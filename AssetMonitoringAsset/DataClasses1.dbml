@@ -222,6 +222,12 @@
       <Association Name="tblAssetHeader_tblAssetDetail" Member="tblAssetHeader" ThisKey="TransHeaderID" OtherKey="AssetHeaderID" Type="tblAssetHeader" IsForeignKey="true" />
     </Type>
   </Table>
+  <Table Name="dbo.tblReference" Member="tblReferences">
+    <Type Name="tblReference">
+      <Column Name="Refid" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Reference" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+    </Type>
+  </Table>
   <Table Name="dbo.tblAssetHeader" Member="tblAssetHeaders">
     <Type Name="tblAssetHeader">
       <Column Name="AssetHeaderID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
@@ -236,12 +242,6 @@
       <Association Name="tblDocumentType_tblAssetHeader" Member="tblDocumentType" ThisKey="DocTypeID" OtherKey="DocumentID" Type="tblDocumentType" IsForeignKey="true" />
       <Association Name="tblUser_tblAssetHeader" Member="tblUser" ThisKey="UserID" OtherKey="UserID" Type="tblUser" IsForeignKey="true" />
       <Association Name="tblVendor_tblAssetHeader" Member="tblVendor" ThisKey="VendorID" OtherKey="VendorID" Type="tblVendor" IsForeignKey="true" />
-    </Type>
-  </Table>
-  <Table Name="dbo.tblReference" Member="tblReferences">
-    <Type Name="tblReference">
-      <Column Name="Refid" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="Reference" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
     </Type>
   </Table>
   <Function Name="dbo.spNewAsset" Method="spNewAsset">

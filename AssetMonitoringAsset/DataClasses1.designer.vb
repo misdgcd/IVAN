@@ -115,17 +115,17 @@ Partial Public Class DataClasses1DataContext
     End Sub
   Partial Private Sub DeletetblAssetDetail(instance As tblAssetDetail)
     End Sub
-  Partial Private Sub InserttblAssetHeader(instance As tblAssetHeader)
-    End Sub
-  Partial Private Sub UpdatetblAssetHeader(instance As tblAssetHeader)
-    End Sub
-  Partial Private Sub DeletetblAssetHeader(instance As tblAssetHeader)
-    End Sub
   Partial Private Sub InserttblReference(instance As tblReference)
     End Sub
   Partial Private Sub UpdatetblReference(instance As tblReference)
     End Sub
   Partial Private Sub DeletetblReference(instance As tblReference)
+    End Sub
+  Partial Private Sub InserttblAssetHeader(instance As tblAssetHeader)
+    End Sub
+  Partial Private Sub UpdatetblAssetHeader(instance As tblAssetHeader)
+    End Sub
+  Partial Private Sub DeletetblAssetHeader(instance As tblAssetHeader)
     End Sub
   #End Region
 	
@@ -238,15 +238,15 @@ Partial Public Class DataClasses1DataContext
 		End Get
 	End Property
 	
-	Public ReadOnly Property tblAssetHeaders() As System.Data.Linq.Table(Of tblAssetHeader)
-		Get
-			Return Me.GetTable(Of tblAssetHeader)
-		End Get
-	End Property
-	
 	Public ReadOnly Property tblReferences() As System.Data.Linq.Table(Of tblReference)
 		Get
 			Return Me.GetTable(Of tblReference)
+		End Get
+	End Property
+	
+	Public ReadOnly Property tblAssetHeaders() As System.Data.Linq.Table(Of tblAssetHeader)
+		Get
+			Return Me.GetTable(Of tblAssetHeader)
 		End Get
 	End Property
 	
@@ -5045,6 +5045,90 @@ Partial Public Class tblAssetDetail
 	End Sub
 End Class
 
+<Global.System.Data.Linq.Mapping.TableAttribute(Name:="dbo.tblReference")>  _
+Partial Public Class tblReference
+	Implements System.ComponentModel.INotifyPropertyChanging, System.ComponentModel.INotifyPropertyChanged
+	
+	Private Shared emptyChangingEventArgs As PropertyChangingEventArgs = New PropertyChangingEventArgs(String.Empty)
+	
+	Private _Refid As Integer
+	
+	Private _Reference As String
+	
+    #Region "Extensibility Method Definitions"
+    Partial Private Sub OnLoaded()
+    End Sub
+    Partial Private Sub OnValidate(action As System.Data.Linq.ChangeAction)
+    End Sub
+    Partial Private Sub OnCreated()
+    End Sub
+    Partial Private Sub OnRefidChanging(value As Integer)
+    End Sub
+    Partial Private Sub OnRefidChanged()
+    End Sub
+    Partial Private Sub OnReferenceChanging(value As String)
+    End Sub
+    Partial Private Sub OnReferenceChanged()
+    End Sub
+    #End Region
+	
+	Public Sub New()
+		MyBase.New
+		OnCreated
+	End Sub
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_Refid", AutoSync:=AutoSync.OnInsert, DbType:="Int NOT NULL IDENTITY", IsPrimaryKey:=true, IsDbGenerated:=true)>  _
+	Public Property Refid() As Integer
+		Get
+			Return Me._Refid
+		End Get
+		Set
+			If ((Me._Refid = value)  _
+						= false) Then
+				Me.OnRefidChanging(value)
+				Me.SendPropertyChanging
+				Me._Refid = value
+				Me.SendPropertyChanged("Refid")
+				Me.OnRefidChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_Reference", DbType:="VarChar(MAX)")>  _
+	Public Property Reference() As String
+		Get
+			Return Me._Reference
+		End Get
+		Set
+			If (String.Equals(Me._Reference, value) = false) Then
+				Me.OnReferenceChanging(value)
+				Me.SendPropertyChanging
+				Me._Reference = value
+				Me.SendPropertyChanged("Reference")
+				Me.OnReferenceChanged
+			End If
+		End Set
+	End Property
+	
+	Public Event PropertyChanging As PropertyChangingEventHandler Implements System.ComponentModel.INotifyPropertyChanging.PropertyChanging
+	
+	Public Event PropertyChanged As PropertyChangedEventHandler Implements System.ComponentModel.INotifyPropertyChanged.PropertyChanged
+	
+	Protected Overridable Sub SendPropertyChanging()
+		If ((Me.PropertyChangingEvent Is Nothing)  _
+					= false) Then
+			RaiseEvent PropertyChanging(Me, emptyChangingEventArgs)
+		End If
+	End Sub
+	
+	Protected Overridable Sub SendPropertyChanged(ByVal propertyName As [String])
+		If ((Me.PropertyChangedEvent Is Nothing)  _
+					= false) Then
+			RaiseEvent PropertyChanged(Me, New PropertyChangedEventArgs(propertyName))
+		End If
+	End Sub
+End Class
+
 <Global.System.Data.Linq.Mapping.TableAttribute(Name:="dbo.tblAssetHeader")>  _
 Partial Public Class tblAssetHeader
 	Implements System.ComponentModel.INotifyPropertyChanging, System.ComponentModel.INotifyPropertyChanged
@@ -5383,90 +5467,6 @@ Partial Public Class tblAssetHeader
 	Private Sub detach_tblAssetDetails(ByVal entity As tblAssetDetail)
 		Me.SendPropertyChanging
 		entity.tblAssetHeader = Nothing
-	End Sub
-End Class
-
-<Global.System.Data.Linq.Mapping.TableAttribute(Name:="dbo.tblReference")>  _
-Partial Public Class tblReference
-	Implements System.ComponentModel.INotifyPropertyChanging, System.ComponentModel.INotifyPropertyChanged
-	
-	Private Shared emptyChangingEventArgs As PropertyChangingEventArgs = New PropertyChangingEventArgs(String.Empty)
-	
-	Private _Refid As Integer
-	
-	Private _Reference As String
-	
-    #Region "Extensibility Method Definitions"
-    Partial Private Sub OnLoaded()
-    End Sub
-    Partial Private Sub OnValidate(action As System.Data.Linq.ChangeAction)
-    End Sub
-    Partial Private Sub OnCreated()
-    End Sub
-    Partial Private Sub OnRefidChanging(value As Integer)
-    End Sub
-    Partial Private Sub OnRefidChanged()
-    End Sub
-    Partial Private Sub OnReferenceChanging(value As String)
-    End Sub
-    Partial Private Sub OnReferenceChanged()
-    End Sub
-    #End Region
-	
-	Public Sub New()
-		MyBase.New
-		OnCreated
-	End Sub
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_Refid", AutoSync:=AutoSync.OnInsert, DbType:="Int NOT NULL IDENTITY", IsPrimaryKey:=true, IsDbGenerated:=true)>  _
-	Public Property Refid() As Integer
-		Get
-			Return Me._Refid
-		End Get
-		Set
-			If ((Me._Refid = value)  _
-						= false) Then
-				Me.OnRefidChanging(value)
-				Me.SendPropertyChanging
-				Me._Refid = value
-				Me.SendPropertyChanged("Refid")
-				Me.OnRefidChanged
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_Reference", DbType:="VarChar(MAX)")>  _
-	Public Property Reference() As String
-		Get
-			Return Me._Reference
-		End Get
-		Set
-			If (String.Equals(Me._Reference, value) = false) Then
-				Me.OnReferenceChanging(value)
-				Me.SendPropertyChanging
-				Me._Reference = value
-				Me.SendPropertyChanged("Reference")
-				Me.OnReferenceChanged
-			End If
-		End Set
-	End Property
-	
-	Public Event PropertyChanging As PropertyChangingEventHandler Implements System.ComponentModel.INotifyPropertyChanging.PropertyChanging
-	
-	Public Event PropertyChanged As PropertyChangedEventHandler Implements System.ComponentModel.INotifyPropertyChanged.PropertyChanged
-	
-	Protected Overridable Sub SendPropertyChanging()
-		If ((Me.PropertyChangingEvent Is Nothing)  _
-					= false) Then
-			RaiseEvent PropertyChanging(Me, emptyChangingEventArgs)
-		End If
-	End Sub
-	
-	Protected Overridable Sub SendPropertyChanged(ByVal propertyName As [String])
-		If ((Me.PropertyChangedEvent Is Nothing)  _
-					= false) Then
-			RaiseEvent PropertyChanged(Me, New PropertyChangedEventArgs(propertyName))
-		End If
 	End Sub
 End Class
 

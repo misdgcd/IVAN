@@ -1,9 +1,9 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
 Partial Class BuildAsset
     Inherits DevExpress.XtraEditors.XtraForm
 
     'Form overrides dispose to clean up the component list.
-    <System.Diagnostics.DebuggerNonUserCode()> _
+    <System.Diagnostics.DebuggerNonUserCode()>
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         If disposing AndAlso components IsNot Nothing Then
             components.Dispose()
@@ -17,7 +17,7 @@ Partial Class BuildAsset
     'NOTE: The following procedure is required by the Windows Form Designer
     'It can be modified using the Windows Form Designer.  
     'Do not modify it using the code editor.
-    <System.Diagnostics.DebuggerStepThrough()> _
+    <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.PanelControl2 = New DevExpress.XtraEditors.PanelControl()
@@ -30,7 +30,6 @@ Partial Class BuildAsset
         Me.PanelControl1 = New DevExpress.XtraEditors.PanelControl()
         Me.dgview = New System.Windows.Forms.DataGridView()
         Me.SimpleButton1 = New DevExpress.XtraEditors.SimpleButton()
-        Me.SimpleButton2 = New DevExpress.XtraEditors.SimpleButton()
         CType(Me.PanelControl2, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.PanelControl2.SuspendLayout()
         CType(Me.PanelControl1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -40,7 +39,6 @@ Partial Class BuildAsset
         '
         'PanelControl2
         '
-        Me.PanelControl2.Controls.Add(Me.SimpleButton2)
         Me.PanelControl2.Controls.Add(Me.TextBox1)
         Me.PanelControl2.Controls.Add(Me.Label4)
         Me.PanelControl2.Controls.Add(Me.Label3)
@@ -157,14 +155,6 @@ Partial Class BuildAsset
         Me.SimpleButton1.TabIndex = 14
         Me.SimpleButton1.Text = "Record"
         '
-        'SimpleButton2
-        '
-        Me.SimpleButton2.Location = New System.Drawing.Point(624, 41)
-        Me.SimpleButton2.Name = "SimpleButton2"
-        Me.SimpleButton2.Size = New System.Drawing.Size(75, 23)
-        Me.SimpleButton2.TabIndex = 13
-        Me.SimpleButton2.Text = "SimpleButton2"
-        '
         'BuildAsset
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -202,5 +192,4 @@ Partial Class BuildAsset
     Friend WithEvents PanelControl1 As DevExpress.XtraEditors.PanelControl
     Friend WithEvents dgview As DataGridView
     Friend WithEvents SimpleButton1 As DevExpress.XtraEditors.SimpleButton
-    Friend WithEvents SimpleButton2 As DevExpress.XtraEditors.SimpleButton
 End Class

@@ -1,25 +1,32 @@
 ﻿Public Class Login
     Private Sub SimpleButton1_Click(sender As Object, e As EventArgs) Handles SimpleButton1.Click
 
-
-
-
         If TextBox1.Text = String.Empty Then
             MsgBox("Invalid Username...")
+            TextBox1.Text = String.Empty
+            TextBox2.Text = String.Empty
         ElseIf TextBox2.Text = String.Empty Then
             MsgBox("Invalid Password...")
+            TextBox1.Text = String.Empty
+            TextBox2.Text = String.Empty
         Else
             If UserClass.FetchLogin(TextBox1.Text, TextBox2.Text) = 0 Then
                 MsgBox("Invalid User Account...")
+                TextBox1.Text = String.Empty
+                TextBox2.Text = String.Empty
             ElseIf UserClass.FetchLogin(TextBox1.Text, TextBox2.Text) = 1 Then
                 loaddetails()
                 Home.Show()
+                Me.Hide()
+
+                TextBox1.Text = String.Empty
+                TextBox2.Text = String.Empty
             Else
                 MsgBox("Multiple Account is Not Permitted...Please Contact SPU")
             End If
         End If
 
-        Me.Hide()
+
     End Sub
 
     Private Sub Login_Load(sender As Object, e As EventArgs) Handles MyBase.Load

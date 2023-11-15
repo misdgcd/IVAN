@@ -8,9 +8,9 @@ Public Class AssetHeaderClass
     End Function
 
 
-    Public Shared Sub SaveAsset(ByVal entry As String, ByVal remarks As String, ByVal date1 As Date)
+    Public Shared Sub SaveAsset(ByVal entry As String, ByVal remarks As String, ByVal date1 As Date, ByVal Docno As String, ByVal DocId As Integer, ByVal vendorId As Integer)
         Try
-            Dim Docno As String = "N/A"
+
             Dim user As Integer = Home.UserID
             Dim post As Table(Of tblAssetHeader) = AssetHeaderClass.GetAssetHeader
 
@@ -20,9 +20,9 @@ Public Class AssetHeaderClass
                   .EntryNumber = entry,
                   .TransDate = date1,
                   .Remarks = remarks,
-                  .VendorID = 0,
+                  .VendorID = vendorId,
                   .Docno = Docno,
-                  .DocTypeID = 0
+                  .DocTypeID = DocId
                 }
             post.InsertOnSubmit(p)
             post.Context.SubmitChanges()
@@ -55,6 +55,28 @@ Public Class AssetHeaderClass
         End If
     End Function
 
+
+    Public Shared Function FetchEntryID2() As String
+        Dim querysection As String = (From s In db.tblAssetHeaders
+                                      Order By s.AssetHeaderID Descending
+                                      Where s.EntryNumber <> ""
+                                      Select s.EntryNumber).FirstOrDefault()
+
+        If IsNothing(querysection) Then
+            Dim newEntryID As String = "AA" + "-" + Home.Department + "-" + Home.Branch + "-" + Home.Section + "-" + "000001"
+            Return newEntryID
+        Else
+            Dim parts As String() = querysection.Split("-"c)
+            Dim lastPart As String = parts(parts.Length - 1)
+            Dim nextNumber As Integer = Integer.Parse(lastPart) + 1
+
+            ' Assuming you want the format "000001" for all values, you can use the following format.
+            Dim formattedNextNumber As String = nextNumber.ToString("D6")
+            Dim newEntryID As String = $"{"AA"}-{Home.Department}-{Home.Branch}-{Home.Section}-{formattedNextNumber}"
+
+            Return newEntryID
+        End If
+    End Function
 
     Public Shared Function FetchAssetMasterData(ByVal Search As String) As Object
         Dim querysection = (From s In db.tblAssetDetailMasterlists

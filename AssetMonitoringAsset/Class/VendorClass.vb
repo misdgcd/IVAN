@@ -78,7 +78,7 @@ Public Class VendorClass
             Dim currentdate As Date = DateTime.Now.Date()
             'Insert Asset in DB
             db.spUpdateVendor(typeid, StrConv(ATD, VbStrConv.ProperCase), currentdate, user, ATC.ToUpper)
-            MessageBox.Show("Document Type Successfully Updated.", "Info!", MessageBoxButtons.OK, MessageBoxIcon.Information)
+            MessageBox.Show("Vendor Successfully Updated.", "Info!", MessageBoxButtons.OK, MessageBoxIcon.Information)
             'After Insert Load View
             AssetBranch.ViewBranch()
 
@@ -109,4 +109,11 @@ Public Class VendorClass
         Return querysection
     End Function
 
+
+    Public Shared Function FetchVEndorID(ByVal Des As String) As Integer
+        Dim querysection = (From s In db.tblVendors
+                            Where s.VendorDescription.Contains(Des)
+                            Select s.VendorID).Single
+        Return querysection
+    End Function
 End Class

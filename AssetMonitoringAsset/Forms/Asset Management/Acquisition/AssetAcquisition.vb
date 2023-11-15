@@ -1,4 +1,8 @@
 ﻿Public Class AssetAcquisition
+
+
+    Public vendorID As Integer
+    Public DocId As Integer
     Private Sub AssetAcquisition_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Displaydg()
     End Sub
@@ -8,8 +12,7 @@
         ComboBox2.DataSource = DocTypeClass.ViewCboxDoc
         dgview.AllowUserToAddRows = True
         DateTimePicker1.Value = DateTime.Now.Date()
-        'Label2.Text = AssetHeaderClass.FetchEntryID
-
+        Label2.Text = AssetHeaderClass.FetchEntryID2
         dgview.Columns.Add("0", "Asset Code")
         dgview.Columns.Add("1", "Asset Description")
         dgview.Columns.Add("2", "Categories")
@@ -72,5 +75,51 @@
             TextBox1.Text = String.Empty
             TextBox2.Text = String.Empty
         End If
+    End Sub
+
+    Private Sub dgview_CellValidating(sender As Object, e As DataGridViewCellValidatingEventArgs) Handles dgview.CellValidating
+        Dim row As Integer = dgview.CurrentCell.RowIndex
+        If e.ColumnIndex = 7 Then
+
+            Dim input As String = e.FormattedValue.ToString()
+            Dim result As Double
+            If Not Double.TryParse(input, result) Then
+                ' Display an error message or handle the invalid input as per your requirement
+                MessageBox.Show("Invalid Quantity", "Invalid Input", MessageBoxButtons.OK)
+                'dgview.AllowUserToAddRows = False
+                e.Cancel = True
+            Else
+                dgview.AllowUserToAddRows = True
+            End If
+
+        ElseIf e.ColumnIndex = 4 AndAlso String.IsNullOrWhiteSpace(e.FormattedValue.ToString()) Then
+            MessageBox.Show("Invalid Reference", "Invalid Input", MessageBoxButtons.OK)
+        ElseIf e.ColumnIndex = 4 Then
+
+            If dgview.Rows(row).Cells(4).Value.ToString = "N/A" Then
+                dgview.Rows(row).Cells(5).Value = "N/A"
+                dgview.Rows(row).Cells(5).ReadOnly = True
+            Else
+                dgview.Rows(row).Cells(5).ReadOnly = False
+            End If
+        End If
+    End Sub
+
+    Private Sub SimpleButton1_Click(sender As Object, e As EventArgs) Handles SimpleButton1.Click
+        If TextBox2.Text = String.Empty Then
+            MessageBox.Show("Invalid Doc Number", "Validation")
+        Else
+
+            AssetHeaderClass.SaveAsset(Label2.Text, TextBox1.Text, DateTimePicker1.Value, TextBox2.Text, DocId, vendorID)
+
+        End If
+    End Sub
+
+    Private Sub ComboBox1_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ComboBox1.SelectedIndexChanged
+        vendorID = VendorClass.FetchVEndorID(ComboBox1.Text)
+    End Sub
+
+    Private Sub ComboBox2_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ComboBox2.SelectedIndexChanged
+        DocId = DocTypeClass.FetchDocTypeID(ComboBox2.Text)
     End Sub
 End Class

@@ -52,25 +52,22 @@
     End Sub
 
     Private Sub Dgview_CellValidating(sender As Object, e As DataGridViewCellValidatingEventArgs) Handles dgview.CellValidating
+        Dim totalRows As Integer = dgview.RowCount
         Dim row As Integer = dgview.CurrentCell.RowIndex
         If e.ColumnIndex = 7 Then
-
             Dim input As String = e.FormattedValue.ToString()
             Dim result As Double
             If Not Double.TryParse(input, result) Then
-                ' Display an error message or handle the invalid input as per your requirement
-                MessageBox.Show("Please Enter Valid Quantity...")
-                'dgview.AllowUserToAddRows = False
+                MessageBox.Show("Invalid Quantity", "Invalid Input", MessageBoxButtons.OK)
                 e.Cancel = True
             Else
-                dgview.AllowUserToAddRows = True
             End If
-
         ElseIf e.ColumnIndex = 4 AndAlso String.IsNullOrWhiteSpace(e.FormattedValue.ToString()) Then
             MessageBox.Show("Invalid Reference", "Invalid Input", MessageBoxButtons.OK)
         ElseIf e.ColumnIndex = 4 Then
 
             If dgview.Rows(row).Cells(4).Value.ToString = "N/A" Then
+                dgview.Rows(row).Cells(5).Value = "N/A"
                 dgview.Rows(row).Cells(5).ReadOnly = True
             Else
                 dgview.Rows(row).Cells(5).ReadOnly = False
@@ -79,16 +76,7 @@
     End Sub
 
     Private Sub Dgview_RowValidating(sender As Object, e As DataGridViewCellCancelEventArgs) Handles dgview.RowValidating
-        Dim row As Integer = dgview.CurrentCell.RowIndex
 
-        If e.ColumnIndex = 4 AndAlso String.IsNullOrWhiteSpace(dgview.Rows(row).Cells(4).Value.ToString()) Then
-            MessageBox.Show("Column 4 cannot be empty. Please enter a valid value.", "Invalid Input", MessageBoxButtons.OK, MessageBoxIcon.Warning)
-
-            ' Set the cell to ReadOnly to disable editing
-            dgview.Rows(row).Cells(4).ReadOnly = True
-
-            e.Cancel = True
-        End If
     End Sub
 
     Private Sub SimpleButton1_Click(sender As Object, e As EventArgs) Handles SimpleButton1.Click
@@ -97,7 +85,10 @@
 
 
         Try
-            AssetHeaderClass.SaveAsset(Label2.Text, TextBox1.Text, DateTimePicker1.Value)
+            Dim Docno As String = "N/A"
+            Dim DocId As Integer = 0
+            Dim VenID As Integer = 0
+            AssetHeaderClass.SaveAsset(Label2.Text, TextBox1.Text, DateTimePicker1.Value, Docno, DocId, VenID)
 
             For Each row As DataGridViewRow In dgview.Rows
 
@@ -125,7 +116,8 @@
             Label2.Text = String.Empty
             fordgvclearing()
             Displaydg()
-            MsgBox("Successfully Recorded...")
+
+            MessageBox.Show("Successfully Recorded", "Message", MessageBoxButtons.OK)
 
         Catch ex As Exception
             MessageBox.Show("Invalid Entry, Please Check blank Cells...", "Validation", MessageBoxButtons.OK, MessageBoxIcon.Information)

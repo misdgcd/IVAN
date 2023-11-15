@@ -106,4 +106,12 @@ Public Class DocTypeClass
                             Select s.DocumentDescription).ToList
         Return querysection
     End Function
+
+
+    Public Shared Function FetchDocTypeID(ByVal Des As String) As Integer
+        Dim querysection = (From s In db.tblDocumentTypes
+                            Where s.DocumentDescription.Contains(Des)
+                            Select s.DocumentID).Single
+        Return querysection
+    End Function
 End Class

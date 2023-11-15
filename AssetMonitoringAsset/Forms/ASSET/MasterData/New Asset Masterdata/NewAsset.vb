@@ -82,10 +82,7 @@
                     Dim c As String = row.Cells(7).Value.ToString
                     MasterdataDetailsClass.SaveAssetDetail(sc, ad, Integer.Parse(ci), Integer.Parse(ti), Integer.Parse(c), TransHeaderID)
                 End If
-
             Next
-
-
             TextBox1.Text = String.Empty
             Label2.Text = String.Empty
             fordgvclearing()
@@ -95,8 +92,6 @@
         Catch ex As Exception
             MessageBox.Show("Invalid Entry, Please Check blank Cells...", "Validation", MessageBoxButtons.OK, MessageBoxIcon.Information)
         End Try
-
-
     End Sub
 
     Public Sub fordgvclearing()
@@ -153,9 +148,6 @@
 
 
     End Sub
-
-
-
 
 
     Private Sub NewAsset_KeyDown(sender As Object, e As KeyEventArgs) Handles MyBase.KeyDown

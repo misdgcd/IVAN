@@ -154,7 +154,6 @@ Partial Class AssetAcquisition
         '
         Me.DateTimePicker1.CalendarFont = New System.Drawing.Font("Arial Narrow", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.DateTimePicker1.DropDownAlign = System.Windows.Forms.LeftRightAlignment.Right
-        Me.DateTimePicker1.Enabled = False
         Me.DateTimePicker1.Font = New System.Drawing.Font("Arial Rounded MT Bold", 11.25!)
         Me.DateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
         Me.DateTimePicker1.Location = New System.Drawing.Point(852, 63)

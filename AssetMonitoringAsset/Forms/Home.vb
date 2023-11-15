@@ -99,4 +99,8 @@
     Private Sub AccordionControlElement30_Click(sender As Object, e As EventArgs) Handles AccordionControlElement30.Click
         Reference.ShowDialog()
     End Sub
+
+    Private Sub Home_FormClosing(sender As Object, e As FormClosingEventArgs) Handles MyBase.FormClosing
+        Login.Show()
+    End Sub
 End Class

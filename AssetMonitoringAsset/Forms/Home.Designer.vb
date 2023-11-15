@@ -50,9 +50,9 @@ Partial Class Home
         Me.AccordionControlElement12 = New DevExpress.XtraBars.Navigation.AccordionControlElement()
         Me.AccordionControlElement11 = New DevExpress.XtraBars.Navigation.AccordionControlElement()
         Me.AccordionControlElement6 = New DevExpress.XtraBars.Navigation.AccordionControlElement()
+        Me.AccordionControlElement30 = New DevExpress.XtraBars.Navigation.AccordionControlElement()
         Me.PanelControl1 = New DevExpress.XtraEditors.PanelControl()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
-        Me.AccordionControlElement30 = New DevExpress.XtraBars.Navigation.AccordionControlElement()
         CType(Me.AccordionControl1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PanelControl1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -286,6 +286,12 @@ Partial Class Home
         Me.AccordionControlElement6.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item
         Me.AccordionControlElement6.Text = "Asset Condition"
         '
+        'AccordionControlElement30
+        '
+        Me.AccordionControlElement30.Name = "AccordionControlElement30"
+        Me.AccordionControlElement30.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item
+        Me.AccordionControlElement30.Text = "Reference"
+        '
         'PanelControl1
         '
         Me.PanelControl1.Dock = System.Windows.Forms.DockStyle.Bottom
@@ -304,12 +310,6 @@ Partial Class Home
         Me.PictureBox1.Size = New System.Drawing.Size(1090, 628)
         Me.PictureBox1.TabIndex = 4
         Me.PictureBox1.TabStop = False
-        '
-        'AccordionControlElement30
-        '
-        Me.AccordionControlElement30.Name = "AccordionControlElement30"
-        Me.AccordionControlElement30.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item
-        Me.AccordionControlElement30.Text = "Reference"
         '
         'Home
         '
