@@ -8,7 +8,7 @@ Public Class AssetHeaderClass
     End Function
 
 
-    Public Shared Sub SaveAsset(ByVal entry As String, ByVal remarks As String, ByVal date1 As Date, ByVal Docno As String, ByVal DocId As Integer, ByVal vendorId As Integer)
+    Public Shared Sub SaveAsset(ByVal entry As String, ByVal remarks As String, ByVal date1 As Date, ByVal Docno As String, ByVal DocId As Integer, ByVal vendorId As Integer, ByVal mod1 As Integer)
         Try
 
             Dim user As Integer = Home.UserID
@@ -22,7 +22,8 @@ Public Class AssetHeaderClass
                   .Remarks = remarks,
                   .VendorID = vendorId,
                   .Docno = Docno,
-                  .DocTypeID = DocId
+                  .DocTypeID = DocId,
+                  .module1 = mod1
                 }
             post.InsertOnSubmit(p)
             post.Context.SubmitChanges()

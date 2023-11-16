@@ -52,27 +52,25 @@
     End Sub
 
     Private Sub Dgview_CellValidating(sender As Object, e As DataGridViewCellValidatingEventArgs) Handles dgview.CellValidating
-        Dim totalRows As Integer = dgview.RowCount
-        Dim row As Integer = dgview.CurrentCell.RowIndex
-        If e.ColumnIndex = 7 Then
-            Dim input As String = e.FormattedValue.ToString()
-            Dim result As Double
-            If Not Double.TryParse(input, result) Then
-                MessageBox.Show("Invalid Quantity", "Invalid Input", MessageBoxButtons.OK)
-                e.Cancel = True
-            Else
-            End If
-        ElseIf e.ColumnIndex = 4 AndAlso String.IsNullOrWhiteSpace(e.FormattedValue.ToString()) Then
-            MessageBox.Show("Invalid Reference", "Invalid Input", MessageBoxButtons.OK)
-        ElseIf e.ColumnIndex = 4 Then
+        Try
+            Dim row As Integer = dgview.CurrentCell.RowIndex
 
-            If dgview.Rows(row).Cells(4).Value.ToString = "N/A" Then
-                dgview.Rows(row).Cells(5).Value = "N/A"
-                dgview.Rows(row).Cells(5).ReadOnly = True
-            Else
-                dgview.Rows(row).Cells(5).ReadOnly = False
+            If e.ColumnIndex = 4 AndAlso String.IsNullOrWhiteSpace(e.FormattedValue.ToString()) Then
+                MessageBox.Show("Invalid Reference", "Invalid Input", MessageBoxButtons.OK)
+            ElseIf e.ColumnIndex = 4 Then
+
+                If dgview.Rows(row).Cells(4).Value.ToString = "N/A" Then
+                    dgview.Rows(row).Cells(5).Value = "N/A"
+                    dgview.Rows(row).Cells(5).ReadOnly = True
+                Else
+                    dgview.Rows(row).Cells(5).ReadOnly = False
+                    dgview.Rows(row).Cells(7).Value = "1"
+                    dgview.Rows(row).Cells(7).ReadOnly = True
+                End If
             End If
-        End If
+        Catch ex As Exception
+
+        End Try
     End Sub
 
     Private Sub Dgview_RowValidating(sender As Object, e As DataGridViewCellCancelEventArgs) Handles dgview.RowValidating
@@ -81,47 +79,75 @@
 
     Private Sub SimpleButton1_Click(sender As Object, e As EventArgs) Handles SimpleButton1.Click
 
+        Dim rows As Integer = dgview.CurrentCell.RowIndex
+
+        If dgview.Rows(rows).Cells(4).Value Is Nothing OrElse String.IsNullOrWhiteSpace(dgview.Rows(rows).Cells(4).Value.ToString()) Then
+            MessageBox.Show("Invalid Reference", "Validation")
+        ElseIf dgview.Rows(rows).Cells(7).Value Is Nothing OrElse String.IsNullOrWhiteSpace(dgview.Rows(rows).Cells(7).Value.ToString()) Then
+            MessageBox.Show("Invalid Quantity", "Validation")
+        ElseIf dgview.Rows(rows).Cells(5).Value Is Nothing OrElse String.IsNullOrWhiteSpace(dgview.Rows(rows).Cells(5).Value.ToString()) Then
+            MessageBox.Show("Invalid Reference Number", "Validation")
+        ElseIf dgview.Rows(rows).Cells(0).Value Is Nothing OrElse String.IsNullOrWhiteSpace(dgview.Rows(rows).Cells(5).Value.ToString()) Then
+            MessageBox.Show("Invalid Asset", "Validation")
+        Else
+            Try
+                Dim Docno As String = "N/A"
+                Dim DocId As Integer = 0
+                Dim VenID As Integer = 0
+                Dim mod2 As Integer = 2
+                For Each row As DataGridViewRow In dgview.Rows
+                    If Not row.IsNewRow Then
+                        Dim mod1 As Integer = 1
+                        Dim TransHeaderID As Integer = AssetHeaderClass.FetchTransHeaderID
+                        Dim AssetCode As String = row.Cells(0).Value.ToString
+                        Dim Des As String = row.Cells(1).Value.ToString
+                        Dim ref As String = row.Cells(4).Value.ToString
+                        Dim refno As String = row.Cells(5).Value.ToString
+                        Dim qty As String = row.Cells(7).Value.ToString
+                        Dim CatId As String = row.Cells(8).Value.ToString
+                        Dim TypeId As String = row.Cells(9).Value.ToString
+                        Dim ConId As String = row.Cells(10).Value.ToString
+                        Dim assetID As String = row.Cells(11).Value.ToString
+
+                        If AssetDetailClass.FetchAssetCount(Integer.Parse(assetID), refno) > 0 Then
+
+                            If AssetDetailClass.FetchRefnoCount(refno) > 0 Then
+                                MessageBox.Show("Please Use Unique Serial Number", "Validation", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                            Else
+                                AssetHeaderClass.SaveAsset(Label2.Text, TextBox1.Text, DateTimePicker1.Value, Docno, DocId, VenID, mod2)
+                                AssetDetailClass.SaveAssetDetail(AssetCode, Des, Integer.Parse(CatId), Integer.Parse(TypeId), Integer.Parse(ConId), TransHeaderID, ref, refno, Double.Parse(qty), Integer.Parse(assetID), mod1)
+
+                                InventoryClass.UpdateInventory(Integer.Parse(assetID), Double.Parse(qty), ref)
+
+                                TextBox1.Text = String.Empty
+
+                                Label2.Text = String.Empty
+                                fordgvclearing()
+                                Displaydg()
+                                MessageBox.Show("Successfully Recorded", "Message", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                            End If
+
+                        Else
+                            AssetHeaderClass.SaveAsset(Label2.Text, TextBox1.Text, DateTimePicker1.Value, Docno, DocId, VenID, mod2)
+                            AssetDetailClass.SaveAssetDetail(AssetCode, Des, Integer.Parse(CatId), Integer.Parse(TypeId), Integer.Parse(ConId), TransHeaderID, ref, refno, Double.Parse(qty), Integer.Parse(assetID), mod1)
+                            InventoryClass.SaveAssetInventory(Integer.Parse(assetID), AssetCode, Double.Parse(qty), ref, refno)
+                            TextBox1.Text = String.Empty
+
+                            Label2.Text = String.Empty
+                            fordgvclearing()
+                            Displaydg()
+                            MessageBox.Show("Successfully Recorded", "Message", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                        End If
+                    End If
+                Next
+            Catch ex As Exception
+                MessageBox.Show("Invalid Entry, Please Check blank Cells...", "Validation", MessageBoxButtons.OK, MessageBoxIcon.Information)
+            End Try
+        End If
 
 
 
-        Try
-            Dim Docno As String = "N/A"
-            Dim DocId As Integer = 0
-            Dim VenID As Integer = 0
-            AssetHeaderClass.SaveAsset(Label2.Text, TextBox1.Text, DateTimePicker1.Value, Docno, DocId, VenID)
 
-            For Each row As DataGridViewRow In dgview.Rows
-
-                If Not row.IsNewRow Then
-
-                    Dim TransHeaderID As Integer = AssetHeaderClass.FetchTransHeaderID
-
-                    Dim AssetCode As String = row.Cells(0).Value.ToString
-                    Dim Des As String = row.Cells(1).Value.ToString
-                    Dim ref As String = row.Cells(4).Value.ToString
-                    Dim refno As String = row.Cells(5).Value.ToString
-                    Dim qty As String = row.Cells(7).Value.ToString
-
-                    Dim CatId As String = row.Cells(8).Value.ToString
-                    Dim TypeId As String = row.Cells(9).Value.ToString
-                    Dim ConId As String = row.Cells(10).Value.ToString
-                    Dim assetID As String = row.Cells(11).Value.ToString
-                    AssetDetailClass.SaveAssetDetail(AssetCode, Des, Integer.Parse(CatId), Integer.Parse(TypeId), Integer.Parse(ConId), TransHeaderID, ref, refno, Double.Parse(qty), Integer.Parse(assetID))
-                End If
-
-            Next
-
-
-            TextBox1.Text = String.Empty
-            Label2.Text = String.Empty
-            fordgvclearing()
-            Displaydg()
-
-            MessageBox.Show("Successfully Recorded", "Message", MessageBoxButtons.OK)
-
-        Catch ex As Exception
-            MessageBox.Show("Invalid Entry, Please Check blank Cells...", "Validation", MessageBoxButtons.OK, MessageBoxIcon.Information)
-        End Try
 
 
 

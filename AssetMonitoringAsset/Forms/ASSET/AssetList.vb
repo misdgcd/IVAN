@@ -80,4 +80,8 @@
             TextBox1.Text = String.Empty
         End If
     End Sub
+
+    Private Sub SimpleButton1_Click(sender As Object, e As EventArgs) Handles SimpleButton1.Click
+        NewAsset.ShowDialog()
+    End Sub
 End Class

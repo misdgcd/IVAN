@@ -20,10 +20,12 @@ Partial Class AssetList
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(AssetList))
         Me.PanelControl1 = New DevExpress.XtraEditors.PanelControl()
         Me.TextBox1 = New System.Windows.Forms.TextBox()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.dgview2 = New System.Windows.Forms.DataGridView()
+        Me.SimpleButton1 = New DevExpress.XtraEditors.SimpleButton()
         CType(Me.PanelControl1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.PanelControl1.SuspendLayout()
         CType(Me.dgview2, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -31,6 +33,7 @@ Partial Class AssetList
         '
         'PanelControl1
         '
+        Me.PanelControl1.Controls.Add(Me.SimpleButton1)
         Me.PanelControl1.Controls.Add(Me.TextBox1)
         Me.PanelControl1.Controls.Add(Me.Label3)
         Me.PanelControl1.Controls.Add(Me.dgview2)
@@ -85,6 +88,18 @@ Partial Class AssetList
         Me.dgview2.Size = New System.Drawing.Size(909, 357)
         Me.dgview2.TabIndex = 0
         '
+        'SimpleButton1
+        '
+        Me.SimpleButton1.Appearance.Font = New System.Drawing.Font("Arial Rounded MT Bold", 11.25!)
+        Me.SimpleButton1.Appearance.Options.UseFont = True
+        Me.SimpleButton1.ImageOptions.Image = CType(resources.GetObject("SimpleButton1.ImageOptions.Image"), System.Drawing.Image)
+        Me.SimpleButton1.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.RightCenter
+        Me.SimpleButton1.Location = New System.Drawing.Point(811, 5)
+        Me.SimpleButton1.Name = "SimpleButton1"
+        Me.SimpleButton1.Size = New System.Drawing.Size(97, 40)
+        Me.SimpleButton1.TabIndex = 7
+        Me.SimpleButton1.Text = "ADD"
+        '
         'AssetList
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -113,4 +128,5 @@ Partial Class AssetList
     Friend WithEvents TextBox1 As TextBox
     Friend WithEvents Label3 As Label
     Friend WithEvents dgview2 As DataGridView
+    Friend WithEvents SimpleButton1 As DevExpress.XtraEditors.SimpleButton
 End Class

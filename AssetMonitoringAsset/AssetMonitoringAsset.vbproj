@@ -101,6 +101,7 @@
     <Compile Include="Class\AssetDetailClass.vb" />
     <Compile Include="Class\AssetHeaderClass.vb" />
     <Compile Include="Class\BranchClass.vb" />
+    <Compile Include="Class\InventoryClass.vb" />
     <Compile Include="Class\MasterdataDetailsClass.vb" />
     <Compile Include="Class\MasterdataHeaderClass.vb" />
     <Compile Include="Class\CategoryClass.vb" />
@@ -125,10 +126,10 @@
     <Compile Include="Forms\Asset Management\Acquisition\AssetAcquisition.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\ASSET\Build Asset\BuildAsset\AssetList.Designer.vb">
+    <Compile Include="Forms\ASSET\AssetList.Designer.vb">
       <DependentUpon>AssetList.vb</DependentUpon>
     </Compile>
-    <Compile Include="Forms\ASSET\Build Asset\BuildAsset\AssetList.vb">
+    <Compile Include="Forms\ASSET\AssetList.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Forms\ASSET\Build Asset\BuildAsset\BuildAsset.Designer.vb">
@@ -400,7 +401,7 @@
     <EmbeddedResource Include="Forms\Asset Management\Acquisition\AssetAcquisition.resx">
       <DependentUpon>AssetAcquisition.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\ASSET\Build Asset\BuildAsset\AssetList.resx">
+    <EmbeddedResource Include="Forms\ASSET\AssetList.resx">
       <DependentUpon>AssetList.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\ASSET\Build Asset\BuildAsset\BuildAsset.resx">
@@ -589,6 +590,9 @@
   </ItemGroup>
   <ItemGroup>
     <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Forms\Asset Management\Register\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.

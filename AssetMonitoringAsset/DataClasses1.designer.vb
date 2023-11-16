@@ -109,23 +109,29 @@ Partial Public Class DataClasses1DataContext
     End Sub
   Partial Private Sub DeletetblUser(instance As tblUser)
     End Sub
-  Partial Private Sub InserttblAssetDetail(instance As tblAssetDetail)
-    End Sub
-  Partial Private Sub UpdatetblAssetDetail(instance As tblAssetDetail)
-    End Sub
-  Partial Private Sub DeletetblAssetDetail(instance As tblAssetDetail)
-    End Sub
   Partial Private Sub InserttblReference(instance As tblReference)
     End Sub
   Partial Private Sub UpdatetblReference(instance As tblReference)
     End Sub
   Partial Private Sub DeletetblReference(instance As tblReference)
     End Sub
+  Partial Private Sub InserttblAssetDetail(instance As tblAssetDetail)
+    End Sub
+  Partial Private Sub UpdatetblAssetDetail(instance As tblAssetDetail)
+    End Sub
+  Partial Private Sub DeletetblAssetDetail(instance As tblAssetDetail)
+    End Sub
   Partial Private Sub InserttblAssetHeader(instance As tblAssetHeader)
     End Sub
   Partial Private Sub UpdatetblAssetHeader(instance As tblAssetHeader)
     End Sub
   Partial Private Sub DeletetblAssetHeader(instance As tblAssetHeader)
+    End Sub
+  Partial Private Sub InserttblAssetInventory(instance As tblAssetInventory)
+    End Sub
+  Partial Private Sub UpdatetblAssetInventory(instance As tblAssetInventory)
+    End Sub
+  Partial Private Sub DeletetblAssetInventory(instance As tblAssetInventory)
     End Sub
   #End Region
 	
@@ -232,21 +238,27 @@ Partial Public Class DataClasses1DataContext
 		End Get
 	End Property
 	
-	Public ReadOnly Property tblAssetDetails() As System.Data.Linq.Table(Of tblAssetDetail)
-		Get
-			Return Me.GetTable(Of tblAssetDetail)
-		End Get
-	End Property
-	
 	Public ReadOnly Property tblReferences() As System.Data.Linq.Table(Of tblReference)
 		Get
 			Return Me.GetTable(Of tblReference)
 		End Get
 	End Property
 	
+	Public ReadOnly Property tblAssetDetails() As System.Data.Linq.Table(Of tblAssetDetail)
+		Get
+			Return Me.GetTable(Of tblAssetDetail)
+		End Get
+	End Property
+	
 	Public ReadOnly Property tblAssetHeaders() As System.Data.Linq.Table(Of tblAssetHeader)
 		Get
 			Return Me.GetTable(Of tblAssetHeader)
+		End Get
+	End Property
+	
+	Public ReadOnly Property tblAssetInventories() As System.Data.Linq.Table(Of tblAssetInventory)
+		Get
+			Return Me.GetTable(Of tblAssetInventory)
 		End Get
 	End Property
 	
@@ -1056,6 +1068,8 @@ Partial Public Class tblAssetDetailMasterlist
 	
 	Private _tblAssetDetails As EntitySet(Of tblAssetDetail)
 	
+	Private _tblAssetInventories As EntitySet(Of tblAssetInventory)
+	
 	Private _tblAssetCondition As EntityRef(Of tblAssetCondition)
 	
 	Private _tblAssetHeaderMasterlist As EntityRef(Of tblAssetHeaderMasterlist)
@@ -1122,6 +1136,7 @@ Partial Public Class tblAssetDetailMasterlist
 	Public Sub New()
 		MyBase.New
 		Me._tblAssetDetails = New EntitySet(Of tblAssetDetail)(AddressOf Me.attach_tblAssetDetails, AddressOf Me.detach_tblAssetDetails)
+		Me._tblAssetInventories = New EntitySet(Of tblAssetInventory)(AddressOf Me.attach_tblAssetInventories, AddressOf Me.detach_tblAssetInventories)
 		Me._tblAssetCondition = CType(Nothing, EntityRef(Of tblAssetCondition))
 		Me._tblAssetHeaderMasterlist = CType(Nothing, EntityRef(Of tblAssetHeaderMasterlist))
 		Me._tblAssetType = CType(Nothing, EntityRef(Of tblAssetType))
@@ -1332,6 +1347,16 @@ Partial Public Class tblAssetDetailMasterlist
 		End Set
 	End Property
 	
+	<Global.System.Data.Linq.Mapping.AssociationAttribute(Name:="tblAssetDetailMasterlist_tblAssetInventory", Storage:="_tblAssetInventories", ThisKey:="AssetID", OtherKey:="AssetId")>  _
+	Public Property tblAssetInventories() As EntitySet(Of tblAssetInventory)
+		Get
+			Return Me._tblAssetInventories
+		End Get
+		Set
+			Me._tblAssetInventories.Assign(value)
+		End Set
+	End Property
+	
 	<Global.System.Data.Linq.Mapping.AssociationAttribute(Name:="tblAssetCondition_tblAssetDetailMasterlist", Storage:="_tblAssetCondition", ThisKey:="AssetConditionID", OtherKey:="AssetConditionID", IsForeignKey:=true)>  _
 	Public Property tblAssetCondition() As tblAssetCondition
 		Get
@@ -1496,6 +1521,16 @@ Partial Public Class tblAssetDetailMasterlist
 	End Sub
 	
 	Private Sub detach_tblAssetDetails(ByVal entity As tblAssetDetail)
+		Me.SendPropertyChanging
+		entity.tblAssetDetailMasterlist = Nothing
+	End Sub
+	
+	Private Sub attach_tblAssetInventories(ByVal entity As tblAssetInventory)
+		Me.SendPropertyChanging
+		entity.tblAssetDetailMasterlist = Me
+	End Sub
+	
+	Private Sub detach_tblAssetInventories(ByVal entity As tblAssetInventory)
 		Me.SendPropertyChanging
 		entity.tblAssetDetailMasterlist = Nothing
 	End Sub
@@ -4459,6 +4494,90 @@ Partial Public Class tblUser
 	End Sub
 End Class
 
+<Global.System.Data.Linq.Mapping.TableAttribute(Name:="dbo.tblReference")>  _
+Partial Public Class tblReference
+	Implements System.ComponentModel.INotifyPropertyChanging, System.ComponentModel.INotifyPropertyChanged
+	
+	Private Shared emptyChangingEventArgs As PropertyChangingEventArgs = New PropertyChangingEventArgs(String.Empty)
+	
+	Private _Refid As Integer
+	
+	Private _Reference As String
+	
+    #Region "Extensibility Method Definitions"
+    Partial Private Sub OnLoaded()
+    End Sub
+    Partial Private Sub OnValidate(action As System.Data.Linq.ChangeAction)
+    End Sub
+    Partial Private Sub OnCreated()
+    End Sub
+    Partial Private Sub OnRefidChanging(value As Integer)
+    End Sub
+    Partial Private Sub OnRefidChanged()
+    End Sub
+    Partial Private Sub OnReferenceChanging(value As String)
+    End Sub
+    Partial Private Sub OnReferenceChanged()
+    End Sub
+    #End Region
+	
+	Public Sub New()
+		MyBase.New
+		OnCreated
+	End Sub
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_Refid", AutoSync:=AutoSync.OnInsert, DbType:="Int NOT NULL IDENTITY", IsPrimaryKey:=true, IsDbGenerated:=true)>  _
+	Public Property Refid() As Integer
+		Get
+			Return Me._Refid
+		End Get
+		Set
+			If ((Me._Refid = value)  _
+						= false) Then
+				Me.OnRefidChanging(value)
+				Me.SendPropertyChanging
+				Me._Refid = value
+				Me.SendPropertyChanged("Refid")
+				Me.OnRefidChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_Reference", DbType:="VarChar(MAX)")>  _
+	Public Property Reference() As String
+		Get
+			Return Me._Reference
+		End Get
+		Set
+			If (String.Equals(Me._Reference, value) = false) Then
+				Me.OnReferenceChanging(value)
+				Me.SendPropertyChanging
+				Me._Reference = value
+				Me.SendPropertyChanged("Reference")
+				Me.OnReferenceChanged
+			End If
+		End Set
+	End Property
+	
+	Public Event PropertyChanging As PropertyChangingEventHandler Implements System.ComponentModel.INotifyPropertyChanging.PropertyChanging
+	
+	Public Event PropertyChanged As PropertyChangedEventHandler Implements System.ComponentModel.INotifyPropertyChanged.PropertyChanged
+	
+	Protected Overridable Sub SendPropertyChanging()
+		If ((Me.PropertyChangingEvent Is Nothing)  _
+					= false) Then
+			RaiseEvent PropertyChanging(Me, emptyChangingEventArgs)
+		End If
+	End Sub
+	
+	Protected Overridable Sub SendPropertyChanged(ByVal propertyName As [String])
+		If ((Me.PropertyChangedEvent Is Nothing)  _
+					= false) Then
+			RaiseEvent PropertyChanged(Me, New PropertyChangedEventArgs(propertyName))
+		End If
+	End Sub
+End Class
+
 <Global.System.Data.Linq.Mapping.TableAttribute(Name:="dbo.tblAssetDetails")>  _
 Partial Public Class tblAssetDetail
 	Implements System.ComponentModel.INotifyPropertyChanging, System.ComponentModel.INotifyPropertyChanged
@@ -4492,6 +4611,8 @@ Partial Public Class tblAssetDetail
 	Private _TransHeaderID As System.Nullable(Of Integer)
 	
 	Private _VendorID As System.Nullable(Of Integer)
+	
+	Private _module1 As System.Nullable(Of Integer)
 	
 	Private _tblAssetCondition As EntityRef(Of tblAssetCondition)
 	
@@ -4569,6 +4690,10 @@ Partial Public Class tblAssetDetail
     Partial Private Sub OnVendorIDChanging(value As System.Nullable(Of Integer))
     End Sub
     Partial Private Sub OnVendorIDChanged()
+    End Sub
+    Partial Private Sub Onmodule1Changing(value As System.Nullable(Of Integer))
+    End Sub
+    Partial Private Sub Onmodule1Changed()
     End Sub
     #End Region
 	
@@ -4830,6 +4955,22 @@ Partial Public Class tblAssetDetail
 		End Set
 	End Property
 	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_module1", DbType:="Int")>  _
+	Public Property module1() As System.Nullable(Of Integer)
+		Get
+			Return Me._module1
+		End Get
+		Set
+			If (Me._module1.Equals(value) = false) Then
+				Me.Onmodule1Changing(value)
+				Me.SendPropertyChanging
+				Me._module1 = value
+				Me.SendPropertyChanged("module1")
+				Me.Onmodule1Changed
+			End If
+		End Set
+	End Property
+	
 	<Global.System.Data.Linq.Mapping.AssociationAttribute(Name:="tblAssetCondition_tblAssetDetail", Storage:="_tblAssetCondition", ThisKey:="AssetConditionID", OtherKey:="AssetConditionID", IsForeignKey:=true)>  _
 	Public Property tblAssetCondition() As tblAssetCondition
 		Get
@@ -5045,90 +5186,6 @@ Partial Public Class tblAssetDetail
 	End Sub
 End Class
 
-<Global.System.Data.Linq.Mapping.TableAttribute(Name:="dbo.tblReference")>  _
-Partial Public Class tblReference
-	Implements System.ComponentModel.INotifyPropertyChanging, System.ComponentModel.INotifyPropertyChanged
-	
-	Private Shared emptyChangingEventArgs As PropertyChangingEventArgs = New PropertyChangingEventArgs(String.Empty)
-	
-	Private _Refid As Integer
-	
-	Private _Reference As String
-	
-    #Region "Extensibility Method Definitions"
-    Partial Private Sub OnLoaded()
-    End Sub
-    Partial Private Sub OnValidate(action As System.Data.Linq.ChangeAction)
-    End Sub
-    Partial Private Sub OnCreated()
-    End Sub
-    Partial Private Sub OnRefidChanging(value As Integer)
-    End Sub
-    Partial Private Sub OnRefidChanged()
-    End Sub
-    Partial Private Sub OnReferenceChanging(value As String)
-    End Sub
-    Partial Private Sub OnReferenceChanged()
-    End Sub
-    #End Region
-	
-	Public Sub New()
-		MyBase.New
-		OnCreated
-	End Sub
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_Refid", AutoSync:=AutoSync.OnInsert, DbType:="Int NOT NULL IDENTITY", IsPrimaryKey:=true, IsDbGenerated:=true)>  _
-	Public Property Refid() As Integer
-		Get
-			Return Me._Refid
-		End Get
-		Set
-			If ((Me._Refid = value)  _
-						= false) Then
-				Me.OnRefidChanging(value)
-				Me.SendPropertyChanging
-				Me._Refid = value
-				Me.SendPropertyChanged("Refid")
-				Me.OnRefidChanged
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_Reference", DbType:="VarChar(MAX)")>  _
-	Public Property Reference() As String
-		Get
-			Return Me._Reference
-		End Get
-		Set
-			If (String.Equals(Me._Reference, value) = false) Then
-				Me.OnReferenceChanging(value)
-				Me.SendPropertyChanging
-				Me._Reference = value
-				Me.SendPropertyChanged("Reference")
-				Me.OnReferenceChanged
-			End If
-		End Set
-	End Property
-	
-	Public Event PropertyChanging As PropertyChangingEventHandler Implements System.ComponentModel.INotifyPropertyChanging.PropertyChanging
-	
-	Public Event PropertyChanged As PropertyChangedEventHandler Implements System.ComponentModel.INotifyPropertyChanged.PropertyChanged
-	
-	Protected Overridable Sub SendPropertyChanging()
-		If ((Me.PropertyChangingEvent Is Nothing)  _
-					= false) Then
-			RaiseEvent PropertyChanging(Me, emptyChangingEventArgs)
-		End If
-	End Sub
-	
-	Protected Overridable Sub SendPropertyChanged(ByVal propertyName As [String])
-		If ((Me.PropertyChangedEvent Is Nothing)  _
-					= false) Then
-			RaiseEvent PropertyChanged(Me, New PropertyChangedEventArgs(propertyName))
-		End If
-	End Sub
-End Class
-
 <Global.System.Data.Linq.Mapping.TableAttribute(Name:="dbo.tblAssetHeader")>  _
 Partial Public Class tblAssetHeader
 	Implements System.ComponentModel.INotifyPropertyChanging, System.ComponentModel.INotifyPropertyChanged
@@ -5150,6 +5207,8 @@ Partial Public Class tblAssetHeader
 	Private _Docno As String
 	
 	Private _DocTypeID As System.Nullable(Of Integer)
+	
+	Private _module1 As System.Nullable(Of Integer)
 	
 	Private _tblAssetDetails As EntitySet(Of tblAssetDetail)
 	
@@ -5197,6 +5256,10 @@ Partial Public Class tblAssetHeader
     Partial Private Sub OnDocTypeIDChanging(value As System.Nullable(Of Integer))
     End Sub
     Partial Private Sub OnDocTypeIDChanged()
+    End Sub
+    Partial Private Sub Onmodule1Changing(value As System.Nullable(Of Integer))
+    End Sub
+    Partial Private Sub Onmodule1Changed()
     End Sub
     #End Region
 	
@@ -5347,6 +5410,22 @@ Partial Public Class tblAssetHeader
 		End Set
 	End Property
 	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_module1", DbType:="Int")>  _
+	Public Property module1() As System.Nullable(Of Integer)
+		Get
+			Return Me._module1
+		End Get
+		Set
+			If (Me._module1.Equals(value) = false) Then
+				Me.Onmodule1Changing(value)
+				Me.SendPropertyChanging
+				Me._module1 = value
+				Me.SendPropertyChanged("module1")
+				Me.Onmodule1Changed
+			End If
+		End Set
+	End Property
+	
 	<Global.System.Data.Linq.Mapping.AssociationAttribute(Name:="tblAssetHeader_tblAssetDetail", Storage:="_tblAssetDetails", ThisKey:="AssetHeaderID", OtherKey:="TransHeaderID")>  _
 	Public Property tblAssetDetails() As EntitySet(Of tblAssetDetail)
 		Get
@@ -5467,6 +5546,256 @@ Partial Public Class tblAssetHeader
 	Private Sub detach_tblAssetDetails(ByVal entity As tblAssetDetail)
 		Me.SendPropertyChanging
 		entity.tblAssetHeader = Nothing
+	End Sub
+End Class
+
+<Global.System.Data.Linq.Mapping.TableAttribute(Name:="dbo.tblAssetInventory")>  _
+Partial Public Class tblAssetInventory
+	Implements System.ComponentModel.INotifyPropertyChanging, System.ComponentModel.INotifyPropertyChanged
+	
+	Private Shared emptyChangingEventArgs As PropertyChangingEventArgs = New PropertyChangingEventArgs(String.Empty)
+	
+	Private _InvID As Integer
+	
+	Private _AssetId As System.Nullable(Of Integer)
+	
+	Private _AssetCode As String
+	
+	Private _AvailableQuantity As System.Nullable(Of Double)
+	
+	Private _UsedQuantity As System.Nullable(Of Double)
+	
+	Private _TotalQuantity As System.Nullable(Of Double)
+	
+	Private _Reference As String
+	
+	Private _ReferenceNUmber As String
+	
+	Private _tblAssetDetailMasterlist As EntityRef(Of tblAssetDetailMasterlist)
+	
+    #Region "Extensibility Method Definitions"
+    Partial Private Sub OnLoaded()
+    End Sub
+    Partial Private Sub OnValidate(action As System.Data.Linq.ChangeAction)
+    End Sub
+    Partial Private Sub OnCreated()
+    End Sub
+    Partial Private Sub OnInvIDChanging(value As Integer)
+    End Sub
+    Partial Private Sub OnInvIDChanged()
+    End Sub
+    Partial Private Sub OnAssetIdChanging(value As System.Nullable(Of Integer))
+    End Sub
+    Partial Private Sub OnAssetIdChanged()
+    End Sub
+    Partial Private Sub OnAssetCodeChanging(value As String)
+    End Sub
+    Partial Private Sub OnAssetCodeChanged()
+    End Sub
+    Partial Private Sub OnAvailableQuantityChanging(value As System.Nullable(Of Double))
+    End Sub
+    Partial Private Sub OnAvailableQuantityChanged()
+    End Sub
+    Partial Private Sub OnUsedQuantityChanging(value As System.Nullable(Of Double))
+    End Sub
+    Partial Private Sub OnUsedQuantityChanged()
+    End Sub
+    Partial Private Sub OnTotalQuantityChanging(value As System.Nullable(Of Double))
+    End Sub
+    Partial Private Sub OnTotalQuantityChanged()
+    End Sub
+    Partial Private Sub OnReferenceChanging(value As String)
+    End Sub
+    Partial Private Sub OnReferenceChanged()
+    End Sub
+    Partial Private Sub OnReferenceNUmberChanging(value As String)
+    End Sub
+    Partial Private Sub OnReferenceNUmberChanged()
+    End Sub
+    #End Region
+	
+	Public Sub New()
+		MyBase.New
+		Me._tblAssetDetailMasterlist = CType(Nothing, EntityRef(Of tblAssetDetailMasterlist))
+		OnCreated
+	End Sub
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_InvID", AutoSync:=AutoSync.OnInsert, DbType:="Int NOT NULL IDENTITY", IsPrimaryKey:=true, IsDbGenerated:=true)>  _
+	Public Property InvID() As Integer
+		Get
+			Return Me._InvID
+		End Get
+		Set
+			If ((Me._InvID = value)  _
+						= false) Then
+				Me.OnInvIDChanging(value)
+				Me.SendPropertyChanging
+				Me._InvID = value
+				Me.SendPropertyChanged("InvID")
+				Me.OnInvIDChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_AssetId", DbType:="Int")>  _
+	Public Property AssetId() As System.Nullable(Of Integer)
+		Get
+			Return Me._AssetId
+		End Get
+		Set
+			If (Me._AssetId.Equals(value) = false) Then
+				If Me._tblAssetDetailMasterlist.HasLoadedOrAssignedValue Then
+					Throw New System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException()
+				End If
+				Me.OnAssetIdChanging(value)
+				Me.SendPropertyChanging
+				Me._AssetId = value
+				Me.SendPropertyChanged("AssetId")
+				Me.OnAssetIdChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_AssetCode", DbType:="VarChar(MAX)")>  _
+	Public Property AssetCode() As String
+		Get
+			Return Me._AssetCode
+		End Get
+		Set
+			If (String.Equals(Me._AssetCode, value) = false) Then
+				Me.OnAssetCodeChanging(value)
+				Me.SendPropertyChanging
+				Me._AssetCode = value
+				Me.SendPropertyChanged("AssetCode")
+				Me.OnAssetCodeChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_AvailableQuantity", DbType:="Float")>  _
+	Public Property AvailableQuantity() As System.Nullable(Of Double)
+		Get
+			Return Me._AvailableQuantity
+		End Get
+		Set
+			If (Me._AvailableQuantity.Equals(value) = false) Then
+				Me.OnAvailableQuantityChanging(value)
+				Me.SendPropertyChanging
+				Me._AvailableQuantity = value
+				Me.SendPropertyChanged("AvailableQuantity")
+				Me.OnAvailableQuantityChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_UsedQuantity", DbType:="Float")>  _
+	Public Property UsedQuantity() As System.Nullable(Of Double)
+		Get
+			Return Me._UsedQuantity
+		End Get
+		Set
+			If (Me._UsedQuantity.Equals(value) = false) Then
+				Me.OnUsedQuantityChanging(value)
+				Me.SendPropertyChanging
+				Me._UsedQuantity = value
+				Me.SendPropertyChanged("UsedQuantity")
+				Me.OnUsedQuantityChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_TotalQuantity", DbType:="Float")>  _
+	Public Property TotalQuantity() As System.Nullable(Of Double)
+		Get
+			Return Me._TotalQuantity
+		End Get
+		Set
+			If (Me._TotalQuantity.Equals(value) = false) Then
+				Me.OnTotalQuantityChanging(value)
+				Me.SendPropertyChanging
+				Me._TotalQuantity = value
+				Me.SendPropertyChanged("TotalQuantity")
+				Me.OnTotalQuantityChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_Reference", DbType:="VarChar(MAX)")>  _
+	Public Property Reference() As String
+		Get
+			Return Me._Reference
+		End Get
+		Set
+			If (String.Equals(Me._Reference, value) = false) Then
+				Me.OnReferenceChanging(value)
+				Me.SendPropertyChanging
+				Me._Reference = value
+				Me.SendPropertyChanged("Reference")
+				Me.OnReferenceChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_ReferenceNUmber", DbType:="VarChar(MAX)")>  _
+	Public Property ReferenceNUmber() As String
+		Get
+			Return Me._ReferenceNUmber
+		End Get
+		Set
+			If (String.Equals(Me._ReferenceNUmber, value) = false) Then
+				Me.OnReferenceNUmberChanging(value)
+				Me.SendPropertyChanging
+				Me._ReferenceNUmber = value
+				Me.SendPropertyChanged("ReferenceNUmber")
+				Me.OnReferenceNUmberChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.AssociationAttribute(Name:="tblAssetDetailMasterlist_tblAssetInventory", Storage:="_tblAssetDetailMasterlist", ThisKey:="AssetId", OtherKey:="AssetID", IsForeignKey:=true)>  _
+	Public Property tblAssetDetailMasterlist() As tblAssetDetailMasterlist
+		Get
+			Return Me._tblAssetDetailMasterlist.Entity
+		End Get
+		Set
+			Dim previousValue As tblAssetDetailMasterlist = Me._tblAssetDetailMasterlist.Entity
+			If ((Object.Equals(previousValue, value) = false)  _
+						OrElse (Me._tblAssetDetailMasterlist.HasLoadedOrAssignedValue = false)) Then
+				Me.SendPropertyChanging
+				If ((previousValue Is Nothing)  _
+							= false) Then
+					Me._tblAssetDetailMasterlist.Entity = Nothing
+					previousValue.tblAssetInventories.Remove(Me)
+				End If
+				Me._tblAssetDetailMasterlist.Entity = value
+				If ((value Is Nothing)  _
+							= false) Then
+					value.tblAssetInventories.Add(Me)
+					Me._AssetId = value.AssetID
+				Else
+					Me._AssetId = CType(Nothing, Nullable(Of Integer))
+				End If
+				Me.SendPropertyChanged("tblAssetDetailMasterlist")
+			End If
+		End Set
+	End Property
+	
+	Public Event PropertyChanging As PropertyChangingEventHandler Implements System.ComponentModel.INotifyPropertyChanging.PropertyChanging
+	
+	Public Event PropertyChanged As PropertyChangedEventHandler Implements System.ComponentModel.INotifyPropertyChanged.PropertyChanged
+	
+	Protected Overridable Sub SendPropertyChanging()
+		If ((Me.PropertyChangingEvent Is Nothing)  _
+					= false) Then
+			RaiseEvent PropertyChanging(Me, emptyChangingEventArgs)
+		End If
+	End Sub
+	
+	Protected Overridable Sub SendPropertyChanged(ByVal propertyName As [String])
+		If ((Me.PropertyChangedEvent Is Nothing)  _
+					= false) Then
+			RaiseEvent PropertyChanged(Me, New PropertyChangedEventArgs(propertyName))
+		End If
 	End Sub
 End Class
 
