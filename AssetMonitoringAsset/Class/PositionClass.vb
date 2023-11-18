@@ -114,4 +114,15 @@ Public Class PositionClass
         Return querysection
     End Function
 
+
+
+
+    Public Shared Function FetPosCount(ByVal code As String) As Integer
+        Dim count As Integer = (From s In db.tblPositions
+                                Where (s.PositionCode.Contains(code))
+                                Select s.PositionCode).Count()
+        Return count
+    End Function
+
+
 End Class

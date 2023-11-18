@@ -27,7 +27,11 @@
             MsgBox("Invalid Asset Doc. Type Description")
         Else
             If SimpleButton2.Text = "Record" Then
-                DocTypeClass.SaveDocType(TextBox1.Text, TextBox2.Text)
+                If DocTypeClass.FetchDTCount(TextBox1.Text) > 0 Then
+                    MessageBox.Show("Doc. Type Code Already Exist", "Validation", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                Else
+                    DocTypeClass.SaveDocType(TextBox1.Text, TextBox2.Text)
+                End If
             ElseIf SimpleButton2.Text = "Save" Then
                 DocTypeClass.UpdateDocType(AssetDocumentType.DocID, TextBox1.Text, TextBox2.Text)
             End If

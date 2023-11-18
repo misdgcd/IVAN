@@ -114,4 +114,12 @@ Public Class DocTypeClass
                             Select s.DocumentID).Single
         Return querysection
     End Function
+
+    Public Shared Function FetchDTCount(ByVal code As String) As Integer
+        Dim count As Integer = (From s In db.tblDocumentTypes
+                                Where (s.DocumentCode.Contains(code))
+                                Select s.DocumentCode).Count()
+        Return count
+    End Function
+
 End Class

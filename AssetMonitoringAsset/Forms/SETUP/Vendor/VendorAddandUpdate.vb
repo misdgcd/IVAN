@@ -27,7 +27,12 @@
             MsgBox("Invalid Asset Condition Description")
         Else
             If SimpleButton2.Text = "Record" Then
-                VendorClass.SaveVendor(TextBox1.Text, TextBox2.Text)
+                If VendorClass.FetchVenCount(TextBox1.Text) > 0 Then
+                    MessageBox.Show("Vendor Code Already Exist", "Validation", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                Else
+                    VendorClass.SaveVendor(TextBox1.Text, TextBox2.Text)
+                End If
+
             ElseIf SimpleButton2.Text = "Save" Then
                 VendorClass.UpdateVendor(Vendor.VenID, TextBox1.Text, TextBox2.Text)
             End If

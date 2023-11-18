@@ -94,30 +94,32 @@ Public Class AssetHeaderClass
         Dim querysection As Integer = (From s In db.tblAssetHeaders
                                        Order By s.AssetHeaderID Descending
                                        Select s.AssetHeaderID).FirstOrDefault()
+
         Return querysection
     End Function
 
-    Public Shared Function FetchDatatoDGV1(ByVal entryno As String, ByVal date1 As Date, ByVal date2 As Date) As Object
+    Public Shared Function FetchDatatoDGV1(ByVal Search As String, ByVal date1 As Date, ByVal date2 As Date, ByVal mods As Integer) As Object
         Dim querysection = (From s In db.tblAssetHeaders
                             Join u In db.tblUsers On s.UserID Equals u.UserID
                             Join j In db.tblEmployees On u.EmployeeID Equals j.EmployeeID
-                            Where (s.EntryNumber = entryno Or entryno = "") And (s.TransDate >= date1 AndAlso s.TransDate <= date2)
+                            Where (s.EntryNumber.Contains(Search)) And (s.TransDate >= date1 AndAlso s.TransDate <= date2) And (s.module1 = mods)
                             Order By s.AssetHeaderID Ascending
                             Let fl = j.FirstName + " " + j.LastName
-                            Select New With {s.TransDate, s.EntryNumber, s.Remarks, fl}).ToList()
+                            Select New With {s.TransDate, s.EntryNumber, s.Remarks, fl, s.AssetHeaderID}).ToList()
         Return querysection
     End Function
 
 
-    Public Shared Function Fetchregister1(ByVal entryno As String) As Object
+    Public Shared Function Fetchregister1(ByVal entryno As Integer) As Object
         Dim querysection = (From s In db.tblAssetHeaders
                             Join f In db.tblAssetDetails On s.AssetHeaderID Equals f.ID
                             Join c In db.tblCategories On f.categoryID Equals c.CategoryID
                             Join k In db.tblAssetTypes On f.assetTypeID Equals k.AssetTypeID
                             Join e In db.tblAssetConditions On f.AssetConditionID Equals e.AssetConditionID
-                            Where s.EntryNumber.Contains(entryno)
-                            Select f.AssetCode, f.description, c.CategoryDescription, k.AssetTypeDescription, e.AssetConditionDescription).ToList()
+                            Where f.TransHeaderID = entryno
+                            Select f.AssetCode, f.description, c.CategoryDescription, k.AssetTypeDescription, e.AssetConditionDescription, f.Reference, f.Refno, f.Quantity).ToList()
         Return querysection
     End Function
+
 
 End Class

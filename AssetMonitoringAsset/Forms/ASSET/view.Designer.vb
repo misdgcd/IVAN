@@ -58,7 +58,9 @@ Partial Class view
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1040, 649)
         Me.Controls.Add(Me.ReportViewer1)
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
         Me.Name = "view"
+        Me.ShowInTaskbar = False
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Print"
         CType(Me.DataTable1BindingSource, System.ComponentModel.ISupportInitialize).EndInit()

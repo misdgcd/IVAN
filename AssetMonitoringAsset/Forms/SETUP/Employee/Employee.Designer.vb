@@ -461,6 +461,7 @@ Partial Class Employee
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.TextBox2)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
+        Me.IconOptions.ShowIcon = False
         Me.KeyPreview = True
         Me.MaximizeBox = False
         Me.MinimizeBox = False

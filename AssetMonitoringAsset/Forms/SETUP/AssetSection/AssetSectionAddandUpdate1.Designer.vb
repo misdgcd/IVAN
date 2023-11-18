@@ -95,7 +95,12 @@ Partial Class AssetSectionAddandUpdate1
         Me.Controls.Add(Me.TextBox2)
         Me.Controls.Add(Me.TextBox1)
         Me.Controls.Add(Me.Label1)
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
+        Me.IconOptions.ShowIcon = False
+        Me.MaximizeBox = False
+        Me.MinimizeBox = False
         Me.Name = "AssetSectionAddandUpdate1"
+        Me.ShowInTaskbar = False
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Add"
         Me.ResumeLayout(False)

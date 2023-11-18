@@ -36,7 +36,12 @@
             MsgBox("Invalid Last Name...")
         Else
             If SimpleButton1.Text = "Record" Then
-                EmployeeClass.SaveEmployee(TextBox1.Text, TextBox2.Text, Integer.Parse(branID), Integer.Parse(DepID), Integer.Parse(PosID), Integer.Parse(SecID))
+                If EmployeeClass.FetchEmCount(TextBox1.Text, TextBox2.Text) > 0 Then
+                    MessageBox.Show("Employee Already Exist", "Validation", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                Else
+                    EmployeeClass.SaveEmployee(TextBox1.Text, TextBox2.Text, Integer.Parse(branID), Integer.Parse(DepID), Integer.Parse(PosID), Integer.Parse(SecID))
+                End If
+
             ElseIf SimpleButton1.Text = "Save" Then
                 EmployeeClass.UpdateEmployee(updateID, TextBox1.Text, TextBox2.Text, Integer.Parse(branID), Integer.Parse(DepID), Integer.Parse(PosID), Integer.Parse(SecID))
             End If

@@ -1,12 +1,17 @@
 ﻿Public Class AssetPositionAddandUpdate
     Private Sub SimpleButton2_Click(sender As Object, e As EventArgs) Handles SimpleButton2.Click
         If TextBox1.Text = String.Empty Then
-            MsgBox("Invalid Asset Condition Code")
+            MsgBox("Invalid Asset Position Code")
         ElseIf TextBox2.Text = String.Empty Then
-            MsgBox("Invalid Asset Condition Description")
+            MsgBox("Invalid Asset Position Description")
         Else
             If SimpleButton2.Text = "Record" Then
-                PositionClass.SavePosition(TextBox1.Text, TextBox2.Text)
+                If PositionClass.FetPosCount(TextBox1.Text) > 0 Then
+                    MessageBox.Show("Position Code Already Exist", "Validation", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                Else
+                    PositionClass.SavePosition(TextBox1.Text, TextBox2.Text)
+                End If
+
             ElseIf SimpleButton2.Text = "Save" Then
                 PositionClass.UpdatePosition(AssetPosition.posID, TextBox1.Text, TextBox2.Text)
             End If

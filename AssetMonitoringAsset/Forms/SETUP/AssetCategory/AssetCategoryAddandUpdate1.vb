@@ -28,11 +28,14 @@
             MsgBox("Invalid Asset Type Description")
         Else
             If SimpleButton2.Text = "Record" Then
-                CategoryClass.SaveCategory(TextBox1.Text, TextBox2.Text)
+                If CategoryClass.FetchCCount(TextBox1.Text) > 0 Then
+                    MessageBox.Show("Category Code Already Exist", "Validation", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                Else
+                    CategoryClass.SaveCategory(TextBox1.Text, TextBox2.Text)
+                End If
             ElseIf SimpleButton2.Text = "Save" Then
                 CategoryClass.UpdateCategory(AssetCategory.CatID, TextBox1.Text, TextBox2.Text)
             End If
-
         End If
     End Sub
 

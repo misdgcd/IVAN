@@ -120,5 +120,13 @@ Public Class EmployeeClass
         Return querysection
     End Function
 
+    Public Shared Function FetchEmCount(ByVal fname As String, ByVal lname As String) As Integer
+        Dim count As Integer = (From s In db.tblEmployees
+                                Where (s.FirstName.Contains(fname) And s.LastName.Contains(lname))
+                                Select s).Count()
+        Return count
+    End Function
+
+
 
 End Class

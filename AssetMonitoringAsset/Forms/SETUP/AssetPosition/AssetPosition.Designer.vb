@@ -174,9 +174,14 @@ Partial Class AssetPosition
         Me.Controls.Add(Me.PanelControl2)
         Me.Controls.Add(Me.PanelControl1)
         Me.FormBorderEffect = DevExpress.XtraEditors.FormBorderEffect.None
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
+        Me.IconOptions.ShowIcon = False
         Me.KeyPreview = True
+        Me.MaximizeBox = False
+        Me.MinimizeBox = False
         Me.Name = "AssetPosition"
         Me.Padding = New System.Windows.Forms.Padding(5)
+        Me.ShowInTaskbar = False
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent
         Me.Text = "Position"
         CType(Me.PanelControl2, System.ComponentModel.ISupportInitialize).EndInit()

@@ -9,7 +9,12 @@
             MsgBox("Invalid Asset Type Description")
         Else
             If SimpleButton2.Text = "Record" Then
-                TypeClass.SaveAssetType(TextBox1.Text, TextBox2.Text)
+                If TypeClass.FetchTCount(TextBox1.Text) > 0 Then
+                    MessageBox.Show("Asset Type Code Already Exist", "Validation", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                Else
+                    TypeClass.SaveAssetType(TextBox1.Text, TextBox2.Text)
+                End If
+
             ElseIf SimpleButton2.Text = "Save" Then
                 TypeClass.UpdateAssetType(AssetType.TypeID, TextBox1.Text, TextBox2.Text)
             End If

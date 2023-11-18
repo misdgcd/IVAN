@@ -36,11 +36,14 @@ Partial Class AssetAcquisition
         Me.PanelControl1 = New DevExpress.XtraEditors.PanelControl()
         Me.dgview = New System.Windows.Forms.DataGridView()
         Me.SimpleButton1 = New DevExpress.XtraEditors.SimpleButton()
+        Me.PanelControl3 = New DevExpress.XtraEditors.PanelControl()
         CType(Me.PanelControl2, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.PanelControl2.SuspendLayout()
         CType(Me.PanelControl1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.PanelControl1.SuspendLayout()
         CType(Me.dgview, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PanelControl3, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.PanelControl3.SuspendLayout()
         Me.SuspendLayout()
         '
         'PanelControl2
@@ -51,22 +54,15 @@ Partial Class AssetAcquisition
         Me.PanelControl2.Controls.Add(Me.Label7)
         Me.PanelControl2.Controls.Add(Me.Label6)
         Me.PanelControl2.Controls.Add(Me.Label5)
-        Me.PanelControl2.Controls.Add(Me.TextBox1)
-        Me.PanelControl2.Controls.Add(Me.Label4)
-        Me.PanelControl2.Controls.Add(Me.Label3)
-        Me.PanelControl2.Controls.Add(Me.DateTimePicker1)
-        Me.PanelControl2.Controls.Add(Me.Label1)
-        Me.PanelControl2.Controls.Add(Me.Label2)
-        Me.PanelControl2.Dock = System.Windows.Forms.DockStyle.Top
         Me.PanelControl2.Location = New System.Drawing.Point(5, 5)
         Me.PanelControl2.Name = "PanelControl2"
-        Me.PanelControl2.Size = New System.Drawing.Size(1171, 159)
+        Me.PanelControl2.Size = New System.Drawing.Size(434, 159)
         Me.PanelControl2.TabIndex = 16
         '
         'TextBox2
         '
         Me.TextBox2.Font = New System.Drawing.Font("Arial", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox2.Location = New System.Drawing.Point(149, 100)
+        Me.TextBox2.Location = New System.Drawing.Point(145, 111)
         Me.TextBox2.Name = "TextBox2"
         Me.TextBox2.Size = New System.Drawing.Size(269, 25)
         Me.TextBox2.TabIndex = 26
@@ -76,7 +72,7 @@ Partial Class AssetAcquisition
         Me.ComboBox2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.ComboBox2.Font = New System.Drawing.Font("Arial", 11.25!)
         Me.ComboBox2.FormattingEnabled = True
-        Me.ComboBox2.Location = New System.Drawing.Point(149, 61)
+        Me.ComboBox2.Location = New System.Drawing.Point(145, 62)
         Me.ComboBox2.Name = "ComboBox2"
         Me.ComboBox2.Size = New System.Drawing.Size(269, 25)
         Me.ComboBox2.TabIndex = 25
@@ -86,7 +82,7 @@ Partial Class AssetAcquisition
         Me.ComboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.ComboBox1.Font = New System.Drawing.Font("Arial", 11.25!)
         Me.ComboBox1.FormattingEnabled = True
-        Me.ComboBox1.Location = New System.Drawing.Point(149, 24)
+        Me.ComboBox1.Location = New System.Drawing.Point(145, 20)
         Me.ComboBox1.Name = "ComboBox1"
         Me.ComboBox1.Size = New System.Drawing.Size(269, 25)
         Me.ComboBox1.TabIndex = 24
@@ -95,7 +91,7 @@ Partial Class AssetAcquisition
         '
         Me.Label7.AutoSize = True
         Me.Label7.Font = New System.Drawing.Font("Arial Rounded MT Bold", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label7.Location = New System.Drawing.Point(69, 108)
+        Me.Label7.Location = New System.Drawing.Point(65, 114)
         Me.Label7.Name = "Label7"
         Me.Label7.Size = New System.Drawing.Size(74, 17)
         Me.Label7.TabIndex = 15
@@ -105,7 +101,7 @@ Partial Class AssetAcquisition
         '
         Me.Label6.AutoSize = True
         Me.Label6.Font = New System.Drawing.Font("Arial Rounded MT Bold", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label6.Location = New System.Drawing.Point(54, 69)
+        Me.Label6.Location = New System.Drawing.Point(50, 70)
         Me.Label6.Name = "Label6"
         Me.Label6.Size = New System.Drawing.Size(89, 17)
         Me.Label6.TabIndex = 14
@@ -115,7 +111,7 @@ Partial Class AssetAcquisition
         '
         Me.Label5.AutoSize = True
         Me.Label5.Font = New System.Drawing.Font("Arial Rounded MT Bold", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label5.Location = New System.Drawing.Point(13, 32)
+        Me.Label5.Location = New System.Drawing.Point(9, 23)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(130, 17)
         Me.Label5.TabIndex = 13
@@ -124,17 +120,17 @@ Partial Class AssetAcquisition
         'TextBox1
         '
         Me.TextBox1.Font = New System.Drawing.Font("Arial", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox1.Location = New System.Drawing.Point(852, 105)
+        Me.TextBox1.Location = New System.Drawing.Point(108, 108)
         Me.TextBox1.Multiline = True
         Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.Size = New System.Drawing.Size(302, 45)
+        Me.TextBox1.Size = New System.Drawing.Size(250, 45)
         Me.TextBox1.TabIndex = 12
         '
         'Label4
         '
         Me.Label4.AutoSize = True
         Me.Label4.Font = New System.Drawing.Font("Arial Rounded MT Bold", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label4.Location = New System.Drawing.Point(760, 108)
+        Me.Label4.Location = New System.Drawing.Point(16, 111)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(83, 17)
         Me.Label4.TabIndex = 11
@@ -144,7 +140,7 @@ Partial Class AssetAcquisition
         '
         Me.Label3.AutoSize = True
         Me.Label3.Font = New System.Drawing.Font("Arial Rounded MT Bold", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label3.Location = New System.Drawing.Point(758, 27)
+        Me.Label3.Location = New System.Drawing.Point(14, 20)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(85, 17)
         Me.Label3.TabIndex = 10
@@ -156,9 +152,9 @@ Partial Class AssetAcquisition
         Me.DateTimePicker1.DropDownAlign = System.Windows.Forms.LeftRightAlignment.Right
         Me.DateTimePicker1.Font = New System.Drawing.Font("Arial Rounded MT Bold", 11.25!)
         Me.DateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
-        Me.DateTimePicker1.Location = New System.Drawing.Point(852, 63)
+        Me.DateTimePicker1.Location = New System.Drawing.Point(108, 59)
         Me.DateTimePicker1.Name = "DateTimePicker1"
-        Me.DateTimePicker1.Size = New System.Drawing.Size(169, 25)
+        Me.DateTimePicker1.Size = New System.Drawing.Size(250, 25)
         Me.DateTimePicker1.TabIndex = 9
         Me.DateTimePicker1.Value = New Date(2023, 11, 6, 0, 0, 0, 0)
         '
@@ -166,7 +162,7 @@ Partial Class AssetAcquisition
         '
         Me.Label1.AutoSize = True
         Me.Label1.Font = New System.Drawing.Font("Arial Rounded MT Bold", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.Location = New System.Drawing.Point(792, 69)
+        Me.Label1.Location = New System.Drawing.Point(48, 65)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(51, 17)
         Me.Label1.TabIndex = 8
@@ -176,7 +172,7 @@ Partial Class AssetAcquisition
         '
         Me.Label2.AutoSize = True
         Me.Label2.Font = New System.Drawing.Font("Arial Rounded MT Bold", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.Location = New System.Drawing.Point(849, 27)
+        Me.Label2.Location = New System.Drawing.Point(105, 20)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(15, 17)
         Me.Label2.TabIndex = 7
@@ -192,6 +188,7 @@ Partial Class AssetAcquisition
         '
         'dgview
         '
+        Me.dgview.AllowUserToOrderColumns = True
         Me.dgview.AllowUserToResizeColumns = False
         Me.dgview.AllowUserToResizeRows = False
         Me.dgview.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
@@ -218,17 +215,32 @@ Partial Class AssetAcquisition
         '
         Me.SimpleButton1.Appearance.Font = New System.Drawing.Font("Arial Rounded MT Bold", 11.25!)
         Me.SimpleButton1.Appearance.Options.UseFont = True
+        Me.SimpleButton1.Enabled = False
         Me.SimpleButton1.Location = New System.Drawing.Point(1038, 544)
         Me.SimpleButton1.Name = "SimpleButton1"
         Me.SimpleButton1.Size = New System.Drawing.Size(138, 36)
         Me.SimpleButton1.TabIndex = 17
         Me.SimpleButton1.Text = "Record"
         '
+        'PanelControl3
+        '
+        Me.PanelControl3.Controls.Add(Me.Label2)
+        Me.PanelControl3.Controls.Add(Me.Label3)
+        Me.PanelControl3.Controls.Add(Me.DateTimePicker1)
+        Me.PanelControl3.Controls.Add(Me.Label1)
+        Me.PanelControl3.Controls.Add(Me.TextBox1)
+        Me.PanelControl3.Controls.Add(Me.Label4)
+        Me.PanelControl3.Location = New System.Drawing.Point(446, 5)
+        Me.PanelControl3.Name = "PanelControl3"
+        Me.PanelControl3.Size = New System.Drawing.Size(375, 161)
+        Me.PanelControl3.TabIndex = 18
+        '
         'AssetAcquisition
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1181, 585)
+        Me.Controls.Add(Me.PanelControl3)
         Me.Controls.Add(Me.PanelControl2)
         Me.Controls.Add(Me.PanelControl1)
         Me.Controls.Add(Me.SimpleButton1)
@@ -239,6 +251,7 @@ Partial Class AssetAcquisition
         Me.MinimizeBox = False
         Me.Name = "AssetAcquisition"
         Me.Padding = New System.Windows.Forms.Padding(5)
+        Me.ShowInTaskbar = False
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Asset Acquisition"
         CType(Me.PanelControl2, System.ComponentModel.ISupportInitialize).EndInit()
@@ -247,6 +260,9 @@ Partial Class AssetAcquisition
         CType(Me.PanelControl1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.PanelControl1.ResumeLayout(False)
         CType(Me.dgview, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PanelControl3, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.PanelControl3.ResumeLayout(False)
+        Me.PanelControl3.PerformLayout()
         Me.ResumeLayout(False)
 
     End Sub
@@ -267,4 +283,5 @@ Partial Class AssetAcquisition
     Friend WithEvents ComboBox2 As ComboBox
     Friend WithEvents ComboBox1 As ComboBox
     Friend WithEvents TextBox2 As TextBox
+    Friend WithEvents PanelControl3 As DevExpress.XtraEditors.PanelControl
 End Class

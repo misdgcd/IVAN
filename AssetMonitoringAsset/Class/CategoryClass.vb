@@ -106,4 +106,12 @@ Public Class CategoryClass
         Return querysection
     End Function
 
+
+    Public Shared Function FetchCCount(ByVal code As String) As Integer
+        Dim count As Integer = (From s In db.tblCategories
+                                Where (s.CategoryCode.Contains(code))
+                                Select s.CategoryCode).Count()
+        Return count
+    End Function
+
 End Class

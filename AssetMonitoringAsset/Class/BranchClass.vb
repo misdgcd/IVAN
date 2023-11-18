@@ -104,4 +104,11 @@ Public Class BranchClass
         Return querysection
     End Function
 
+
+    Public Shared Function FetchBCCount(ByVal Bcode As String) As Integer
+        Dim count As Integer = (From s In db.tblBranches
+                                Where (s.BranchCode.Contains(Bcode))
+                                Select s.BranchCode).Count()
+        Return count
+    End Function
 End Class

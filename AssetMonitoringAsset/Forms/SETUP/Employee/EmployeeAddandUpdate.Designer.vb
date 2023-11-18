@@ -192,8 +192,12 @@ Partial Class EmployeeAddandUpdate
         Me.Controls.Add(Me.Label2)
         Me.FormBorderEffect = DevExpress.XtraEditors.FormBorderEffect.None
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
+        Me.IconOptions.ShowIcon = False
         Me.KeyPreview = True
+        Me.MaximizeBox = False
+        Me.MinimizeBox = False
         Me.Name = "EmployeeAddandUpdate"
+        Me.ShowInTaskbar = False
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Add"
         Me.ResumeLayout(False)

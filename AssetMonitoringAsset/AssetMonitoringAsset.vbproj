@@ -126,6 +126,18 @@
     <Compile Include="Forms\Asset Management\Acquisition\AssetAcquisition.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Forms\Asset Management\Register\AAdetail.Designer.vb">
+      <DependentUpon>AAdetail.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Asset Management\Register\AAdetail.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Asset Management\Register\AARegister.Designer.vb">
+      <DependentUpon>AARegister.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Asset Management\Register\AARegister.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Forms\ASSET\AssetList.Designer.vb">
       <DependentUpon>AssetList.vb</DependentUpon>
     </Compile>
@@ -154,6 +166,12 @@
       <DependentUpon>NewAssetRegister.vb</DependentUpon>
     </Compile>
     <Compile Include="Forms\ASSET\Build Asset\register\NewAssetRegister.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ASSET\InventoryList.Designer.vb">
+      <DependentUpon>InventoryList.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\ASSET\InventoryList.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Forms\ASSET\MasterData\masterdatalist\MasterDataList.Designer.vb">
@@ -198,10 +216,10 @@
     <Compile Include="Forms\ASSET\MasterData\Register\RegisterDetails.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\ASSET\MasterData\Register\view.Designer.vb">
+    <Compile Include="Forms\ASSET\view.Designer.vb">
       <DependentUpon>view.vb</DependentUpon>
     </Compile>
-    <Compile Include="Forms\ASSET\MasterData\Register\view.vb">
+    <Compile Include="Forms\ASSET\view.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Forms\LoginForm\Login.Designer.vb">
@@ -401,6 +419,12 @@
     <EmbeddedResource Include="Forms\Asset Management\Acquisition\AssetAcquisition.resx">
       <DependentUpon>AssetAcquisition.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Asset Management\Register\AAdetail.resx">
+      <DependentUpon>AAdetail.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Asset Management\Register\AARegister.resx">
+      <DependentUpon>AARegister.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\ASSET\AssetList.resx">
       <DependentUpon>AssetList.vb</DependentUpon>
     </EmbeddedResource>
@@ -415,6 +439,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\ASSET\Build Asset\register\NewAssetRegister.resx">
       <DependentUpon>NewAssetRegister.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ASSET\InventoryList.resx">
+      <DependentUpon>InventoryList.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\ASSET\MasterData\masterdatalist\MasterDataList.resx">
       <DependentUpon>MasterDataList.vb</DependentUpon>
@@ -438,7 +465,7 @@
       <DependentUpon>RegisterDetails.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\ASSET\MasterData\Register\Report1.rdlc" />
-    <EmbeddedResource Include="Forms\ASSET\MasterData\Register\view.resx">
+    <EmbeddedResource Include="Forms\ASSET\view.resx">
       <DependentUpon>view.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\LoginForm\Login.resx">
@@ -591,9 +618,7 @@
   <ItemGroup>
     <WCFMetadata Include="Connected Services\" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Forms\Asset Management\Register\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
        Other similar extension points exist, see Microsoft.Common.targets.

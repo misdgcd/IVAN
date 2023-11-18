@@ -5,13 +5,15 @@
     End Sub
 
     Private Sub viewdgv()
-        dgv.DataSource = AssetHeaderClass.Fetchregister1(entry)
+        dgv.DataSource = AssetHeaderClass.Fetchregister1(Integer.Parse(entry))
 
         dgv.Columns(0).HeaderText = "Asset Code"
         dgv.Columns(1).HeaderText = "Description"
         dgv.Columns(2).HeaderText = "Category"
         dgv.Columns(3).HeaderText = "Asset Type"
-        dgv.Columns(4).HeaderText = "Condition"
+        dgv.Columns(4).HeaderText = "Reference"
+        dgv.Columns(5).HeaderText = "Number"
+        dgv.Columns(6).HeaderText = "Quantity"
 
     End Sub
     Private Sub Dgv_CellDoubleClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgv.CellDoubleClick

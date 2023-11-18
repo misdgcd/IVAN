@@ -175,9 +175,13 @@ Partial Class AssetType
         Me.Controls.Add(Me.PanelControl1)
         Me.FormBorderEffect = DevExpress.XtraEditors.FormBorderEffect.None
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
+        Me.IconOptions.ShowIcon = False
         Me.KeyPreview = True
+        Me.MaximizeBox = False
+        Me.MinimizeBox = False
         Me.Name = "AssetType"
         Me.Padding = New System.Windows.Forms.Padding(5)
+        Me.ShowInTaskbar = False
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Asset Type"
         CType(Me.PanelControl1, System.ComponentModel.ISupportInitialize).EndInit()

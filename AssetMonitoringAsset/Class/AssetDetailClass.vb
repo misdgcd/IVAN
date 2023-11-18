@@ -9,7 +9,7 @@ Public Class AssetDetailClass
     End Function
 
 
-    Public Shared Sub SaveAssetDetail(ByVal assetcode As String, ByVal des As String, ByVal catId As Integer, ByVal typeID As Integer, ByVal ConId As Integer, ByVal TransHeaderId As Integer, ByVal ref As String, ByVal refno As String, ByVal qty As Double, ByVal assetID As Integer, ByVal mod1 As Integer)
+    Public Shared Sub SaveAssetDetail(ByVal assetcode As String, ByVal des As String, ByVal catId As Integer, ByVal typeID As Integer, ByVal ConId As Integer, ByVal TransHeaderId As Integer, ByVal ref As String, ByVal refno As String, ByVal qty As Double, ByVal assetID As Integer, ByVal mod1 As Integer, ByVal vendorID As Integer)
         Try
             Dim user As Integer = Home.UserID
             Dim currentdate As Date = DateTime.Now.Date()
@@ -28,7 +28,7 @@ Public Class AssetDetailClass
                   .Quantity = qty,
                   .Reference = ref,
                   .Refno = refno,
-                  .VendorID = 0,
+                  .VendorID = vendorID,
                   .assetID = assetID,
                   .module1 = mod1
                 }
@@ -47,9 +47,9 @@ Public Class AssetDetailClass
         Return count
     End Function
 
-    Public Shared Function FetchRefnoCount(ByVal RefNo As String) As Integer
+    Public Shared Function FetchRefnoCount(ByVal RefNo As String, ByVal ref As String) As Integer
         Dim count As Integer = (From s In db.tblAssetInventories
-                                Where (s.ReferenceNUmber.Contains(RefNo) AndAlso s.ReferenceNUmber <> "N/A")
+                                Where (s.Reference = ref AndAlso s.ReferenceNUmber = RefNo) And s.ReferenceNUmber <> "N/A"
                                 Select s.AssetCode).Count()
         Return count
     End Function

@@ -93,7 +93,7 @@
     End Sub
 
     Private Sub AccordionControlElement18_Click(sender As Object, e As EventArgs) Handles AccordionControlElement18.Click
-        AssetAcquisition.ShowDialog()
+
     End Sub
 
     Private Sub AccordionControlElement30_Click(sender As Object, e As EventArgs) Handles AccordionControlElement30.Click
@@ -102,5 +102,25 @@
 
     Private Sub Home_FormClosing(sender As Object, e As FormClosingEventArgs) Handles MyBase.FormClosing
         Login.Show()
+    End Sub
+
+    Private Sub AccordionControlElement31_Click(sender As Object, e As EventArgs) Handles AccordionControlElement31.Click
+        AssetAcquisition.ShowDialog()
+    End Sub
+
+    Private Sub AccordionControlElement19_Click(sender As Object, e As EventArgs) Handles AccordionControlElement19.Click
+
+    End Sub
+
+    Private Sub AccordionControlElement39_Click(sender As Object, e As EventArgs) Handles AccordionControlElement39.Click
+        InventoryList.ShowDialog()
+    End Sub
+
+    Private Sub AccordionControlElement32_Click(sender As Object, e As EventArgs) Handles AccordionControlElement32.Click
+        AARegister.ShowDialog()
+    End Sub
+
+    Private Sub AccordionControlElement1_Click(sender As Object, e As EventArgs) Handles AccordionControlElement1.Click
+
     End Sub
 End Class

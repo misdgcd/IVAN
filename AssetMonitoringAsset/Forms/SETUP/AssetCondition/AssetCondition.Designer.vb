@@ -175,6 +175,7 @@ Partial Class AssetCondition
         Me.Controls.Add(Me.PanelControl1)
         Me.FormBorderEffect = DevExpress.XtraEditors.FormBorderEffect.None
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
+        Me.IconOptions.ShowIcon = False
         Me.KeyPreview = True
         Me.MaximizeBox = False
         Me.MinimizeBox = False

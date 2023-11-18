@@ -23,9 +23,17 @@ Partial Class Home
         Me.AccordionControl1 = New DevExpress.XtraBars.Navigation.AccordionControl()
         Me.AccordionControlElement1 = New DevExpress.XtraBars.Navigation.AccordionControlElement()
         Me.AccordionControlElement18 = New DevExpress.XtraBars.Navigation.AccordionControlElement()
+        Me.AccordionControlElement31 = New DevExpress.XtraBars.Navigation.AccordionControlElement()
+        Me.AccordionControlElement32 = New DevExpress.XtraBars.Navigation.AccordionControlElement()
         Me.AccordionControlElement19 = New DevExpress.XtraBars.Navigation.AccordionControlElement()
+        Me.AccordionControlElement33 = New DevExpress.XtraBars.Navigation.AccordionControlElement()
+        Me.AccordionControlElement34 = New DevExpress.XtraBars.Navigation.AccordionControlElement()
         Me.AccordionControlElement20 = New DevExpress.XtraBars.Navigation.AccordionControlElement()
+        Me.AccordionControlElement35 = New DevExpress.XtraBars.Navigation.AccordionControlElement()
+        Me.AccordionControlElement36 = New DevExpress.XtraBars.Navigation.AccordionControlElement()
         Me.AccordionControlElement21 = New DevExpress.XtraBars.Navigation.AccordionControlElement()
+        Me.AccordionControlElement37 = New DevExpress.XtraBars.Navigation.AccordionControlElement()
+        Me.AccordionControlElement38 = New DevExpress.XtraBars.Navigation.AccordionControlElement()
         Me.AccordionControlElement2 = New DevExpress.XtraBars.Navigation.AccordionControlElement()
         Me.AccordionControlElement27 = New DevExpress.XtraBars.Navigation.AccordionControlElement()
         Me.AccordionControlElement25 = New DevExpress.XtraBars.Navigation.AccordionControlElement()
@@ -34,6 +42,7 @@ Partial Class Home
         Me.AccordionControlElement15 = New DevExpress.XtraBars.Navigation.AccordionControlElement()
         Me.AccordionControlElement17 = New DevExpress.XtraBars.Navigation.AccordionControlElement()
         Me.AccordionControlElement28 = New DevExpress.XtraBars.Navigation.AccordionControlElement()
+        Me.AccordionControlElement39 = New DevExpress.XtraBars.Navigation.AccordionControlElement()
         Me.AccordionControlElement16 = New DevExpress.XtraBars.Navigation.AccordionControlElement()
         Me.AccordionControlElement22 = New DevExpress.XtraBars.Navigation.AccordionControlElement()
         Me.AccordionControlElement23 = New DevExpress.XtraBars.Navigation.AccordionControlElement()
@@ -66,7 +75,7 @@ Partial Class Home
         Me.AccordionControl1.Elements.AddRange(New DevExpress.XtraBars.Navigation.AccordionControlElement() {Me.AccordionControlElement1, Me.AccordionControlElement2, Me.AccordionControlElement16, Me.AccordionControlElement22, Me.AccordionControlElement3})
         Me.AccordionControl1.Location = New System.Drawing.Point(0, 0)
         Me.AccordionControl1.Name = "AccordionControl1"
-        Me.AccordionControl1.Size = New System.Drawing.Size(210, 651)
+        Me.AccordionControl1.Size = New System.Drawing.Size(227, 651)
         Me.AccordionControl1.TabIndex = 0
         Me.AccordionControl1.ViewType = DevExpress.XtraBars.Navigation.AccordionControlViewType.HamburgerMenu
         '
@@ -75,40 +84,87 @@ Partial Class Home
         Me.AccordionControlElement1.Appearance.Default.ForeColor = System.Drawing.Color.Black
         Me.AccordionControlElement1.Appearance.Default.Options.UseForeColor = True
         Me.AccordionControlElement1.Elements.AddRange(New DevExpress.XtraBars.Navigation.AccordionControlElement() {Me.AccordionControlElement18, Me.AccordionControlElement19, Me.AccordionControlElement20, Me.AccordionControlElement21})
-        Me.AccordionControlElement1.Expanded = True
         Me.AccordionControlElement1.ImageOptions.Image = CType(resources.GetObject("AccordionControlElement1.ImageOptions.Image"), System.Drawing.Image)
         Me.AccordionControlElement1.Name = "AccordionControlElement1"
         Me.AccordionControlElement1.Text = "Asset Management"
         '
         'AccordionControlElement18
         '
+        Me.AccordionControlElement18.Elements.AddRange(New DevExpress.XtraBars.Navigation.AccordionControlElement() {Me.AccordionControlElement31, Me.AccordionControlElement32})
         Me.AccordionControlElement18.Name = "AccordionControlElement18"
-        Me.AccordionControlElement18.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item
         Me.AccordionControlElement18.Text = "Acquisition"
+        '
+        'AccordionControlElement31
+        '
+        Me.AccordionControlElement31.Name = "AccordionControlElement31"
+        Me.AccordionControlElement31.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item
+        Me.AccordionControlElement31.Text = "Asset Acquisition"
+        '
+        'AccordionControlElement32
+        '
+        Me.AccordionControlElement32.Name = "AccordionControlElement32"
+        Me.AccordionControlElement32.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item
+        Me.AccordionControlElement32.Text = "Asset Acquisition Register"
         '
         'AccordionControlElement19
         '
+        Me.AccordionControlElement19.Elements.AddRange(New DevExpress.XtraBars.Navigation.AccordionControlElement() {Me.AccordionControlElement33, Me.AccordionControlElement34})
         Me.AccordionControlElement19.Name = "AccordionControlElement19"
-        Me.AccordionControlElement19.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item
         Me.AccordionControlElement19.Text = "Transfer "
+        '
+        'AccordionControlElement33
+        '
+        Me.AccordionControlElement33.Name = "AccordionControlElement33"
+        Me.AccordionControlElement33.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item
+        Me.AccordionControlElement33.Text = "Asset Transfer Request"
+        '
+        'AccordionControlElement34
+        '
+        Me.AccordionControlElement34.Name = "AccordionControlElement34"
+        Me.AccordionControlElement34.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item
+        Me.AccordionControlElement34.Text = "Asset Transfer Request Register"
         '
         'AccordionControlElement20
         '
+        Me.AccordionControlElement20.Elements.AddRange(New DevExpress.XtraBars.Navigation.AccordionControlElement() {Me.AccordionControlElement35, Me.AccordionControlElement36})
         Me.AccordionControlElement20.Name = "AccordionControlElement20"
-        Me.AccordionControlElement20.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item
         Me.AccordionControlElement20.Text = "Assignment"
+        '
+        'AccordionControlElement35
+        '
+        Me.AccordionControlElement35.Name = "AccordionControlElement35"
+        Me.AccordionControlElement35.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item
+        Me.AccordionControlElement35.Text = "Allocation "
+        '
+        'AccordionControlElement36
+        '
+        Me.AccordionControlElement36.Name = "AccordionControlElement36"
+        Me.AccordionControlElement36.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item
+        Me.AccordionControlElement36.Text = "Return "
         '
         'AccordionControlElement21
         '
+        Me.AccordionControlElement21.Elements.AddRange(New DevExpress.XtraBars.Navigation.AccordionControlElement() {Me.AccordionControlElement37, Me.AccordionControlElement38})
         Me.AccordionControlElement21.Name = "AccordionControlElement21"
-        Me.AccordionControlElement21.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item
         Me.AccordionControlElement21.Text = "Retirement"
+        '
+        'AccordionControlElement37
+        '
+        Me.AccordionControlElement37.Name = "AccordionControlElement37"
+        Me.AccordionControlElement37.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item
+        Me.AccordionControlElement37.Text = "Utilization"
+        '
+        'AccordionControlElement38
+        '
+        Me.AccordionControlElement38.Name = "AccordionControlElement38"
+        Me.AccordionControlElement38.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item
+        Me.AccordionControlElement38.Text = "Data Ownership"
         '
         'AccordionControlElement2
         '
         Me.AccordionControlElement2.Appearance.Default.ForeColor = System.Drawing.Color.Black
         Me.AccordionControlElement2.Appearance.Default.Options.UseForeColor = True
-        Me.AccordionControlElement2.Elements.AddRange(New DevExpress.XtraBars.Navigation.AccordionControlElement() {Me.AccordionControlElement27, Me.AccordionControlElement15})
+        Me.AccordionControlElement2.Elements.AddRange(New DevExpress.XtraBars.Navigation.AccordionControlElement() {Me.AccordionControlElement27, Me.AccordionControlElement15, Me.AccordionControlElement39})
         Me.AccordionControlElement2.ImageOptions.Image = CType(resources.GetObject("AccordionControlElement2.ImageOptions.Image"), System.Drawing.Image)
         Me.AccordionControlElement2.Name = "AccordionControlElement2"
         Me.AccordionControlElement2.Text = "Asset"
@@ -157,6 +213,12 @@ Partial Class Home
         Me.AccordionControlElement28.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item
         Me.AccordionControlElement28.Text = "New Asset Register"
         '
+        'AccordionControlElement39
+        '
+        Me.AccordionControlElement39.Name = "AccordionControlElement39"
+        Me.AccordionControlElement39.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item
+        Me.AccordionControlElement39.Text = "Inventory"
+        '
         'AccordionControlElement16
         '
         Me.AccordionControlElement16.Appearance.Default.ForeColor = System.Drawing.Color.Black
@@ -193,7 +255,6 @@ Partial Class Home
         Me.AccordionControlElement3.Appearance.Normal.ForeColor = System.Drawing.Color.Black
         Me.AccordionControlElement3.Appearance.Normal.Options.UseForeColor = True
         Me.AccordionControlElement3.Elements.AddRange(New DevExpress.XtraBars.Navigation.AccordionControlElement() {Me.AccordionControlElement5, Me.AccordionControlElement4, Me.AccordionControlElement9, Me.AccordionControlElement8, Me.AccordionControlElement7, Me.AccordionControlElement13, Me.AccordionControlElement10, Me.AccordionControlElement14, Me.AccordionControlElement12, Me.AccordionControlElement11, Me.AccordionControlElement6, Me.AccordionControlElement30})
-        Me.AccordionControlElement3.Expanded = True
         Me.AccordionControlElement3.ImageOptions.Image = CType(resources.GetObject("AccordionControlElement3.ImageOptions.Image"), System.Drawing.Image)
         Me.AccordionControlElement3.Name = "AccordionControlElement3"
         Me.AccordionControlElement3.Text = "Setup"
@@ -295,9 +356,9 @@ Partial Class Home
         'PanelControl1
         '
         Me.PanelControl1.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.PanelControl1.Location = New System.Drawing.Point(210, 628)
+        Me.PanelControl1.Location = New System.Drawing.Point(227, 628)
         Me.PanelControl1.Name = "PanelControl1"
-        Me.PanelControl1.Size = New System.Drawing.Size(1090, 23)
+        Me.PanelControl1.Size = New System.Drawing.Size(1073, 23)
         Me.PanelControl1.TabIndex = 2
         '
         'PictureBox1
@@ -305,9 +366,9 @@ Partial Class Home
         Me.PictureBox1.BackgroundImage = Global.AssetMonitoringAsset.My.Resources.Resources.photo_2023_10_23_15_37_35
         Me.PictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
         Me.PictureBox1.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.PictureBox1.Location = New System.Drawing.Point(210, 0)
+        Me.PictureBox1.Location = New System.Drawing.Point(227, 0)
         Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(1090, 628)
+        Me.PictureBox1.Size = New System.Drawing.Size(1073, 628)
         Me.PictureBox1.TabIndex = 4
         Me.PictureBox1.TabStop = False
         '
@@ -327,7 +388,6 @@ Partial Class Home
         Me.MaximizeBox = False
         Me.MinimizeBox = False
         Me.Name = "Home"
-        Me.ShowInTaskbar = False
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Home"
         Me.WindowState = System.Windows.Forms.FormWindowState.Maximized
@@ -371,4 +431,13 @@ Partial Class Home
     Friend WithEvents AccordionControlElement28 As DevExpress.XtraBars.Navigation.AccordionControlElement
     Friend WithEvents AccordionControlElement29 As DevExpress.XtraBars.Navigation.AccordionControlElement
     Friend WithEvents AccordionControlElement30 As DevExpress.XtraBars.Navigation.AccordionControlElement
+    Friend WithEvents AccordionControlElement31 As DevExpress.XtraBars.Navigation.AccordionControlElement
+    Friend WithEvents AccordionControlElement32 As DevExpress.XtraBars.Navigation.AccordionControlElement
+    Friend WithEvents AccordionControlElement33 As DevExpress.XtraBars.Navigation.AccordionControlElement
+    Friend WithEvents AccordionControlElement34 As DevExpress.XtraBars.Navigation.AccordionControlElement
+    Friend WithEvents AccordionControlElement35 As DevExpress.XtraBars.Navigation.AccordionControlElement
+    Friend WithEvents AccordionControlElement36 As DevExpress.XtraBars.Navigation.AccordionControlElement
+    Friend WithEvents AccordionControlElement37 As DevExpress.XtraBars.Navigation.AccordionControlElement
+    Friend WithEvents AccordionControlElement38 As DevExpress.XtraBars.Navigation.AccordionControlElement
+    Friend WithEvents AccordionControlElement39 As DevExpress.XtraBars.Navigation.AccordionControlElement
 End Class

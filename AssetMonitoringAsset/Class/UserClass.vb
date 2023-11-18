@@ -164,4 +164,5 @@ Public Class UserClass
         Return querydetail
 
     End Function
+
 End Class

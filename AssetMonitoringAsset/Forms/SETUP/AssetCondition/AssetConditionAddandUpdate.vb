@@ -27,11 +27,14 @@
             MsgBox("Invalid Asset Condition Description")
         Else
             If SimpleButton2.Text = "Record" Then
-                ConditionClass.SaveCondition(TextBox1.Text, TextBox2.Text)
+                If ConditionClass.FetchConCount(TextBox1.Text) > 0 Then
+                    MessageBox.Show("Condition Code Already Exist", "Validation", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                Else
+                    ConditionClass.SaveCondition(TextBox1.Text, TextBox2.Text)
+                End If
             ElseIf SimpleButton2.Text = "Save" Then
                 ConditionClass.UpdateCondition(AssetCondition.ConID, TextBox1.Text, TextBox2.Text)
             End If
-
         End If
     End Sub
 End Class

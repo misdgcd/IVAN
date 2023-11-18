@@ -102,4 +102,11 @@ Public Class DepartmentClass
 
         Return querysection
     End Function
+
+    Public Shared Function FetchDepCount(ByVal code As String) As Integer
+        Dim count As Integer = (From s In db.tblDepartments
+                                Where (s.DepartmentCode.Contains(code))
+                                Select s.DepartmentCode).Count()
+        Return count
+    End Function
 End Class

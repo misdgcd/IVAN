@@ -167,3 +167,6 @@ C:\Users\HSDP_SYS_DEV\source\repos\AssetMonitoringAsset\AssetMonitoringAsset\obj
 C:\Users\HSDP_SYS_DEV\source\repos\AssetMonitoringAsset\AssetMonitoringAsset\obj\Debug\AssetMonitoringAsset.AssetAcquisition.resources
 C:\Users\HSDP_SYS_DEV\source\repos\AssetMonitoringAsset\AssetMonitoringAsset\obj\Debug\AssetMonitoringAsset.Reference.resources
 C:\Users\HSDP_SYS_DEV\source\repos\AssetMonitoringAsset\AssetMonitoringAsset\obj\Debug\AssetMonitoringAsset.ReferenceList.resources
+C:\Users\HSDP_SYS_DEV\source\repos\AssetMonitoringAsset\AssetMonitoringAsset\obj\Debug\AssetMonitoringAsset.InventoryList.resources
+C:\Users\HSDP_SYS_DEV\source\repos\AssetMonitoringAsset\AssetMonitoringAsset\obj\Debug\AssetMonitoringAsset.AAdetail.resources
+C:\Users\HSDP_SYS_DEV\source\repos\AssetMonitoringAsset\AssetMonitoringAsset\obj\Debug\AssetMonitoringAsset.AARegister.resources

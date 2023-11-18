@@ -98,4 +98,12 @@ Public Class ConditionClass
                             Select s.AssetConditionDescription).ToList
         Return querysection
     End Function
+
+    Public Shared Function FetchConCount(ByVal code As String) As Integer
+        Dim count As Integer = (From s In db.tblAssetConditions
+                                Where (s.AssetConditionCode.Contains(code))
+                                Select s.AssetConditionCode).Count()
+        Return count
+    End Function
+
 End Class

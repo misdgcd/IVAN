@@ -170,6 +170,7 @@ Partial Class BuildAsset
         Me.MinimizeBox = False
         Me.Name = "BuildAsset"
         Me.Padding = New System.Windows.Forms.Padding(5)
+        Me.ShowInTaskbar = False
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Build Asset"
         CType(Me.PanelControl2, System.ComponentModel.ISupportInitialize).EndInit()

@@ -107,4 +107,11 @@ Public Class TypeClass
         Return querysection
     End Function
 
+    Public Shared Function FetchTCount(ByVal code As String) As Integer
+        Dim count As Integer = (From s In db.tblAssetTypes
+                                Where (s.AssetTypeCode.Contains(code))
+                                Select s.AssetTypeCode).Count()
+        Return count
+    End Function
+
 End Class

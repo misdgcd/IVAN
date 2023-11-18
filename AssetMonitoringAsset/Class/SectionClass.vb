@@ -101,4 +101,10 @@ Public Class SectionClass
         Return querysection
     End Function
 
+    Public Shared Function FetchSecCount(ByVal code As String) As Integer
+        Dim count As Integer = (From s In db.tblSections
+                                Where (s.SectionCode.Contains(code))
+                                Select s.SectionCode).Count()
+        Return count
+    End Function
 End Class

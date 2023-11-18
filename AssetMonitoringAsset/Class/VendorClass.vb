@@ -116,4 +116,12 @@ Public Class VendorClass
                             Select s.VendorID).Single
         Return querysection
     End Function
+
+    Public Shared Function FetchVenCount(ByVal code As String) As Integer
+        Dim count As Integer = (From s In db.tblVendors
+                                Where (s.VendorCode.Contains(code))
+                                Select s.VendorCode).Count()
+        Return count
+    End Function
+
 End Class
