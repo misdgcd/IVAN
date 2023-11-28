@@ -40,19 +40,19 @@ Public Class AssetDetailClass
         End Try
     End Sub
 
-    Public Shared Function FetchAssetCount(ByVal AssetId As Integer, ByVal RefNo As String) As Integer
+
+
+    Public Shared Function FetchRefnoCount(ByVal assetcode As String, ByVal RefNo As String, ByVal ref As String) As Integer
         Dim count As Integer = (From s In db.tblAssetInventories
-                                Where (s.AssetId = AssetId) And (s.ReferenceNUmber.Contains(RefNo))
-                                Select s.AssetCode).Count()
+                                Where s.AssetCode = assetcode AndAlso s.Reference = ref AndAlso s.ReferenceNUmber = RefNo And s.Reference <> "N/A"
+                                Select s).Count()
         Return count
     End Function
 
-    Public Shared Function FetchRefnoCount(ByVal RefNo As String, ByVal ref As String) As Integer
+    Public Shared Function FetchNACount(ByVal assetcode As String, ByVal RefNo As String, ByVal ref As String) As Integer
         Dim count As Integer = (From s In db.tblAssetInventories
-                                Where (s.Reference = ref AndAlso s.ReferenceNUmber = RefNo) And s.ReferenceNUmber <> "N/A"
-                                Select s.AssetCode).Count()
+                                Where s.AssetCode = assetcode AndAlso s.Reference = ref AndAlso s.ReferenceNUmber = RefNo
+                                Select s).Count()
         Return count
     End Function
-
-
 End Class

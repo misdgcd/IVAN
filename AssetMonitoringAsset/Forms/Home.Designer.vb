@@ -84,6 +84,7 @@ Partial Class Home
         Me.AccordionControlElement1.Appearance.Default.ForeColor = System.Drawing.Color.Black
         Me.AccordionControlElement1.Appearance.Default.Options.UseForeColor = True
         Me.AccordionControlElement1.Elements.AddRange(New DevExpress.XtraBars.Navigation.AccordionControlElement() {Me.AccordionControlElement18, Me.AccordionControlElement19, Me.AccordionControlElement20, Me.AccordionControlElement21})
+        Me.AccordionControlElement1.Expanded = True
         Me.AccordionControlElement1.ImageOptions.Image = CType(resources.GetObject("AccordionControlElement1.ImageOptions.Image"), System.Drawing.Image)
         Me.AccordionControlElement1.Name = "AccordionControlElement1"
         Me.AccordionControlElement1.Text = "Asset Management"
@@ -127,6 +128,7 @@ Partial Class Home
         'AccordionControlElement20
         '
         Me.AccordionControlElement20.Elements.AddRange(New DevExpress.XtraBars.Navigation.AccordionControlElement() {Me.AccordionControlElement35, Me.AccordionControlElement36})
+        Me.AccordionControlElement20.Expanded = True
         Me.AccordionControlElement20.Name = "AccordionControlElement20"
         Me.AccordionControlElement20.Text = "Assignment"
         '
@@ -145,6 +147,7 @@ Partial Class Home
         'AccordionControlElement21
         '
         Me.AccordionControlElement21.Elements.AddRange(New DevExpress.XtraBars.Navigation.AccordionControlElement() {Me.AccordionControlElement37, Me.AccordionControlElement38})
+        Me.AccordionControlElement21.Expanded = True
         Me.AccordionControlElement21.Name = "AccordionControlElement21"
         Me.AccordionControlElement21.Text = "Retirement"
         '

@@ -1,5 +1,84 @@
 ﻿<?xml version="1.0" encoding="utf-8"?><Database Name="AMSdb" Class="DataClasses1DataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
   <Connection Mode="AppSettings" ConnectionString="Data Source=172.16.10.218;Initial Catalog=AMSdb;User ID=HSDPI" SettingsObjectName="AssetMonitoringAsset.Settings" SettingsPropertyName="AMSdbConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.tblSection" Member="tblSections">
+    <Type Name="tblSection">
+      <Column Name="SectionID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="SectionCode" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="SectionDecription" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="DateCreated" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="DateModified" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="UserID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="UserIDModified" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="tblSection_tblAllocationHeader" Member="tblAllocationHeaders" ThisKey="SectionID" OtherKey="SectionId" Type="tblAllocationHeader" />
+      <Association Name="tblSection_tblEmployee" Member="tblEmployees" ThisKey="SectionID" OtherKey="SectionID" Type="tblEmployee" />
+      <Association Name="tblUser_tblSection" Member="tblUser" ThisKey="UserID" OtherKey="UserID" Type="tblUser" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblAssetInventory" Member="tblAssetInventories">
+    <Type Name="tblAssetInventory">
+      <Column Name="InvID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="AssetId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="AssetCode" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="AvailableQuantity" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="UsedQuantity" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="TotalQuantity" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="Reference" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="ReferenceNUmber" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="Owner" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="borrowerStat" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="borrower" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Status" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="tblAssetInventory_tblAllocationDetail" Member="tblAllocationDetails" ThisKey="InvID" OtherKey="InvID" Type="tblAllocationDetail" />
+      <Association Name="tblAssetDetailMasterlist_tblAssetInventory" Member="tblAssetDetailMasterlist" ThisKey="AssetId" OtherKey="AssetID" Type="tblAssetDetailMasterlist" IsForeignKey="true" />
+      <Association Name="tblEmployee_tblAssetInventory" Member="tblEmployee" ThisKey="borrower" OtherKey="EmployeeID" Type="tblEmployee" IsForeignKey="true" />
+      <Association Name="tblEmployee_tblAssetInventory2" Member="tblEmployee1" ThisKey="Owner" OtherKey="EmployeeID" Type="tblEmployee" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblAllocationDetail" Member="tblAllocationDetails">
+    <Type Name="tblAllocationDetail">
+      <Column Name="Allocationdetailid" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="AssetId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="InvID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="qty" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="Allocationheaderid" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="tblAssetInventory_tblAllocationDetail" Member="tblAssetInventory" ThisKey="InvID" OtherKey="InvID" Type="tblAssetInventory" IsForeignKey="true" />
+      <Association Name="tblAllocationHeader_tblAllocationDetail" Member="tblAllocationHeader" ThisKey="Allocationheaderid" OtherKey="Allocationheaderid" Type="tblAllocationHeader" IsForeignKey="true" />
+      <Association Name="tblAssetDetailMasterlist_tblAllocationDetail" Member="tblAssetDetailMasterlist" ThisKey="AssetId" OtherKey="AssetID" Type="tblAssetDetailMasterlist" IsForeignKey="true" />
+      <Association Name="tblAssetInventory1_tblAllocationDetail" Member="tblAssetInventory1" ThisKey="InvID" OtherKey="InvID" Type="tblAssetInventory1" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblVendor" Member="tblVendors">
+    <Type Name="tblVendor">
+      <Column Name="VendorID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="VendorCode" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="VendorDescription" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="DateCreated" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="DateModified" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="UserID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="UserIDModified" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="tblVendor_tblAssetDetail" Member="tblAssetDetails" ThisKey="VendorID" OtherKey="VendorID" Type="tblAssetDetail" />
+      <Association Name="tblVendor_tblAssetHeader" Member="tblAssetHeaders" ThisKey="VendorID" OtherKey="VendorID" Type="tblAssetHeader" />
+      <Association Name="tblVendor_tblAssetHeaderMasterlist" Member="tblAssetHeaderMasterlists" ThisKey="VendorID" OtherKey="VendorID" Type="tblAssetHeaderMasterlist" />
+      <Association Name="tblUser_tblVendor" Member="tblUser" ThisKey="VendorID" OtherKey="UserID" Type="tblUser" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblAllocationHeader" Member="tblAllocationHeaders">
+    <Type Name="tblAllocationHeader">
+      <Column Name="Allocationheaderid" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="DepartmentId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="BranchId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="SectionId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Date" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="Entrynumber" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="EmployeeID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="tblAllocationHeader_tblAllocationDetail" Member="tblAllocationDetails" ThisKey="Allocationheaderid" OtherKey="Allocationheaderid" Type="tblAllocationDetail" />
+      <Association Name="tblSection_tblAllocationHeader" Member="tblSection" ThisKey="SectionId" OtherKey="SectionID" Type="tblSection" IsForeignKey="true" />
+      <Association Name="tblBranch_tblAllocationHeader" Member="tblBranch" ThisKey="BranchId" OtherKey="BranchID" Type="tblBranch" IsForeignKey="true" />
+      <Association Name="tblDepartment_tblAllocationHeader" Member="tblDepartment" ThisKey="DepartmentId" OtherKey="DepartmentID" Type="tblDepartment" IsForeignKey="true" />
+      <Association Name="tblEmployee_tblAllocationHeader" Member="tblEmployee" ThisKey="EmployeeID" OtherKey="EmployeeID" Type="tblEmployee" IsForeignKey="true" />
+      <Association Name="tblSection1_tblAllocationHeader" Member="tblSection1" ThisKey="SectionId" OtherKey="SectionID" Type="tblSection1" IsForeignKey="true" />
+    </Type>
+  </Table>
   <Table Name="dbo.tblAssetCondition" Member="tblAssetConditions">
     <Type Name="tblAssetCondition">
       <Column Name="AssetConditionID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
@@ -12,21 +91,6 @@
       <Association Name="tblAssetCondition_tblAssetDetailMasterlist" Member="tblAssetDetailMasterlists" ThisKey="AssetConditionID" OtherKey="AssetConditionID" Type="tblAssetDetailMasterlist" />
       <Association Name="tblAssetCondition_tblAssetDetail" Member="tblAssetDetails" ThisKey="AssetConditionID" OtherKey="AssetConditionID" Type="tblAssetDetail" />
       <Association Name="tblUser_tblAssetCondition" Member="tblUser" ThisKey="UserID" OtherKey="UserID" Type="tblUser" IsForeignKey="true" />
-    </Type>
-  </Table>
-  <Table Name="dbo.tblVendor" Member="tblVendors">
-    <Type Name="tblVendor">
-      <Column Name="VendorID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="VendorCode" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
-      <Column Name="VendorDescription" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
-      <Column Name="DateCreated" Type="System.DateTime" DbType="Date" CanBeNull="true" />
-      <Column Name="DateModified" Type="System.DateTime" DbType="Date" CanBeNull="true" />
-      <Column Name="UserID" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="UserIDModified" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Association Name="tblVendor_tblAssetHeaderMasterlist" Member="tblAssetHeaderMasterlists" ThisKey="VendorID" OtherKey="VendorID" Type="tblAssetHeaderMasterlist" />
-      <Association Name="tblVendor_tblAssetDetail" Member="tblAssetDetails" ThisKey="VendorID" OtherKey="VendorID" Type="tblAssetDetail" />
-      <Association Name="tblVendor_tblAssetHeader" Member="tblAssetHeaders" ThisKey="VendorID" OtherKey="VendorID" Type="tblAssetHeader" />
-      <Association Name="tblUser_tblVendor" Member="tblUser" ThisKey="VendorID" OtherKey="UserID" Type="tblUser" IsForeignKey="true" />
     </Type>
   </Table>
   <Table Name="dbo.tblAssetDetailMasterlist" Member="tblAssetDetailMasterlists">
@@ -42,13 +106,58 @@
       <Column Name="UserID" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="UserIDModified" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="AssetHeaderID" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Association Name="tblAssetDetailMasterlist_tblAssetDetail" Member="tblAssetDetails" ThisKey="AssetID" OtherKey="assetID" Type="tblAssetDetail" />
       <Association Name="tblAssetDetailMasterlist_tblAssetInventory" Member="tblAssetInventories" ThisKey="AssetID" OtherKey="AssetId" Type="tblAssetInventory" />
+      <Association Name="tblAssetDetailMasterlist_tblAllocationDetail" Member="tblAllocationDetails" ThisKey="AssetID" OtherKey="AssetId" Type="tblAllocationDetail" />
+      <Association Name="tblAssetDetailMasterlist_tblAssetDetail" Member="tblAssetDetails" ThisKey="AssetID" OtherKey="assetID" Type="tblAssetDetail" />
+      <Association Name="tblAssetDetailMasterlist_tblAssetInventory1" Member="tblAssetInventory1s" ThisKey="AssetID" OtherKey="AssetId" Type="tblAssetInventory1" />
       <Association Name="tblAssetCondition_tblAssetDetailMasterlist" Member="tblAssetCondition" ThisKey="AssetConditionID" OtherKey="AssetConditionID" Type="tblAssetCondition" IsForeignKey="true" />
       <Association Name="tblAssetHeaderMasterlist_tblAssetDetailMasterlist" Member="tblAssetHeaderMasterlist" ThisKey="AssetHeaderID" OtherKey="AssetHeaderID" Type="tblAssetHeaderMasterlist" IsForeignKey="true" />
       <Association Name="tblAssetType_tblAssetDetailMasterlist" Member="tblAssetType" ThisKey="AssetTypeID" OtherKey="AssetTypeID" Type="tblAssetType" IsForeignKey="true" />
       <Association Name="tblCategory_tblAssetDetailMasterlist" Member="tblCategory" ThisKey="CategoryID" OtherKey="CategoryID" Type="tblCategory" IsForeignKey="true" />
       <Association Name="tblUser_tblAssetDetailMasterlist" Member="tblUser" ThisKey="UserID" OtherKey="UserID" Type="tblUser" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblAssetDetails" Member="tblAssetDetails">
+    <Type Name="tblAssetDetail">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="assetID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="AssetCode" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="description" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="categoryID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="assetTypeID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="AssetConditionID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Reference" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="Refno" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="Quantity" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="DateCreated" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="UserID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="TransHeaderID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="VendorID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="module1" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="tblAssetCondition_tblAssetDetail" Member="tblAssetCondition" ThisKey="AssetConditionID" OtherKey="AssetConditionID" Type="tblAssetCondition" IsForeignKey="true" />
+      <Association Name="tblAssetDetailMasterlist_tblAssetDetail" Member="tblAssetDetailMasterlist" ThisKey="assetID" OtherKey="AssetID" Type="tblAssetDetailMasterlist" IsForeignKey="true" />
+      <Association Name="tblVendor_tblAssetDetail" Member="tblVendor" ThisKey="VendorID" OtherKey="VendorID" Type="tblVendor" IsForeignKey="true" />
+      <Association Name="tblAssetHeader_tblAssetDetail" Member="tblAssetHeader" ThisKey="TransHeaderID" OtherKey="AssetHeaderID" Type="tblAssetHeader" IsForeignKey="true" />
+      <Association Name="tblAssetType_tblAssetDetail" Member="tblAssetType" ThisKey="assetTypeID" OtherKey="AssetTypeID" Type="tblAssetType" IsForeignKey="true" />
+      <Association Name="tblCategory_tblAssetDetail" Member="tblCategory" ThisKey="categoryID" OtherKey="CategoryID" Type="tblCategory" IsForeignKey="true" />
+      <Association Name="tblUser_tblAssetDetail" Member="tblUser" ThisKey="UserID" OtherKey="UserID" Type="tblUser" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblAssetHeader" Member="tblAssetHeaders">
+    <Type Name="tblAssetHeader">
+      <Column Name="AssetHeaderID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="UserID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="EntryNumber" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="TransDate" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="Remarks" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="VendorID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Docno" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="DocTypeID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="module1" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="tblAssetHeader_tblAssetDetail" Member="tblAssetDetails" ThisKey="AssetHeaderID" OtherKey="TransHeaderID" Type="tblAssetDetail" />
+      <Association Name="tblVendor_tblAssetHeader" Member="tblVendor" ThisKey="VendorID" OtherKey="VendorID" Type="tblVendor" IsForeignKey="true" />
+      <Association Name="tblDocumentType_tblAssetHeader" Member="tblDocumentType" ThisKey="DocTypeID" OtherKey="DocumentID" Type="tblDocumentType" IsForeignKey="true" />
+      <Association Name="tblUser_tblAssetHeader" Member="tblUser" ThisKey="UserID" OtherKey="UserID" Type="tblUser" IsForeignKey="true" />
     </Type>
   </Table>
   <Table Name="dbo.tblAssetHeaderMasterlist" Member="tblAssetHeaderMasterlists">
@@ -62,6 +171,26 @@
       <Association Name="tblAssetHeaderMasterlist_tblAssetDetailMasterlist" Member="tblAssetDetailMasterlists" ThisKey="AssetHeaderID" OtherKey="AssetHeaderID" Type="tblAssetDetailMasterlist" />
       <Association Name="tblVendor_tblAssetHeaderMasterlist" Member="tblVendor" ThisKey="VendorID" OtherKey="VendorID" Type="tblVendor" IsForeignKey="true" />
       <Association Name="tblUser_tblAssetHeaderMasterlist" Member="tblUser" ThisKey="UserID" OtherKey="UserID" Type="tblUser" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblAssetInventory" Member="tblAssetInventory1s">
+    <Type Name="tblAssetInventory1">
+      <Column Name="InvID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="AssetId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="AssetCode" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="AvailableQuantity" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="UsedQuantity" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="TotalQuantity" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="Reference" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="ReferenceNUmber" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="Owner" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="borrowerStat" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="borrower" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Status" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="tblAssetInventory1_tblAllocationDetail" Member="tblAllocationDetails" ThisKey="InvID" OtherKey="InvID" Type="tblAllocationDetail" />
+      <Association Name="tblAssetDetailMasterlist_tblAssetInventory1" Member="tblAssetDetailMasterlist" ThisKey="AssetId" OtherKey="AssetID" Type="tblAssetDetailMasterlist" IsForeignKey="true" />
+      <Association Name="tblEmployee_tblAssetInventory1" Member="tblEmployee" ThisKey="borrower" OtherKey="EmployeeID" Type="tblEmployee" IsForeignKey="true" />
+      <Association Name="tblEmployee_tblAssetInventory11" Member="tblEmployee1" ThisKey="Owner" OtherKey="EmployeeID" Type="tblEmployee" IsForeignKey="true" />
     </Type>
   </Table>
   <Table Name="dbo.tblAssetType" Member="tblAssetTypes">
@@ -87,6 +216,7 @@
       <Column Name="DateModified" Type="System.DateTime" DbType="Date" CanBeNull="true" />
       <Column Name="UserID" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="UserIDModified" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="tblBranch_tblAllocationHeader" Member="tblAllocationHeaders" ThisKey="BranchID" OtherKey="BranchId" Type="tblAllocationHeader" />
       <Association Name="tblBranch_tblEmployee" Member="tblEmployees" ThisKey="BranchID" OtherKey="BranchID" Type="tblEmployee" />
       <Association Name="tblUser_tblBranch" Member="tblUser" ThisKey="BranchID" OtherKey="UserID" Type="tblUser" IsForeignKey="true" />
     </Type>
@@ -114,6 +244,7 @@
       <Column Name="DateModified" Type="System.DateTime" DbType="Date" CanBeNull="true" />
       <Column Name="UserID" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="UserIDModified" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="tblDepartment_tblAllocationHeader" Member="tblAllocationHeaders" ThisKey="DepartmentID" OtherKey="DepartmentId" Type="tblAllocationHeader" />
       <Association Name="tblDepartment_tblEmployee" Member="tblEmployees" ThisKey="DepartmentID" OtherKey="DepartmentID" Type="tblEmployee" />
       <Association Name="tblUser_tblDepartment" Member="tblUser" ThisKey="DepartmentID" OtherKey="UserID" Type="tblUser" IsForeignKey="true" />
     </Type>
@@ -142,10 +273,16 @@
       <Column Name="SectionID" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="AddbyUserID" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="Datecreated" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Association Name="tblEmployee_tblAssetInventory" Member="tblAssetInventories" ThisKey="EmployeeID" OtherKey="borrower" Type="tblAssetInventory" />
+      <Association Name="tblEmployee_tblAssetInventory1" Member="tblAssetInventory1s" ThisKey="EmployeeID" OtherKey="borrower" Type="tblAssetInventory1" />
+      <Association Name="tblEmployee_tblAssetInventory2" Member="tblAssetInventories1" ThisKey="EmployeeID" OtherKey="Owner" Type="tblAssetInventory" />
+      <Association Name="tblEmployee_tblAssetInventory11" Member="tblAssetInventory1s1" ThisKey="EmployeeID" OtherKey="Owner" Type="tblAssetInventory1" />
+      <Association Name="tblEmployee_tblAllocationHeader" Member="tblAllocationHeaders" ThisKey="EmployeeID" OtherKey="EmployeeID" Type="tblAllocationHeader" />
       <Association Name="tblBranch_tblEmployee" Member="tblBranch" ThisKey="BranchID" OtherKey="BranchID" Type="tblBranch" IsForeignKey="true" />
       <Association Name="tblDepartment_tblEmployee" Member="tblDepartment" ThisKey="DepartmentID" OtherKey="DepartmentID" Type="tblDepartment" IsForeignKey="true" />
-      <Association Name="tblPosition_tblEmployee" Member="tblPosition" ThisKey="PositionID" OtherKey="PositionID" Type="tblPosition" IsForeignKey="true" />
       <Association Name="tblSection_tblEmployee" Member="tblSection" ThisKey="SectionID" OtherKey="SectionID" Type="tblSection" IsForeignKey="true" />
+      <Association Name="tblPosition_tblEmployee" Member="tblPosition" ThisKey="PositionID" OtherKey="PositionID" Type="tblPosition" IsForeignKey="true" />
+      <Association Name="tblSection1_tblEmployee" Member="tblSection1" ThisKey="SectionID" OtherKey="SectionID" Type="tblSection1" IsForeignKey="true" />
       <Association Name="tblUser_tblEmployee" Member="tblUser" ThisKey="AddbyUserID" OtherKey="UserID" Type="tblUser" IsForeignKey="true" />
     </Type>
   </Table>
@@ -162,8 +299,14 @@
       <Association Name="tblUser_tblPosition" Member="tblUser" ThisKey="UserID" OtherKey="UserID" Type="tblUser" IsForeignKey="true" />
     </Type>
   </Table>
-  <Table Name="dbo.tblSection" Member="tblSections">
-    <Type Name="tblSection">
+  <Table Name="dbo.tblReference" Member="tblReferences">
+    <Type Name="tblReference">
+      <Column Name="Refid" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Reference" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblSection" Member="tblSection1s">
+    <Type Name="tblSection1">
       <Column Name="SectionID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
       <Column Name="SectionCode" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
       <Column Name="SectionDecription" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
@@ -171,8 +314,9 @@
       <Column Name="DateModified" Type="System.DateTime" DbType="Date" CanBeNull="true" />
       <Column Name="UserID" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="UserIDModified" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Association Name="tblSection_tblEmployee" Member="tblEmployees" ThisKey="SectionID" OtherKey="SectionID" Type="tblEmployee" />
-      <Association Name="tblUser_tblSection" Member="tblUser" ThisKey="UserID" OtherKey="UserID" Type="tblUser" IsForeignKey="true" />
+      <Association Name="tblSection1_tblAllocationHeader" Member="tblAllocationHeaders" ThisKey="SectionID" OtherKey="SectionId" Type="tblAllocationHeader" />
+      <Association Name="tblSection1_tblEmployee" Member="tblEmployees" ThisKey="SectionID" OtherKey="SectionID" Type="tblEmployee" />
+      <Association Name="tblUser_tblSection1" Member="tblUser" ThisKey="UserID" OtherKey="UserID" Type="tblUser" IsForeignKey="true" />
     </Type>
   </Table>
   <Table Name="dbo.tblUser" Member="tblUsers">
@@ -182,9 +326,13 @@
       <Column Name="Username" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
       <Column Name="Password" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
       <Column Name="Status" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
-      <Association Name="tblUser_tblAssetCondition" Member="tblAssetConditions" ThisKey="UserID" OtherKey="UserID" Type="tblAssetCondition" />
+      <Association Name="tblUser_tblSection" Member="tblSections" ThisKey="UserID" OtherKey="UserID" Type="tblSection" />
+      <Association Name="tblUser_tblSection1" Member="tblSection1s" ThisKey="UserID" OtherKey="UserID" Type="tblSection1" />
       <Association Name="tblUser_tblVendor" Member="tblVendor" ThisKey="UserID" OtherKey="VendorID" Type="tblVendor" Cardinality="One" />
+      <Association Name="tblUser_tblAssetCondition" Member="tblAssetConditions" ThisKey="UserID" OtherKey="UserID" Type="tblAssetCondition" />
       <Association Name="tblUser_tblAssetDetailMasterlist" Member="tblAssetDetailMasterlists" ThisKey="UserID" OtherKey="UserID" Type="tblAssetDetailMasterlist" />
+      <Association Name="tblUser_tblAssetDetail" Member="tblAssetDetails" ThisKey="UserID" OtherKey="UserID" Type="tblAssetDetail" />
+      <Association Name="tblUser_tblAssetHeader" Member="tblAssetHeaders" ThisKey="UserID" OtherKey="UserID" Type="tblAssetHeader" />
       <Association Name="tblUser_tblAssetHeaderMasterlist" Member="tblAssetHeaderMasterlists" ThisKey="UserID" OtherKey="UserID" Type="tblAssetHeaderMasterlist" />
       <Association Name="tblUser_tblAssetType" Member="tblAssetTypes" ThisKey="UserID" OtherKey="UserID" Type="tblAssetType" />
       <Association Name="tblUser_tblBranch" Member="tblBranch" ThisKey="UserID" OtherKey="BranchID" Type="tblBranch" Cardinality="One" />
@@ -193,71 +341,6 @@
       <Association Name="tblUser_tblDocumentType" Member="tblDocumentTypes" ThisKey="UserID" OtherKey="UserID" Type="tblDocumentType" />
       <Association Name="tblUser_tblEmployee" Member="tblEmployees" ThisKey="UserID" OtherKey="AddbyUserID" Type="tblEmployee" />
       <Association Name="tblUser_tblPosition" Member="tblPositions" ThisKey="UserID" OtherKey="UserID" Type="tblPosition" />
-      <Association Name="tblUser_tblSection" Member="tblSections" ThisKey="UserID" OtherKey="UserID" Type="tblSection" />
-      <Association Name="tblUser_tblAssetDetail" Member="tblAssetDetails" ThisKey="UserID" OtherKey="UserID" Type="tblAssetDetail" />
-      <Association Name="tblUser_tblAssetHeader" Member="tblAssetHeaders" ThisKey="UserID" OtherKey="UserID" Type="tblAssetHeader" />
-    </Type>
-  </Table>
-  <Table Name="dbo.tblReference" Member="tblReferences">
-    <Type Name="tblReference">
-      <Column Name="Refid" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="Reference" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
-    </Type>
-  </Table>
-  <Table Name="dbo.tblAssetDetails" Member="tblAssetDetails">
-    <Type Name="tblAssetDetail">
-      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="assetID" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="AssetCode" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
-      <Column Name="description" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
-      <Column Name="categoryID" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="assetTypeID" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="AssetConditionID" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="Reference" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
-      <Column Name="Refno" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
-      <Column Name="Quantity" Type="System.Double" DbType="Float" CanBeNull="true" />
-      <Column Name="DateCreated" Type="System.DateTime" DbType="Date" CanBeNull="true" />
-      <Column Name="UserID" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="TransHeaderID" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="VendorID" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="module1" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Association Name="tblAssetCondition_tblAssetDetail" Member="tblAssetCondition" ThisKey="AssetConditionID" OtherKey="AssetConditionID" Type="tblAssetCondition" IsForeignKey="true" />
-      <Association Name="tblAssetDetailMasterlist_tblAssetDetail" Member="tblAssetDetailMasterlist" ThisKey="assetID" OtherKey="AssetID" Type="tblAssetDetailMasterlist" IsForeignKey="true" />
-      <Association Name="tblAssetType_tblAssetDetail" Member="tblAssetType" ThisKey="assetTypeID" OtherKey="AssetTypeID" Type="tblAssetType" IsForeignKey="true" />
-      <Association Name="tblCategory_tblAssetDetail" Member="tblCategory" ThisKey="categoryID" OtherKey="CategoryID" Type="tblCategory" IsForeignKey="true" />
-      <Association Name="tblUser_tblAssetDetail" Member="tblUser" ThisKey="UserID" OtherKey="UserID" Type="tblUser" IsForeignKey="true" />
-      <Association Name="tblVendor_tblAssetDetail" Member="tblVendor" ThisKey="VendorID" OtherKey="VendorID" Type="tblVendor" IsForeignKey="true" />
-      <Association Name="tblAssetHeader_tblAssetDetail" Member="tblAssetHeader" ThisKey="TransHeaderID" OtherKey="AssetHeaderID" Type="tblAssetHeader" IsForeignKey="true" />
-    </Type>
-  </Table>
-  <Table Name="dbo.tblAssetHeader" Member="tblAssetHeaders">
-    <Type Name="tblAssetHeader">
-      <Column Name="AssetHeaderID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="UserID" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="EntryNumber" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
-      <Column Name="TransDate" Type="System.DateTime" DbType="Date" CanBeNull="true" />
-      <Column Name="Remarks" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
-      <Column Name="VendorID" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="Docno" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
-      <Column Name="DocTypeID" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="module1" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Association Name="tblAssetHeader_tblAssetDetail" Member="tblAssetDetails" ThisKey="AssetHeaderID" OtherKey="TransHeaderID" Type="tblAssetDetail" />
-      <Association Name="tblDocumentType_tblAssetHeader" Member="tblDocumentType" ThisKey="DocTypeID" OtherKey="DocumentID" Type="tblDocumentType" IsForeignKey="true" />
-      <Association Name="tblUser_tblAssetHeader" Member="tblUser" ThisKey="UserID" OtherKey="UserID" Type="tblUser" IsForeignKey="true" />
-      <Association Name="tblVendor_tblAssetHeader" Member="tblVendor" ThisKey="VendorID" OtherKey="VendorID" Type="tblVendor" IsForeignKey="true" />
-    </Type>
-  </Table>
-  <Table Name="dbo.tblAssetInventory" Member="tblAssetInventories">
-    <Type Name="tblAssetInventory">
-      <Column Name="InvID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="AssetId" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="AssetCode" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
-      <Column Name="AvailableQuantity" Type="System.Double" DbType="Float" CanBeNull="true" />
-      <Column Name="UsedQuantity" Type="System.Double" DbType="Float" CanBeNull="true" />
-      <Column Name="TotalQuantity" Type="System.Double" DbType="Float" CanBeNull="true" />
-      <Column Name="Reference" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
-      <Column Name="ReferenceNUmber" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
-      <Association Name="tblAssetDetailMasterlist_tblAssetInventory" Member="tblAssetDetailMasterlist" ThisKey="AssetId" OtherKey="AssetID" Type="tblAssetDetailMasterlist" IsForeignKey="true" />
     </Type>
   </Table>
   <Function Name="dbo.spNewAsset" Method="spNewAsset">
@@ -599,5 +682,16 @@
     <Parameter Name="UserID" Parameter="userID" Type="System.Int32" DbType="Int" />
     <Parameter Name="Pass" Parameter="pass" Type="System.String" DbType="VarChar(200)" />
     <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.spViewInventory" Method="spViewInventory">
+    <Parameter Name="search" Type="System.String" DbType="VarChar(MAX)" />
+    <Parameter Name="fltr1" Type="System.Int32" DbType="Int" />
+    <ElementType Name="spViewInventoryResult">
+      <Column Name="AssetCode" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="AssetDescription" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="available" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="used" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="total" Type="System.Double" DbType="Float" CanBeNull="true" />
+    </ElementType>
   </Function>
 </Database>

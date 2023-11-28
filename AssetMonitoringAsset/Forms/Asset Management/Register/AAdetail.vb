@@ -1,5 +1,5 @@
 ﻿Public Class AAdetail
-    Public entry As String = String.Empty
+    Public entry As Integer
     Private Sub AAdetail_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         viewdgv()
     End Sub
@@ -7,11 +7,11 @@
     Private Sub viewdgv()
         dgv.DataSource = AssetHeaderClass.Fetchregister1(entry)
 
-        dgv.Columns(0).HeaderText = "Asset Code"
-        dgv.Columns(1).HeaderText = "Description"
-        dgv.Columns(2).HeaderText = "Category"
-        dgv.Columns(3).HeaderText = "Asset Type"
-        dgv.Columns(4).HeaderText = "Condition"
+        'dgv.Columns(0).HeaderText = "Asset Code"
+        'dgv.Columns(1).HeaderText = "Description"
+        'dgv.Columns(2).HeaderText = "Category"
+        'dgv.Columns(3).HeaderText = "Asset Type"
+        'dgv.Columns(4).HeaderText = "Condition"
 
     End Sub
 

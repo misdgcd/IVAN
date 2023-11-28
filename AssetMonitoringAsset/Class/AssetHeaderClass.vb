@@ -109,15 +109,14 @@ Public Class AssetHeaderClass
         Return querysection
     End Function
 
-
     Public Shared Function Fetchregister1(ByVal entryno As Integer) As Object
         Dim querysection = (From s In db.tblAssetHeaders
-                            Join f In db.tblAssetDetails On s.AssetHeaderID Equals f.ID
+                            Join f In db.tblAssetDetails On s.AssetHeaderID Equals f.TransHeaderID
                             Join c In db.tblCategories On f.categoryID Equals c.CategoryID
                             Join k In db.tblAssetTypes On f.assetTypeID Equals k.AssetTypeID
                             Join e In db.tblAssetConditions On f.AssetConditionID Equals e.AssetConditionID
                             Where f.TransHeaderID = entryno
-                            Select f.AssetCode, f.description, c.CategoryDescription, k.AssetTypeDescription, e.AssetConditionDescription, f.Reference, f.Refno, f.Quantity).ToList()
+                            Select f.AssetCode, f.description, c.CategoryDescription, k.AssetTypeDescription, e.AssetConditionDescription, f.Reference, f.Refno, f.Quantity).ToList
         Return querysection
     End Function
 

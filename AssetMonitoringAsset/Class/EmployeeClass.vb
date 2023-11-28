@@ -128,5 +128,17 @@ Public Class EmployeeClass
     End Function
 
 
+    Public Shared Function ViewEmployeeList2(ByVal search As String) As Object
+        Dim querysection = (From s In db.tblEmployees
+                            Join p In db.tblBranches On s.BranchID Equals p.BranchID
+                            Join l In db.tblDepartments On s.DepartmentID Equals l.DepartmentID
+                            Join g In db.tblSections On s.SectionID Equals g.SectionID
+                            Where s.FirstName.Contains(search) Or s.LastName.Contains(search)
+                            Order By s.EmployeeID
+                            Select s.EmployeeID, s.FirstName, s.LastName, p.BranchDescription, l.DepartmentDescription, g.SectionDecription).ToList
+        Return querysection
+    End Function
+
+
 
 End Class

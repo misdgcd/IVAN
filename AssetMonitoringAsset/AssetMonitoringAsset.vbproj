@@ -98,6 +98,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>AMSdbDataSet.xsd</DependentUpon>
     </Compile>
+    <Compile Include="Class\AllocationHeaderClass.vb" />
     <Compile Include="Class\AssetDetailClass.vb" />
     <Compile Include="Class\AssetHeaderClass.vb" />
     <Compile Include="Class\BranchClass.vb" />
@@ -168,10 +169,16 @@
     <Compile Include="Forms\ASSET\Build Asset\register\NewAssetRegister.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\ASSET\InventoryList.Designer.vb">
+    <Compile Include="Forms\ASSET\Inventory\Details.Designer.vb">
+      <DependentUpon>Details.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\ASSET\Inventory\Details.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ASSET\Inventory\InventoryList.Designer.vb">
       <DependentUpon>InventoryList.vb</DependentUpon>
     </Compile>
-    <Compile Include="Forms\ASSET\InventoryList.vb">
+    <Compile Include="Forms\ASSET\Inventory\InventoryList.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Forms\ASSET\MasterData\masterdatalist\MasterDataList.Designer.vb">
@@ -220,6 +227,24 @@
       <DependentUpon>view.vb</DependentUpon>
     </Compile>
     <Compile Include="Forms\ASSET\view.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Assignment\Allocation\Allocation.Designer.vb">
+      <DependentUpon>Allocation.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Assignment\Allocation\Allocation.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Assignment\Allocation\EmployeeList2.Designer.vb">
+      <DependentUpon>EmployeeList2.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Assignment\Allocation\EmployeeList2.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Assignment\Allocation\Items\AssetList2.Designer.vb">
+      <DependentUpon>AssetList2.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Assignment\Allocation\Items\AssetList2.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Forms\LoginForm\Login.Designer.vb">
@@ -440,7 +465,10 @@
     <EmbeddedResource Include="Forms\ASSET\Build Asset\register\NewAssetRegister.resx">
       <DependentUpon>NewAssetRegister.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\ASSET\InventoryList.resx">
+    <EmbeddedResource Include="Forms\ASSET\Inventory\Details.resx">
+      <DependentUpon>Details.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ASSET\Inventory\InventoryList.resx">
       <DependentUpon>InventoryList.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\ASSET\MasterData\masterdatalist\MasterDataList.resx">
@@ -467,6 +495,15 @@
     <EmbeddedResource Include="Forms\ASSET\MasterData\Register\Report1.rdlc" />
     <EmbeddedResource Include="Forms\ASSET\view.resx">
       <DependentUpon>view.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Assignment\Allocation\Allocation.resx">
+      <DependentUpon>Allocation.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Assignment\Allocation\EmployeeList2.resx">
+      <DependentUpon>EmployeeList2.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Assignment\Allocation\Items\AssetList2.resx">
+      <DependentUpon>AssetList2.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\LoginForm\Login.resx">
       <DependentUpon>Login.vb</DependentUpon>
@@ -618,7 +655,9 @@
   <ItemGroup>
     <WCFMetadata Include="Connected Services\" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Forms\Assignment\Allocation\retun\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
        Other similar extension points exist, see Microsoft.Common.targets.

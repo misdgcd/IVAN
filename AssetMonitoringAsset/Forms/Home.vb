@@ -123,4 +123,12 @@
     Private Sub AccordionControlElement1_Click(sender As Object, e As EventArgs) Handles AccordionControlElement1.Click
 
     End Sub
+
+    Private Sub AccordionControlElement21_Click(sender As Object, e As EventArgs) Handles AccordionControlElement21.Click
+
+    End Sub
+
+    Private Sub AccordionControlElement35_Click(sender As Object, e As EventArgs) Handles AccordionControlElement35.Click
+        Allocation.ShowDialog()
+    End Sub
 End Class

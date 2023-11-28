@@ -32,10 +32,11 @@
 
 
             With BuildRegisterDetail
-                .entry = selectedrow.Cells(4).Value.ToString
+                .entry = Integer.Parse(selectedrow.Cells(4).Value.ToString)
                 .TextBox1.Text = selectedrow.Cells(1).Value.ToString
                 .TextBox2.Text = Format(CDate(selectedrow.Cells(0).Value.ToString), "dd/MM/yyyy")
                 .TextBox3.Text = selectedrow.Cells(2).Value.ToString
+                .viewdgv()
                 .ShowDialog()
             End With
 

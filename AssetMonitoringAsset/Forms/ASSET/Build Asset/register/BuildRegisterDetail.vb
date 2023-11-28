@@ -1,19 +1,21 @@
 ﻿Public Class BuildRegisterDetail
-    Public entry As String = String.Empty
+    Public entry As Integer
     Private Sub BuildRegisterDetail_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         viewdgv()
+
     End Sub
 
-    Private Sub viewdgv()
-        dgv.DataSource = AssetHeaderClass.Fetchregister1(Integer.Parse(entry))
+    Public Sub viewdgv()
+        dgv.DataSource = AssetHeaderClass.Fetchregister1(entry)
 
-        dgv.Columns(0).HeaderText = "Asset Code"
-        dgv.Columns(1).HeaderText = "Description"
-        dgv.Columns(2).HeaderText = "Category"
-        dgv.Columns(3).HeaderText = "Asset Type"
-        dgv.Columns(4).HeaderText = "Reference"
-        dgv.Columns(5).HeaderText = "Number"
-        dgv.Columns(6).HeaderText = "Quantity"
+        'dgv.Columns(0).HeaderText = "Asset Code"
+        'dgv.Columns(1).HeaderText = "Description"
+        'dgv.Columns(2).HeaderText = "Category"
+        'dgv.Columns(3).HeaderText = "Asset Type"
+        'dgv.Columns(5).HeaderText = "Condition"
+        'dgv.Columns(6).HeaderText = "Reference"
+        'dgv.Columns(7).HeaderText = "Number"
+        'dgv.Columns(8).HeaderText = "Quantity"
 
     End Sub
     Private Sub Dgv_CellDoubleClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgv.CellDoubleClick

@@ -31,11 +31,23 @@ Partial Public Class DataClasses1DataContext
   #Region "Extensibility Method Definitions"
   Partial Private Sub OnCreated()
   End Sub
-  Partial Private Sub InserttblAssetCondition(instance As tblAssetCondition)
+  Partial Private Sub InserttblSection(instance As tblSection)
     End Sub
-  Partial Private Sub UpdatetblAssetCondition(instance As tblAssetCondition)
+  Partial Private Sub UpdatetblSection(instance As tblSection)
     End Sub
-  Partial Private Sub DeletetblAssetCondition(instance As tblAssetCondition)
+  Partial Private Sub DeletetblSection(instance As tblSection)
+    End Sub
+  Partial Private Sub InserttblAssetInventory(instance As tblAssetInventory)
+    End Sub
+  Partial Private Sub UpdatetblAssetInventory(instance As tblAssetInventory)
+    End Sub
+  Partial Private Sub DeletetblAssetInventory(instance As tblAssetInventory)
+    End Sub
+  Partial Private Sub InserttblAllocationDetail(instance As tblAllocationDetail)
+    End Sub
+  Partial Private Sub UpdatetblAllocationDetail(instance As tblAllocationDetail)
+    End Sub
+  Partial Private Sub DeletetblAllocationDetail(instance As tblAllocationDetail)
     End Sub
   Partial Private Sub InserttblVendor(instance As tblVendor)
     End Sub
@@ -43,17 +55,47 @@ Partial Public Class DataClasses1DataContext
     End Sub
   Partial Private Sub DeletetblVendor(instance As tblVendor)
     End Sub
+  Partial Private Sub InserttblAllocationHeader(instance As tblAllocationHeader)
+    End Sub
+  Partial Private Sub UpdatetblAllocationHeader(instance As tblAllocationHeader)
+    End Sub
+  Partial Private Sub DeletetblAllocationHeader(instance As tblAllocationHeader)
+    End Sub
+  Partial Private Sub InserttblAssetCondition(instance As tblAssetCondition)
+    End Sub
+  Partial Private Sub UpdatetblAssetCondition(instance As tblAssetCondition)
+    End Sub
+  Partial Private Sub DeletetblAssetCondition(instance As tblAssetCondition)
+    End Sub
   Partial Private Sub InserttblAssetDetailMasterlist(instance As tblAssetDetailMasterlist)
     End Sub
   Partial Private Sub UpdatetblAssetDetailMasterlist(instance As tblAssetDetailMasterlist)
     End Sub
   Partial Private Sub DeletetblAssetDetailMasterlist(instance As tblAssetDetailMasterlist)
     End Sub
+  Partial Private Sub InserttblAssetDetail(instance As tblAssetDetail)
+    End Sub
+  Partial Private Sub UpdatetblAssetDetail(instance As tblAssetDetail)
+    End Sub
+  Partial Private Sub DeletetblAssetDetail(instance As tblAssetDetail)
+    End Sub
+  Partial Private Sub InserttblAssetHeader(instance As tblAssetHeader)
+    End Sub
+  Partial Private Sub UpdatetblAssetHeader(instance As tblAssetHeader)
+    End Sub
+  Partial Private Sub DeletetblAssetHeader(instance As tblAssetHeader)
+    End Sub
   Partial Private Sub InserttblAssetHeaderMasterlist(instance As tblAssetHeaderMasterlist)
     End Sub
   Partial Private Sub UpdatetblAssetHeaderMasterlist(instance As tblAssetHeaderMasterlist)
     End Sub
   Partial Private Sub DeletetblAssetHeaderMasterlist(instance As tblAssetHeaderMasterlist)
+    End Sub
+  Partial Private Sub InserttblAssetInventory1(instance As tblAssetInventory1)
+    End Sub
+  Partial Private Sub UpdatetblAssetInventory1(instance As tblAssetInventory1)
+    End Sub
+  Partial Private Sub DeletetblAssetInventory1(instance As tblAssetInventory1)
     End Sub
   Partial Private Sub InserttblAssetType(instance As tblAssetType)
     End Sub
@@ -97,41 +139,23 @@ Partial Public Class DataClasses1DataContext
     End Sub
   Partial Private Sub DeletetblPosition(instance As tblPosition)
     End Sub
-  Partial Private Sub InserttblSection(instance As tblSection)
-    End Sub
-  Partial Private Sub UpdatetblSection(instance As tblSection)
-    End Sub
-  Partial Private Sub DeletetblSection(instance As tblSection)
-    End Sub
-  Partial Private Sub InserttblUser(instance As tblUser)
-    End Sub
-  Partial Private Sub UpdatetblUser(instance As tblUser)
-    End Sub
-  Partial Private Sub DeletetblUser(instance As tblUser)
-    End Sub
   Partial Private Sub InserttblReference(instance As tblReference)
     End Sub
   Partial Private Sub UpdatetblReference(instance As tblReference)
     End Sub
   Partial Private Sub DeletetblReference(instance As tblReference)
     End Sub
-  Partial Private Sub InserttblAssetDetail(instance As tblAssetDetail)
+  Partial Private Sub InserttblSection1(instance As tblSection1)
     End Sub
-  Partial Private Sub UpdatetblAssetDetail(instance As tblAssetDetail)
+  Partial Private Sub UpdatetblSection1(instance As tblSection1)
     End Sub
-  Partial Private Sub DeletetblAssetDetail(instance As tblAssetDetail)
+  Partial Private Sub DeletetblSection1(instance As tblSection1)
     End Sub
-  Partial Private Sub InserttblAssetHeader(instance As tblAssetHeader)
+  Partial Private Sub InserttblUser(instance As tblUser)
     End Sub
-  Partial Private Sub UpdatetblAssetHeader(instance As tblAssetHeader)
+  Partial Private Sub UpdatetblUser(instance As tblUser)
     End Sub
-  Partial Private Sub DeletetblAssetHeader(instance As tblAssetHeader)
-    End Sub
-  Partial Private Sub InserttblAssetInventory(instance As tblAssetInventory)
-    End Sub
-  Partial Private Sub UpdatetblAssetInventory(instance As tblAssetInventory)
-    End Sub
-  Partial Private Sub DeletetblAssetInventory(instance As tblAssetInventory)
+  Partial Private Sub DeletetblUser(instance As tblUser)
     End Sub
   #End Region
 	
@@ -160,9 +184,21 @@ Partial Public Class DataClasses1DataContext
 		OnCreated
 	End Sub
 	
-	Public ReadOnly Property tblAssetConditions() As System.Data.Linq.Table(Of tblAssetCondition)
+	Public ReadOnly Property tblSections() As System.Data.Linq.Table(Of tblSection)
 		Get
-			Return Me.GetTable(Of tblAssetCondition)
+			Return Me.GetTable(Of tblSection)
+		End Get
+	End Property
+	
+	Public ReadOnly Property tblAssetInventories() As System.Data.Linq.Table(Of tblAssetInventory)
+		Get
+			Return Me.GetTable(Of tblAssetInventory)
+		End Get
+	End Property
+	
+	Public ReadOnly Property tblAllocationDetails() As System.Data.Linq.Table(Of tblAllocationDetail)
+		Get
+			Return Me.GetTable(Of tblAllocationDetail)
 		End Get
 	End Property
 	
@@ -172,15 +208,45 @@ Partial Public Class DataClasses1DataContext
 		End Get
 	End Property
 	
+	Public ReadOnly Property tblAllocationHeaders() As System.Data.Linq.Table(Of tblAllocationHeader)
+		Get
+			Return Me.GetTable(Of tblAllocationHeader)
+		End Get
+	End Property
+	
+	Public ReadOnly Property tblAssetConditions() As System.Data.Linq.Table(Of tblAssetCondition)
+		Get
+			Return Me.GetTable(Of tblAssetCondition)
+		End Get
+	End Property
+	
 	Public ReadOnly Property tblAssetDetailMasterlists() As System.Data.Linq.Table(Of tblAssetDetailMasterlist)
 		Get
 			Return Me.GetTable(Of tblAssetDetailMasterlist)
 		End Get
 	End Property
 	
+	Public ReadOnly Property tblAssetDetails() As System.Data.Linq.Table(Of tblAssetDetail)
+		Get
+			Return Me.GetTable(Of tblAssetDetail)
+		End Get
+	End Property
+	
+	Public ReadOnly Property tblAssetHeaders() As System.Data.Linq.Table(Of tblAssetHeader)
+		Get
+			Return Me.GetTable(Of tblAssetHeader)
+		End Get
+	End Property
+	
 	Public ReadOnly Property tblAssetHeaderMasterlists() As System.Data.Linq.Table(Of tblAssetHeaderMasterlist)
 		Get
 			Return Me.GetTable(Of tblAssetHeaderMasterlist)
+		End Get
+	End Property
+	
+	Public ReadOnly Property tblAssetInventory1s() As System.Data.Linq.Table(Of tblAssetInventory1)
+		Get
+			Return Me.GetTable(Of tblAssetInventory1)
 		End Get
 	End Property
 	
@@ -226,39 +292,21 @@ Partial Public Class DataClasses1DataContext
 		End Get
 	End Property
 	
-	Public ReadOnly Property tblSections() As System.Data.Linq.Table(Of tblSection)
-		Get
-			Return Me.GetTable(Of tblSection)
-		End Get
-	End Property
-	
-	Public ReadOnly Property tblUsers() As System.Data.Linq.Table(Of tblUser)
-		Get
-			Return Me.GetTable(Of tblUser)
-		End Get
-	End Property
-	
 	Public ReadOnly Property tblReferences() As System.Data.Linq.Table(Of tblReference)
 		Get
 			Return Me.GetTable(Of tblReference)
 		End Get
 	End Property
 	
-	Public ReadOnly Property tblAssetDetails() As System.Data.Linq.Table(Of tblAssetDetail)
+	Public ReadOnly Property tblSection1s() As System.Data.Linq.Table(Of tblSection1)
 		Get
-			Return Me.GetTable(Of tblAssetDetail)
+			Return Me.GetTable(Of tblSection1)
 		End Get
 	End Property
 	
-	Public ReadOnly Property tblAssetHeaders() As System.Data.Linq.Table(Of tblAssetHeader)
+	Public ReadOnly Property tblUsers() As System.Data.Linq.Table(Of tblUser)
 		Get
-			Return Me.GetTable(Of tblAssetHeader)
-		End Get
-	End Property
-	
-	Public ReadOnly Property tblAssetInventories() As System.Data.Linq.Table(Of tblAssetInventory)
-		Get
-			Return Me.GetTable(Of tblAssetInventory)
+			Return Me.GetTable(Of tblUser)
 		End Get
 	End Property
 	
@@ -465,6 +513,1679 @@ Partial Public Class DataClasses1DataContext
 		Dim result As IExecuteResult = Me.ExecuteMethodCall(Me, CType(MethodInfo.GetCurrentMethod,MethodInfo), userID, pass)
 		Return CType(result.ReturnValue,Integer)
 	End Function
+	
+	<Global.System.Data.Linq.Mapping.FunctionAttribute(Name:="dbo.spViewInventory")>  _
+	Public Function spViewInventory(<Global.System.Data.Linq.Mapping.ParameterAttribute(DbType:="VarChar(MAX)")> ByVal search As String, <Global.System.Data.Linq.Mapping.ParameterAttribute(DbType:="Int")> ByVal fltr1 As System.Nullable(Of Integer)) As ISingleResult(Of spViewInventoryResult)
+		Dim result As IExecuteResult = Me.ExecuteMethodCall(Me, CType(MethodInfo.GetCurrentMethod,MethodInfo), search, fltr1)
+		Return CType(result.ReturnValue,ISingleResult(Of spViewInventoryResult))
+	End Function
+End Class
+
+<Global.System.Data.Linq.Mapping.TableAttribute(Name:="dbo.tblSection")>  _
+Partial Public Class tblSection
+	Implements System.ComponentModel.INotifyPropertyChanging, System.ComponentModel.INotifyPropertyChanged
+	
+	Private Shared emptyChangingEventArgs As PropertyChangingEventArgs = New PropertyChangingEventArgs(String.Empty)
+	
+	Private _SectionID As Integer
+	
+	Private _SectionCode As String
+	
+	Private _SectionDecription As String
+	
+	Private _DateCreated As System.Nullable(Of Date)
+	
+	Private _DateModified As System.Nullable(Of Date)
+	
+	Private _UserID As System.Nullable(Of Integer)
+	
+	Private _UserIDModified As System.Nullable(Of Integer)
+	
+	Private _tblAllocationHeaders As EntitySet(Of tblAllocationHeader)
+	
+	Private _tblEmployees As EntitySet(Of tblEmployee)
+	
+	Private _tblUser As EntityRef(Of tblUser)
+	
+    #Region "Extensibility Method Definitions"
+    Partial Private Sub OnLoaded()
+    End Sub
+    Partial Private Sub OnValidate(action As System.Data.Linq.ChangeAction)
+    End Sub
+    Partial Private Sub OnCreated()
+    End Sub
+    Partial Private Sub OnSectionIDChanging(value As Integer)
+    End Sub
+    Partial Private Sub OnSectionIDChanged()
+    End Sub
+    Partial Private Sub OnSectionCodeChanging(value As String)
+    End Sub
+    Partial Private Sub OnSectionCodeChanged()
+    End Sub
+    Partial Private Sub OnSectionDecriptionChanging(value As String)
+    End Sub
+    Partial Private Sub OnSectionDecriptionChanged()
+    End Sub
+    Partial Private Sub OnDateCreatedChanging(value As System.Nullable(Of Date))
+    End Sub
+    Partial Private Sub OnDateCreatedChanged()
+    End Sub
+    Partial Private Sub OnDateModifiedChanging(value As System.Nullable(Of Date))
+    End Sub
+    Partial Private Sub OnDateModifiedChanged()
+    End Sub
+    Partial Private Sub OnUserIDChanging(value As System.Nullable(Of Integer))
+    End Sub
+    Partial Private Sub OnUserIDChanged()
+    End Sub
+    Partial Private Sub OnUserIDModifiedChanging(value As System.Nullable(Of Integer))
+    End Sub
+    Partial Private Sub OnUserIDModifiedChanged()
+    End Sub
+    #End Region
+	
+	Public Sub New()
+		MyBase.New
+		Me._tblAllocationHeaders = New EntitySet(Of tblAllocationHeader)(AddressOf Me.attach_tblAllocationHeaders, AddressOf Me.detach_tblAllocationHeaders)
+		Me._tblEmployees = New EntitySet(Of tblEmployee)(AddressOf Me.attach_tblEmployees, AddressOf Me.detach_tblEmployees)
+		Me._tblUser = CType(Nothing, EntityRef(Of tblUser))
+		OnCreated
+	End Sub
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_SectionID", AutoSync:=AutoSync.OnInsert, DbType:="Int NOT NULL IDENTITY", IsPrimaryKey:=true, IsDbGenerated:=true)>  _
+	Public Property SectionID() As Integer
+		Get
+			Return Me._SectionID
+		End Get
+		Set
+			If ((Me._SectionID = value)  _
+						= false) Then
+				Me.OnSectionIDChanging(value)
+				Me.SendPropertyChanging
+				Me._SectionID = value
+				Me.SendPropertyChanged("SectionID")
+				Me.OnSectionIDChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_SectionCode", DbType:="VarChar(200)")>  _
+	Public Property SectionCode() As String
+		Get
+			Return Me._SectionCode
+		End Get
+		Set
+			If (String.Equals(Me._SectionCode, value) = false) Then
+				Me.OnSectionCodeChanging(value)
+				Me.SendPropertyChanging
+				Me._SectionCode = value
+				Me.SendPropertyChanged("SectionCode")
+				Me.OnSectionCodeChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_SectionDecription", DbType:="VarChar(200)")>  _
+	Public Property SectionDecription() As String
+		Get
+			Return Me._SectionDecription
+		End Get
+		Set
+			If (String.Equals(Me._SectionDecription, value) = false) Then
+				Me.OnSectionDecriptionChanging(value)
+				Me.SendPropertyChanging
+				Me._SectionDecription = value
+				Me.SendPropertyChanged("SectionDecription")
+				Me.OnSectionDecriptionChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_DateCreated", DbType:="Date")>  _
+	Public Property DateCreated() As System.Nullable(Of Date)
+		Get
+			Return Me._DateCreated
+		End Get
+		Set
+			If (Me._DateCreated.Equals(value) = false) Then
+				Me.OnDateCreatedChanging(value)
+				Me.SendPropertyChanging
+				Me._DateCreated = value
+				Me.SendPropertyChanged("DateCreated")
+				Me.OnDateCreatedChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_DateModified", DbType:="Date")>  _
+	Public Property DateModified() As System.Nullable(Of Date)
+		Get
+			Return Me._DateModified
+		End Get
+		Set
+			If (Me._DateModified.Equals(value) = false) Then
+				Me.OnDateModifiedChanging(value)
+				Me.SendPropertyChanging
+				Me._DateModified = value
+				Me.SendPropertyChanged("DateModified")
+				Me.OnDateModifiedChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_UserID", DbType:="Int")>  _
+	Public Property UserID() As System.Nullable(Of Integer)
+		Get
+			Return Me._UserID
+		End Get
+		Set
+			If (Me._UserID.Equals(value) = false) Then
+				If Me._tblUser.HasLoadedOrAssignedValue Then
+					Throw New System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException()
+				End If
+				Me.OnUserIDChanging(value)
+				Me.SendPropertyChanging
+				Me._UserID = value
+				Me.SendPropertyChanged("UserID")
+				Me.OnUserIDChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_UserIDModified", DbType:="Int")>  _
+	Public Property UserIDModified() As System.Nullable(Of Integer)
+		Get
+			Return Me._UserIDModified
+		End Get
+		Set
+			If (Me._UserIDModified.Equals(value) = false) Then
+				Me.OnUserIDModifiedChanging(value)
+				Me.SendPropertyChanging
+				Me._UserIDModified = value
+				Me.SendPropertyChanged("UserIDModified")
+				Me.OnUserIDModifiedChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.AssociationAttribute(Name:="tblSection_tblAllocationHeader", Storage:="_tblAllocationHeaders", ThisKey:="SectionID", OtherKey:="SectionId")>  _
+	Public Property tblAllocationHeaders() As EntitySet(Of tblAllocationHeader)
+		Get
+			Return Me._tblAllocationHeaders
+		End Get
+		Set
+			Me._tblAllocationHeaders.Assign(value)
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.AssociationAttribute(Name:="tblSection_tblEmployee", Storage:="_tblEmployees", ThisKey:="SectionID", OtherKey:="SectionID")>  _
+	Public Property tblEmployees() As EntitySet(Of tblEmployee)
+		Get
+			Return Me._tblEmployees
+		End Get
+		Set
+			Me._tblEmployees.Assign(value)
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.AssociationAttribute(Name:="tblUser_tblSection", Storage:="_tblUser", ThisKey:="UserID", OtherKey:="UserID", IsForeignKey:=true)>  _
+	Public Property tblUser() As tblUser
+		Get
+			Return Me._tblUser.Entity
+		End Get
+		Set
+			Dim previousValue As tblUser = Me._tblUser.Entity
+			If ((Object.Equals(previousValue, value) = false)  _
+						OrElse (Me._tblUser.HasLoadedOrAssignedValue = false)) Then
+				Me.SendPropertyChanging
+				If ((previousValue Is Nothing)  _
+							= false) Then
+					Me._tblUser.Entity = Nothing
+					previousValue.tblSections.Remove(Me)
+				End If
+				Me._tblUser.Entity = value
+				If ((value Is Nothing)  _
+							= false) Then
+					value.tblSections.Add(Me)
+					Me._UserID = value.UserID
+				Else
+					Me._UserID = CType(Nothing, Nullable(Of Integer))
+				End If
+				Me.SendPropertyChanged("tblUser")
+			End If
+		End Set
+	End Property
+	
+	Public Event PropertyChanging As PropertyChangingEventHandler Implements System.ComponentModel.INotifyPropertyChanging.PropertyChanging
+	
+	Public Event PropertyChanged As PropertyChangedEventHandler Implements System.ComponentModel.INotifyPropertyChanged.PropertyChanged
+	
+	Protected Overridable Sub SendPropertyChanging()
+		If ((Me.PropertyChangingEvent Is Nothing)  _
+					= false) Then
+			RaiseEvent PropertyChanging(Me, emptyChangingEventArgs)
+		End If
+	End Sub
+	
+	Protected Overridable Sub SendPropertyChanged(ByVal propertyName As [String])
+		If ((Me.PropertyChangedEvent Is Nothing)  _
+					= false) Then
+			RaiseEvent PropertyChanged(Me, New PropertyChangedEventArgs(propertyName))
+		End If
+	End Sub
+	
+	Private Sub attach_tblAllocationHeaders(ByVal entity As tblAllocationHeader)
+		Me.SendPropertyChanging
+		entity.tblSection = Me
+	End Sub
+	
+	Private Sub detach_tblAllocationHeaders(ByVal entity As tblAllocationHeader)
+		Me.SendPropertyChanging
+		entity.tblSection = Nothing
+	End Sub
+	
+	Private Sub attach_tblEmployees(ByVal entity As tblEmployee)
+		Me.SendPropertyChanging
+		entity.tblSection = Me
+	End Sub
+	
+	Private Sub detach_tblEmployees(ByVal entity As tblEmployee)
+		Me.SendPropertyChanging
+		entity.tblSection = Nothing
+	End Sub
+End Class
+
+<Global.System.Data.Linq.Mapping.TableAttribute(Name:="dbo.tblAssetInventory")>  _
+Partial Public Class tblAssetInventory
+	Implements System.ComponentModel.INotifyPropertyChanging, System.ComponentModel.INotifyPropertyChanged
+	
+	Private Shared emptyChangingEventArgs As PropertyChangingEventArgs = New PropertyChangingEventArgs(String.Empty)
+	
+	Private _InvID As Integer
+	
+	Private _AssetId As System.Nullable(Of Integer)
+	
+	Private _AssetCode As String
+	
+	Private _AvailableQuantity As System.Nullable(Of Double)
+	
+	Private _UsedQuantity As System.Nullable(Of Double)
+	
+	Private _TotalQuantity As System.Nullable(Of Double)
+	
+	Private _Reference As String
+	
+	Private _ReferenceNUmber As String
+	
+	Private _Owner As System.Nullable(Of Integer)
+	
+	Private _borrowerStat As String
+	
+	Private _borrower As System.Nullable(Of Integer)
+	
+	Private _Status As System.Nullable(Of Integer)
+	
+	Private _tblAllocationDetails As EntitySet(Of tblAllocationDetail)
+	
+	Private _tblAssetDetailMasterlist As EntityRef(Of tblAssetDetailMasterlist)
+	
+	Private _tblEmployee As EntityRef(Of tblEmployee)
+	
+	Private _tblEmployee1 As EntityRef(Of tblEmployee)
+	
+    #Region "Extensibility Method Definitions"
+    Partial Private Sub OnLoaded()
+    End Sub
+    Partial Private Sub OnValidate(action As System.Data.Linq.ChangeAction)
+    End Sub
+    Partial Private Sub OnCreated()
+    End Sub
+    Partial Private Sub OnInvIDChanging(value As Integer)
+    End Sub
+    Partial Private Sub OnInvIDChanged()
+    End Sub
+    Partial Private Sub OnAssetIdChanging(value As System.Nullable(Of Integer))
+    End Sub
+    Partial Private Sub OnAssetIdChanged()
+    End Sub
+    Partial Private Sub OnAssetCodeChanging(value As String)
+    End Sub
+    Partial Private Sub OnAssetCodeChanged()
+    End Sub
+    Partial Private Sub OnAvailableQuantityChanging(value As System.Nullable(Of Double))
+    End Sub
+    Partial Private Sub OnAvailableQuantityChanged()
+    End Sub
+    Partial Private Sub OnUsedQuantityChanging(value As System.Nullable(Of Double))
+    End Sub
+    Partial Private Sub OnUsedQuantityChanged()
+    End Sub
+    Partial Private Sub OnTotalQuantityChanging(value As System.Nullable(Of Double))
+    End Sub
+    Partial Private Sub OnTotalQuantityChanged()
+    End Sub
+    Partial Private Sub OnReferenceChanging(value As String)
+    End Sub
+    Partial Private Sub OnReferenceChanged()
+    End Sub
+    Partial Private Sub OnReferenceNUmberChanging(value As String)
+    End Sub
+    Partial Private Sub OnReferenceNUmberChanged()
+    End Sub
+    Partial Private Sub OnOwnerChanging(value As System.Nullable(Of Integer))
+    End Sub
+    Partial Private Sub OnOwnerChanged()
+    End Sub
+    Partial Private Sub OnborrowerStatChanging(value As String)
+    End Sub
+    Partial Private Sub OnborrowerStatChanged()
+    End Sub
+    Partial Private Sub OnborrowerChanging(value As System.Nullable(Of Integer))
+    End Sub
+    Partial Private Sub OnborrowerChanged()
+    End Sub
+    Partial Private Sub OnStatusChanging(value As System.Nullable(Of Integer))
+    End Sub
+    Partial Private Sub OnStatusChanged()
+    End Sub
+    #End Region
+	
+	Public Sub New()
+		MyBase.New
+		Me._tblAllocationDetails = New EntitySet(Of tblAllocationDetail)(AddressOf Me.attach_tblAllocationDetails, AddressOf Me.detach_tblAllocationDetails)
+		Me._tblAssetDetailMasterlist = CType(Nothing, EntityRef(Of tblAssetDetailMasterlist))
+		Me._tblEmployee = CType(Nothing, EntityRef(Of tblEmployee))
+		Me._tblEmployee1 = CType(Nothing, EntityRef(Of tblEmployee))
+		OnCreated
+	End Sub
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_InvID", AutoSync:=AutoSync.OnInsert, DbType:="Int NOT NULL IDENTITY", IsPrimaryKey:=true, IsDbGenerated:=true)>  _
+	Public Property InvID() As Integer
+		Get
+			Return Me._InvID
+		End Get
+		Set
+			If ((Me._InvID = value)  _
+						= false) Then
+				Me.OnInvIDChanging(value)
+				Me.SendPropertyChanging
+				Me._InvID = value
+				Me.SendPropertyChanged("InvID")
+				Me.OnInvIDChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_AssetId", DbType:="Int")>  _
+	Public Property AssetId() As System.Nullable(Of Integer)
+		Get
+			Return Me._AssetId
+		End Get
+		Set
+			If (Me._AssetId.Equals(value) = false) Then
+				If Me._tblAssetDetailMasterlist.HasLoadedOrAssignedValue Then
+					Throw New System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException()
+				End If
+				Me.OnAssetIdChanging(value)
+				Me.SendPropertyChanging
+				Me._AssetId = value
+				Me.SendPropertyChanged("AssetId")
+				Me.OnAssetIdChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_AssetCode", DbType:="VarChar(MAX)")>  _
+	Public Property AssetCode() As String
+		Get
+			Return Me._AssetCode
+		End Get
+		Set
+			If (String.Equals(Me._AssetCode, value) = false) Then
+				Me.OnAssetCodeChanging(value)
+				Me.SendPropertyChanging
+				Me._AssetCode = value
+				Me.SendPropertyChanged("AssetCode")
+				Me.OnAssetCodeChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_AvailableQuantity", DbType:="Float")>  _
+	Public Property AvailableQuantity() As System.Nullable(Of Double)
+		Get
+			Return Me._AvailableQuantity
+		End Get
+		Set
+			If (Me._AvailableQuantity.Equals(value) = false) Then
+				Me.OnAvailableQuantityChanging(value)
+				Me.SendPropertyChanging
+				Me._AvailableQuantity = value
+				Me.SendPropertyChanged("AvailableQuantity")
+				Me.OnAvailableQuantityChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_UsedQuantity", DbType:="Float")>  _
+	Public Property UsedQuantity() As System.Nullable(Of Double)
+		Get
+			Return Me._UsedQuantity
+		End Get
+		Set
+			If (Me._UsedQuantity.Equals(value) = false) Then
+				Me.OnUsedQuantityChanging(value)
+				Me.SendPropertyChanging
+				Me._UsedQuantity = value
+				Me.SendPropertyChanged("UsedQuantity")
+				Me.OnUsedQuantityChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_TotalQuantity", DbType:="Float")>  _
+	Public Property TotalQuantity() As System.Nullable(Of Double)
+		Get
+			Return Me._TotalQuantity
+		End Get
+		Set
+			If (Me._TotalQuantity.Equals(value) = false) Then
+				Me.OnTotalQuantityChanging(value)
+				Me.SendPropertyChanging
+				Me._TotalQuantity = value
+				Me.SendPropertyChanged("TotalQuantity")
+				Me.OnTotalQuantityChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_Reference", DbType:="VarChar(MAX)")>  _
+	Public Property Reference() As String
+		Get
+			Return Me._Reference
+		End Get
+		Set
+			If (String.Equals(Me._Reference, value) = false) Then
+				Me.OnReferenceChanging(value)
+				Me.SendPropertyChanging
+				Me._Reference = value
+				Me.SendPropertyChanged("Reference")
+				Me.OnReferenceChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_ReferenceNUmber", DbType:="VarChar(MAX)")>  _
+	Public Property ReferenceNUmber() As String
+		Get
+			Return Me._ReferenceNUmber
+		End Get
+		Set
+			If (String.Equals(Me._ReferenceNUmber, value) = false) Then
+				Me.OnReferenceNUmberChanging(value)
+				Me.SendPropertyChanging
+				Me._ReferenceNUmber = value
+				Me.SendPropertyChanged("ReferenceNUmber")
+				Me.OnReferenceNUmberChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_Owner", DbType:="Int")>  _
+	Public Property Owner() As System.Nullable(Of Integer)
+		Get
+			Return Me._Owner
+		End Get
+		Set
+			If (Me._Owner.Equals(value) = false) Then
+				If Me._tblEmployee1.HasLoadedOrAssignedValue Then
+					Throw New System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException()
+				End If
+				Me.OnOwnerChanging(value)
+				Me.SendPropertyChanging
+				Me._Owner = value
+				Me.SendPropertyChanged("Owner")
+				Me.OnOwnerChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_borrowerStat", DbType:="VarChar(MAX)")>  _
+	Public Property borrowerStat() As String
+		Get
+			Return Me._borrowerStat
+		End Get
+		Set
+			If (String.Equals(Me._borrowerStat, value) = false) Then
+				Me.OnborrowerStatChanging(value)
+				Me.SendPropertyChanging
+				Me._borrowerStat = value
+				Me.SendPropertyChanged("borrowerStat")
+				Me.OnborrowerStatChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_borrower", DbType:="Int")>  _
+	Public Property borrower() As System.Nullable(Of Integer)
+		Get
+			Return Me._borrower
+		End Get
+		Set
+			If (Me._borrower.Equals(value) = false) Then
+				If Me._tblEmployee.HasLoadedOrAssignedValue Then
+					Throw New System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException()
+				End If
+				Me.OnborrowerChanging(value)
+				Me.SendPropertyChanging
+				Me._borrower = value
+				Me.SendPropertyChanged("borrower")
+				Me.OnborrowerChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_Status", DbType:="Int")>  _
+	Public Property Status() As System.Nullable(Of Integer)
+		Get
+			Return Me._Status
+		End Get
+		Set
+			If (Me._Status.Equals(value) = false) Then
+				Me.OnStatusChanging(value)
+				Me.SendPropertyChanging
+				Me._Status = value
+				Me.SendPropertyChanged("Status")
+				Me.OnStatusChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.AssociationAttribute(Name:="tblAssetInventory_tblAllocationDetail", Storage:="_tblAllocationDetails", ThisKey:="InvID", OtherKey:="InvID")>  _
+	Public Property tblAllocationDetails() As EntitySet(Of tblAllocationDetail)
+		Get
+			Return Me._tblAllocationDetails
+		End Get
+		Set
+			Me._tblAllocationDetails.Assign(value)
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.AssociationAttribute(Name:="tblAssetDetailMasterlist_tblAssetInventory", Storage:="_tblAssetDetailMasterlist", ThisKey:="AssetId", OtherKey:="AssetID", IsForeignKey:=true)>  _
+	Public Property tblAssetDetailMasterlist() As tblAssetDetailMasterlist
+		Get
+			Return Me._tblAssetDetailMasterlist.Entity
+		End Get
+		Set
+			Dim previousValue As tblAssetDetailMasterlist = Me._tblAssetDetailMasterlist.Entity
+			If ((Object.Equals(previousValue, value) = false)  _
+						OrElse (Me._tblAssetDetailMasterlist.HasLoadedOrAssignedValue = false)) Then
+				Me.SendPropertyChanging
+				If ((previousValue Is Nothing)  _
+							= false) Then
+					Me._tblAssetDetailMasterlist.Entity = Nothing
+					previousValue.tblAssetInventories.Remove(Me)
+				End If
+				Me._tblAssetDetailMasterlist.Entity = value
+				If ((value Is Nothing)  _
+							= false) Then
+					value.tblAssetInventories.Add(Me)
+					Me._AssetId = value.AssetID
+				Else
+					Me._AssetId = CType(Nothing, Nullable(Of Integer))
+				End If
+				Me.SendPropertyChanged("tblAssetDetailMasterlist")
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.AssociationAttribute(Name:="tblEmployee_tblAssetInventory", Storage:="_tblEmployee", ThisKey:="borrower", OtherKey:="EmployeeID", IsForeignKey:=true)>  _
+	Public Property tblEmployee() As tblEmployee
+		Get
+			Return Me._tblEmployee.Entity
+		End Get
+		Set
+			Dim previousValue As tblEmployee = Me._tblEmployee.Entity
+			If ((Object.Equals(previousValue, value) = false)  _
+						OrElse (Me._tblEmployee.HasLoadedOrAssignedValue = false)) Then
+				Me.SendPropertyChanging
+				If ((previousValue Is Nothing)  _
+							= false) Then
+					Me._tblEmployee.Entity = Nothing
+					previousValue.tblAssetInventories.Remove(Me)
+				End If
+				Me._tblEmployee.Entity = value
+				If ((value Is Nothing)  _
+							= false) Then
+					value.tblAssetInventories.Add(Me)
+					Me._borrower = value.EmployeeID
+				Else
+					Me._borrower = CType(Nothing, Nullable(Of Integer))
+				End If
+				Me.SendPropertyChanged("tblEmployee")
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.AssociationAttribute(Name:="tblEmployee_tblAssetInventory2", Storage:="_tblEmployee1", ThisKey:="Owner", OtherKey:="EmployeeID", IsForeignKey:=true)>  _
+	Public Property tblEmployee1() As tblEmployee
+		Get
+			Return Me._tblEmployee1.Entity
+		End Get
+		Set
+			Dim previousValue As tblEmployee = Me._tblEmployee1.Entity
+			If ((Object.Equals(previousValue, value) = false)  _
+						OrElse (Me._tblEmployee1.HasLoadedOrAssignedValue = false)) Then
+				Me.SendPropertyChanging
+				If ((previousValue Is Nothing)  _
+							= false) Then
+					Me._tblEmployee1.Entity = Nothing
+					previousValue.tblAssetInventories1.Remove(Me)
+				End If
+				Me._tblEmployee1.Entity = value
+				If ((value Is Nothing)  _
+							= false) Then
+					value.tblAssetInventories1.Add(Me)
+					Me._Owner = value.EmployeeID
+				Else
+					Me._Owner = CType(Nothing, Nullable(Of Integer))
+				End If
+				Me.SendPropertyChanged("tblEmployee1")
+			End If
+		End Set
+	End Property
+	
+	Public Event PropertyChanging As PropertyChangingEventHandler Implements System.ComponentModel.INotifyPropertyChanging.PropertyChanging
+	
+	Public Event PropertyChanged As PropertyChangedEventHandler Implements System.ComponentModel.INotifyPropertyChanged.PropertyChanged
+	
+	Protected Overridable Sub SendPropertyChanging()
+		If ((Me.PropertyChangingEvent Is Nothing)  _
+					= false) Then
+			RaiseEvent PropertyChanging(Me, emptyChangingEventArgs)
+		End If
+	End Sub
+	
+	Protected Overridable Sub SendPropertyChanged(ByVal propertyName As [String])
+		If ((Me.PropertyChangedEvent Is Nothing)  _
+					= false) Then
+			RaiseEvent PropertyChanged(Me, New PropertyChangedEventArgs(propertyName))
+		End If
+	End Sub
+	
+	Private Sub attach_tblAllocationDetails(ByVal entity As tblAllocationDetail)
+		Me.SendPropertyChanging
+		entity.tblAssetInventory = Me
+	End Sub
+	
+	Private Sub detach_tblAllocationDetails(ByVal entity As tblAllocationDetail)
+		Me.SendPropertyChanging
+		entity.tblAssetInventory = Nothing
+	End Sub
+End Class
+
+<Global.System.Data.Linq.Mapping.TableAttribute(Name:="dbo.tblAllocationDetail")>  _
+Partial Public Class tblAllocationDetail
+	Implements System.ComponentModel.INotifyPropertyChanging, System.ComponentModel.INotifyPropertyChanged
+	
+	Private Shared emptyChangingEventArgs As PropertyChangingEventArgs = New PropertyChangingEventArgs(String.Empty)
+	
+	Private _Allocationdetailid As Integer
+	
+	Private _AssetId As System.Nullable(Of Integer)
+	
+	Private _InvID As System.Nullable(Of Integer)
+	
+	Private _qty As System.Nullable(Of Double)
+	
+	Private _Allocationheaderid As System.Nullable(Of Integer)
+	
+	Private _tblAssetInventory As EntityRef(Of tblAssetInventory)
+	
+	Private _tblAllocationHeader As EntityRef(Of tblAllocationHeader)
+	
+	Private _tblAssetDetailMasterlist As EntityRef(Of tblAssetDetailMasterlist)
+	
+	Private _tblAssetInventory1 As EntityRef(Of tblAssetInventory1)
+	
+    #Region "Extensibility Method Definitions"
+    Partial Private Sub OnLoaded()
+    End Sub
+    Partial Private Sub OnValidate(action As System.Data.Linq.ChangeAction)
+    End Sub
+    Partial Private Sub OnCreated()
+    End Sub
+    Partial Private Sub OnAllocationdetailidChanging(value As Integer)
+    End Sub
+    Partial Private Sub OnAllocationdetailidChanged()
+    End Sub
+    Partial Private Sub OnAssetIdChanging(value As System.Nullable(Of Integer))
+    End Sub
+    Partial Private Sub OnAssetIdChanged()
+    End Sub
+    Partial Private Sub OnInvIDChanging(value As System.Nullable(Of Integer))
+    End Sub
+    Partial Private Sub OnInvIDChanged()
+    End Sub
+    Partial Private Sub OnqtyChanging(value As System.Nullable(Of Double))
+    End Sub
+    Partial Private Sub OnqtyChanged()
+    End Sub
+    Partial Private Sub OnAllocationheaderidChanging(value As System.Nullable(Of Integer))
+    End Sub
+    Partial Private Sub OnAllocationheaderidChanged()
+    End Sub
+    #End Region
+	
+	Public Sub New()
+		MyBase.New
+		Me._tblAssetInventory = CType(Nothing, EntityRef(Of tblAssetInventory))
+		Me._tblAllocationHeader = CType(Nothing, EntityRef(Of tblAllocationHeader))
+		Me._tblAssetDetailMasterlist = CType(Nothing, EntityRef(Of tblAssetDetailMasterlist))
+		Me._tblAssetInventory1 = CType(Nothing, EntityRef(Of tblAssetInventory1))
+		OnCreated
+	End Sub
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_Allocationdetailid", AutoSync:=AutoSync.OnInsert, DbType:="Int NOT NULL IDENTITY", IsPrimaryKey:=true, IsDbGenerated:=true)>  _
+	Public Property Allocationdetailid() As Integer
+		Get
+			Return Me._Allocationdetailid
+		End Get
+		Set
+			If ((Me._Allocationdetailid = value)  _
+						= false) Then
+				Me.OnAllocationdetailidChanging(value)
+				Me.SendPropertyChanging
+				Me._Allocationdetailid = value
+				Me.SendPropertyChanged("Allocationdetailid")
+				Me.OnAllocationdetailidChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_AssetId", DbType:="Int")>  _
+	Public Property AssetId() As System.Nullable(Of Integer)
+		Get
+			Return Me._AssetId
+		End Get
+		Set
+			If (Me._AssetId.Equals(value) = false) Then
+				If Me._tblAssetDetailMasterlist.HasLoadedOrAssignedValue Then
+					Throw New System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException()
+				End If
+				Me.OnAssetIdChanging(value)
+				Me.SendPropertyChanging
+				Me._AssetId = value
+				Me.SendPropertyChanged("AssetId")
+				Me.OnAssetIdChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_InvID", DbType:="Int")>  _
+	Public Property InvID() As System.Nullable(Of Integer)
+		Get
+			Return Me._InvID
+		End Get
+		Set
+			If (Me._InvID.Equals(value) = false) Then
+				If (Me._tblAssetInventory.HasLoadedOrAssignedValue OrElse Me._tblAssetInventory1.HasLoadedOrAssignedValue) Then
+					Throw New System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException()
+				End If
+				Me.OnInvIDChanging(value)
+				Me.SendPropertyChanging
+				Me._InvID = value
+				Me.SendPropertyChanged("InvID")
+				Me.OnInvIDChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_qty", DbType:="Float")>  _
+	Public Property qty() As System.Nullable(Of Double)
+		Get
+			Return Me._qty
+		End Get
+		Set
+			If (Me._qty.Equals(value) = false) Then
+				Me.OnqtyChanging(value)
+				Me.SendPropertyChanging
+				Me._qty = value
+				Me.SendPropertyChanged("qty")
+				Me.OnqtyChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_Allocationheaderid", DbType:="Int")>  _
+	Public Property Allocationheaderid() As System.Nullable(Of Integer)
+		Get
+			Return Me._Allocationheaderid
+		End Get
+		Set
+			If (Me._Allocationheaderid.Equals(value) = false) Then
+				If Me._tblAllocationHeader.HasLoadedOrAssignedValue Then
+					Throw New System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException()
+				End If
+				Me.OnAllocationheaderidChanging(value)
+				Me.SendPropertyChanging
+				Me._Allocationheaderid = value
+				Me.SendPropertyChanged("Allocationheaderid")
+				Me.OnAllocationheaderidChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.AssociationAttribute(Name:="tblAssetInventory_tblAllocationDetail", Storage:="_tblAssetInventory", ThisKey:="InvID", OtherKey:="InvID", IsForeignKey:=true)>  _
+	Public Property tblAssetInventory() As tblAssetInventory
+		Get
+			Return Me._tblAssetInventory.Entity
+		End Get
+		Set
+			Dim previousValue As tblAssetInventory = Me._tblAssetInventory.Entity
+			If ((Object.Equals(previousValue, value) = false)  _
+						OrElse (Me._tblAssetInventory.HasLoadedOrAssignedValue = false)) Then
+				Me.SendPropertyChanging
+				If ((previousValue Is Nothing)  _
+							= false) Then
+					Me._tblAssetInventory.Entity = Nothing
+					previousValue.tblAllocationDetails.Remove(Me)
+				End If
+				Me._tblAssetInventory.Entity = value
+				If ((value Is Nothing)  _
+							= false) Then
+					value.tblAllocationDetails.Add(Me)
+					Me._InvID = value.InvID
+				Else
+					Me._InvID = CType(Nothing, Nullable(Of Integer))
+				End If
+				Me.SendPropertyChanged("tblAssetInventory")
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.AssociationAttribute(Name:="tblAllocationHeader_tblAllocationDetail", Storage:="_tblAllocationHeader", ThisKey:="Allocationheaderid", OtherKey:="Allocationheaderid", IsForeignKey:=true)>  _
+	Public Property tblAllocationHeader() As tblAllocationHeader
+		Get
+			Return Me._tblAllocationHeader.Entity
+		End Get
+		Set
+			Dim previousValue As tblAllocationHeader = Me._tblAllocationHeader.Entity
+			If ((Object.Equals(previousValue, value) = false)  _
+						OrElse (Me._tblAllocationHeader.HasLoadedOrAssignedValue = false)) Then
+				Me.SendPropertyChanging
+				If ((previousValue Is Nothing)  _
+							= false) Then
+					Me._tblAllocationHeader.Entity = Nothing
+					previousValue.tblAllocationDetails.Remove(Me)
+				End If
+				Me._tblAllocationHeader.Entity = value
+				If ((value Is Nothing)  _
+							= false) Then
+					value.tblAllocationDetails.Add(Me)
+					Me._Allocationheaderid = value.Allocationheaderid
+				Else
+					Me._Allocationheaderid = CType(Nothing, Nullable(Of Integer))
+				End If
+				Me.SendPropertyChanged("tblAllocationHeader")
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.AssociationAttribute(Name:="tblAssetDetailMasterlist_tblAllocationDetail", Storage:="_tblAssetDetailMasterlist", ThisKey:="AssetId", OtherKey:="AssetID", IsForeignKey:=true)>  _
+	Public Property tblAssetDetailMasterlist() As tblAssetDetailMasterlist
+		Get
+			Return Me._tblAssetDetailMasterlist.Entity
+		End Get
+		Set
+			Dim previousValue As tblAssetDetailMasterlist = Me._tblAssetDetailMasterlist.Entity
+			If ((Object.Equals(previousValue, value) = false)  _
+						OrElse (Me._tblAssetDetailMasterlist.HasLoadedOrAssignedValue = false)) Then
+				Me.SendPropertyChanging
+				If ((previousValue Is Nothing)  _
+							= false) Then
+					Me._tblAssetDetailMasterlist.Entity = Nothing
+					previousValue.tblAllocationDetails.Remove(Me)
+				End If
+				Me._tblAssetDetailMasterlist.Entity = value
+				If ((value Is Nothing)  _
+							= false) Then
+					value.tblAllocationDetails.Add(Me)
+					Me._AssetId = value.AssetID
+				Else
+					Me._AssetId = CType(Nothing, Nullable(Of Integer))
+				End If
+				Me.SendPropertyChanged("tblAssetDetailMasterlist")
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.AssociationAttribute(Name:="tblAssetInventory1_tblAllocationDetail", Storage:="_tblAssetInventory1", ThisKey:="InvID", OtherKey:="InvID", IsForeignKey:=true)>  _
+	Public Property tblAssetInventory1() As tblAssetInventory1
+		Get
+			Return Me._tblAssetInventory1.Entity
+		End Get
+		Set
+			Dim previousValue As tblAssetInventory1 = Me._tblAssetInventory1.Entity
+			If ((Object.Equals(previousValue, value) = false)  _
+						OrElse (Me._tblAssetInventory1.HasLoadedOrAssignedValue = false)) Then
+				Me.SendPropertyChanging
+				If ((previousValue Is Nothing)  _
+							= false) Then
+					Me._tblAssetInventory1.Entity = Nothing
+					previousValue.tblAllocationDetails.Remove(Me)
+				End If
+				Me._tblAssetInventory1.Entity = value
+				If ((value Is Nothing)  _
+							= false) Then
+					value.tblAllocationDetails.Add(Me)
+					Me._InvID = value.InvID
+				Else
+					Me._InvID = CType(Nothing, Nullable(Of Integer))
+				End If
+				Me.SendPropertyChanged("tblAssetInventory1")
+			End If
+		End Set
+	End Property
+	
+	Public Event PropertyChanging As PropertyChangingEventHandler Implements System.ComponentModel.INotifyPropertyChanging.PropertyChanging
+	
+	Public Event PropertyChanged As PropertyChangedEventHandler Implements System.ComponentModel.INotifyPropertyChanged.PropertyChanged
+	
+	Protected Overridable Sub SendPropertyChanging()
+		If ((Me.PropertyChangingEvent Is Nothing)  _
+					= false) Then
+			RaiseEvent PropertyChanging(Me, emptyChangingEventArgs)
+		End If
+	End Sub
+	
+	Protected Overridable Sub SendPropertyChanged(ByVal propertyName As [String])
+		If ((Me.PropertyChangedEvent Is Nothing)  _
+					= false) Then
+			RaiseEvent PropertyChanged(Me, New PropertyChangedEventArgs(propertyName))
+		End If
+	End Sub
+End Class
+
+<Global.System.Data.Linq.Mapping.TableAttribute(Name:="dbo.tblVendor")>  _
+Partial Public Class tblVendor
+	Implements System.ComponentModel.INotifyPropertyChanging, System.ComponentModel.INotifyPropertyChanged
+	
+	Private Shared emptyChangingEventArgs As PropertyChangingEventArgs = New PropertyChangingEventArgs(String.Empty)
+	
+	Private _VendorID As Integer
+	
+	Private _VendorCode As String
+	
+	Private _VendorDescription As String
+	
+	Private _DateCreated As System.Nullable(Of Date)
+	
+	Private _DateModified As System.Nullable(Of Date)
+	
+	Private _UserID As System.Nullable(Of Integer)
+	
+	Private _UserIDModified As System.Nullable(Of Integer)
+	
+	Private _tblAssetDetails As EntitySet(Of tblAssetDetail)
+	
+	Private _tblAssetHeaders As EntitySet(Of tblAssetHeader)
+	
+	Private _tblAssetHeaderMasterlists As EntitySet(Of tblAssetHeaderMasterlist)
+	
+	Private _tblUser As EntityRef(Of tblUser)
+	
+    #Region "Extensibility Method Definitions"
+    Partial Private Sub OnLoaded()
+    End Sub
+    Partial Private Sub OnValidate(action As System.Data.Linq.ChangeAction)
+    End Sub
+    Partial Private Sub OnCreated()
+    End Sub
+    Partial Private Sub OnVendorIDChanging(value As Integer)
+    End Sub
+    Partial Private Sub OnVendorIDChanged()
+    End Sub
+    Partial Private Sub OnVendorCodeChanging(value As String)
+    End Sub
+    Partial Private Sub OnVendorCodeChanged()
+    End Sub
+    Partial Private Sub OnVendorDescriptionChanging(value As String)
+    End Sub
+    Partial Private Sub OnVendorDescriptionChanged()
+    End Sub
+    Partial Private Sub OnDateCreatedChanging(value As System.Nullable(Of Date))
+    End Sub
+    Partial Private Sub OnDateCreatedChanged()
+    End Sub
+    Partial Private Sub OnDateModifiedChanging(value As System.Nullable(Of Date))
+    End Sub
+    Partial Private Sub OnDateModifiedChanged()
+    End Sub
+    Partial Private Sub OnUserIDChanging(value As System.Nullable(Of Integer))
+    End Sub
+    Partial Private Sub OnUserIDChanged()
+    End Sub
+    Partial Private Sub OnUserIDModifiedChanging(value As System.Nullable(Of Integer))
+    End Sub
+    Partial Private Sub OnUserIDModifiedChanged()
+    End Sub
+    #End Region
+	
+	Public Sub New()
+		MyBase.New
+		Me._tblAssetDetails = New EntitySet(Of tblAssetDetail)(AddressOf Me.attach_tblAssetDetails, AddressOf Me.detach_tblAssetDetails)
+		Me._tblAssetHeaders = New EntitySet(Of tblAssetHeader)(AddressOf Me.attach_tblAssetHeaders, AddressOf Me.detach_tblAssetHeaders)
+		Me._tblAssetHeaderMasterlists = New EntitySet(Of tblAssetHeaderMasterlist)(AddressOf Me.attach_tblAssetHeaderMasterlists, AddressOf Me.detach_tblAssetHeaderMasterlists)
+		Me._tblUser = CType(Nothing, EntityRef(Of tblUser))
+		OnCreated
+	End Sub
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_VendorID", AutoSync:=AutoSync.OnInsert, DbType:="Int NOT NULL IDENTITY", IsPrimaryKey:=true, IsDbGenerated:=true)>  _
+	Public Property VendorID() As Integer
+		Get
+			Return Me._VendorID
+		End Get
+		Set
+			If ((Me._VendorID = value)  _
+						= false) Then
+				If Me._tblUser.HasLoadedOrAssignedValue Then
+					Throw New System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException()
+				End If
+				Me.OnVendorIDChanging(value)
+				Me.SendPropertyChanging
+				Me._VendorID = value
+				Me.SendPropertyChanged("VendorID")
+				Me.OnVendorIDChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_VendorCode", DbType:="VarChar(200)")>  _
+	Public Property VendorCode() As String
+		Get
+			Return Me._VendorCode
+		End Get
+		Set
+			If (String.Equals(Me._VendorCode, value) = false) Then
+				Me.OnVendorCodeChanging(value)
+				Me.SendPropertyChanging
+				Me._VendorCode = value
+				Me.SendPropertyChanged("VendorCode")
+				Me.OnVendorCodeChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_VendorDescription", DbType:="VarChar(200)")>  _
+	Public Property VendorDescription() As String
+		Get
+			Return Me._VendorDescription
+		End Get
+		Set
+			If (String.Equals(Me._VendorDescription, value) = false) Then
+				Me.OnVendorDescriptionChanging(value)
+				Me.SendPropertyChanging
+				Me._VendorDescription = value
+				Me.SendPropertyChanged("VendorDescription")
+				Me.OnVendorDescriptionChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_DateCreated", DbType:="Date")>  _
+	Public Property DateCreated() As System.Nullable(Of Date)
+		Get
+			Return Me._DateCreated
+		End Get
+		Set
+			If (Me._DateCreated.Equals(value) = false) Then
+				Me.OnDateCreatedChanging(value)
+				Me.SendPropertyChanging
+				Me._DateCreated = value
+				Me.SendPropertyChanged("DateCreated")
+				Me.OnDateCreatedChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_DateModified", DbType:="Date")>  _
+	Public Property DateModified() As System.Nullable(Of Date)
+		Get
+			Return Me._DateModified
+		End Get
+		Set
+			If (Me._DateModified.Equals(value) = false) Then
+				Me.OnDateModifiedChanging(value)
+				Me.SendPropertyChanging
+				Me._DateModified = value
+				Me.SendPropertyChanged("DateModified")
+				Me.OnDateModifiedChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_UserID", DbType:="Int")>  _
+	Public Property UserID() As System.Nullable(Of Integer)
+		Get
+			Return Me._UserID
+		End Get
+		Set
+			If (Me._UserID.Equals(value) = false) Then
+				Me.OnUserIDChanging(value)
+				Me.SendPropertyChanging
+				Me._UserID = value
+				Me.SendPropertyChanged("UserID")
+				Me.OnUserIDChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_UserIDModified", DbType:="Int")>  _
+	Public Property UserIDModified() As System.Nullable(Of Integer)
+		Get
+			Return Me._UserIDModified
+		End Get
+		Set
+			If (Me._UserIDModified.Equals(value) = false) Then
+				Me.OnUserIDModifiedChanging(value)
+				Me.SendPropertyChanging
+				Me._UserIDModified = value
+				Me.SendPropertyChanged("UserIDModified")
+				Me.OnUserIDModifiedChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.AssociationAttribute(Name:="tblVendor_tblAssetDetail", Storage:="_tblAssetDetails", ThisKey:="VendorID", OtherKey:="VendorID")>  _
+	Public Property tblAssetDetails() As EntitySet(Of tblAssetDetail)
+		Get
+			Return Me._tblAssetDetails
+		End Get
+		Set
+			Me._tblAssetDetails.Assign(value)
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.AssociationAttribute(Name:="tblVendor_tblAssetHeader", Storage:="_tblAssetHeaders", ThisKey:="VendorID", OtherKey:="VendorID")>  _
+	Public Property tblAssetHeaders() As EntitySet(Of tblAssetHeader)
+		Get
+			Return Me._tblAssetHeaders
+		End Get
+		Set
+			Me._tblAssetHeaders.Assign(value)
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.AssociationAttribute(Name:="tblVendor_tblAssetHeaderMasterlist", Storage:="_tblAssetHeaderMasterlists", ThisKey:="VendorID", OtherKey:="VendorID")>  _
+	Public Property tblAssetHeaderMasterlists() As EntitySet(Of tblAssetHeaderMasterlist)
+		Get
+			Return Me._tblAssetHeaderMasterlists
+		End Get
+		Set
+			Me._tblAssetHeaderMasterlists.Assign(value)
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.AssociationAttribute(Name:="tblUser_tblVendor", Storage:="_tblUser", ThisKey:="VendorID", OtherKey:="UserID", IsForeignKey:=true)>  _
+	Public Property tblUser() As tblUser
+		Get
+			Return Me._tblUser.Entity
+		End Get
+		Set
+			Dim previousValue As tblUser = Me._tblUser.Entity
+			If ((Object.Equals(previousValue, value) = false)  _
+						OrElse (Me._tblUser.HasLoadedOrAssignedValue = false)) Then
+				Me.SendPropertyChanging
+				If ((previousValue Is Nothing)  _
+							= false) Then
+					Me._tblUser.Entity = Nothing
+					previousValue.tblVendor = Nothing
+				End If
+				Me._tblUser.Entity = value
+				If ((value Is Nothing)  _
+							= false) Then
+					value.tblVendor = Me
+					Me._VendorID = value.UserID
+				Else
+					Me._VendorID = CType(Nothing, Integer)
+				End If
+				Me.SendPropertyChanged("tblUser")
+			End If
+		End Set
+	End Property
+	
+	Public Event PropertyChanging As PropertyChangingEventHandler Implements System.ComponentModel.INotifyPropertyChanging.PropertyChanging
+	
+	Public Event PropertyChanged As PropertyChangedEventHandler Implements System.ComponentModel.INotifyPropertyChanged.PropertyChanged
+	
+	Protected Overridable Sub SendPropertyChanging()
+		If ((Me.PropertyChangingEvent Is Nothing)  _
+					= false) Then
+			RaiseEvent PropertyChanging(Me, emptyChangingEventArgs)
+		End If
+	End Sub
+	
+	Protected Overridable Sub SendPropertyChanged(ByVal propertyName As [String])
+		If ((Me.PropertyChangedEvent Is Nothing)  _
+					= false) Then
+			RaiseEvent PropertyChanged(Me, New PropertyChangedEventArgs(propertyName))
+		End If
+	End Sub
+	
+	Private Sub attach_tblAssetDetails(ByVal entity As tblAssetDetail)
+		Me.SendPropertyChanging
+		entity.tblVendor = Me
+	End Sub
+	
+	Private Sub detach_tblAssetDetails(ByVal entity As tblAssetDetail)
+		Me.SendPropertyChanging
+		entity.tblVendor = Nothing
+	End Sub
+	
+	Private Sub attach_tblAssetHeaders(ByVal entity As tblAssetHeader)
+		Me.SendPropertyChanging
+		entity.tblVendor = Me
+	End Sub
+	
+	Private Sub detach_tblAssetHeaders(ByVal entity As tblAssetHeader)
+		Me.SendPropertyChanging
+		entity.tblVendor = Nothing
+	End Sub
+	
+	Private Sub attach_tblAssetHeaderMasterlists(ByVal entity As tblAssetHeaderMasterlist)
+		Me.SendPropertyChanging
+		entity.tblVendor = Me
+	End Sub
+	
+	Private Sub detach_tblAssetHeaderMasterlists(ByVal entity As tblAssetHeaderMasterlist)
+		Me.SendPropertyChanging
+		entity.tblVendor = Nothing
+	End Sub
+End Class
+
+<Global.System.Data.Linq.Mapping.TableAttribute(Name:="dbo.tblAllocationHeader")>  _
+Partial Public Class tblAllocationHeader
+	Implements System.ComponentModel.INotifyPropertyChanging, System.ComponentModel.INotifyPropertyChanged
+	
+	Private Shared emptyChangingEventArgs As PropertyChangingEventArgs = New PropertyChangingEventArgs(String.Empty)
+	
+	Private _Allocationheaderid As Integer
+	
+	Private _DepartmentId As System.Nullable(Of Integer)
+	
+	Private _BranchId As System.Nullable(Of Integer)
+	
+	Private _SectionId As System.Nullable(Of Integer)
+	
+	Private _Date As System.Nullable(Of Date)
+	
+	Private _Entrynumber As String
+	
+	Private _EmployeeID As System.Nullable(Of Integer)
+	
+	Private _tblAllocationDetails As EntitySet(Of tblAllocationDetail)
+	
+	Private _tblSection As EntityRef(Of tblSection)
+	
+	Private _tblBranch As EntityRef(Of tblBranch)
+	
+	Private _tblDepartment As EntityRef(Of tblDepartment)
+	
+	Private _tblEmployee As EntityRef(Of tblEmployee)
+	
+	Private _tblSection1 As EntityRef(Of tblSection1)
+	
+    #Region "Extensibility Method Definitions"
+    Partial Private Sub OnLoaded()
+    End Sub
+    Partial Private Sub OnValidate(action As System.Data.Linq.ChangeAction)
+    End Sub
+    Partial Private Sub OnCreated()
+    End Sub
+    Partial Private Sub OnAllocationheaderidChanging(value As Integer)
+    End Sub
+    Partial Private Sub OnAllocationheaderidChanged()
+    End Sub
+    Partial Private Sub OnDepartmentIdChanging(value As System.Nullable(Of Integer))
+    End Sub
+    Partial Private Sub OnDepartmentIdChanged()
+    End Sub
+    Partial Private Sub OnBranchIdChanging(value As System.Nullable(Of Integer))
+    End Sub
+    Partial Private Sub OnBranchIdChanged()
+    End Sub
+    Partial Private Sub OnSectionIdChanging(value As System.Nullable(Of Integer))
+    End Sub
+    Partial Private Sub OnSectionIdChanged()
+    End Sub
+    Partial Private Sub OnDateChanging(value As System.Nullable(Of Date))
+    End Sub
+    Partial Private Sub OnDateChanged()
+    End Sub
+    Partial Private Sub OnEntrynumberChanging(value As String)
+    End Sub
+    Partial Private Sub OnEntrynumberChanged()
+    End Sub
+    Partial Private Sub OnEmployeeIDChanging(value As System.Nullable(Of Integer))
+    End Sub
+    Partial Private Sub OnEmployeeIDChanged()
+    End Sub
+    #End Region
+	
+	Public Sub New()
+		MyBase.New
+		Me._tblAllocationDetails = New EntitySet(Of tblAllocationDetail)(AddressOf Me.attach_tblAllocationDetails, AddressOf Me.detach_tblAllocationDetails)
+		Me._tblSection = CType(Nothing, EntityRef(Of tblSection))
+		Me._tblBranch = CType(Nothing, EntityRef(Of tblBranch))
+		Me._tblDepartment = CType(Nothing, EntityRef(Of tblDepartment))
+		Me._tblEmployee = CType(Nothing, EntityRef(Of tblEmployee))
+		Me._tblSection1 = CType(Nothing, EntityRef(Of tblSection1))
+		OnCreated
+	End Sub
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_Allocationheaderid", AutoSync:=AutoSync.OnInsert, DbType:="Int NOT NULL IDENTITY", IsPrimaryKey:=true, IsDbGenerated:=true)>  _
+	Public Property Allocationheaderid() As Integer
+		Get
+			Return Me._Allocationheaderid
+		End Get
+		Set
+			If ((Me._Allocationheaderid = value)  _
+						= false) Then
+				Me.OnAllocationheaderidChanging(value)
+				Me.SendPropertyChanging
+				Me._Allocationheaderid = value
+				Me.SendPropertyChanged("Allocationheaderid")
+				Me.OnAllocationheaderidChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_DepartmentId", DbType:="Int")>  _
+	Public Property DepartmentId() As System.Nullable(Of Integer)
+		Get
+			Return Me._DepartmentId
+		End Get
+		Set
+			If (Me._DepartmentId.Equals(value) = false) Then
+				If Me._tblDepartment.HasLoadedOrAssignedValue Then
+					Throw New System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException()
+				End If
+				Me.OnDepartmentIdChanging(value)
+				Me.SendPropertyChanging
+				Me._DepartmentId = value
+				Me.SendPropertyChanged("DepartmentId")
+				Me.OnDepartmentIdChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_BranchId", DbType:="Int")>  _
+	Public Property BranchId() As System.Nullable(Of Integer)
+		Get
+			Return Me._BranchId
+		End Get
+		Set
+			If (Me._BranchId.Equals(value) = false) Then
+				If Me._tblBranch.HasLoadedOrAssignedValue Then
+					Throw New System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException()
+				End If
+				Me.OnBranchIdChanging(value)
+				Me.SendPropertyChanging
+				Me._BranchId = value
+				Me.SendPropertyChanged("BranchId")
+				Me.OnBranchIdChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_SectionId", DbType:="Int")>  _
+	Public Property SectionId() As System.Nullable(Of Integer)
+		Get
+			Return Me._SectionId
+		End Get
+		Set
+			If (Me._SectionId.Equals(value) = false) Then
+				If (Me._tblSection.HasLoadedOrAssignedValue OrElse Me._tblSection1.HasLoadedOrAssignedValue) Then
+					Throw New System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException()
+				End If
+				Me.OnSectionIdChanging(value)
+				Me.SendPropertyChanging
+				Me._SectionId = value
+				Me.SendPropertyChanged("SectionId")
+				Me.OnSectionIdChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Name:="Date", Storage:="_Date", DbType:="Date")>  _
+	Public Property [Date]() As System.Nullable(Of Date)
+		Get
+			Return Me._Date
+		End Get
+		Set
+			If (Me._Date.Equals(value) = false) Then
+				Me.OnDateChanging(value)
+				Me.SendPropertyChanging
+				Me._Date = value
+				Me.SendPropertyChanged("[Date]")
+				Me.OnDateChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_Entrynumber", DbType:="VarChar(MAX)")>  _
+	Public Property Entrynumber() As String
+		Get
+			Return Me._Entrynumber
+		End Get
+		Set
+			If (String.Equals(Me._Entrynumber, value) = false) Then
+				Me.OnEntrynumberChanging(value)
+				Me.SendPropertyChanging
+				Me._Entrynumber = value
+				Me.SendPropertyChanged("Entrynumber")
+				Me.OnEntrynumberChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_EmployeeID", DbType:="Int")>  _
+	Public Property EmployeeID() As System.Nullable(Of Integer)
+		Get
+			Return Me._EmployeeID
+		End Get
+		Set
+			If (Me._EmployeeID.Equals(value) = false) Then
+				If Me._tblEmployee.HasLoadedOrAssignedValue Then
+					Throw New System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException()
+				End If
+				Me.OnEmployeeIDChanging(value)
+				Me.SendPropertyChanging
+				Me._EmployeeID = value
+				Me.SendPropertyChanged("EmployeeID")
+				Me.OnEmployeeIDChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.AssociationAttribute(Name:="tblAllocationHeader_tblAllocationDetail", Storage:="_tblAllocationDetails", ThisKey:="Allocationheaderid", OtherKey:="Allocationheaderid")>  _
+	Public Property tblAllocationDetails() As EntitySet(Of tblAllocationDetail)
+		Get
+			Return Me._tblAllocationDetails
+		End Get
+		Set
+			Me._tblAllocationDetails.Assign(value)
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.AssociationAttribute(Name:="tblSection_tblAllocationHeader", Storage:="_tblSection", ThisKey:="SectionId", OtherKey:="SectionID", IsForeignKey:=true)>  _
+	Public Property tblSection() As tblSection
+		Get
+			Return Me._tblSection.Entity
+		End Get
+		Set
+			Dim previousValue As tblSection = Me._tblSection.Entity
+			If ((Object.Equals(previousValue, value) = false)  _
+						OrElse (Me._tblSection.HasLoadedOrAssignedValue = false)) Then
+				Me.SendPropertyChanging
+				If ((previousValue Is Nothing)  _
+							= false) Then
+					Me._tblSection.Entity = Nothing
+					previousValue.tblAllocationHeaders.Remove(Me)
+				End If
+				Me._tblSection.Entity = value
+				If ((value Is Nothing)  _
+							= false) Then
+					value.tblAllocationHeaders.Add(Me)
+					Me._SectionId = value.SectionID
+				Else
+					Me._SectionId = CType(Nothing, Nullable(Of Integer))
+				End If
+				Me.SendPropertyChanged("tblSection")
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.AssociationAttribute(Name:="tblBranch_tblAllocationHeader", Storage:="_tblBranch", ThisKey:="BranchId", OtherKey:="BranchID", IsForeignKey:=true)>  _
+	Public Property tblBranch() As tblBranch
+		Get
+			Return Me._tblBranch.Entity
+		End Get
+		Set
+			Dim previousValue As tblBranch = Me._tblBranch.Entity
+			If ((Object.Equals(previousValue, value) = false)  _
+						OrElse (Me._tblBranch.HasLoadedOrAssignedValue = false)) Then
+				Me.SendPropertyChanging
+				If ((previousValue Is Nothing)  _
+							= false) Then
+					Me._tblBranch.Entity = Nothing
+					previousValue.tblAllocationHeaders.Remove(Me)
+				End If
+				Me._tblBranch.Entity = value
+				If ((value Is Nothing)  _
+							= false) Then
+					value.tblAllocationHeaders.Add(Me)
+					Me._BranchId = value.BranchID
+				Else
+					Me._BranchId = CType(Nothing, Nullable(Of Integer))
+				End If
+				Me.SendPropertyChanged("tblBranch")
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.AssociationAttribute(Name:="tblDepartment_tblAllocationHeader", Storage:="_tblDepartment", ThisKey:="DepartmentId", OtherKey:="DepartmentID", IsForeignKey:=true)>  _
+	Public Property tblDepartment() As tblDepartment
+		Get
+			Return Me._tblDepartment.Entity
+		End Get
+		Set
+			Dim previousValue As tblDepartment = Me._tblDepartment.Entity
+			If ((Object.Equals(previousValue, value) = false)  _
+						OrElse (Me._tblDepartment.HasLoadedOrAssignedValue = false)) Then
+				Me.SendPropertyChanging
+				If ((previousValue Is Nothing)  _
+							= false) Then
+					Me._tblDepartment.Entity = Nothing
+					previousValue.tblAllocationHeaders.Remove(Me)
+				End If
+				Me._tblDepartment.Entity = value
+				If ((value Is Nothing)  _
+							= false) Then
+					value.tblAllocationHeaders.Add(Me)
+					Me._DepartmentId = value.DepartmentID
+				Else
+					Me._DepartmentId = CType(Nothing, Nullable(Of Integer))
+				End If
+				Me.SendPropertyChanged("tblDepartment")
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.AssociationAttribute(Name:="tblEmployee_tblAllocationHeader", Storage:="_tblEmployee", ThisKey:="EmployeeID", OtherKey:="EmployeeID", IsForeignKey:=true)>  _
+	Public Property tblEmployee() As tblEmployee
+		Get
+			Return Me._tblEmployee.Entity
+		End Get
+		Set
+			Dim previousValue As tblEmployee = Me._tblEmployee.Entity
+			If ((Object.Equals(previousValue, value) = false)  _
+						OrElse (Me._tblEmployee.HasLoadedOrAssignedValue = false)) Then
+				Me.SendPropertyChanging
+				If ((previousValue Is Nothing)  _
+							= false) Then
+					Me._tblEmployee.Entity = Nothing
+					previousValue.tblAllocationHeaders.Remove(Me)
+				End If
+				Me._tblEmployee.Entity = value
+				If ((value Is Nothing)  _
+							= false) Then
+					value.tblAllocationHeaders.Add(Me)
+					Me._EmployeeID = value.EmployeeID
+				Else
+					Me._EmployeeID = CType(Nothing, Nullable(Of Integer))
+				End If
+				Me.SendPropertyChanged("tblEmployee")
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.AssociationAttribute(Name:="tblSection1_tblAllocationHeader", Storage:="_tblSection1", ThisKey:="SectionId", OtherKey:="SectionID", IsForeignKey:=true)>  _
+	Public Property tblSection1() As tblSection1
+		Get
+			Return Me._tblSection1.Entity
+		End Get
+		Set
+			Dim previousValue As tblSection1 = Me._tblSection1.Entity
+			If ((Object.Equals(previousValue, value) = false)  _
+						OrElse (Me._tblSection1.HasLoadedOrAssignedValue = false)) Then
+				Me.SendPropertyChanging
+				If ((previousValue Is Nothing)  _
+							= false) Then
+					Me._tblSection1.Entity = Nothing
+					previousValue.tblAllocationHeaders.Remove(Me)
+				End If
+				Me._tblSection1.Entity = value
+				If ((value Is Nothing)  _
+							= false) Then
+					value.tblAllocationHeaders.Add(Me)
+					Me._SectionId = value.SectionID
+				Else
+					Me._SectionId = CType(Nothing, Nullable(Of Integer))
+				End If
+				Me.SendPropertyChanged("tblSection1")
+			End If
+		End Set
+	End Property
+	
+	Public Event PropertyChanging As PropertyChangingEventHandler Implements System.ComponentModel.INotifyPropertyChanging.PropertyChanging
+	
+	Public Event PropertyChanged As PropertyChangedEventHandler Implements System.ComponentModel.INotifyPropertyChanged.PropertyChanged
+	
+	Protected Overridable Sub SendPropertyChanging()
+		If ((Me.PropertyChangingEvent Is Nothing)  _
+					= false) Then
+			RaiseEvent PropertyChanging(Me, emptyChangingEventArgs)
+		End If
+	End Sub
+	
+	Protected Overridable Sub SendPropertyChanged(ByVal propertyName As [String])
+		If ((Me.PropertyChangedEvent Is Nothing)  _
+					= false) Then
+			RaiseEvent PropertyChanged(Me, New PropertyChangedEventArgs(propertyName))
+		End If
+	End Sub
+	
+	Private Sub attach_tblAllocationDetails(ByVal entity As tblAllocationDetail)
+		Me.SendPropertyChanging
+		entity.tblAllocationHeader = Me
+	End Sub
+	
+	Private Sub detach_tblAllocationDetails(ByVal entity As tblAllocationDetail)
+		Me.SendPropertyChanging
+		entity.tblAllocationHeader = Nothing
+	End Sub
 End Class
 
 <Global.System.Data.Linq.Mapping.TableAttribute(Name:="dbo.tblAssetCondition")>  _
@@ -741,303 +2462,6 @@ Partial Public Class tblAssetCondition
 	End Sub
 End Class
 
-<Global.System.Data.Linq.Mapping.TableAttribute(Name:="dbo.tblVendor")>  _
-Partial Public Class tblVendor
-	Implements System.ComponentModel.INotifyPropertyChanging, System.ComponentModel.INotifyPropertyChanged
-	
-	Private Shared emptyChangingEventArgs As PropertyChangingEventArgs = New PropertyChangingEventArgs(String.Empty)
-	
-	Private _VendorID As Integer
-	
-	Private _VendorCode As String
-	
-	Private _VendorDescription As String
-	
-	Private _DateCreated As System.Nullable(Of Date)
-	
-	Private _DateModified As System.Nullable(Of Date)
-	
-	Private _UserID As System.Nullable(Of Integer)
-	
-	Private _UserIDModified As System.Nullable(Of Integer)
-	
-	Private _tblAssetHeaderMasterlists As EntitySet(Of tblAssetHeaderMasterlist)
-	
-	Private _tblAssetDetails As EntitySet(Of tblAssetDetail)
-	
-	Private _tblAssetHeaders As EntitySet(Of tblAssetHeader)
-	
-	Private _tblUser As EntityRef(Of tblUser)
-	
-    #Region "Extensibility Method Definitions"
-    Partial Private Sub OnLoaded()
-    End Sub
-    Partial Private Sub OnValidate(action As System.Data.Linq.ChangeAction)
-    End Sub
-    Partial Private Sub OnCreated()
-    End Sub
-    Partial Private Sub OnVendorIDChanging(value As Integer)
-    End Sub
-    Partial Private Sub OnVendorIDChanged()
-    End Sub
-    Partial Private Sub OnVendorCodeChanging(value As String)
-    End Sub
-    Partial Private Sub OnVendorCodeChanged()
-    End Sub
-    Partial Private Sub OnVendorDescriptionChanging(value As String)
-    End Sub
-    Partial Private Sub OnVendorDescriptionChanged()
-    End Sub
-    Partial Private Sub OnDateCreatedChanging(value As System.Nullable(Of Date))
-    End Sub
-    Partial Private Sub OnDateCreatedChanged()
-    End Sub
-    Partial Private Sub OnDateModifiedChanging(value As System.Nullable(Of Date))
-    End Sub
-    Partial Private Sub OnDateModifiedChanged()
-    End Sub
-    Partial Private Sub OnUserIDChanging(value As System.Nullable(Of Integer))
-    End Sub
-    Partial Private Sub OnUserIDChanged()
-    End Sub
-    Partial Private Sub OnUserIDModifiedChanging(value As System.Nullable(Of Integer))
-    End Sub
-    Partial Private Sub OnUserIDModifiedChanged()
-    End Sub
-    #End Region
-	
-	Public Sub New()
-		MyBase.New
-		Me._tblAssetHeaderMasterlists = New EntitySet(Of tblAssetHeaderMasterlist)(AddressOf Me.attach_tblAssetHeaderMasterlists, AddressOf Me.detach_tblAssetHeaderMasterlists)
-		Me._tblAssetDetails = New EntitySet(Of tblAssetDetail)(AddressOf Me.attach_tblAssetDetails, AddressOf Me.detach_tblAssetDetails)
-		Me._tblAssetHeaders = New EntitySet(Of tblAssetHeader)(AddressOf Me.attach_tblAssetHeaders, AddressOf Me.detach_tblAssetHeaders)
-		Me._tblUser = CType(Nothing, EntityRef(Of tblUser))
-		OnCreated
-	End Sub
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_VendorID", AutoSync:=AutoSync.OnInsert, DbType:="Int NOT NULL IDENTITY", IsPrimaryKey:=true, IsDbGenerated:=true)>  _
-	Public Property VendorID() As Integer
-		Get
-			Return Me._VendorID
-		End Get
-		Set
-			If ((Me._VendorID = value)  _
-						= false) Then
-				If Me._tblUser.HasLoadedOrAssignedValue Then
-					Throw New System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException()
-				End If
-				Me.OnVendorIDChanging(value)
-				Me.SendPropertyChanging
-				Me._VendorID = value
-				Me.SendPropertyChanged("VendorID")
-				Me.OnVendorIDChanged
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_VendorCode", DbType:="VarChar(200)")>  _
-	Public Property VendorCode() As String
-		Get
-			Return Me._VendorCode
-		End Get
-		Set
-			If (String.Equals(Me._VendorCode, value) = false) Then
-				Me.OnVendorCodeChanging(value)
-				Me.SendPropertyChanging
-				Me._VendorCode = value
-				Me.SendPropertyChanged("VendorCode")
-				Me.OnVendorCodeChanged
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_VendorDescription", DbType:="VarChar(200)")>  _
-	Public Property VendorDescription() As String
-		Get
-			Return Me._VendorDescription
-		End Get
-		Set
-			If (String.Equals(Me._VendorDescription, value) = false) Then
-				Me.OnVendorDescriptionChanging(value)
-				Me.SendPropertyChanging
-				Me._VendorDescription = value
-				Me.SendPropertyChanged("VendorDescription")
-				Me.OnVendorDescriptionChanged
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_DateCreated", DbType:="Date")>  _
-	Public Property DateCreated() As System.Nullable(Of Date)
-		Get
-			Return Me._DateCreated
-		End Get
-		Set
-			If (Me._DateCreated.Equals(value) = false) Then
-				Me.OnDateCreatedChanging(value)
-				Me.SendPropertyChanging
-				Me._DateCreated = value
-				Me.SendPropertyChanged("DateCreated")
-				Me.OnDateCreatedChanged
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_DateModified", DbType:="Date")>  _
-	Public Property DateModified() As System.Nullable(Of Date)
-		Get
-			Return Me._DateModified
-		End Get
-		Set
-			If (Me._DateModified.Equals(value) = false) Then
-				Me.OnDateModifiedChanging(value)
-				Me.SendPropertyChanging
-				Me._DateModified = value
-				Me.SendPropertyChanged("DateModified")
-				Me.OnDateModifiedChanged
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_UserID", DbType:="Int")>  _
-	Public Property UserID() As System.Nullable(Of Integer)
-		Get
-			Return Me._UserID
-		End Get
-		Set
-			If (Me._UserID.Equals(value) = false) Then
-				Me.OnUserIDChanging(value)
-				Me.SendPropertyChanging
-				Me._UserID = value
-				Me.SendPropertyChanged("UserID")
-				Me.OnUserIDChanged
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_UserIDModified", DbType:="Int")>  _
-	Public Property UserIDModified() As System.Nullable(Of Integer)
-		Get
-			Return Me._UserIDModified
-		End Get
-		Set
-			If (Me._UserIDModified.Equals(value) = false) Then
-				Me.OnUserIDModifiedChanging(value)
-				Me.SendPropertyChanging
-				Me._UserIDModified = value
-				Me.SendPropertyChanged("UserIDModified")
-				Me.OnUserIDModifiedChanged
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.AssociationAttribute(Name:="tblVendor_tblAssetHeaderMasterlist", Storage:="_tblAssetHeaderMasterlists", ThisKey:="VendorID", OtherKey:="VendorID")>  _
-	Public Property tblAssetHeaderMasterlists() As EntitySet(Of tblAssetHeaderMasterlist)
-		Get
-			Return Me._tblAssetHeaderMasterlists
-		End Get
-		Set
-			Me._tblAssetHeaderMasterlists.Assign(value)
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.AssociationAttribute(Name:="tblVendor_tblAssetDetail", Storage:="_tblAssetDetails", ThisKey:="VendorID", OtherKey:="VendorID")>  _
-	Public Property tblAssetDetails() As EntitySet(Of tblAssetDetail)
-		Get
-			Return Me._tblAssetDetails
-		End Get
-		Set
-			Me._tblAssetDetails.Assign(value)
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.AssociationAttribute(Name:="tblVendor_tblAssetHeader", Storage:="_tblAssetHeaders", ThisKey:="VendorID", OtherKey:="VendorID")>  _
-	Public Property tblAssetHeaders() As EntitySet(Of tblAssetHeader)
-		Get
-			Return Me._tblAssetHeaders
-		End Get
-		Set
-			Me._tblAssetHeaders.Assign(value)
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.AssociationAttribute(Name:="tblUser_tblVendor", Storage:="_tblUser", ThisKey:="VendorID", OtherKey:="UserID", IsForeignKey:=true)>  _
-	Public Property tblUser() As tblUser
-		Get
-			Return Me._tblUser.Entity
-		End Get
-		Set
-			Dim previousValue As tblUser = Me._tblUser.Entity
-			If ((Object.Equals(previousValue, value) = false)  _
-						OrElse (Me._tblUser.HasLoadedOrAssignedValue = false)) Then
-				Me.SendPropertyChanging
-				If ((previousValue Is Nothing)  _
-							= false) Then
-					Me._tblUser.Entity = Nothing
-					previousValue.tblVendor = Nothing
-				End If
-				Me._tblUser.Entity = value
-				If ((value Is Nothing)  _
-							= false) Then
-					value.tblVendor = Me
-					Me._VendorID = value.UserID
-				Else
-					Me._VendorID = CType(Nothing, Integer)
-				End If
-				Me.SendPropertyChanged("tblUser")
-			End If
-		End Set
-	End Property
-	
-	Public Event PropertyChanging As PropertyChangingEventHandler Implements System.ComponentModel.INotifyPropertyChanging.PropertyChanging
-	
-	Public Event PropertyChanged As PropertyChangedEventHandler Implements System.ComponentModel.INotifyPropertyChanged.PropertyChanged
-	
-	Protected Overridable Sub SendPropertyChanging()
-		If ((Me.PropertyChangingEvent Is Nothing)  _
-					= false) Then
-			RaiseEvent PropertyChanging(Me, emptyChangingEventArgs)
-		End If
-	End Sub
-	
-	Protected Overridable Sub SendPropertyChanged(ByVal propertyName As [String])
-		If ((Me.PropertyChangedEvent Is Nothing)  _
-					= false) Then
-			RaiseEvent PropertyChanged(Me, New PropertyChangedEventArgs(propertyName))
-		End If
-	End Sub
-	
-	Private Sub attach_tblAssetHeaderMasterlists(ByVal entity As tblAssetHeaderMasterlist)
-		Me.SendPropertyChanging
-		entity.tblVendor = Me
-	End Sub
-	
-	Private Sub detach_tblAssetHeaderMasterlists(ByVal entity As tblAssetHeaderMasterlist)
-		Me.SendPropertyChanging
-		entity.tblVendor = Nothing
-	End Sub
-	
-	Private Sub attach_tblAssetDetails(ByVal entity As tblAssetDetail)
-		Me.SendPropertyChanging
-		entity.tblVendor = Me
-	End Sub
-	
-	Private Sub detach_tblAssetDetails(ByVal entity As tblAssetDetail)
-		Me.SendPropertyChanging
-		entity.tblVendor = Nothing
-	End Sub
-	
-	Private Sub attach_tblAssetHeaders(ByVal entity As tblAssetHeader)
-		Me.SendPropertyChanging
-		entity.tblVendor = Me
-	End Sub
-	
-	Private Sub detach_tblAssetHeaders(ByVal entity As tblAssetHeader)
-		Me.SendPropertyChanging
-		entity.tblVendor = Nothing
-	End Sub
-End Class
-
 <Global.System.Data.Linq.Mapping.TableAttribute(Name:="dbo.tblAssetDetailMasterlist")>  _
 Partial Public Class tblAssetDetailMasterlist
 	Implements System.ComponentModel.INotifyPropertyChanging, System.ComponentModel.INotifyPropertyChanged
@@ -1066,9 +2490,13 @@ Partial Public Class tblAssetDetailMasterlist
 	
 	Private _AssetHeaderID As System.Nullable(Of Integer)
 	
+	Private _tblAssetInventories As EntitySet(Of tblAssetInventory)
+	
+	Private _tblAllocationDetails As EntitySet(Of tblAllocationDetail)
+	
 	Private _tblAssetDetails As EntitySet(Of tblAssetDetail)
 	
-	Private _tblAssetInventories As EntitySet(Of tblAssetInventory)
+	Private _tblAssetInventory1s As EntitySet(Of tblAssetInventory1)
 	
 	Private _tblAssetCondition As EntityRef(Of tblAssetCondition)
 	
@@ -1135,8 +2563,10 @@ Partial Public Class tblAssetDetailMasterlist
 	
 	Public Sub New()
 		MyBase.New
-		Me._tblAssetDetails = New EntitySet(Of tblAssetDetail)(AddressOf Me.attach_tblAssetDetails, AddressOf Me.detach_tblAssetDetails)
 		Me._tblAssetInventories = New EntitySet(Of tblAssetInventory)(AddressOf Me.attach_tblAssetInventories, AddressOf Me.detach_tblAssetInventories)
+		Me._tblAllocationDetails = New EntitySet(Of tblAllocationDetail)(AddressOf Me.attach_tblAllocationDetails, AddressOf Me.detach_tblAllocationDetails)
+		Me._tblAssetDetails = New EntitySet(Of tblAssetDetail)(AddressOf Me.attach_tblAssetDetails, AddressOf Me.detach_tblAssetDetails)
+		Me._tblAssetInventory1s = New EntitySet(Of tblAssetInventory1)(AddressOf Me.attach_tblAssetInventory1s, AddressOf Me.detach_tblAssetInventory1s)
 		Me._tblAssetCondition = CType(Nothing, EntityRef(Of tblAssetCondition))
 		Me._tblAssetHeaderMasterlist = CType(Nothing, EntityRef(Of tblAssetHeaderMasterlist))
 		Me._tblAssetType = CType(Nothing, EntityRef(Of tblAssetType))
@@ -1337,6 +2767,26 @@ Partial Public Class tblAssetDetailMasterlist
 		End Set
 	End Property
 	
+	<Global.System.Data.Linq.Mapping.AssociationAttribute(Name:="tblAssetDetailMasterlist_tblAssetInventory", Storage:="_tblAssetInventories", ThisKey:="AssetID", OtherKey:="AssetId")>  _
+	Public Property tblAssetInventories() As EntitySet(Of tblAssetInventory)
+		Get
+			Return Me._tblAssetInventories
+		End Get
+		Set
+			Me._tblAssetInventories.Assign(value)
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.AssociationAttribute(Name:="tblAssetDetailMasterlist_tblAllocationDetail", Storage:="_tblAllocationDetails", ThisKey:="AssetID", OtherKey:="AssetId")>  _
+	Public Property tblAllocationDetails() As EntitySet(Of tblAllocationDetail)
+		Get
+			Return Me._tblAllocationDetails
+		End Get
+		Set
+			Me._tblAllocationDetails.Assign(value)
+		End Set
+	End Property
+	
 	<Global.System.Data.Linq.Mapping.AssociationAttribute(Name:="tblAssetDetailMasterlist_tblAssetDetail", Storage:="_tblAssetDetails", ThisKey:="AssetID", OtherKey:="assetID")>  _
 	Public Property tblAssetDetails() As EntitySet(Of tblAssetDetail)
 		Get
@@ -1347,13 +2797,13 @@ Partial Public Class tblAssetDetailMasterlist
 		End Set
 	End Property
 	
-	<Global.System.Data.Linq.Mapping.AssociationAttribute(Name:="tblAssetDetailMasterlist_tblAssetInventory", Storage:="_tblAssetInventories", ThisKey:="AssetID", OtherKey:="AssetId")>  _
-	Public Property tblAssetInventories() As EntitySet(Of tblAssetInventory)
+	<Global.System.Data.Linq.Mapping.AssociationAttribute(Name:="tblAssetDetailMasterlist_tblAssetInventory1", Storage:="_tblAssetInventory1s", ThisKey:="AssetID", OtherKey:="AssetId")>  _
+	Public Property tblAssetInventory1s() As EntitySet(Of tblAssetInventory1)
 		Get
-			Return Me._tblAssetInventories
+			Return Me._tblAssetInventory1s
 		End Get
 		Set
-			Me._tblAssetInventories.Assign(value)
+			Me._tblAssetInventory1s.Assign(value)
 		End Set
 	End Property
 	
@@ -1515,16 +2965,6 @@ Partial Public Class tblAssetDetailMasterlist
 		End If
 	End Sub
 	
-	Private Sub attach_tblAssetDetails(ByVal entity As tblAssetDetail)
-		Me.SendPropertyChanging
-		entity.tblAssetDetailMasterlist = Me
-	End Sub
-	
-	Private Sub detach_tblAssetDetails(ByVal entity As tblAssetDetail)
-		Me.SendPropertyChanging
-		entity.tblAssetDetailMasterlist = Nothing
-	End Sub
-	
 	Private Sub attach_tblAssetInventories(ByVal entity As tblAssetInventory)
 		Me.SendPropertyChanging
 		entity.tblAssetDetailMasterlist = Me
@@ -1534,3047 +2974,35 @@ Partial Public Class tblAssetDetailMasterlist
 		Me.SendPropertyChanging
 		entity.tblAssetDetailMasterlist = Nothing
 	End Sub
-End Class
-
-<Global.System.Data.Linq.Mapping.TableAttribute(Name:="dbo.tblAssetHeaderMasterlist")>  _
-Partial Public Class tblAssetHeaderMasterlist
-	Implements System.ComponentModel.INotifyPropertyChanging, System.ComponentModel.INotifyPropertyChanged
 	
-	Private Shared emptyChangingEventArgs As PropertyChangingEventArgs = New PropertyChangingEventArgs(String.Empty)
-	
-	Private _AssetHeaderID As Integer
-	
-	Private _UserID As System.Nullable(Of Integer)
-	
-	Private _EntryNumber As String
-	
-	Private _TransDate As System.Nullable(Of Date)
-	
-	Private _Remarks As String
-	
-	Private _VendorID As System.Nullable(Of Integer)
-	
-	Private _tblAssetDetailMasterlists As EntitySet(Of tblAssetDetailMasterlist)
-	
-	Private _tblVendor As EntityRef(Of tblVendor)
-	
-	Private _tblUser As EntityRef(Of tblUser)
-	
-    #Region "Extensibility Method Definitions"
-    Partial Private Sub OnLoaded()
-    End Sub
-    Partial Private Sub OnValidate(action As System.Data.Linq.ChangeAction)
-    End Sub
-    Partial Private Sub OnCreated()
-    End Sub
-    Partial Private Sub OnAssetHeaderIDChanging(value As Integer)
-    End Sub
-    Partial Private Sub OnAssetHeaderIDChanged()
-    End Sub
-    Partial Private Sub OnUserIDChanging(value As System.Nullable(Of Integer))
-    End Sub
-    Partial Private Sub OnUserIDChanged()
-    End Sub
-    Partial Private Sub OnEntryNumberChanging(value As String)
-    End Sub
-    Partial Private Sub OnEntryNumberChanged()
-    End Sub
-    Partial Private Sub OnTransDateChanging(value As System.Nullable(Of Date))
-    End Sub
-    Partial Private Sub OnTransDateChanged()
-    End Sub
-    Partial Private Sub OnRemarksChanging(value As String)
-    End Sub
-    Partial Private Sub OnRemarksChanged()
-    End Sub
-    Partial Private Sub OnVendorIDChanging(value As System.Nullable(Of Integer))
-    End Sub
-    Partial Private Sub OnVendorIDChanged()
-    End Sub
-    #End Region
-	
-	Public Sub New()
-		MyBase.New
-		Me._tblAssetDetailMasterlists = New EntitySet(Of tblAssetDetailMasterlist)(AddressOf Me.attach_tblAssetDetailMasterlists, AddressOf Me.detach_tblAssetDetailMasterlists)
-		Me._tblVendor = CType(Nothing, EntityRef(Of tblVendor))
-		Me._tblUser = CType(Nothing, EntityRef(Of tblUser))
-		OnCreated
-	End Sub
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_AssetHeaderID", AutoSync:=AutoSync.OnInsert, DbType:="Int NOT NULL IDENTITY", IsPrimaryKey:=true, IsDbGenerated:=true)>  _
-	Public Property AssetHeaderID() As Integer
-		Get
-			Return Me._AssetHeaderID
-		End Get
-		Set
-			If ((Me._AssetHeaderID = value)  _
-						= false) Then
-				Me.OnAssetHeaderIDChanging(value)
-				Me.SendPropertyChanging
-				Me._AssetHeaderID = value
-				Me.SendPropertyChanged("AssetHeaderID")
-				Me.OnAssetHeaderIDChanged
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_UserID", DbType:="Int")>  _
-	Public Property UserID() As System.Nullable(Of Integer)
-		Get
-			Return Me._UserID
-		End Get
-		Set
-			If (Me._UserID.Equals(value) = false) Then
-				If Me._tblUser.HasLoadedOrAssignedValue Then
-					Throw New System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException()
-				End If
-				Me.OnUserIDChanging(value)
-				Me.SendPropertyChanging
-				Me._UserID = value
-				Me.SendPropertyChanged("UserID")
-				Me.OnUserIDChanged
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_EntryNumber", DbType:="VarChar(MAX)")>  _
-	Public Property EntryNumber() As String
-		Get
-			Return Me._EntryNumber
-		End Get
-		Set
-			If (String.Equals(Me._EntryNumber, value) = false) Then
-				Me.OnEntryNumberChanging(value)
-				Me.SendPropertyChanging
-				Me._EntryNumber = value
-				Me.SendPropertyChanged("EntryNumber")
-				Me.OnEntryNumberChanged
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_TransDate", DbType:="Date")>  _
-	Public Property TransDate() As System.Nullable(Of Date)
-		Get
-			Return Me._TransDate
-		End Get
-		Set
-			If (Me._TransDate.Equals(value) = false) Then
-				Me.OnTransDateChanging(value)
-				Me.SendPropertyChanging
-				Me._TransDate = value
-				Me.SendPropertyChanged("TransDate")
-				Me.OnTransDateChanged
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_Remarks", DbType:="VarChar(MAX)")>  _
-	Public Property Remarks() As String
-		Get
-			Return Me._Remarks
-		End Get
-		Set
-			If (String.Equals(Me._Remarks, value) = false) Then
-				Me.OnRemarksChanging(value)
-				Me.SendPropertyChanging
-				Me._Remarks = value
-				Me.SendPropertyChanged("Remarks")
-				Me.OnRemarksChanged
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_VendorID", DbType:="Int")>  _
-	Public Property VendorID() As System.Nullable(Of Integer)
-		Get
-			Return Me._VendorID
-		End Get
-		Set
-			If (Me._VendorID.Equals(value) = false) Then
-				If Me._tblVendor.HasLoadedOrAssignedValue Then
-					Throw New System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException()
-				End If
-				Me.OnVendorIDChanging(value)
-				Me.SendPropertyChanging
-				Me._VendorID = value
-				Me.SendPropertyChanged("VendorID")
-				Me.OnVendorIDChanged
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.AssociationAttribute(Name:="tblAssetHeaderMasterlist_tblAssetDetailMasterlist", Storage:="_tblAssetDetailMasterlists", ThisKey:="AssetHeaderID", OtherKey:="AssetHeaderID")>  _
-	Public Property tblAssetDetailMasterlists() As EntitySet(Of tblAssetDetailMasterlist)
-		Get
-			Return Me._tblAssetDetailMasterlists
-		End Get
-		Set
-			Me._tblAssetDetailMasterlists.Assign(value)
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.AssociationAttribute(Name:="tblVendor_tblAssetHeaderMasterlist", Storage:="_tblVendor", ThisKey:="VendorID", OtherKey:="VendorID", IsForeignKey:=true)>  _
-	Public Property tblVendor() As tblVendor
-		Get
-			Return Me._tblVendor.Entity
-		End Get
-		Set
-			Dim previousValue As tblVendor = Me._tblVendor.Entity
-			If ((Object.Equals(previousValue, value) = false)  _
-						OrElse (Me._tblVendor.HasLoadedOrAssignedValue = false)) Then
-				Me.SendPropertyChanging
-				If ((previousValue Is Nothing)  _
-							= false) Then
-					Me._tblVendor.Entity = Nothing
-					previousValue.tblAssetHeaderMasterlists.Remove(Me)
-				End If
-				Me._tblVendor.Entity = value
-				If ((value Is Nothing)  _
-							= false) Then
-					value.tblAssetHeaderMasterlists.Add(Me)
-					Me._VendorID = value.VendorID
-				Else
-					Me._VendorID = CType(Nothing, Nullable(Of Integer))
-				End If
-				Me.SendPropertyChanged("tblVendor")
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.AssociationAttribute(Name:="tblUser_tblAssetHeaderMasterlist", Storage:="_tblUser", ThisKey:="UserID", OtherKey:="UserID", IsForeignKey:=true)>  _
-	Public Property tblUser() As tblUser
-		Get
-			Return Me._tblUser.Entity
-		End Get
-		Set
-			Dim previousValue As tblUser = Me._tblUser.Entity
-			If ((Object.Equals(previousValue, value) = false)  _
-						OrElse (Me._tblUser.HasLoadedOrAssignedValue = false)) Then
-				Me.SendPropertyChanging
-				If ((previousValue Is Nothing)  _
-							= false) Then
-					Me._tblUser.Entity = Nothing
-					previousValue.tblAssetHeaderMasterlists.Remove(Me)
-				End If
-				Me._tblUser.Entity = value
-				If ((value Is Nothing)  _
-							= false) Then
-					value.tblAssetHeaderMasterlists.Add(Me)
-					Me._UserID = value.UserID
-				Else
-					Me._UserID = CType(Nothing, Nullable(Of Integer))
-				End If
-				Me.SendPropertyChanged("tblUser")
-			End If
-		End Set
-	End Property
-	
-	Public Event PropertyChanging As PropertyChangingEventHandler Implements System.ComponentModel.INotifyPropertyChanging.PropertyChanging
-	
-	Public Event PropertyChanged As PropertyChangedEventHandler Implements System.ComponentModel.INotifyPropertyChanged.PropertyChanged
-	
-	Protected Overridable Sub SendPropertyChanging()
-		If ((Me.PropertyChangingEvent Is Nothing)  _
-					= false) Then
-			RaiseEvent PropertyChanging(Me, emptyChangingEventArgs)
-		End If
-	End Sub
-	
-	Protected Overridable Sub SendPropertyChanged(ByVal propertyName As [String])
-		If ((Me.PropertyChangedEvent Is Nothing)  _
-					= false) Then
-			RaiseEvent PropertyChanged(Me, New PropertyChangedEventArgs(propertyName))
-		End If
-	End Sub
-	
-	Private Sub attach_tblAssetDetailMasterlists(ByVal entity As tblAssetDetailMasterlist)
+	Private Sub attach_tblAllocationDetails(ByVal entity As tblAllocationDetail)
 		Me.SendPropertyChanging
-		entity.tblAssetHeaderMasterlist = Me
+		entity.tblAssetDetailMasterlist = Me
 	End Sub
 	
-	Private Sub detach_tblAssetDetailMasterlists(ByVal entity As tblAssetDetailMasterlist)
+	Private Sub detach_tblAllocationDetails(ByVal entity As tblAllocationDetail)
 		Me.SendPropertyChanging
-		entity.tblAssetHeaderMasterlist = Nothing
-	End Sub
-End Class
-
-<Global.System.Data.Linq.Mapping.TableAttribute(Name:="dbo.tblAssetType")>  _
-Partial Public Class tblAssetType
-	Implements System.ComponentModel.INotifyPropertyChanging, System.ComponentModel.INotifyPropertyChanged
-	
-	Private Shared emptyChangingEventArgs As PropertyChangingEventArgs = New PropertyChangingEventArgs(String.Empty)
-	
-	Private _AssetTypeID As Integer
-	
-	Private _AssetTypeCode As String
-	
-	Private _AssetTypeDescription As String
-	
-	Private _DateCreated As System.Nullable(Of Date)
-	
-	Private _DateModified As System.Nullable(Of Date)
-	
-	Private _UserID As System.Nullable(Of Integer)
-	
-	Private _UserIDModified As System.Nullable(Of Integer)
-	
-	Private _tblAssetDetailMasterlists As EntitySet(Of tblAssetDetailMasterlist)
-	
-	Private _tblAssetDetails As EntitySet(Of tblAssetDetail)
-	
-	Private _tblUser As EntityRef(Of tblUser)
-	
-    #Region "Extensibility Method Definitions"
-    Partial Private Sub OnLoaded()
-    End Sub
-    Partial Private Sub OnValidate(action As System.Data.Linq.ChangeAction)
-    End Sub
-    Partial Private Sub OnCreated()
-    End Sub
-    Partial Private Sub OnAssetTypeIDChanging(value As Integer)
-    End Sub
-    Partial Private Sub OnAssetTypeIDChanged()
-    End Sub
-    Partial Private Sub OnAssetTypeCodeChanging(value As String)
-    End Sub
-    Partial Private Sub OnAssetTypeCodeChanged()
-    End Sub
-    Partial Private Sub OnAssetTypeDescriptionChanging(value As String)
-    End Sub
-    Partial Private Sub OnAssetTypeDescriptionChanged()
-    End Sub
-    Partial Private Sub OnDateCreatedChanging(value As System.Nullable(Of Date))
-    End Sub
-    Partial Private Sub OnDateCreatedChanged()
-    End Sub
-    Partial Private Sub OnDateModifiedChanging(value As System.Nullable(Of Date))
-    End Sub
-    Partial Private Sub OnDateModifiedChanged()
-    End Sub
-    Partial Private Sub OnUserIDChanging(value As System.Nullable(Of Integer))
-    End Sub
-    Partial Private Sub OnUserIDChanged()
-    End Sub
-    Partial Private Sub OnUserIDModifiedChanging(value As System.Nullable(Of Integer))
-    End Sub
-    Partial Private Sub OnUserIDModifiedChanged()
-    End Sub
-    #End Region
-	
-	Public Sub New()
-		MyBase.New
-		Me._tblAssetDetailMasterlists = New EntitySet(Of tblAssetDetailMasterlist)(AddressOf Me.attach_tblAssetDetailMasterlists, AddressOf Me.detach_tblAssetDetailMasterlists)
-		Me._tblAssetDetails = New EntitySet(Of tblAssetDetail)(AddressOf Me.attach_tblAssetDetails, AddressOf Me.detach_tblAssetDetails)
-		Me._tblUser = CType(Nothing, EntityRef(Of tblUser))
-		OnCreated
-	End Sub
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_AssetTypeID", AutoSync:=AutoSync.OnInsert, DbType:="Int NOT NULL IDENTITY", IsPrimaryKey:=true, IsDbGenerated:=true)>  _
-	Public Property AssetTypeID() As Integer
-		Get
-			Return Me._AssetTypeID
-		End Get
-		Set
-			If ((Me._AssetTypeID = value)  _
-						= false) Then
-				Me.OnAssetTypeIDChanging(value)
-				Me.SendPropertyChanging
-				Me._AssetTypeID = value
-				Me.SendPropertyChanged("AssetTypeID")
-				Me.OnAssetTypeIDChanged
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_AssetTypeCode", DbType:="VarChar(200)")>  _
-	Public Property AssetTypeCode() As String
-		Get
-			Return Me._AssetTypeCode
-		End Get
-		Set
-			If (String.Equals(Me._AssetTypeCode, value) = false) Then
-				Me.OnAssetTypeCodeChanging(value)
-				Me.SendPropertyChanging
-				Me._AssetTypeCode = value
-				Me.SendPropertyChanged("AssetTypeCode")
-				Me.OnAssetTypeCodeChanged
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_AssetTypeDescription", DbType:="VarChar(200)")>  _
-	Public Property AssetTypeDescription() As String
-		Get
-			Return Me._AssetTypeDescription
-		End Get
-		Set
-			If (String.Equals(Me._AssetTypeDescription, value) = false) Then
-				Me.OnAssetTypeDescriptionChanging(value)
-				Me.SendPropertyChanging
-				Me._AssetTypeDescription = value
-				Me.SendPropertyChanged("AssetTypeDescription")
-				Me.OnAssetTypeDescriptionChanged
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_DateCreated", DbType:="Date")>  _
-	Public Property DateCreated() As System.Nullable(Of Date)
-		Get
-			Return Me._DateCreated
-		End Get
-		Set
-			If (Me._DateCreated.Equals(value) = false) Then
-				Me.OnDateCreatedChanging(value)
-				Me.SendPropertyChanging
-				Me._DateCreated = value
-				Me.SendPropertyChanged("DateCreated")
-				Me.OnDateCreatedChanged
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_DateModified", DbType:="Date")>  _
-	Public Property DateModified() As System.Nullable(Of Date)
-		Get
-			Return Me._DateModified
-		End Get
-		Set
-			If (Me._DateModified.Equals(value) = false) Then
-				Me.OnDateModifiedChanging(value)
-				Me.SendPropertyChanging
-				Me._DateModified = value
-				Me.SendPropertyChanged("DateModified")
-				Me.OnDateModifiedChanged
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_UserID", DbType:="Int")>  _
-	Public Property UserID() As System.Nullable(Of Integer)
-		Get
-			Return Me._UserID
-		End Get
-		Set
-			If (Me._UserID.Equals(value) = false) Then
-				If Me._tblUser.HasLoadedOrAssignedValue Then
-					Throw New System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException()
-				End If
-				Me.OnUserIDChanging(value)
-				Me.SendPropertyChanging
-				Me._UserID = value
-				Me.SendPropertyChanged("UserID")
-				Me.OnUserIDChanged
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_UserIDModified", DbType:="Int")>  _
-	Public Property UserIDModified() As System.Nullable(Of Integer)
-		Get
-			Return Me._UserIDModified
-		End Get
-		Set
-			If (Me._UserIDModified.Equals(value) = false) Then
-				Me.OnUserIDModifiedChanging(value)
-				Me.SendPropertyChanging
-				Me._UserIDModified = value
-				Me.SendPropertyChanged("UserIDModified")
-				Me.OnUserIDModifiedChanged
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.AssociationAttribute(Name:="tblAssetType_tblAssetDetailMasterlist", Storage:="_tblAssetDetailMasterlists", ThisKey:="AssetTypeID", OtherKey:="AssetTypeID")>  _
-	Public Property tblAssetDetailMasterlists() As EntitySet(Of tblAssetDetailMasterlist)
-		Get
-			Return Me._tblAssetDetailMasterlists
-		End Get
-		Set
-			Me._tblAssetDetailMasterlists.Assign(value)
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.AssociationAttribute(Name:="tblAssetType_tblAssetDetail", Storage:="_tblAssetDetails", ThisKey:="AssetTypeID", OtherKey:="assetTypeID")>  _
-	Public Property tblAssetDetails() As EntitySet(Of tblAssetDetail)
-		Get
-			Return Me._tblAssetDetails
-		End Get
-		Set
-			Me._tblAssetDetails.Assign(value)
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.AssociationAttribute(Name:="tblUser_tblAssetType", Storage:="_tblUser", ThisKey:="UserID", OtherKey:="UserID", IsForeignKey:=true)>  _
-	Public Property tblUser() As tblUser
-		Get
-			Return Me._tblUser.Entity
-		End Get
-		Set
-			Dim previousValue As tblUser = Me._tblUser.Entity
-			If ((Object.Equals(previousValue, value) = false)  _
-						OrElse (Me._tblUser.HasLoadedOrAssignedValue = false)) Then
-				Me.SendPropertyChanging
-				If ((previousValue Is Nothing)  _
-							= false) Then
-					Me._tblUser.Entity = Nothing
-					previousValue.tblAssetTypes.Remove(Me)
-				End If
-				Me._tblUser.Entity = value
-				If ((value Is Nothing)  _
-							= false) Then
-					value.tblAssetTypes.Add(Me)
-					Me._UserID = value.UserID
-				Else
-					Me._UserID = CType(Nothing, Nullable(Of Integer))
-				End If
-				Me.SendPropertyChanged("tblUser")
-			End If
-		End Set
-	End Property
-	
-	Public Event PropertyChanging As PropertyChangingEventHandler Implements System.ComponentModel.INotifyPropertyChanging.PropertyChanging
-	
-	Public Event PropertyChanged As PropertyChangedEventHandler Implements System.ComponentModel.INotifyPropertyChanged.PropertyChanged
-	
-	Protected Overridable Sub SendPropertyChanging()
-		If ((Me.PropertyChangingEvent Is Nothing)  _
-					= false) Then
-			RaiseEvent PropertyChanging(Me, emptyChangingEventArgs)
-		End If
-	End Sub
-	
-	Protected Overridable Sub SendPropertyChanged(ByVal propertyName As [String])
-		If ((Me.PropertyChangedEvent Is Nothing)  _
-					= false) Then
-			RaiseEvent PropertyChanged(Me, New PropertyChangedEventArgs(propertyName))
-		End If
-	End Sub
-	
-	Private Sub attach_tblAssetDetailMasterlists(ByVal entity As tblAssetDetailMasterlist)
-		Me.SendPropertyChanging
-		entity.tblAssetType = Me
-	End Sub
-	
-	Private Sub detach_tblAssetDetailMasterlists(ByVal entity As tblAssetDetailMasterlist)
-		Me.SendPropertyChanging
-		entity.tblAssetType = Nothing
+		entity.tblAssetDetailMasterlist = Nothing
 	End Sub
 	
 	Private Sub attach_tblAssetDetails(ByVal entity As tblAssetDetail)
 		Me.SendPropertyChanging
-		entity.tblAssetType = Me
+		entity.tblAssetDetailMasterlist = Me
 	End Sub
 	
 	Private Sub detach_tblAssetDetails(ByVal entity As tblAssetDetail)
 		Me.SendPropertyChanging
-		entity.tblAssetType = Nothing
-	End Sub
-End Class
-
-<Global.System.Data.Linq.Mapping.TableAttribute(Name:="dbo.tblBranch")>  _
-Partial Public Class tblBranch
-	Implements System.ComponentModel.INotifyPropertyChanging, System.ComponentModel.INotifyPropertyChanged
-	
-	Private Shared emptyChangingEventArgs As PropertyChangingEventArgs = New PropertyChangingEventArgs(String.Empty)
-	
-	Private _BranchID As Integer
-	
-	Private _BranchCode As String
-	
-	Private _BranchDescription As String
-	
-	Private _DateCreated As System.Nullable(Of Date)
-	
-	Private _DateModified As System.Nullable(Of Date)
-	
-	Private _UserID As System.Nullable(Of Integer)
-	
-	Private _UserIDModified As System.Nullable(Of Integer)
-	
-	Private _tblEmployees As EntitySet(Of tblEmployee)
-	
-	Private _tblUser As EntityRef(Of tblUser)
-	
-    #Region "Extensibility Method Definitions"
-    Partial Private Sub OnLoaded()
-    End Sub
-    Partial Private Sub OnValidate(action As System.Data.Linq.ChangeAction)
-    End Sub
-    Partial Private Sub OnCreated()
-    End Sub
-    Partial Private Sub OnBranchIDChanging(value As Integer)
-    End Sub
-    Partial Private Sub OnBranchIDChanged()
-    End Sub
-    Partial Private Sub OnBranchCodeChanging(value As String)
-    End Sub
-    Partial Private Sub OnBranchCodeChanged()
-    End Sub
-    Partial Private Sub OnBranchDescriptionChanging(value As String)
-    End Sub
-    Partial Private Sub OnBranchDescriptionChanged()
-    End Sub
-    Partial Private Sub OnDateCreatedChanging(value As System.Nullable(Of Date))
-    End Sub
-    Partial Private Sub OnDateCreatedChanged()
-    End Sub
-    Partial Private Sub OnDateModifiedChanging(value As System.Nullable(Of Date))
-    End Sub
-    Partial Private Sub OnDateModifiedChanged()
-    End Sub
-    Partial Private Sub OnUserIDChanging(value As System.Nullable(Of Integer))
-    End Sub
-    Partial Private Sub OnUserIDChanged()
-    End Sub
-    Partial Private Sub OnUserIDModifiedChanging(value As System.Nullable(Of Integer))
-    End Sub
-    Partial Private Sub OnUserIDModifiedChanged()
-    End Sub
-    #End Region
-	
-	Public Sub New()
-		MyBase.New
-		Me._tblEmployees = New EntitySet(Of tblEmployee)(AddressOf Me.attach_tblEmployees, AddressOf Me.detach_tblEmployees)
-		Me._tblUser = CType(Nothing, EntityRef(Of tblUser))
-		OnCreated
+		entity.tblAssetDetailMasterlist = Nothing
 	End Sub
 	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_BranchID", AutoSync:=AutoSync.OnInsert, DbType:="Int NOT NULL IDENTITY", IsPrimaryKey:=true, IsDbGenerated:=true)>  _
-	Public Property BranchID() As Integer
-		Get
-			Return Me._BranchID
-		End Get
-		Set
-			If ((Me._BranchID = value)  _
-						= false) Then
-				If Me._tblUser.HasLoadedOrAssignedValue Then
-					Throw New System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException()
-				End If
-				Me.OnBranchIDChanging(value)
-				Me.SendPropertyChanging
-				Me._BranchID = value
-				Me.SendPropertyChanged("BranchID")
-				Me.OnBranchIDChanged
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_BranchCode", DbType:="VarChar(200)")>  _
-	Public Property BranchCode() As String
-		Get
-			Return Me._BranchCode
-		End Get
-		Set
-			If (String.Equals(Me._BranchCode, value) = false) Then
-				Me.OnBranchCodeChanging(value)
-				Me.SendPropertyChanging
-				Me._BranchCode = value
-				Me.SendPropertyChanged("BranchCode")
-				Me.OnBranchCodeChanged
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_BranchDescription", DbType:="VarChar(200)")>  _
-	Public Property BranchDescription() As String
-		Get
-			Return Me._BranchDescription
-		End Get
-		Set
-			If (String.Equals(Me._BranchDescription, value) = false) Then
-				Me.OnBranchDescriptionChanging(value)
-				Me.SendPropertyChanging
-				Me._BranchDescription = value
-				Me.SendPropertyChanged("BranchDescription")
-				Me.OnBranchDescriptionChanged
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_DateCreated", DbType:="Date")>  _
-	Public Property DateCreated() As System.Nullable(Of Date)
-		Get
-			Return Me._DateCreated
-		End Get
-		Set
-			If (Me._DateCreated.Equals(value) = false) Then
-				Me.OnDateCreatedChanging(value)
-				Me.SendPropertyChanging
-				Me._DateCreated = value
-				Me.SendPropertyChanged("DateCreated")
-				Me.OnDateCreatedChanged
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_DateModified", DbType:="Date")>  _
-	Public Property DateModified() As System.Nullable(Of Date)
-		Get
-			Return Me._DateModified
-		End Get
-		Set
-			If (Me._DateModified.Equals(value) = false) Then
-				Me.OnDateModifiedChanging(value)
-				Me.SendPropertyChanging
-				Me._DateModified = value
-				Me.SendPropertyChanged("DateModified")
-				Me.OnDateModifiedChanged
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_UserID", DbType:="Int")>  _
-	Public Property UserID() As System.Nullable(Of Integer)
-		Get
-			Return Me._UserID
-		End Get
-		Set
-			If (Me._UserID.Equals(value) = false) Then
-				Me.OnUserIDChanging(value)
-				Me.SendPropertyChanging
-				Me._UserID = value
-				Me.SendPropertyChanged("UserID")
-				Me.OnUserIDChanged
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_UserIDModified", DbType:="Int")>  _
-	Public Property UserIDModified() As System.Nullable(Of Integer)
-		Get
-			Return Me._UserIDModified
-		End Get
-		Set
-			If (Me._UserIDModified.Equals(value) = false) Then
-				Me.OnUserIDModifiedChanging(value)
-				Me.SendPropertyChanging
-				Me._UserIDModified = value
-				Me.SendPropertyChanged("UserIDModified")
-				Me.OnUserIDModifiedChanged
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.AssociationAttribute(Name:="tblBranch_tblEmployee", Storage:="_tblEmployees", ThisKey:="BranchID", OtherKey:="BranchID")>  _
-	Public Property tblEmployees() As EntitySet(Of tblEmployee)
-		Get
-			Return Me._tblEmployees
-		End Get
-		Set
-			Me._tblEmployees.Assign(value)
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.AssociationAttribute(Name:="tblUser_tblBranch", Storage:="_tblUser", ThisKey:="BranchID", OtherKey:="UserID", IsForeignKey:=true)>  _
-	Public Property tblUser() As tblUser
-		Get
-			Return Me._tblUser.Entity
-		End Get
-		Set
-			Dim previousValue As tblUser = Me._tblUser.Entity
-			If ((Object.Equals(previousValue, value) = false)  _
-						OrElse (Me._tblUser.HasLoadedOrAssignedValue = false)) Then
-				Me.SendPropertyChanging
-				If ((previousValue Is Nothing)  _
-							= false) Then
-					Me._tblUser.Entity = Nothing
-					previousValue.tblBranch = Nothing
-				End If
-				Me._tblUser.Entity = value
-				If ((value Is Nothing)  _
-							= false) Then
-					value.tblBranch = Me
-					Me._BranchID = value.UserID
-				Else
-					Me._BranchID = CType(Nothing, Integer)
-				End If
-				Me.SendPropertyChanged("tblUser")
-			End If
-		End Set
-	End Property
-	
-	Public Event PropertyChanging As PropertyChangingEventHandler Implements System.ComponentModel.INotifyPropertyChanging.PropertyChanging
-	
-	Public Event PropertyChanged As PropertyChangedEventHandler Implements System.ComponentModel.INotifyPropertyChanged.PropertyChanged
-	
-	Protected Overridable Sub SendPropertyChanging()
-		If ((Me.PropertyChangingEvent Is Nothing)  _
-					= false) Then
-			RaiseEvent PropertyChanging(Me, emptyChangingEventArgs)
-		End If
-	End Sub
-	
-	Protected Overridable Sub SendPropertyChanged(ByVal propertyName As [String])
-		If ((Me.PropertyChangedEvent Is Nothing)  _
-					= false) Then
-			RaiseEvent PropertyChanged(Me, New PropertyChangedEventArgs(propertyName))
-		End If
-	End Sub
-	
-	Private Sub attach_tblEmployees(ByVal entity As tblEmployee)
+	Private Sub attach_tblAssetInventory1s(ByVal entity As tblAssetInventory1)
 		Me.SendPropertyChanging
-		entity.tblBranch = Me
+		entity.tblAssetDetailMasterlist = Me
 	End Sub
 	
-	Private Sub detach_tblEmployees(ByVal entity As tblEmployee)
+	Private Sub detach_tblAssetInventory1s(ByVal entity As tblAssetInventory1)
 		Me.SendPropertyChanging
-		entity.tblBranch = Nothing
-	End Sub
-End Class
-
-<Global.System.Data.Linq.Mapping.TableAttribute(Name:="dbo.tblCategory")>  _
-Partial Public Class tblCategory
-	Implements System.ComponentModel.INotifyPropertyChanging, System.ComponentModel.INotifyPropertyChanged
-	
-	Private Shared emptyChangingEventArgs As PropertyChangingEventArgs = New PropertyChangingEventArgs(String.Empty)
-	
-	Private _CategoryID As Integer
-	
-	Private _CategoryCode As String
-	
-	Private _CategoryDescription As String
-	
-	Private _DateCreated As System.Nullable(Of Date)
-	
-	Private _DateModified As System.Nullable(Of Date)
-	
-	Private _UserID As System.Nullable(Of Integer)
-	
-	Private _UserIDModified As System.Nullable(Of Integer)
-	
-	Private _tblAssetDetailMasterlists As EntitySet(Of tblAssetDetailMasterlist)
-	
-	Private _tblAssetDetails As EntitySet(Of tblAssetDetail)
-	
-	Private _tblUser As EntityRef(Of tblUser)
-	
-    #Region "Extensibility Method Definitions"
-    Partial Private Sub OnLoaded()
-    End Sub
-    Partial Private Sub OnValidate(action As System.Data.Linq.ChangeAction)
-    End Sub
-    Partial Private Sub OnCreated()
-    End Sub
-    Partial Private Sub OnCategoryIDChanging(value As Integer)
-    End Sub
-    Partial Private Sub OnCategoryIDChanged()
-    End Sub
-    Partial Private Sub OnCategoryCodeChanging(value As String)
-    End Sub
-    Partial Private Sub OnCategoryCodeChanged()
-    End Sub
-    Partial Private Sub OnCategoryDescriptionChanging(value As String)
-    End Sub
-    Partial Private Sub OnCategoryDescriptionChanged()
-    End Sub
-    Partial Private Sub OnDateCreatedChanging(value As System.Nullable(Of Date))
-    End Sub
-    Partial Private Sub OnDateCreatedChanged()
-    End Sub
-    Partial Private Sub OnDateModifiedChanging(value As System.Nullable(Of Date))
-    End Sub
-    Partial Private Sub OnDateModifiedChanged()
-    End Sub
-    Partial Private Sub OnUserIDChanging(value As System.Nullable(Of Integer))
-    End Sub
-    Partial Private Sub OnUserIDChanged()
-    End Sub
-    Partial Private Sub OnUserIDModifiedChanging(value As System.Nullable(Of Integer))
-    End Sub
-    Partial Private Sub OnUserIDModifiedChanged()
-    End Sub
-    #End Region
-	
-	Public Sub New()
-		MyBase.New
-		Me._tblAssetDetailMasterlists = New EntitySet(Of tblAssetDetailMasterlist)(AddressOf Me.attach_tblAssetDetailMasterlists, AddressOf Me.detach_tblAssetDetailMasterlists)
-		Me._tblAssetDetails = New EntitySet(Of tblAssetDetail)(AddressOf Me.attach_tblAssetDetails, AddressOf Me.detach_tblAssetDetails)
-		Me._tblUser = CType(Nothing, EntityRef(Of tblUser))
-		OnCreated
-	End Sub
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_CategoryID", AutoSync:=AutoSync.OnInsert, DbType:="Int NOT NULL IDENTITY", IsPrimaryKey:=true, IsDbGenerated:=true)>  _
-	Public Property CategoryID() As Integer
-		Get
-			Return Me._CategoryID
-		End Get
-		Set
-			If ((Me._CategoryID = value)  _
-						= false) Then
-				Me.OnCategoryIDChanging(value)
-				Me.SendPropertyChanging
-				Me._CategoryID = value
-				Me.SendPropertyChanged("CategoryID")
-				Me.OnCategoryIDChanged
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_CategoryCode", DbType:="VarChar(200)")>  _
-	Public Property CategoryCode() As String
-		Get
-			Return Me._CategoryCode
-		End Get
-		Set
-			If (String.Equals(Me._CategoryCode, value) = false) Then
-				Me.OnCategoryCodeChanging(value)
-				Me.SendPropertyChanging
-				Me._CategoryCode = value
-				Me.SendPropertyChanged("CategoryCode")
-				Me.OnCategoryCodeChanged
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_CategoryDescription", DbType:="VarChar(200)")>  _
-	Public Property CategoryDescription() As String
-		Get
-			Return Me._CategoryDescription
-		End Get
-		Set
-			If (String.Equals(Me._CategoryDescription, value) = false) Then
-				Me.OnCategoryDescriptionChanging(value)
-				Me.SendPropertyChanging
-				Me._CategoryDescription = value
-				Me.SendPropertyChanged("CategoryDescription")
-				Me.OnCategoryDescriptionChanged
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_DateCreated", DbType:="Date")>  _
-	Public Property DateCreated() As System.Nullable(Of Date)
-		Get
-			Return Me._DateCreated
-		End Get
-		Set
-			If (Me._DateCreated.Equals(value) = false) Then
-				Me.OnDateCreatedChanging(value)
-				Me.SendPropertyChanging
-				Me._DateCreated = value
-				Me.SendPropertyChanged("DateCreated")
-				Me.OnDateCreatedChanged
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_DateModified", DbType:="Date")>  _
-	Public Property DateModified() As System.Nullable(Of Date)
-		Get
-			Return Me._DateModified
-		End Get
-		Set
-			If (Me._DateModified.Equals(value) = false) Then
-				Me.OnDateModifiedChanging(value)
-				Me.SendPropertyChanging
-				Me._DateModified = value
-				Me.SendPropertyChanged("DateModified")
-				Me.OnDateModifiedChanged
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_UserID", DbType:="Int")>  _
-	Public Property UserID() As System.Nullable(Of Integer)
-		Get
-			Return Me._UserID
-		End Get
-		Set
-			If (Me._UserID.Equals(value) = false) Then
-				If Me._tblUser.HasLoadedOrAssignedValue Then
-					Throw New System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException()
-				End If
-				Me.OnUserIDChanging(value)
-				Me.SendPropertyChanging
-				Me._UserID = value
-				Me.SendPropertyChanged("UserID")
-				Me.OnUserIDChanged
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_UserIDModified", DbType:="Int")>  _
-	Public Property UserIDModified() As System.Nullable(Of Integer)
-		Get
-			Return Me._UserIDModified
-		End Get
-		Set
-			If (Me._UserIDModified.Equals(value) = false) Then
-				Me.OnUserIDModifiedChanging(value)
-				Me.SendPropertyChanging
-				Me._UserIDModified = value
-				Me.SendPropertyChanged("UserIDModified")
-				Me.OnUserIDModifiedChanged
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.AssociationAttribute(Name:="tblCategory_tblAssetDetailMasterlist", Storage:="_tblAssetDetailMasterlists", ThisKey:="CategoryID", OtherKey:="CategoryID")>  _
-	Public Property tblAssetDetailMasterlists() As EntitySet(Of tblAssetDetailMasterlist)
-		Get
-			Return Me._tblAssetDetailMasterlists
-		End Get
-		Set
-			Me._tblAssetDetailMasterlists.Assign(value)
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.AssociationAttribute(Name:="tblCategory_tblAssetDetail", Storage:="_tblAssetDetails", ThisKey:="CategoryID", OtherKey:="categoryID")>  _
-	Public Property tblAssetDetails() As EntitySet(Of tblAssetDetail)
-		Get
-			Return Me._tblAssetDetails
-		End Get
-		Set
-			Me._tblAssetDetails.Assign(value)
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.AssociationAttribute(Name:="tblUser_tblCategory", Storage:="_tblUser", ThisKey:="UserID", OtherKey:="UserID", IsForeignKey:=true)>  _
-	Public Property tblUser() As tblUser
-		Get
-			Return Me._tblUser.Entity
-		End Get
-		Set
-			Dim previousValue As tblUser = Me._tblUser.Entity
-			If ((Object.Equals(previousValue, value) = false)  _
-						OrElse (Me._tblUser.HasLoadedOrAssignedValue = false)) Then
-				Me.SendPropertyChanging
-				If ((previousValue Is Nothing)  _
-							= false) Then
-					Me._tblUser.Entity = Nothing
-					previousValue.tblCategories.Remove(Me)
-				End If
-				Me._tblUser.Entity = value
-				If ((value Is Nothing)  _
-							= false) Then
-					value.tblCategories.Add(Me)
-					Me._UserID = value.UserID
-				Else
-					Me._UserID = CType(Nothing, Nullable(Of Integer))
-				End If
-				Me.SendPropertyChanged("tblUser")
-			End If
-		End Set
-	End Property
-	
-	Public Event PropertyChanging As PropertyChangingEventHandler Implements System.ComponentModel.INotifyPropertyChanging.PropertyChanging
-	
-	Public Event PropertyChanged As PropertyChangedEventHandler Implements System.ComponentModel.INotifyPropertyChanged.PropertyChanged
-	
-	Protected Overridable Sub SendPropertyChanging()
-		If ((Me.PropertyChangingEvent Is Nothing)  _
-					= false) Then
-			RaiseEvent PropertyChanging(Me, emptyChangingEventArgs)
-		End If
-	End Sub
-	
-	Protected Overridable Sub SendPropertyChanged(ByVal propertyName As [String])
-		If ((Me.PropertyChangedEvent Is Nothing)  _
-					= false) Then
-			RaiseEvent PropertyChanged(Me, New PropertyChangedEventArgs(propertyName))
-		End If
-	End Sub
-	
-	Private Sub attach_tblAssetDetailMasterlists(ByVal entity As tblAssetDetailMasterlist)
-		Me.SendPropertyChanging
-		entity.tblCategory = Me
-	End Sub
-	
-	Private Sub detach_tblAssetDetailMasterlists(ByVal entity As tblAssetDetailMasterlist)
-		Me.SendPropertyChanging
-		entity.tblCategory = Nothing
-	End Sub
-	
-	Private Sub attach_tblAssetDetails(ByVal entity As tblAssetDetail)
-		Me.SendPropertyChanging
-		entity.tblCategory = Me
-	End Sub
-	
-	Private Sub detach_tblAssetDetails(ByVal entity As tblAssetDetail)
-		Me.SendPropertyChanging
-		entity.tblCategory = Nothing
-	End Sub
-End Class
-
-<Global.System.Data.Linq.Mapping.TableAttribute(Name:="dbo.tblDepartment")>  _
-Partial Public Class tblDepartment
-	Implements System.ComponentModel.INotifyPropertyChanging, System.ComponentModel.INotifyPropertyChanged
-	
-	Private Shared emptyChangingEventArgs As PropertyChangingEventArgs = New PropertyChangingEventArgs(String.Empty)
-	
-	Private _DepartmentID As Integer
-	
-	Private _DepartmentCode As String
-	
-	Private _DepartmentDescription As String
-	
-	Private _DateCreated As System.Nullable(Of Date)
-	
-	Private _DateModified As System.Nullable(Of Date)
-	
-	Private _UserID As System.Nullable(Of Integer)
-	
-	Private _UserIDModified As System.Nullable(Of Integer)
-	
-	Private _tblEmployees As EntitySet(Of tblEmployee)
-	
-	Private _tblUser As EntityRef(Of tblUser)
-	
-    #Region "Extensibility Method Definitions"
-    Partial Private Sub OnLoaded()
-    End Sub
-    Partial Private Sub OnValidate(action As System.Data.Linq.ChangeAction)
-    End Sub
-    Partial Private Sub OnCreated()
-    End Sub
-    Partial Private Sub OnDepartmentIDChanging(value As Integer)
-    End Sub
-    Partial Private Sub OnDepartmentIDChanged()
-    End Sub
-    Partial Private Sub OnDepartmentCodeChanging(value As String)
-    End Sub
-    Partial Private Sub OnDepartmentCodeChanged()
-    End Sub
-    Partial Private Sub OnDepartmentDescriptionChanging(value As String)
-    End Sub
-    Partial Private Sub OnDepartmentDescriptionChanged()
-    End Sub
-    Partial Private Sub OnDateCreatedChanging(value As System.Nullable(Of Date))
-    End Sub
-    Partial Private Sub OnDateCreatedChanged()
-    End Sub
-    Partial Private Sub OnDateModifiedChanging(value As System.Nullable(Of Date))
-    End Sub
-    Partial Private Sub OnDateModifiedChanged()
-    End Sub
-    Partial Private Sub OnUserIDChanging(value As System.Nullable(Of Integer))
-    End Sub
-    Partial Private Sub OnUserIDChanged()
-    End Sub
-    Partial Private Sub OnUserIDModifiedChanging(value As System.Nullable(Of Integer))
-    End Sub
-    Partial Private Sub OnUserIDModifiedChanged()
-    End Sub
-    #End Region
-	
-	Public Sub New()
-		MyBase.New
-		Me._tblEmployees = New EntitySet(Of tblEmployee)(AddressOf Me.attach_tblEmployees, AddressOf Me.detach_tblEmployees)
-		Me._tblUser = CType(Nothing, EntityRef(Of tblUser))
-		OnCreated
-	End Sub
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_DepartmentID", AutoSync:=AutoSync.OnInsert, DbType:="Int NOT NULL IDENTITY", IsPrimaryKey:=true, IsDbGenerated:=true)>  _
-	Public Property DepartmentID() As Integer
-		Get
-			Return Me._DepartmentID
-		End Get
-		Set
-			If ((Me._DepartmentID = value)  _
-						= false) Then
-				If Me._tblUser.HasLoadedOrAssignedValue Then
-					Throw New System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException()
-				End If
-				Me.OnDepartmentIDChanging(value)
-				Me.SendPropertyChanging
-				Me._DepartmentID = value
-				Me.SendPropertyChanged("DepartmentID")
-				Me.OnDepartmentIDChanged
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_DepartmentCode", DbType:="VarChar(200)")>  _
-	Public Property DepartmentCode() As String
-		Get
-			Return Me._DepartmentCode
-		End Get
-		Set
-			If (String.Equals(Me._DepartmentCode, value) = false) Then
-				Me.OnDepartmentCodeChanging(value)
-				Me.SendPropertyChanging
-				Me._DepartmentCode = value
-				Me.SendPropertyChanged("DepartmentCode")
-				Me.OnDepartmentCodeChanged
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_DepartmentDescription", DbType:="VarChar(200)")>  _
-	Public Property DepartmentDescription() As String
-		Get
-			Return Me._DepartmentDescription
-		End Get
-		Set
-			If (String.Equals(Me._DepartmentDescription, value) = false) Then
-				Me.OnDepartmentDescriptionChanging(value)
-				Me.SendPropertyChanging
-				Me._DepartmentDescription = value
-				Me.SendPropertyChanged("DepartmentDescription")
-				Me.OnDepartmentDescriptionChanged
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_DateCreated", DbType:="Date")>  _
-	Public Property DateCreated() As System.Nullable(Of Date)
-		Get
-			Return Me._DateCreated
-		End Get
-		Set
-			If (Me._DateCreated.Equals(value) = false) Then
-				Me.OnDateCreatedChanging(value)
-				Me.SendPropertyChanging
-				Me._DateCreated = value
-				Me.SendPropertyChanged("DateCreated")
-				Me.OnDateCreatedChanged
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_DateModified", DbType:="Date")>  _
-	Public Property DateModified() As System.Nullable(Of Date)
-		Get
-			Return Me._DateModified
-		End Get
-		Set
-			If (Me._DateModified.Equals(value) = false) Then
-				Me.OnDateModifiedChanging(value)
-				Me.SendPropertyChanging
-				Me._DateModified = value
-				Me.SendPropertyChanged("DateModified")
-				Me.OnDateModifiedChanged
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_UserID", DbType:="Int")>  _
-	Public Property UserID() As System.Nullable(Of Integer)
-		Get
-			Return Me._UserID
-		End Get
-		Set
-			If (Me._UserID.Equals(value) = false) Then
-				Me.OnUserIDChanging(value)
-				Me.SendPropertyChanging
-				Me._UserID = value
-				Me.SendPropertyChanged("UserID")
-				Me.OnUserIDChanged
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_UserIDModified", DbType:="Int")>  _
-	Public Property UserIDModified() As System.Nullable(Of Integer)
-		Get
-			Return Me._UserIDModified
-		End Get
-		Set
-			If (Me._UserIDModified.Equals(value) = false) Then
-				Me.OnUserIDModifiedChanging(value)
-				Me.SendPropertyChanging
-				Me._UserIDModified = value
-				Me.SendPropertyChanged("UserIDModified")
-				Me.OnUserIDModifiedChanged
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.AssociationAttribute(Name:="tblDepartment_tblEmployee", Storage:="_tblEmployees", ThisKey:="DepartmentID", OtherKey:="DepartmentID")>  _
-	Public Property tblEmployees() As EntitySet(Of tblEmployee)
-		Get
-			Return Me._tblEmployees
-		End Get
-		Set
-			Me._tblEmployees.Assign(value)
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.AssociationAttribute(Name:="tblUser_tblDepartment", Storage:="_tblUser", ThisKey:="DepartmentID", OtherKey:="UserID", IsForeignKey:=true)>  _
-	Public Property tblUser() As tblUser
-		Get
-			Return Me._tblUser.Entity
-		End Get
-		Set
-			Dim previousValue As tblUser = Me._tblUser.Entity
-			If ((Object.Equals(previousValue, value) = false)  _
-						OrElse (Me._tblUser.HasLoadedOrAssignedValue = false)) Then
-				Me.SendPropertyChanging
-				If ((previousValue Is Nothing)  _
-							= false) Then
-					Me._tblUser.Entity = Nothing
-					previousValue.tblDepartment = Nothing
-				End If
-				Me._tblUser.Entity = value
-				If ((value Is Nothing)  _
-							= false) Then
-					value.tblDepartment = Me
-					Me._DepartmentID = value.UserID
-				Else
-					Me._DepartmentID = CType(Nothing, Integer)
-				End If
-				Me.SendPropertyChanged("tblUser")
-			End If
-		End Set
-	End Property
-	
-	Public Event PropertyChanging As PropertyChangingEventHandler Implements System.ComponentModel.INotifyPropertyChanging.PropertyChanging
-	
-	Public Event PropertyChanged As PropertyChangedEventHandler Implements System.ComponentModel.INotifyPropertyChanged.PropertyChanged
-	
-	Protected Overridable Sub SendPropertyChanging()
-		If ((Me.PropertyChangingEvent Is Nothing)  _
-					= false) Then
-			RaiseEvent PropertyChanging(Me, emptyChangingEventArgs)
-		End If
-	End Sub
-	
-	Protected Overridable Sub SendPropertyChanged(ByVal propertyName As [String])
-		If ((Me.PropertyChangedEvent Is Nothing)  _
-					= false) Then
-			RaiseEvent PropertyChanged(Me, New PropertyChangedEventArgs(propertyName))
-		End If
-	End Sub
-	
-	Private Sub attach_tblEmployees(ByVal entity As tblEmployee)
-		Me.SendPropertyChanging
-		entity.tblDepartment = Me
-	End Sub
-	
-	Private Sub detach_tblEmployees(ByVal entity As tblEmployee)
-		Me.SendPropertyChanging
-		entity.tblDepartment = Nothing
-	End Sub
-End Class
-
-<Global.System.Data.Linq.Mapping.TableAttribute(Name:="dbo.tblDocumentType")>  _
-Partial Public Class tblDocumentType
-	Implements System.ComponentModel.INotifyPropertyChanging, System.ComponentModel.INotifyPropertyChanged
-	
-	Private Shared emptyChangingEventArgs As PropertyChangingEventArgs = New PropertyChangingEventArgs(String.Empty)
-	
-	Private _DocumentID As Integer
-	
-	Private _DocumentCode As String
-	
-	Private _DocumentDescription As String
-	
-	Private _DateCreated As System.Nullable(Of Date)
-	
-	Private _DateModified As System.Nullable(Of Date)
-	
-	Private _UserID As System.Nullable(Of Integer)
-	
-	Private _UserIDModified As System.Nullable(Of Integer)
-	
-	Private _tblAssetHeaders As EntitySet(Of tblAssetHeader)
-	
-	Private _tblUser As EntityRef(Of tblUser)
-	
-    #Region "Extensibility Method Definitions"
-    Partial Private Sub OnLoaded()
-    End Sub
-    Partial Private Sub OnValidate(action As System.Data.Linq.ChangeAction)
-    End Sub
-    Partial Private Sub OnCreated()
-    End Sub
-    Partial Private Sub OnDocumentIDChanging(value As Integer)
-    End Sub
-    Partial Private Sub OnDocumentIDChanged()
-    End Sub
-    Partial Private Sub OnDocumentCodeChanging(value As String)
-    End Sub
-    Partial Private Sub OnDocumentCodeChanged()
-    End Sub
-    Partial Private Sub OnDocumentDescriptionChanging(value As String)
-    End Sub
-    Partial Private Sub OnDocumentDescriptionChanged()
-    End Sub
-    Partial Private Sub OnDateCreatedChanging(value As System.Nullable(Of Date))
-    End Sub
-    Partial Private Sub OnDateCreatedChanged()
-    End Sub
-    Partial Private Sub OnDateModifiedChanging(value As System.Nullable(Of Date))
-    End Sub
-    Partial Private Sub OnDateModifiedChanged()
-    End Sub
-    Partial Private Sub OnUserIDChanging(value As System.Nullable(Of Integer))
-    End Sub
-    Partial Private Sub OnUserIDChanged()
-    End Sub
-    Partial Private Sub OnUserIDModifiedChanging(value As System.Nullable(Of Integer))
-    End Sub
-    Partial Private Sub OnUserIDModifiedChanged()
-    End Sub
-    #End Region
-	
-	Public Sub New()
-		MyBase.New
-		Me._tblAssetHeaders = New EntitySet(Of tblAssetHeader)(AddressOf Me.attach_tblAssetHeaders, AddressOf Me.detach_tblAssetHeaders)
-		Me._tblUser = CType(Nothing, EntityRef(Of tblUser))
-		OnCreated
-	End Sub
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_DocumentID", AutoSync:=AutoSync.OnInsert, DbType:="Int NOT NULL IDENTITY", IsPrimaryKey:=true, IsDbGenerated:=true)>  _
-	Public Property DocumentID() As Integer
-		Get
-			Return Me._DocumentID
-		End Get
-		Set
-			If ((Me._DocumentID = value)  _
-						= false) Then
-				Me.OnDocumentIDChanging(value)
-				Me.SendPropertyChanging
-				Me._DocumentID = value
-				Me.SendPropertyChanged("DocumentID")
-				Me.OnDocumentIDChanged
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_DocumentCode", DbType:="VarChar(200)")>  _
-	Public Property DocumentCode() As String
-		Get
-			Return Me._DocumentCode
-		End Get
-		Set
-			If (String.Equals(Me._DocumentCode, value) = false) Then
-				Me.OnDocumentCodeChanging(value)
-				Me.SendPropertyChanging
-				Me._DocumentCode = value
-				Me.SendPropertyChanged("DocumentCode")
-				Me.OnDocumentCodeChanged
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_DocumentDescription", DbType:="VarChar(200)")>  _
-	Public Property DocumentDescription() As String
-		Get
-			Return Me._DocumentDescription
-		End Get
-		Set
-			If (String.Equals(Me._DocumentDescription, value) = false) Then
-				Me.OnDocumentDescriptionChanging(value)
-				Me.SendPropertyChanging
-				Me._DocumentDescription = value
-				Me.SendPropertyChanged("DocumentDescription")
-				Me.OnDocumentDescriptionChanged
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_DateCreated", DbType:="Date")>  _
-	Public Property DateCreated() As System.Nullable(Of Date)
-		Get
-			Return Me._DateCreated
-		End Get
-		Set
-			If (Me._DateCreated.Equals(value) = false) Then
-				Me.OnDateCreatedChanging(value)
-				Me.SendPropertyChanging
-				Me._DateCreated = value
-				Me.SendPropertyChanged("DateCreated")
-				Me.OnDateCreatedChanged
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_DateModified", DbType:="Date")>  _
-	Public Property DateModified() As System.Nullable(Of Date)
-		Get
-			Return Me._DateModified
-		End Get
-		Set
-			If (Me._DateModified.Equals(value) = false) Then
-				Me.OnDateModifiedChanging(value)
-				Me.SendPropertyChanging
-				Me._DateModified = value
-				Me.SendPropertyChanged("DateModified")
-				Me.OnDateModifiedChanged
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_UserID", DbType:="Int")>  _
-	Public Property UserID() As System.Nullable(Of Integer)
-		Get
-			Return Me._UserID
-		End Get
-		Set
-			If (Me._UserID.Equals(value) = false) Then
-				If Me._tblUser.HasLoadedOrAssignedValue Then
-					Throw New System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException()
-				End If
-				Me.OnUserIDChanging(value)
-				Me.SendPropertyChanging
-				Me._UserID = value
-				Me.SendPropertyChanged("UserID")
-				Me.OnUserIDChanged
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_UserIDModified", DbType:="Int")>  _
-	Public Property UserIDModified() As System.Nullable(Of Integer)
-		Get
-			Return Me._UserIDModified
-		End Get
-		Set
-			If (Me._UserIDModified.Equals(value) = false) Then
-				Me.OnUserIDModifiedChanging(value)
-				Me.SendPropertyChanging
-				Me._UserIDModified = value
-				Me.SendPropertyChanged("UserIDModified")
-				Me.OnUserIDModifiedChanged
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.AssociationAttribute(Name:="tblDocumentType_tblAssetHeader", Storage:="_tblAssetHeaders", ThisKey:="DocumentID", OtherKey:="DocTypeID")>  _
-	Public Property tblAssetHeaders() As EntitySet(Of tblAssetHeader)
-		Get
-			Return Me._tblAssetHeaders
-		End Get
-		Set
-			Me._tblAssetHeaders.Assign(value)
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.AssociationAttribute(Name:="tblUser_tblDocumentType", Storage:="_tblUser", ThisKey:="UserID", OtherKey:="UserID", IsForeignKey:=true)>  _
-	Public Property tblUser() As tblUser
-		Get
-			Return Me._tblUser.Entity
-		End Get
-		Set
-			Dim previousValue As tblUser = Me._tblUser.Entity
-			If ((Object.Equals(previousValue, value) = false)  _
-						OrElse (Me._tblUser.HasLoadedOrAssignedValue = false)) Then
-				Me.SendPropertyChanging
-				If ((previousValue Is Nothing)  _
-							= false) Then
-					Me._tblUser.Entity = Nothing
-					previousValue.tblDocumentTypes.Remove(Me)
-				End If
-				Me._tblUser.Entity = value
-				If ((value Is Nothing)  _
-							= false) Then
-					value.tblDocumentTypes.Add(Me)
-					Me._UserID = value.UserID
-				Else
-					Me._UserID = CType(Nothing, Nullable(Of Integer))
-				End If
-				Me.SendPropertyChanged("tblUser")
-			End If
-		End Set
-	End Property
-	
-	Public Event PropertyChanging As PropertyChangingEventHandler Implements System.ComponentModel.INotifyPropertyChanging.PropertyChanging
-	
-	Public Event PropertyChanged As PropertyChangedEventHandler Implements System.ComponentModel.INotifyPropertyChanged.PropertyChanged
-	
-	Protected Overridable Sub SendPropertyChanging()
-		If ((Me.PropertyChangingEvent Is Nothing)  _
-					= false) Then
-			RaiseEvent PropertyChanging(Me, emptyChangingEventArgs)
-		End If
-	End Sub
-	
-	Protected Overridable Sub SendPropertyChanged(ByVal propertyName As [String])
-		If ((Me.PropertyChangedEvent Is Nothing)  _
-					= false) Then
-			RaiseEvent PropertyChanged(Me, New PropertyChangedEventArgs(propertyName))
-		End If
-	End Sub
-	
-	Private Sub attach_tblAssetHeaders(ByVal entity As tblAssetHeader)
-		Me.SendPropertyChanging
-		entity.tblDocumentType = Me
-	End Sub
-	
-	Private Sub detach_tblAssetHeaders(ByVal entity As tblAssetHeader)
-		Me.SendPropertyChanging
-		entity.tblDocumentType = Nothing
-	End Sub
-End Class
-
-<Global.System.Data.Linq.Mapping.TableAttribute(Name:="dbo.tblEmployee")>  _
-Partial Public Class tblEmployee
-	Implements System.ComponentModel.INotifyPropertyChanging, System.ComponentModel.INotifyPropertyChanged
-	
-	Private Shared emptyChangingEventArgs As PropertyChangingEventArgs = New PropertyChangingEventArgs(String.Empty)
-	
-	Private _EmployeeID As Integer
-	
-	Private _FirstName As String
-	
-	Private _LastName As String
-	
-	Private _BranchID As System.Nullable(Of Integer)
-	
-	Private _DepartmentID As System.Nullable(Of Integer)
-	
-	Private _PositionID As System.Nullable(Of Integer)
-	
-	Private _SectionID As System.Nullable(Of Integer)
-	
-	Private _AddbyUserID As System.Nullable(Of Integer)
-	
-	Private _Datecreated As System.Nullable(Of Date)
-	
-	Private _tblBranch As EntityRef(Of tblBranch)
-	
-	Private _tblDepartment As EntityRef(Of tblDepartment)
-	
-	Private _tblPosition As EntityRef(Of tblPosition)
-	
-	Private _tblSection As EntityRef(Of tblSection)
-	
-	Private _tblUser As EntityRef(Of tblUser)
-	
-    #Region "Extensibility Method Definitions"
-    Partial Private Sub OnLoaded()
-    End Sub
-    Partial Private Sub OnValidate(action As System.Data.Linq.ChangeAction)
-    End Sub
-    Partial Private Sub OnCreated()
-    End Sub
-    Partial Private Sub OnEmployeeIDChanging(value As Integer)
-    End Sub
-    Partial Private Sub OnEmployeeIDChanged()
-    End Sub
-    Partial Private Sub OnFirstNameChanging(value As String)
-    End Sub
-    Partial Private Sub OnFirstNameChanged()
-    End Sub
-    Partial Private Sub OnLastNameChanging(value As String)
-    End Sub
-    Partial Private Sub OnLastNameChanged()
-    End Sub
-    Partial Private Sub OnBranchIDChanging(value As System.Nullable(Of Integer))
-    End Sub
-    Partial Private Sub OnBranchIDChanged()
-    End Sub
-    Partial Private Sub OnDepartmentIDChanging(value As System.Nullable(Of Integer))
-    End Sub
-    Partial Private Sub OnDepartmentIDChanged()
-    End Sub
-    Partial Private Sub OnPositionIDChanging(value As System.Nullable(Of Integer))
-    End Sub
-    Partial Private Sub OnPositionIDChanged()
-    End Sub
-    Partial Private Sub OnSectionIDChanging(value As System.Nullable(Of Integer))
-    End Sub
-    Partial Private Sub OnSectionIDChanged()
-    End Sub
-    Partial Private Sub OnAddbyUserIDChanging(value As System.Nullable(Of Integer))
-    End Sub
-    Partial Private Sub OnAddbyUserIDChanged()
-    End Sub
-    Partial Private Sub OnDatecreatedChanging(value As System.Nullable(Of Date))
-    End Sub
-    Partial Private Sub OnDatecreatedChanged()
-    End Sub
-    #End Region
-	
-	Public Sub New()
-		MyBase.New
-		Me._tblBranch = CType(Nothing, EntityRef(Of tblBranch))
-		Me._tblDepartment = CType(Nothing, EntityRef(Of tblDepartment))
-		Me._tblPosition = CType(Nothing, EntityRef(Of tblPosition))
-		Me._tblSection = CType(Nothing, EntityRef(Of tblSection))
-		Me._tblUser = CType(Nothing, EntityRef(Of tblUser))
-		OnCreated
-	End Sub
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_EmployeeID", AutoSync:=AutoSync.OnInsert, DbType:="Int NOT NULL IDENTITY", IsPrimaryKey:=true, IsDbGenerated:=true)>  _
-	Public Property EmployeeID() As Integer
-		Get
-			Return Me._EmployeeID
-		End Get
-		Set
-			If ((Me._EmployeeID = value)  _
-						= false) Then
-				Me.OnEmployeeIDChanging(value)
-				Me.SendPropertyChanging
-				Me._EmployeeID = value
-				Me.SendPropertyChanged("EmployeeID")
-				Me.OnEmployeeIDChanged
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_FirstName", DbType:="VarChar(200)")>  _
-	Public Property FirstName() As String
-		Get
-			Return Me._FirstName
-		End Get
-		Set
-			If (String.Equals(Me._FirstName, value) = false) Then
-				Me.OnFirstNameChanging(value)
-				Me.SendPropertyChanging
-				Me._FirstName = value
-				Me.SendPropertyChanged("FirstName")
-				Me.OnFirstNameChanged
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_LastName", DbType:="VarChar(200)")>  _
-	Public Property LastName() As String
-		Get
-			Return Me._LastName
-		End Get
-		Set
-			If (String.Equals(Me._LastName, value) = false) Then
-				Me.OnLastNameChanging(value)
-				Me.SendPropertyChanging
-				Me._LastName = value
-				Me.SendPropertyChanged("LastName")
-				Me.OnLastNameChanged
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_BranchID", DbType:="Int")>  _
-	Public Property BranchID() As System.Nullable(Of Integer)
-		Get
-			Return Me._BranchID
-		End Get
-		Set
-			If (Me._BranchID.Equals(value) = false) Then
-				If Me._tblBranch.HasLoadedOrAssignedValue Then
-					Throw New System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException()
-				End If
-				Me.OnBranchIDChanging(value)
-				Me.SendPropertyChanging
-				Me._BranchID = value
-				Me.SendPropertyChanged("BranchID")
-				Me.OnBranchIDChanged
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_DepartmentID", DbType:="Int")>  _
-	Public Property DepartmentID() As System.Nullable(Of Integer)
-		Get
-			Return Me._DepartmentID
-		End Get
-		Set
-			If (Me._DepartmentID.Equals(value) = false) Then
-				If Me._tblDepartment.HasLoadedOrAssignedValue Then
-					Throw New System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException()
-				End If
-				Me.OnDepartmentIDChanging(value)
-				Me.SendPropertyChanging
-				Me._DepartmentID = value
-				Me.SendPropertyChanged("DepartmentID")
-				Me.OnDepartmentIDChanged
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_PositionID", DbType:="Int")>  _
-	Public Property PositionID() As System.Nullable(Of Integer)
-		Get
-			Return Me._PositionID
-		End Get
-		Set
-			If (Me._PositionID.Equals(value) = false) Then
-				If Me._tblPosition.HasLoadedOrAssignedValue Then
-					Throw New System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException()
-				End If
-				Me.OnPositionIDChanging(value)
-				Me.SendPropertyChanging
-				Me._PositionID = value
-				Me.SendPropertyChanged("PositionID")
-				Me.OnPositionIDChanged
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_SectionID", DbType:="Int")>  _
-	Public Property SectionID() As System.Nullable(Of Integer)
-		Get
-			Return Me._SectionID
-		End Get
-		Set
-			If (Me._SectionID.Equals(value) = false) Then
-				If Me._tblSection.HasLoadedOrAssignedValue Then
-					Throw New System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException()
-				End If
-				Me.OnSectionIDChanging(value)
-				Me.SendPropertyChanging
-				Me._SectionID = value
-				Me.SendPropertyChanged("SectionID")
-				Me.OnSectionIDChanged
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_AddbyUserID", DbType:="Int")>  _
-	Public Property AddbyUserID() As System.Nullable(Of Integer)
-		Get
-			Return Me._AddbyUserID
-		End Get
-		Set
-			If (Me._AddbyUserID.Equals(value) = false) Then
-				If Me._tblUser.HasLoadedOrAssignedValue Then
-					Throw New System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException()
-				End If
-				Me.OnAddbyUserIDChanging(value)
-				Me.SendPropertyChanging
-				Me._AddbyUserID = value
-				Me.SendPropertyChanged("AddbyUserID")
-				Me.OnAddbyUserIDChanged
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_Datecreated", DbType:="Date")>  _
-	Public Property Datecreated() As System.Nullable(Of Date)
-		Get
-			Return Me._Datecreated
-		End Get
-		Set
-			If (Me._Datecreated.Equals(value) = false) Then
-				Me.OnDatecreatedChanging(value)
-				Me.SendPropertyChanging
-				Me._Datecreated = value
-				Me.SendPropertyChanged("Datecreated")
-				Me.OnDatecreatedChanged
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.AssociationAttribute(Name:="tblBranch_tblEmployee", Storage:="_tblBranch", ThisKey:="BranchID", OtherKey:="BranchID", IsForeignKey:=true)>  _
-	Public Property tblBranch() As tblBranch
-		Get
-			Return Me._tblBranch.Entity
-		End Get
-		Set
-			Dim previousValue As tblBranch = Me._tblBranch.Entity
-			If ((Object.Equals(previousValue, value) = false)  _
-						OrElse (Me._tblBranch.HasLoadedOrAssignedValue = false)) Then
-				Me.SendPropertyChanging
-				If ((previousValue Is Nothing)  _
-							= false) Then
-					Me._tblBranch.Entity = Nothing
-					previousValue.tblEmployees.Remove(Me)
-				End If
-				Me._tblBranch.Entity = value
-				If ((value Is Nothing)  _
-							= false) Then
-					value.tblEmployees.Add(Me)
-					Me._BranchID = value.BranchID
-				Else
-					Me._BranchID = CType(Nothing, Nullable(Of Integer))
-				End If
-				Me.SendPropertyChanged("tblBranch")
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.AssociationAttribute(Name:="tblDepartment_tblEmployee", Storage:="_tblDepartment", ThisKey:="DepartmentID", OtherKey:="DepartmentID", IsForeignKey:=true)>  _
-	Public Property tblDepartment() As tblDepartment
-		Get
-			Return Me._tblDepartment.Entity
-		End Get
-		Set
-			Dim previousValue As tblDepartment = Me._tblDepartment.Entity
-			If ((Object.Equals(previousValue, value) = false)  _
-						OrElse (Me._tblDepartment.HasLoadedOrAssignedValue = false)) Then
-				Me.SendPropertyChanging
-				If ((previousValue Is Nothing)  _
-							= false) Then
-					Me._tblDepartment.Entity = Nothing
-					previousValue.tblEmployees.Remove(Me)
-				End If
-				Me._tblDepartment.Entity = value
-				If ((value Is Nothing)  _
-							= false) Then
-					value.tblEmployees.Add(Me)
-					Me._DepartmentID = value.DepartmentID
-				Else
-					Me._DepartmentID = CType(Nothing, Nullable(Of Integer))
-				End If
-				Me.SendPropertyChanged("tblDepartment")
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.AssociationAttribute(Name:="tblPosition_tblEmployee", Storage:="_tblPosition", ThisKey:="PositionID", OtherKey:="PositionID", IsForeignKey:=true)>  _
-	Public Property tblPosition() As tblPosition
-		Get
-			Return Me._tblPosition.Entity
-		End Get
-		Set
-			Dim previousValue As tblPosition = Me._tblPosition.Entity
-			If ((Object.Equals(previousValue, value) = false)  _
-						OrElse (Me._tblPosition.HasLoadedOrAssignedValue = false)) Then
-				Me.SendPropertyChanging
-				If ((previousValue Is Nothing)  _
-							= false) Then
-					Me._tblPosition.Entity = Nothing
-					previousValue.tblEmployees.Remove(Me)
-				End If
-				Me._tblPosition.Entity = value
-				If ((value Is Nothing)  _
-							= false) Then
-					value.tblEmployees.Add(Me)
-					Me._PositionID = value.PositionID
-				Else
-					Me._PositionID = CType(Nothing, Nullable(Of Integer))
-				End If
-				Me.SendPropertyChanged("tblPosition")
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.AssociationAttribute(Name:="tblSection_tblEmployee", Storage:="_tblSection", ThisKey:="SectionID", OtherKey:="SectionID", IsForeignKey:=true)>  _
-	Public Property tblSection() As tblSection
-		Get
-			Return Me._tblSection.Entity
-		End Get
-		Set
-			Dim previousValue As tblSection = Me._tblSection.Entity
-			If ((Object.Equals(previousValue, value) = false)  _
-						OrElse (Me._tblSection.HasLoadedOrAssignedValue = false)) Then
-				Me.SendPropertyChanging
-				If ((previousValue Is Nothing)  _
-							= false) Then
-					Me._tblSection.Entity = Nothing
-					previousValue.tblEmployees.Remove(Me)
-				End If
-				Me._tblSection.Entity = value
-				If ((value Is Nothing)  _
-							= false) Then
-					value.tblEmployees.Add(Me)
-					Me._SectionID = value.SectionID
-				Else
-					Me._SectionID = CType(Nothing, Nullable(Of Integer))
-				End If
-				Me.SendPropertyChanged("tblSection")
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.AssociationAttribute(Name:="tblUser_tblEmployee", Storage:="_tblUser", ThisKey:="AddbyUserID", OtherKey:="UserID", IsForeignKey:=true)>  _
-	Public Property tblUser() As tblUser
-		Get
-			Return Me._tblUser.Entity
-		End Get
-		Set
-			Dim previousValue As tblUser = Me._tblUser.Entity
-			If ((Object.Equals(previousValue, value) = false)  _
-						OrElse (Me._tblUser.HasLoadedOrAssignedValue = false)) Then
-				Me.SendPropertyChanging
-				If ((previousValue Is Nothing)  _
-							= false) Then
-					Me._tblUser.Entity = Nothing
-					previousValue.tblEmployees.Remove(Me)
-				End If
-				Me._tblUser.Entity = value
-				If ((value Is Nothing)  _
-							= false) Then
-					value.tblEmployees.Add(Me)
-					Me._AddbyUserID = value.UserID
-				Else
-					Me._AddbyUserID = CType(Nothing, Nullable(Of Integer))
-				End If
-				Me.SendPropertyChanged("tblUser")
-			End If
-		End Set
-	End Property
-	
-	Public Event PropertyChanging As PropertyChangingEventHandler Implements System.ComponentModel.INotifyPropertyChanging.PropertyChanging
-	
-	Public Event PropertyChanged As PropertyChangedEventHandler Implements System.ComponentModel.INotifyPropertyChanged.PropertyChanged
-	
-	Protected Overridable Sub SendPropertyChanging()
-		If ((Me.PropertyChangingEvent Is Nothing)  _
-					= false) Then
-			RaiseEvent PropertyChanging(Me, emptyChangingEventArgs)
-		End If
-	End Sub
-	
-	Protected Overridable Sub SendPropertyChanged(ByVal propertyName As [String])
-		If ((Me.PropertyChangedEvent Is Nothing)  _
-					= false) Then
-			RaiseEvent PropertyChanged(Me, New PropertyChangedEventArgs(propertyName))
-		End If
-	End Sub
-End Class
-
-<Global.System.Data.Linq.Mapping.TableAttribute(Name:="dbo.tblPosition")>  _
-Partial Public Class tblPosition
-	Implements System.ComponentModel.INotifyPropertyChanging, System.ComponentModel.INotifyPropertyChanged
-	
-	Private Shared emptyChangingEventArgs As PropertyChangingEventArgs = New PropertyChangingEventArgs(String.Empty)
-	
-	Private _PositionID As Integer
-	
-	Private _PositionCode As String
-	
-	Private _PositionDescription As String
-	
-	Private _DateCreated As System.Nullable(Of Date)
-	
-	Private _DateModified As System.Nullable(Of Date)
-	
-	Private _UserID As System.Nullable(Of Integer)
-	
-	Private _UserIDModified As System.Nullable(Of Integer)
-	
-	Private _tblEmployees As EntitySet(Of tblEmployee)
-	
-	Private _tblUser As EntityRef(Of tblUser)
-	
-    #Region "Extensibility Method Definitions"
-    Partial Private Sub OnLoaded()
-    End Sub
-    Partial Private Sub OnValidate(action As System.Data.Linq.ChangeAction)
-    End Sub
-    Partial Private Sub OnCreated()
-    End Sub
-    Partial Private Sub OnPositionIDChanging(value As Integer)
-    End Sub
-    Partial Private Sub OnPositionIDChanged()
-    End Sub
-    Partial Private Sub OnPositionCodeChanging(value As String)
-    End Sub
-    Partial Private Sub OnPositionCodeChanged()
-    End Sub
-    Partial Private Sub OnPositionDescriptionChanging(value As String)
-    End Sub
-    Partial Private Sub OnPositionDescriptionChanged()
-    End Sub
-    Partial Private Sub OnDateCreatedChanging(value As System.Nullable(Of Date))
-    End Sub
-    Partial Private Sub OnDateCreatedChanged()
-    End Sub
-    Partial Private Sub OnDateModifiedChanging(value As System.Nullable(Of Date))
-    End Sub
-    Partial Private Sub OnDateModifiedChanged()
-    End Sub
-    Partial Private Sub OnUserIDChanging(value As System.Nullable(Of Integer))
-    End Sub
-    Partial Private Sub OnUserIDChanged()
-    End Sub
-    Partial Private Sub OnUserIDModifiedChanging(value As System.Nullable(Of Integer))
-    End Sub
-    Partial Private Sub OnUserIDModifiedChanged()
-    End Sub
-    #End Region
-	
-	Public Sub New()
-		MyBase.New
-		Me._tblEmployees = New EntitySet(Of tblEmployee)(AddressOf Me.attach_tblEmployees, AddressOf Me.detach_tblEmployees)
-		Me._tblUser = CType(Nothing, EntityRef(Of tblUser))
-		OnCreated
-	End Sub
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_PositionID", AutoSync:=AutoSync.OnInsert, DbType:="Int NOT NULL IDENTITY", IsPrimaryKey:=true, IsDbGenerated:=true)>  _
-	Public Property PositionID() As Integer
-		Get
-			Return Me._PositionID
-		End Get
-		Set
-			If ((Me._PositionID = value)  _
-						= false) Then
-				Me.OnPositionIDChanging(value)
-				Me.SendPropertyChanging
-				Me._PositionID = value
-				Me.SendPropertyChanged("PositionID")
-				Me.OnPositionIDChanged
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_PositionCode", DbType:="VarChar(200)")>  _
-	Public Property PositionCode() As String
-		Get
-			Return Me._PositionCode
-		End Get
-		Set
-			If (String.Equals(Me._PositionCode, value) = false) Then
-				Me.OnPositionCodeChanging(value)
-				Me.SendPropertyChanging
-				Me._PositionCode = value
-				Me.SendPropertyChanged("PositionCode")
-				Me.OnPositionCodeChanged
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_PositionDescription", DbType:="VarChar(200)")>  _
-	Public Property PositionDescription() As String
-		Get
-			Return Me._PositionDescription
-		End Get
-		Set
-			If (String.Equals(Me._PositionDescription, value) = false) Then
-				Me.OnPositionDescriptionChanging(value)
-				Me.SendPropertyChanging
-				Me._PositionDescription = value
-				Me.SendPropertyChanged("PositionDescription")
-				Me.OnPositionDescriptionChanged
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_DateCreated", DbType:="Date")>  _
-	Public Property DateCreated() As System.Nullable(Of Date)
-		Get
-			Return Me._DateCreated
-		End Get
-		Set
-			If (Me._DateCreated.Equals(value) = false) Then
-				Me.OnDateCreatedChanging(value)
-				Me.SendPropertyChanging
-				Me._DateCreated = value
-				Me.SendPropertyChanged("DateCreated")
-				Me.OnDateCreatedChanged
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_DateModified", DbType:="Date")>  _
-	Public Property DateModified() As System.Nullable(Of Date)
-		Get
-			Return Me._DateModified
-		End Get
-		Set
-			If (Me._DateModified.Equals(value) = false) Then
-				Me.OnDateModifiedChanging(value)
-				Me.SendPropertyChanging
-				Me._DateModified = value
-				Me.SendPropertyChanged("DateModified")
-				Me.OnDateModifiedChanged
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_UserID", DbType:="Int")>  _
-	Public Property UserID() As System.Nullable(Of Integer)
-		Get
-			Return Me._UserID
-		End Get
-		Set
-			If (Me._UserID.Equals(value) = false) Then
-				If Me._tblUser.HasLoadedOrAssignedValue Then
-					Throw New System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException()
-				End If
-				Me.OnUserIDChanging(value)
-				Me.SendPropertyChanging
-				Me._UserID = value
-				Me.SendPropertyChanged("UserID")
-				Me.OnUserIDChanged
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_UserIDModified", DbType:="Int")>  _
-	Public Property UserIDModified() As System.Nullable(Of Integer)
-		Get
-			Return Me._UserIDModified
-		End Get
-		Set
-			If (Me._UserIDModified.Equals(value) = false) Then
-				Me.OnUserIDModifiedChanging(value)
-				Me.SendPropertyChanging
-				Me._UserIDModified = value
-				Me.SendPropertyChanged("UserIDModified")
-				Me.OnUserIDModifiedChanged
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.AssociationAttribute(Name:="tblPosition_tblEmployee", Storage:="_tblEmployees", ThisKey:="PositionID", OtherKey:="PositionID")>  _
-	Public Property tblEmployees() As EntitySet(Of tblEmployee)
-		Get
-			Return Me._tblEmployees
-		End Get
-		Set
-			Me._tblEmployees.Assign(value)
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.AssociationAttribute(Name:="tblUser_tblPosition", Storage:="_tblUser", ThisKey:="UserID", OtherKey:="UserID", IsForeignKey:=true)>  _
-	Public Property tblUser() As tblUser
-		Get
-			Return Me._tblUser.Entity
-		End Get
-		Set
-			Dim previousValue As tblUser = Me._tblUser.Entity
-			If ((Object.Equals(previousValue, value) = false)  _
-						OrElse (Me._tblUser.HasLoadedOrAssignedValue = false)) Then
-				Me.SendPropertyChanging
-				If ((previousValue Is Nothing)  _
-							= false) Then
-					Me._tblUser.Entity = Nothing
-					previousValue.tblPositions.Remove(Me)
-				End If
-				Me._tblUser.Entity = value
-				If ((value Is Nothing)  _
-							= false) Then
-					value.tblPositions.Add(Me)
-					Me._UserID = value.UserID
-				Else
-					Me._UserID = CType(Nothing, Nullable(Of Integer))
-				End If
-				Me.SendPropertyChanged("tblUser")
-			End If
-		End Set
-	End Property
-	
-	Public Event PropertyChanging As PropertyChangingEventHandler Implements System.ComponentModel.INotifyPropertyChanging.PropertyChanging
-	
-	Public Event PropertyChanged As PropertyChangedEventHandler Implements System.ComponentModel.INotifyPropertyChanged.PropertyChanged
-	
-	Protected Overridable Sub SendPropertyChanging()
-		If ((Me.PropertyChangingEvent Is Nothing)  _
-					= false) Then
-			RaiseEvent PropertyChanging(Me, emptyChangingEventArgs)
-		End If
-	End Sub
-	
-	Protected Overridable Sub SendPropertyChanged(ByVal propertyName As [String])
-		If ((Me.PropertyChangedEvent Is Nothing)  _
-					= false) Then
-			RaiseEvent PropertyChanged(Me, New PropertyChangedEventArgs(propertyName))
-		End If
-	End Sub
-	
-	Private Sub attach_tblEmployees(ByVal entity As tblEmployee)
-		Me.SendPropertyChanging
-		entity.tblPosition = Me
-	End Sub
-	
-	Private Sub detach_tblEmployees(ByVal entity As tblEmployee)
-		Me.SendPropertyChanging
-		entity.tblPosition = Nothing
-	End Sub
-End Class
-
-<Global.System.Data.Linq.Mapping.TableAttribute(Name:="dbo.tblSection")>  _
-Partial Public Class tblSection
-	Implements System.ComponentModel.INotifyPropertyChanging, System.ComponentModel.INotifyPropertyChanged
-	
-	Private Shared emptyChangingEventArgs As PropertyChangingEventArgs = New PropertyChangingEventArgs(String.Empty)
-	
-	Private _SectionID As Integer
-	
-	Private _SectionCode As String
-	
-	Private _SectionDecription As String
-	
-	Private _DateCreated As System.Nullable(Of Date)
-	
-	Private _DateModified As System.Nullable(Of Date)
-	
-	Private _UserID As System.Nullable(Of Integer)
-	
-	Private _UserIDModified As System.Nullable(Of Integer)
-	
-	Private _tblEmployees As EntitySet(Of tblEmployee)
-	
-	Private _tblUser As EntityRef(Of tblUser)
-	
-    #Region "Extensibility Method Definitions"
-    Partial Private Sub OnLoaded()
-    End Sub
-    Partial Private Sub OnValidate(action As System.Data.Linq.ChangeAction)
-    End Sub
-    Partial Private Sub OnCreated()
-    End Sub
-    Partial Private Sub OnSectionIDChanging(value As Integer)
-    End Sub
-    Partial Private Sub OnSectionIDChanged()
-    End Sub
-    Partial Private Sub OnSectionCodeChanging(value As String)
-    End Sub
-    Partial Private Sub OnSectionCodeChanged()
-    End Sub
-    Partial Private Sub OnSectionDecriptionChanging(value As String)
-    End Sub
-    Partial Private Sub OnSectionDecriptionChanged()
-    End Sub
-    Partial Private Sub OnDateCreatedChanging(value As System.Nullable(Of Date))
-    End Sub
-    Partial Private Sub OnDateCreatedChanged()
-    End Sub
-    Partial Private Sub OnDateModifiedChanging(value As System.Nullable(Of Date))
-    End Sub
-    Partial Private Sub OnDateModifiedChanged()
-    End Sub
-    Partial Private Sub OnUserIDChanging(value As System.Nullable(Of Integer))
-    End Sub
-    Partial Private Sub OnUserIDChanged()
-    End Sub
-    Partial Private Sub OnUserIDModifiedChanging(value As System.Nullable(Of Integer))
-    End Sub
-    Partial Private Sub OnUserIDModifiedChanged()
-    End Sub
-    #End Region
-	
-	Public Sub New()
-		MyBase.New
-		Me._tblEmployees = New EntitySet(Of tblEmployee)(AddressOf Me.attach_tblEmployees, AddressOf Me.detach_tblEmployees)
-		Me._tblUser = CType(Nothing, EntityRef(Of tblUser))
-		OnCreated
-	End Sub
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_SectionID", AutoSync:=AutoSync.OnInsert, DbType:="Int NOT NULL IDENTITY", IsPrimaryKey:=true, IsDbGenerated:=true)>  _
-	Public Property SectionID() As Integer
-		Get
-			Return Me._SectionID
-		End Get
-		Set
-			If ((Me._SectionID = value)  _
-						= false) Then
-				Me.OnSectionIDChanging(value)
-				Me.SendPropertyChanging
-				Me._SectionID = value
-				Me.SendPropertyChanged("SectionID")
-				Me.OnSectionIDChanged
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_SectionCode", DbType:="VarChar(200)")>  _
-	Public Property SectionCode() As String
-		Get
-			Return Me._SectionCode
-		End Get
-		Set
-			If (String.Equals(Me._SectionCode, value) = false) Then
-				Me.OnSectionCodeChanging(value)
-				Me.SendPropertyChanging
-				Me._SectionCode = value
-				Me.SendPropertyChanged("SectionCode")
-				Me.OnSectionCodeChanged
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_SectionDecription", DbType:="VarChar(200)")>  _
-	Public Property SectionDecription() As String
-		Get
-			Return Me._SectionDecription
-		End Get
-		Set
-			If (String.Equals(Me._SectionDecription, value) = false) Then
-				Me.OnSectionDecriptionChanging(value)
-				Me.SendPropertyChanging
-				Me._SectionDecription = value
-				Me.SendPropertyChanged("SectionDecription")
-				Me.OnSectionDecriptionChanged
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_DateCreated", DbType:="Date")>  _
-	Public Property DateCreated() As System.Nullable(Of Date)
-		Get
-			Return Me._DateCreated
-		End Get
-		Set
-			If (Me._DateCreated.Equals(value) = false) Then
-				Me.OnDateCreatedChanging(value)
-				Me.SendPropertyChanging
-				Me._DateCreated = value
-				Me.SendPropertyChanged("DateCreated")
-				Me.OnDateCreatedChanged
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_DateModified", DbType:="Date")>  _
-	Public Property DateModified() As System.Nullable(Of Date)
-		Get
-			Return Me._DateModified
-		End Get
-		Set
-			If (Me._DateModified.Equals(value) = false) Then
-				Me.OnDateModifiedChanging(value)
-				Me.SendPropertyChanging
-				Me._DateModified = value
-				Me.SendPropertyChanged("DateModified")
-				Me.OnDateModifiedChanged
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_UserID", DbType:="Int")>  _
-	Public Property UserID() As System.Nullable(Of Integer)
-		Get
-			Return Me._UserID
-		End Get
-		Set
-			If (Me._UserID.Equals(value) = false) Then
-				If Me._tblUser.HasLoadedOrAssignedValue Then
-					Throw New System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException()
-				End If
-				Me.OnUserIDChanging(value)
-				Me.SendPropertyChanging
-				Me._UserID = value
-				Me.SendPropertyChanged("UserID")
-				Me.OnUserIDChanged
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_UserIDModified", DbType:="Int")>  _
-	Public Property UserIDModified() As System.Nullable(Of Integer)
-		Get
-			Return Me._UserIDModified
-		End Get
-		Set
-			If (Me._UserIDModified.Equals(value) = false) Then
-				Me.OnUserIDModifiedChanging(value)
-				Me.SendPropertyChanging
-				Me._UserIDModified = value
-				Me.SendPropertyChanged("UserIDModified")
-				Me.OnUserIDModifiedChanged
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.AssociationAttribute(Name:="tblSection_tblEmployee", Storage:="_tblEmployees", ThisKey:="SectionID", OtherKey:="SectionID")>  _
-	Public Property tblEmployees() As EntitySet(Of tblEmployee)
-		Get
-			Return Me._tblEmployees
-		End Get
-		Set
-			Me._tblEmployees.Assign(value)
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.AssociationAttribute(Name:="tblUser_tblSection", Storage:="_tblUser", ThisKey:="UserID", OtherKey:="UserID", IsForeignKey:=true)>  _
-	Public Property tblUser() As tblUser
-		Get
-			Return Me._tblUser.Entity
-		End Get
-		Set
-			Dim previousValue As tblUser = Me._tblUser.Entity
-			If ((Object.Equals(previousValue, value) = false)  _
-						OrElse (Me._tblUser.HasLoadedOrAssignedValue = false)) Then
-				Me.SendPropertyChanging
-				If ((previousValue Is Nothing)  _
-							= false) Then
-					Me._tblUser.Entity = Nothing
-					previousValue.tblSections.Remove(Me)
-				End If
-				Me._tblUser.Entity = value
-				If ((value Is Nothing)  _
-							= false) Then
-					value.tblSections.Add(Me)
-					Me._UserID = value.UserID
-				Else
-					Me._UserID = CType(Nothing, Nullable(Of Integer))
-				End If
-				Me.SendPropertyChanged("tblUser")
-			End If
-		End Set
-	End Property
-	
-	Public Event PropertyChanging As PropertyChangingEventHandler Implements System.ComponentModel.INotifyPropertyChanging.PropertyChanging
-	
-	Public Event PropertyChanged As PropertyChangedEventHandler Implements System.ComponentModel.INotifyPropertyChanged.PropertyChanged
-	
-	Protected Overridable Sub SendPropertyChanging()
-		If ((Me.PropertyChangingEvent Is Nothing)  _
-					= false) Then
-			RaiseEvent PropertyChanging(Me, emptyChangingEventArgs)
-		End If
-	End Sub
-	
-	Protected Overridable Sub SendPropertyChanged(ByVal propertyName As [String])
-		If ((Me.PropertyChangedEvent Is Nothing)  _
-					= false) Then
-			RaiseEvent PropertyChanged(Me, New PropertyChangedEventArgs(propertyName))
-		End If
-	End Sub
-	
-	Private Sub attach_tblEmployees(ByVal entity As tblEmployee)
-		Me.SendPropertyChanging
-		entity.tblSection = Me
-	End Sub
-	
-	Private Sub detach_tblEmployees(ByVal entity As tblEmployee)
-		Me.SendPropertyChanging
-		entity.tblSection = Nothing
-	End Sub
-End Class
-
-<Global.System.Data.Linq.Mapping.TableAttribute(Name:="dbo.tblUser")>  _
-Partial Public Class tblUser
-	Implements System.ComponentModel.INotifyPropertyChanging, System.ComponentModel.INotifyPropertyChanged
-	
-	Private Shared emptyChangingEventArgs As PropertyChangingEventArgs = New PropertyChangingEventArgs(String.Empty)
-	
-	Private _UserID As Integer
-	
-	Private _EmployeeID As System.Nullable(Of Integer)
-	
-	Private _Username As String
-	
-	Private _Password As String
-	
-	Private _Status As String
-	
-	Private _tblAssetConditions As EntitySet(Of tblAssetCondition)
-	
-	Private _tblVendor As EntityRef(Of tblVendor)
-	
-	Private _tblAssetDetailMasterlists As EntitySet(Of tblAssetDetailMasterlist)
-	
-	Private _tblAssetHeaderMasterlists As EntitySet(Of tblAssetHeaderMasterlist)
-	
-	Private _tblAssetTypes As EntitySet(Of tblAssetType)
-	
-	Private _tblBranch As EntityRef(Of tblBranch)
-	
-	Private _tblCategories As EntitySet(Of tblCategory)
-	
-	Private _tblDepartment As EntityRef(Of tblDepartment)
-	
-	Private _tblDocumentTypes As EntitySet(Of tblDocumentType)
-	
-	Private _tblEmployees As EntitySet(Of tblEmployee)
-	
-	Private _tblPositions As EntitySet(Of tblPosition)
-	
-	Private _tblSections As EntitySet(Of tblSection)
-	
-	Private _tblAssetDetails As EntitySet(Of tblAssetDetail)
-	
-	Private _tblAssetHeaders As EntitySet(Of tblAssetHeader)
-	
-    #Region "Extensibility Method Definitions"
-    Partial Private Sub OnLoaded()
-    End Sub
-    Partial Private Sub OnValidate(action As System.Data.Linq.ChangeAction)
-    End Sub
-    Partial Private Sub OnCreated()
-    End Sub
-    Partial Private Sub OnUserIDChanging(value As Integer)
-    End Sub
-    Partial Private Sub OnUserIDChanged()
-    End Sub
-    Partial Private Sub OnEmployeeIDChanging(value As System.Nullable(Of Integer))
-    End Sub
-    Partial Private Sub OnEmployeeIDChanged()
-    End Sub
-    Partial Private Sub OnUsernameChanging(value As String)
-    End Sub
-    Partial Private Sub OnUsernameChanged()
-    End Sub
-    Partial Private Sub OnPasswordChanging(value As String)
-    End Sub
-    Partial Private Sub OnPasswordChanged()
-    End Sub
-    Partial Private Sub OnStatusChanging(value As String)
-    End Sub
-    Partial Private Sub OnStatusChanged()
-    End Sub
-    #End Region
-	
-	Public Sub New()
-		MyBase.New
-		Me._tblAssetConditions = New EntitySet(Of tblAssetCondition)(AddressOf Me.attach_tblAssetConditions, AddressOf Me.detach_tblAssetConditions)
-		Me._tblVendor = CType(Nothing, EntityRef(Of tblVendor))
-		Me._tblAssetDetailMasterlists = New EntitySet(Of tblAssetDetailMasterlist)(AddressOf Me.attach_tblAssetDetailMasterlists, AddressOf Me.detach_tblAssetDetailMasterlists)
-		Me._tblAssetHeaderMasterlists = New EntitySet(Of tblAssetHeaderMasterlist)(AddressOf Me.attach_tblAssetHeaderMasterlists, AddressOf Me.detach_tblAssetHeaderMasterlists)
-		Me._tblAssetTypes = New EntitySet(Of tblAssetType)(AddressOf Me.attach_tblAssetTypes, AddressOf Me.detach_tblAssetTypes)
-		Me._tblBranch = CType(Nothing, EntityRef(Of tblBranch))
-		Me._tblCategories = New EntitySet(Of tblCategory)(AddressOf Me.attach_tblCategories, AddressOf Me.detach_tblCategories)
-		Me._tblDepartment = CType(Nothing, EntityRef(Of tblDepartment))
-		Me._tblDocumentTypes = New EntitySet(Of tblDocumentType)(AddressOf Me.attach_tblDocumentTypes, AddressOf Me.detach_tblDocumentTypes)
-		Me._tblEmployees = New EntitySet(Of tblEmployee)(AddressOf Me.attach_tblEmployees, AddressOf Me.detach_tblEmployees)
-		Me._tblPositions = New EntitySet(Of tblPosition)(AddressOf Me.attach_tblPositions, AddressOf Me.detach_tblPositions)
-		Me._tblSections = New EntitySet(Of tblSection)(AddressOf Me.attach_tblSections, AddressOf Me.detach_tblSections)
-		Me._tblAssetDetails = New EntitySet(Of tblAssetDetail)(AddressOf Me.attach_tblAssetDetails, AddressOf Me.detach_tblAssetDetails)
-		Me._tblAssetHeaders = New EntitySet(Of tblAssetHeader)(AddressOf Me.attach_tblAssetHeaders, AddressOf Me.detach_tblAssetHeaders)
-		OnCreated
-	End Sub
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_UserID", AutoSync:=AutoSync.OnInsert, DbType:="Int NOT NULL IDENTITY", IsPrimaryKey:=true, IsDbGenerated:=true)>  _
-	Public Property UserID() As Integer
-		Get
-			Return Me._UserID
-		End Get
-		Set
-			If ((Me._UserID = value)  _
-						= false) Then
-				Me.OnUserIDChanging(value)
-				Me.SendPropertyChanging
-				Me._UserID = value
-				Me.SendPropertyChanged("UserID")
-				Me.OnUserIDChanged
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_EmployeeID", DbType:="Int")>  _
-	Public Property EmployeeID() As System.Nullable(Of Integer)
-		Get
-			Return Me._EmployeeID
-		End Get
-		Set
-			If (Me._EmployeeID.Equals(value) = false) Then
-				Me.OnEmployeeIDChanging(value)
-				Me.SendPropertyChanging
-				Me._EmployeeID = value
-				Me.SendPropertyChanged("EmployeeID")
-				Me.OnEmployeeIDChanged
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_Username", DbType:="VarChar(200)")>  _
-	Public Property Username() As String
-		Get
-			Return Me._Username
-		End Get
-		Set
-			If (String.Equals(Me._Username, value) = false) Then
-				Me.OnUsernameChanging(value)
-				Me.SendPropertyChanging
-				Me._Username = value
-				Me.SendPropertyChanged("Username")
-				Me.OnUsernameChanged
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_Password", DbType:="VarChar(200)")>  _
-	Public Property Password() As String
-		Get
-			Return Me._Password
-		End Get
-		Set
-			If (String.Equals(Me._Password, value) = false) Then
-				Me.OnPasswordChanging(value)
-				Me.SendPropertyChanging
-				Me._Password = value
-				Me.SendPropertyChanged("Password")
-				Me.OnPasswordChanged
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_Status", DbType:="VarChar(200)")>  _
-	Public Property Status() As String
-		Get
-			Return Me._Status
-		End Get
-		Set
-			If (String.Equals(Me._Status, value) = false) Then
-				Me.OnStatusChanging(value)
-				Me.SendPropertyChanging
-				Me._Status = value
-				Me.SendPropertyChanged("Status")
-				Me.OnStatusChanged
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.AssociationAttribute(Name:="tblUser_tblAssetCondition", Storage:="_tblAssetConditions", ThisKey:="UserID", OtherKey:="UserID")>  _
-	Public Property tblAssetConditions() As EntitySet(Of tblAssetCondition)
-		Get
-			Return Me._tblAssetConditions
-		End Get
-		Set
-			Me._tblAssetConditions.Assign(value)
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.AssociationAttribute(Name:="tblUser_tblVendor", Storage:="_tblVendor", ThisKey:="UserID", OtherKey:="VendorID", IsUnique:=true, IsForeignKey:=false)>  _
-	Public Property tblVendor() As tblVendor
-		Get
-			Return Me._tblVendor.Entity
-		End Get
-		Set
-			Dim previousValue As tblVendor = Me._tblVendor.Entity
-			If ((Object.Equals(previousValue, value) = false)  _
-						OrElse (Me._tblVendor.HasLoadedOrAssignedValue = false)) Then
-				Me.SendPropertyChanging
-				If ((previousValue Is Nothing)  _
-							= false) Then
-					Me._tblVendor.Entity = Nothing
-					previousValue.tblUser = Nothing
-				End If
-				Me._tblVendor.Entity = value
-				If (Object.Equals(value, Nothing) = false) Then
-					value.tblUser = Me
-				End If
-				Me.SendPropertyChanged("tblVendor")
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.AssociationAttribute(Name:="tblUser_tblAssetDetailMasterlist", Storage:="_tblAssetDetailMasterlists", ThisKey:="UserID", OtherKey:="UserID")>  _
-	Public Property tblAssetDetailMasterlists() As EntitySet(Of tblAssetDetailMasterlist)
-		Get
-			Return Me._tblAssetDetailMasterlists
-		End Get
-		Set
-			Me._tblAssetDetailMasterlists.Assign(value)
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.AssociationAttribute(Name:="tblUser_tblAssetHeaderMasterlist", Storage:="_tblAssetHeaderMasterlists", ThisKey:="UserID", OtherKey:="UserID")>  _
-	Public Property tblAssetHeaderMasterlists() As EntitySet(Of tblAssetHeaderMasterlist)
-		Get
-			Return Me._tblAssetHeaderMasterlists
-		End Get
-		Set
-			Me._tblAssetHeaderMasterlists.Assign(value)
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.AssociationAttribute(Name:="tblUser_tblAssetType", Storage:="_tblAssetTypes", ThisKey:="UserID", OtherKey:="UserID")>  _
-	Public Property tblAssetTypes() As EntitySet(Of tblAssetType)
-		Get
-			Return Me._tblAssetTypes
-		End Get
-		Set
-			Me._tblAssetTypes.Assign(value)
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.AssociationAttribute(Name:="tblUser_tblBranch", Storage:="_tblBranch", ThisKey:="UserID", OtherKey:="BranchID", IsUnique:=true, IsForeignKey:=false)>  _
-	Public Property tblBranch() As tblBranch
-		Get
-			Return Me._tblBranch.Entity
-		End Get
-		Set
-			Dim previousValue As tblBranch = Me._tblBranch.Entity
-			If ((Object.Equals(previousValue, value) = false)  _
-						OrElse (Me._tblBranch.HasLoadedOrAssignedValue = false)) Then
-				Me.SendPropertyChanging
-				If ((previousValue Is Nothing)  _
-							= false) Then
-					Me._tblBranch.Entity = Nothing
-					previousValue.tblUser = Nothing
-				End If
-				Me._tblBranch.Entity = value
-				If (Object.Equals(value, Nothing) = false) Then
-					value.tblUser = Me
-				End If
-				Me.SendPropertyChanged("tblBranch")
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.AssociationAttribute(Name:="tblUser_tblCategory", Storage:="_tblCategories", ThisKey:="UserID", OtherKey:="UserID")>  _
-	Public Property tblCategories() As EntitySet(Of tblCategory)
-		Get
-			Return Me._tblCategories
-		End Get
-		Set
-			Me._tblCategories.Assign(value)
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.AssociationAttribute(Name:="tblUser_tblDepartment", Storage:="_tblDepartment", ThisKey:="UserID", OtherKey:="DepartmentID", IsUnique:=true, IsForeignKey:=false)>  _
-	Public Property tblDepartment() As tblDepartment
-		Get
-			Return Me._tblDepartment.Entity
-		End Get
-		Set
-			Dim previousValue As tblDepartment = Me._tblDepartment.Entity
-			If ((Object.Equals(previousValue, value) = false)  _
-						OrElse (Me._tblDepartment.HasLoadedOrAssignedValue = false)) Then
-				Me.SendPropertyChanging
-				If ((previousValue Is Nothing)  _
-							= false) Then
-					Me._tblDepartment.Entity = Nothing
-					previousValue.tblUser = Nothing
-				End If
-				Me._tblDepartment.Entity = value
-				If (Object.Equals(value, Nothing) = false) Then
-					value.tblUser = Me
-				End If
-				Me.SendPropertyChanged("tblDepartment")
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.AssociationAttribute(Name:="tblUser_tblDocumentType", Storage:="_tblDocumentTypes", ThisKey:="UserID", OtherKey:="UserID")>  _
-	Public Property tblDocumentTypes() As EntitySet(Of tblDocumentType)
-		Get
-			Return Me._tblDocumentTypes
-		End Get
-		Set
-			Me._tblDocumentTypes.Assign(value)
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.AssociationAttribute(Name:="tblUser_tblEmployee", Storage:="_tblEmployees", ThisKey:="UserID", OtherKey:="AddbyUserID")>  _
-	Public Property tblEmployees() As EntitySet(Of tblEmployee)
-		Get
-			Return Me._tblEmployees
-		End Get
-		Set
-			Me._tblEmployees.Assign(value)
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.AssociationAttribute(Name:="tblUser_tblPosition", Storage:="_tblPositions", ThisKey:="UserID", OtherKey:="UserID")>  _
-	Public Property tblPositions() As EntitySet(Of tblPosition)
-		Get
-			Return Me._tblPositions
-		End Get
-		Set
-			Me._tblPositions.Assign(value)
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.AssociationAttribute(Name:="tblUser_tblSection", Storage:="_tblSections", ThisKey:="UserID", OtherKey:="UserID")>  _
-	Public Property tblSections() As EntitySet(Of tblSection)
-		Get
-			Return Me._tblSections
-		End Get
-		Set
-			Me._tblSections.Assign(value)
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.AssociationAttribute(Name:="tblUser_tblAssetDetail", Storage:="_tblAssetDetails", ThisKey:="UserID", OtherKey:="UserID")>  _
-	Public Property tblAssetDetails() As EntitySet(Of tblAssetDetail)
-		Get
-			Return Me._tblAssetDetails
-		End Get
-		Set
-			Me._tblAssetDetails.Assign(value)
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.AssociationAttribute(Name:="tblUser_tblAssetHeader", Storage:="_tblAssetHeaders", ThisKey:="UserID", OtherKey:="UserID")>  _
-	Public Property tblAssetHeaders() As EntitySet(Of tblAssetHeader)
-		Get
-			Return Me._tblAssetHeaders
-		End Get
-		Set
-			Me._tblAssetHeaders.Assign(value)
-		End Set
-	End Property
-	
-	Public Event PropertyChanging As PropertyChangingEventHandler Implements System.ComponentModel.INotifyPropertyChanging.PropertyChanging
-	
-	Public Event PropertyChanged As PropertyChangedEventHandler Implements System.ComponentModel.INotifyPropertyChanged.PropertyChanged
-	
-	Protected Overridable Sub SendPropertyChanging()
-		If ((Me.PropertyChangingEvent Is Nothing)  _
-					= false) Then
-			RaiseEvent PropertyChanging(Me, emptyChangingEventArgs)
-		End If
-	End Sub
-	
-	Protected Overridable Sub SendPropertyChanged(ByVal propertyName As [String])
-		If ((Me.PropertyChangedEvent Is Nothing)  _
-					= false) Then
-			RaiseEvent PropertyChanged(Me, New PropertyChangedEventArgs(propertyName))
-		End If
-	End Sub
-	
-	Private Sub attach_tblAssetConditions(ByVal entity As tblAssetCondition)
-		Me.SendPropertyChanging
-		entity.tblUser = Me
-	End Sub
-	
-	Private Sub detach_tblAssetConditions(ByVal entity As tblAssetCondition)
-		Me.SendPropertyChanging
-		entity.tblUser = Nothing
-	End Sub
-	
-	Private Sub attach_tblAssetDetailMasterlists(ByVal entity As tblAssetDetailMasterlist)
-		Me.SendPropertyChanging
-		entity.tblUser = Me
-	End Sub
-	
-	Private Sub detach_tblAssetDetailMasterlists(ByVal entity As tblAssetDetailMasterlist)
-		Me.SendPropertyChanging
-		entity.tblUser = Nothing
-	End Sub
-	
-	Private Sub attach_tblAssetHeaderMasterlists(ByVal entity As tblAssetHeaderMasterlist)
-		Me.SendPropertyChanging
-		entity.tblUser = Me
-	End Sub
-	
-	Private Sub detach_tblAssetHeaderMasterlists(ByVal entity As tblAssetHeaderMasterlist)
-		Me.SendPropertyChanging
-		entity.tblUser = Nothing
-	End Sub
-	
-	Private Sub attach_tblAssetTypes(ByVal entity As tblAssetType)
-		Me.SendPropertyChanging
-		entity.tblUser = Me
-	End Sub
-	
-	Private Sub detach_tblAssetTypes(ByVal entity As tblAssetType)
-		Me.SendPropertyChanging
-		entity.tblUser = Nothing
-	End Sub
-	
-	Private Sub attach_tblCategories(ByVal entity As tblCategory)
-		Me.SendPropertyChanging
-		entity.tblUser = Me
-	End Sub
-	
-	Private Sub detach_tblCategories(ByVal entity As tblCategory)
-		Me.SendPropertyChanging
-		entity.tblUser = Nothing
-	End Sub
-	
-	Private Sub attach_tblDocumentTypes(ByVal entity As tblDocumentType)
-		Me.SendPropertyChanging
-		entity.tblUser = Me
-	End Sub
-	
-	Private Sub detach_tblDocumentTypes(ByVal entity As tblDocumentType)
-		Me.SendPropertyChanging
-		entity.tblUser = Nothing
-	End Sub
-	
-	Private Sub attach_tblEmployees(ByVal entity As tblEmployee)
-		Me.SendPropertyChanging
-		entity.tblUser = Me
-	End Sub
-	
-	Private Sub detach_tblEmployees(ByVal entity As tblEmployee)
-		Me.SendPropertyChanging
-		entity.tblUser = Nothing
-	End Sub
-	
-	Private Sub attach_tblPositions(ByVal entity As tblPosition)
-		Me.SendPropertyChanging
-		entity.tblUser = Me
-	End Sub
-	
-	Private Sub detach_tblPositions(ByVal entity As tblPosition)
-		Me.SendPropertyChanging
-		entity.tblUser = Nothing
-	End Sub
-	
-	Private Sub attach_tblSections(ByVal entity As tblSection)
-		Me.SendPropertyChanging
-		entity.tblUser = Me
-	End Sub
-	
-	Private Sub detach_tblSections(ByVal entity As tblSection)
-		Me.SendPropertyChanging
-		entity.tblUser = Nothing
-	End Sub
-	
-	Private Sub attach_tblAssetDetails(ByVal entity As tblAssetDetail)
-		Me.SendPropertyChanging
-		entity.tblUser = Me
-	End Sub
-	
-	Private Sub detach_tblAssetDetails(ByVal entity As tblAssetDetail)
-		Me.SendPropertyChanging
-		entity.tblUser = Nothing
-	End Sub
-	
-	Private Sub attach_tblAssetHeaders(ByVal entity As tblAssetHeader)
-		Me.SendPropertyChanging
-		entity.tblUser = Me
-	End Sub
-	
-	Private Sub detach_tblAssetHeaders(ByVal entity As tblAssetHeader)
-		Me.SendPropertyChanging
-		entity.tblUser = Nothing
-	End Sub
-End Class
-
-<Global.System.Data.Linq.Mapping.TableAttribute(Name:="dbo.tblReference")>  _
-Partial Public Class tblReference
-	Implements System.ComponentModel.INotifyPropertyChanging, System.ComponentModel.INotifyPropertyChanged
-	
-	Private Shared emptyChangingEventArgs As PropertyChangingEventArgs = New PropertyChangingEventArgs(String.Empty)
-	
-	Private _Refid As Integer
-	
-	Private _Reference As String
-	
-    #Region "Extensibility Method Definitions"
-    Partial Private Sub OnLoaded()
-    End Sub
-    Partial Private Sub OnValidate(action As System.Data.Linq.ChangeAction)
-    End Sub
-    Partial Private Sub OnCreated()
-    End Sub
-    Partial Private Sub OnRefidChanging(value As Integer)
-    End Sub
-    Partial Private Sub OnRefidChanged()
-    End Sub
-    Partial Private Sub OnReferenceChanging(value As String)
-    End Sub
-    Partial Private Sub OnReferenceChanged()
-    End Sub
-    #End Region
-	
-	Public Sub New()
-		MyBase.New
-		OnCreated
-	End Sub
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_Refid", AutoSync:=AutoSync.OnInsert, DbType:="Int NOT NULL IDENTITY", IsPrimaryKey:=true, IsDbGenerated:=true)>  _
-	Public Property Refid() As Integer
-		Get
-			Return Me._Refid
-		End Get
-		Set
-			If ((Me._Refid = value)  _
-						= false) Then
-				Me.OnRefidChanging(value)
-				Me.SendPropertyChanging
-				Me._Refid = value
-				Me.SendPropertyChanged("Refid")
-				Me.OnRefidChanged
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_Reference", DbType:="VarChar(MAX)")>  _
-	Public Property Reference() As String
-		Get
-			Return Me._Reference
-		End Get
-		Set
-			If (String.Equals(Me._Reference, value) = false) Then
-				Me.OnReferenceChanging(value)
-				Me.SendPropertyChanging
-				Me._Reference = value
-				Me.SendPropertyChanged("Reference")
-				Me.OnReferenceChanged
-			End If
-		End Set
-	End Property
-	
-	Public Event PropertyChanging As PropertyChangingEventHandler Implements System.ComponentModel.INotifyPropertyChanging.PropertyChanging
-	
-	Public Event PropertyChanged As PropertyChangedEventHandler Implements System.ComponentModel.INotifyPropertyChanged.PropertyChanged
-	
-	Protected Overridable Sub SendPropertyChanging()
-		If ((Me.PropertyChangingEvent Is Nothing)  _
-					= false) Then
-			RaiseEvent PropertyChanging(Me, emptyChangingEventArgs)
-		End If
-	End Sub
-	
-	Protected Overridable Sub SendPropertyChanged(ByVal propertyName As [String])
-		If ((Me.PropertyChangedEvent Is Nothing)  _
-					= false) Then
-			RaiseEvent PropertyChanged(Me, New PropertyChangedEventArgs(propertyName))
-		End If
+		entity.tblAssetDetailMasterlist = Nothing
 	End Sub
 End Class
 
@@ -4618,15 +3046,15 @@ Partial Public Class tblAssetDetail
 	
 	Private _tblAssetDetailMasterlist As EntityRef(Of tblAssetDetailMasterlist)
 	
+	Private _tblVendor As EntityRef(Of tblVendor)
+	
+	Private _tblAssetHeader As EntityRef(Of tblAssetHeader)
+	
 	Private _tblAssetType As EntityRef(Of tblAssetType)
 	
 	Private _tblCategory As EntityRef(Of tblCategory)
 	
 	Private _tblUser As EntityRef(Of tblUser)
-	
-	Private _tblVendor As EntityRef(Of tblVendor)
-	
-	Private _tblAssetHeader As EntityRef(Of tblAssetHeader)
 	
     #Region "Extensibility Method Definitions"
     Partial Private Sub OnLoaded()
@@ -4701,11 +3129,11 @@ Partial Public Class tblAssetDetail
 		MyBase.New
 		Me._tblAssetCondition = CType(Nothing, EntityRef(Of tblAssetCondition))
 		Me._tblAssetDetailMasterlist = CType(Nothing, EntityRef(Of tblAssetDetailMasterlist))
+		Me._tblVendor = CType(Nothing, EntityRef(Of tblVendor))
+		Me._tblAssetHeader = CType(Nothing, EntityRef(Of tblAssetHeader))
 		Me._tblAssetType = CType(Nothing, EntityRef(Of tblAssetType))
 		Me._tblCategory = CType(Nothing, EntityRef(Of tblCategory))
 		Me._tblUser = CType(Nothing, EntityRef(Of tblUser))
-		Me._tblVendor = CType(Nothing, EntityRef(Of tblVendor))
-		Me._tblAssetHeader = CType(Nothing, EntityRef(Of tblAssetHeader))
 		OnCreated
 	End Sub
 	
@@ -5027,6 +3455,62 @@ Partial Public Class tblAssetDetail
 		End Set
 	End Property
 	
+	<Global.System.Data.Linq.Mapping.AssociationAttribute(Name:="tblVendor_tblAssetDetail", Storage:="_tblVendor", ThisKey:="VendorID", OtherKey:="VendorID", IsForeignKey:=true)>  _
+	Public Property tblVendor() As tblVendor
+		Get
+			Return Me._tblVendor.Entity
+		End Get
+		Set
+			Dim previousValue As tblVendor = Me._tblVendor.Entity
+			If ((Object.Equals(previousValue, value) = false)  _
+						OrElse (Me._tblVendor.HasLoadedOrAssignedValue = false)) Then
+				Me.SendPropertyChanging
+				If ((previousValue Is Nothing)  _
+							= false) Then
+					Me._tblVendor.Entity = Nothing
+					previousValue.tblAssetDetails.Remove(Me)
+				End If
+				Me._tblVendor.Entity = value
+				If ((value Is Nothing)  _
+							= false) Then
+					value.tblAssetDetails.Add(Me)
+					Me._VendorID = value.VendorID
+				Else
+					Me._VendorID = CType(Nothing, Nullable(Of Integer))
+				End If
+				Me.SendPropertyChanged("tblVendor")
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.AssociationAttribute(Name:="tblAssetHeader_tblAssetDetail", Storage:="_tblAssetHeader", ThisKey:="TransHeaderID", OtherKey:="AssetHeaderID", IsForeignKey:=true)>  _
+	Public Property tblAssetHeader() As tblAssetHeader
+		Get
+			Return Me._tblAssetHeader.Entity
+		End Get
+		Set
+			Dim previousValue As tblAssetHeader = Me._tblAssetHeader.Entity
+			If ((Object.Equals(previousValue, value) = false)  _
+						OrElse (Me._tblAssetHeader.HasLoadedOrAssignedValue = false)) Then
+				Me.SendPropertyChanging
+				If ((previousValue Is Nothing)  _
+							= false) Then
+					Me._tblAssetHeader.Entity = Nothing
+					previousValue.tblAssetDetails.Remove(Me)
+				End If
+				Me._tblAssetHeader.Entity = value
+				If ((value Is Nothing)  _
+							= false) Then
+					value.tblAssetDetails.Add(Me)
+					Me._TransHeaderID = value.AssetHeaderID
+				Else
+					Me._TransHeaderID = CType(Nothing, Nullable(Of Integer))
+				End If
+				Me.SendPropertyChanged("tblAssetHeader")
+			End If
+		End Set
+	End Property
+	
 	<Global.System.Data.Linq.Mapping.AssociationAttribute(Name:="tblAssetType_tblAssetDetail", Storage:="_tblAssetType", ThisKey:="assetTypeID", OtherKey:="AssetTypeID", IsForeignKey:=true)>  _
 	Public Property tblAssetType() As tblAssetType
 		Get
@@ -5111,62 +3595,6 @@ Partial Public Class tblAssetDetail
 		End Set
 	End Property
 	
-	<Global.System.Data.Linq.Mapping.AssociationAttribute(Name:="tblVendor_tblAssetDetail", Storage:="_tblVendor", ThisKey:="VendorID", OtherKey:="VendorID", IsForeignKey:=true)>  _
-	Public Property tblVendor() As tblVendor
-		Get
-			Return Me._tblVendor.Entity
-		End Get
-		Set
-			Dim previousValue As tblVendor = Me._tblVendor.Entity
-			If ((Object.Equals(previousValue, value) = false)  _
-						OrElse (Me._tblVendor.HasLoadedOrAssignedValue = false)) Then
-				Me.SendPropertyChanging
-				If ((previousValue Is Nothing)  _
-							= false) Then
-					Me._tblVendor.Entity = Nothing
-					previousValue.tblAssetDetails.Remove(Me)
-				End If
-				Me._tblVendor.Entity = value
-				If ((value Is Nothing)  _
-							= false) Then
-					value.tblAssetDetails.Add(Me)
-					Me._VendorID = value.VendorID
-				Else
-					Me._VendorID = CType(Nothing, Nullable(Of Integer))
-				End If
-				Me.SendPropertyChanged("tblVendor")
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.AssociationAttribute(Name:="tblAssetHeader_tblAssetDetail", Storage:="_tblAssetHeader", ThisKey:="TransHeaderID", OtherKey:="AssetHeaderID", IsForeignKey:=true)>  _
-	Public Property tblAssetHeader() As tblAssetHeader
-		Get
-			Return Me._tblAssetHeader.Entity
-		End Get
-		Set
-			Dim previousValue As tblAssetHeader = Me._tblAssetHeader.Entity
-			If ((Object.Equals(previousValue, value) = false)  _
-						OrElse (Me._tblAssetHeader.HasLoadedOrAssignedValue = false)) Then
-				Me.SendPropertyChanging
-				If ((previousValue Is Nothing)  _
-							= false) Then
-					Me._tblAssetHeader.Entity = Nothing
-					previousValue.tblAssetDetails.Remove(Me)
-				End If
-				Me._tblAssetHeader.Entity = value
-				If ((value Is Nothing)  _
-							= false) Then
-					value.tblAssetDetails.Add(Me)
-					Me._TransHeaderID = value.AssetHeaderID
-				Else
-					Me._TransHeaderID = CType(Nothing, Nullable(Of Integer))
-				End If
-				Me.SendPropertyChanged("tblAssetHeader")
-			End If
-		End Set
-	End Property
-	
 	Public Event PropertyChanging As PropertyChangingEventHandler Implements System.ComponentModel.INotifyPropertyChanging.PropertyChanging
 	
 	Public Event PropertyChanged As PropertyChangedEventHandler Implements System.ComponentModel.INotifyPropertyChanged.PropertyChanged
@@ -5212,11 +3640,11 @@ Partial Public Class tblAssetHeader
 	
 	Private _tblAssetDetails As EntitySet(Of tblAssetDetail)
 	
+	Private _tblVendor As EntityRef(Of tblVendor)
+	
 	Private _tblDocumentType As EntityRef(Of tblDocumentType)
 	
 	Private _tblUser As EntityRef(Of tblUser)
-	
-	Private _tblVendor As EntityRef(Of tblVendor)
 	
     #Region "Extensibility Method Definitions"
     Partial Private Sub OnLoaded()
@@ -5266,9 +3694,9 @@ Partial Public Class tblAssetHeader
 	Public Sub New()
 		MyBase.New
 		Me._tblAssetDetails = New EntitySet(Of tblAssetDetail)(AddressOf Me.attach_tblAssetDetails, AddressOf Me.detach_tblAssetDetails)
+		Me._tblVendor = CType(Nothing, EntityRef(Of tblVendor))
 		Me._tblDocumentType = CType(Nothing, EntityRef(Of tblDocumentType))
 		Me._tblUser = CType(Nothing, EntityRef(Of tblUser))
-		Me._tblVendor = CType(Nothing, EntityRef(Of tblVendor))
 		OnCreated
 	End Sub
 	
@@ -5436,6 +3864,34 @@ Partial Public Class tblAssetHeader
 		End Set
 	End Property
 	
+	<Global.System.Data.Linq.Mapping.AssociationAttribute(Name:="tblVendor_tblAssetHeader", Storage:="_tblVendor", ThisKey:="VendorID", OtherKey:="VendorID", IsForeignKey:=true)>  _
+	Public Property tblVendor() As tblVendor
+		Get
+			Return Me._tblVendor.Entity
+		End Get
+		Set
+			Dim previousValue As tblVendor = Me._tblVendor.Entity
+			If ((Object.Equals(previousValue, value) = false)  _
+						OrElse (Me._tblVendor.HasLoadedOrAssignedValue = false)) Then
+				Me.SendPropertyChanging
+				If ((previousValue Is Nothing)  _
+							= false) Then
+					Me._tblVendor.Entity = Nothing
+					previousValue.tblAssetHeaders.Remove(Me)
+				End If
+				Me._tblVendor.Entity = value
+				If ((value Is Nothing)  _
+							= false) Then
+					value.tblAssetHeaders.Add(Me)
+					Me._VendorID = value.VendorID
+				Else
+					Me._VendorID = CType(Nothing, Nullable(Of Integer))
+				End If
+				Me.SendPropertyChanged("tblVendor")
+			End If
+		End Set
+	End Property
+	
 	<Global.System.Data.Linq.Mapping.AssociationAttribute(Name:="tblDocumentType_tblAssetHeader", Storage:="_tblDocumentType", ThisKey:="DocTypeID", OtherKey:="DocumentID", IsForeignKey:=true)>  _
 	Public Property tblDocumentType() As tblDocumentType
 		Get
@@ -5492,34 +3948,6 @@ Partial Public Class tblAssetHeader
 		End Set
 	End Property
 	
-	<Global.System.Data.Linq.Mapping.AssociationAttribute(Name:="tblVendor_tblAssetHeader", Storage:="_tblVendor", ThisKey:="VendorID", OtherKey:="VendorID", IsForeignKey:=true)>  _
-	Public Property tblVendor() As tblVendor
-		Get
-			Return Me._tblVendor.Entity
-		End Get
-		Set
-			Dim previousValue As tblVendor = Me._tblVendor.Entity
-			If ((Object.Equals(previousValue, value) = false)  _
-						OrElse (Me._tblVendor.HasLoadedOrAssignedValue = false)) Then
-				Me.SendPropertyChanging
-				If ((previousValue Is Nothing)  _
-							= false) Then
-					Me._tblVendor.Entity = Nothing
-					previousValue.tblAssetHeaders.Remove(Me)
-				End If
-				Me._tblVendor.Entity = value
-				If ((value Is Nothing)  _
-							= false) Then
-					value.tblAssetHeaders.Add(Me)
-					Me._VendorID = value.VendorID
-				Else
-					Me._VendorID = CType(Nothing, Nullable(Of Integer))
-				End If
-				Me.SendPropertyChanged("tblVendor")
-			End If
-		End Set
-	End Property
-	
 	Public Event PropertyChanging As PropertyChangingEventHandler Implements System.ComponentModel.INotifyPropertyChanging.PropertyChanging
 	
 	Public Event PropertyChanged As PropertyChangedEventHandler Implements System.ComponentModel.INotifyPropertyChanged.PropertyChanged
@@ -5549,8 +3977,271 @@ Partial Public Class tblAssetHeader
 	End Sub
 End Class
 
+<Global.System.Data.Linq.Mapping.TableAttribute(Name:="dbo.tblAssetHeaderMasterlist")>  _
+Partial Public Class tblAssetHeaderMasterlist
+	Implements System.ComponentModel.INotifyPropertyChanging, System.ComponentModel.INotifyPropertyChanged
+	
+	Private Shared emptyChangingEventArgs As PropertyChangingEventArgs = New PropertyChangingEventArgs(String.Empty)
+	
+	Private _AssetHeaderID As Integer
+	
+	Private _UserID As System.Nullable(Of Integer)
+	
+	Private _EntryNumber As String
+	
+	Private _TransDate As System.Nullable(Of Date)
+	
+	Private _Remarks As String
+	
+	Private _VendorID As System.Nullable(Of Integer)
+	
+	Private _tblAssetDetailMasterlists As EntitySet(Of tblAssetDetailMasterlist)
+	
+	Private _tblVendor As EntityRef(Of tblVendor)
+	
+	Private _tblUser As EntityRef(Of tblUser)
+	
+    #Region "Extensibility Method Definitions"
+    Partial Private Sub OnLoaded()
+    End Sub
+    Partial Private Sub OnValidate(action As System.Data.Linq.ChangeAction)
+    End Sub
+    Partial Private Sub OnCreated()
+    End Sub
+    Partial Private Sub OnAssetHeaderIDChanging(value As Integer)
+    End Sub
+    Partial Private Sub OnAssetHeaderIDChanged()
+    End Sub
+    Partial Private Sub OnUserIDChanging(value As System.Nullable(Of Integer))
+    End Sub
+    Partial Private Sub OnUserIDChanged()
+    End Sub
+    Partial Private Sub OnEntryNumberChanging(value As String)
+    End Sub
+    Partial Private Sub OnEntryNumberChanged()
+    End Sub
+    Partial Private Sub OnTransDateChanging(value As System.Nullable(Of Date))
+    End Sub
+    Partial Private Sub OnTransDateChanged()
+    End Sub
+    Partial Private Sub OnRemarksChanging(value As String)
+    End Sub
+    Partial Private Sub OnRemarksChanged()
+    End Sub
+    Partial Private Sub OnVendorIDChanging(value As System.Nullable(Of Integer))
+    End Sub
+    Partial Private Sub OnVendorIDChanged()
+    End Sub
+    #End Region
+	
+	Public Sub New()
+		MyBase.New
+		Me._tblAssetDetailMasterlists = New EntitySet(Of tblAssetDetailMasterlist)(AddressOf Me.attach_tblAssetDetailMasterlists, AddressOf Me.detach_tblAssetDetailMasterlists)
+		Me._tblVendor = CType(Nothing, EntityRef(Of tblVendor))
+		Me._tblUser = CType(Nothing, EntityRef(Of tblUser))
+		OnCreated
+	End Sub
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_AssetHeaderID", AutoSync:=AutoSync.OnInsert, DbType:="Int NOT NULL IDENTITY", IsPrimaryKey:=true, IsDbGenerated:=true)>  _
+	Public Property AssetHeaderID() As Integer
+		Get
+			Return Me._AssetHeaderID
+		End Get
+		Set
+			If ((Me._AssetHeaderID = value)  _
+						= false) Then
+				Me.OnAssetHeaderIDChanging(value)
+				Me.SendPropertyChanging
+				Me._AssetHeaderID = value
+				Me.SendPropertyChanged("AssetHeaderID")
+				Me.OnAssetHeaderIDChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_UserID", DbType:="Int")>  _
+	Public Property UserID() As System.Nullable(Of Integer)
+		Get
+			Return Me._UserID
+		End Get
+		Set
+			If (Me._UserID.Equals(value) = false) Then
+				If Me._tblUser.HasLoadedOrAssignedValue Then
+					Throw New System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException()
+				End If
+				Me.OnUserIDChanging(value)
+				Me.SendPropertyChanging
+				Me._UserID = value
+				Me.SendPropertyChanged("UserID")
+				Me.OnUserIDChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_EntryNumber", DbType:="VarChar(MAX)")>  _
+	Public Property EntryNumber() As String
+		Get
+			Return Me._EntryNumber
+		End Get
+		Set
+			If (String.Equals(Me._EntryNumber, value) = false) Then
+				Me.OnEntryNumberChanging(value)
+				Me.SendPropertyChanging
+				Me._EntryNumber = value
+				Me.SendPropertyChanged("EntryNumber")
+				Me.OnEntryNumberChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_TransDate", DbType:="Date")>  _
+	Public Property TransDate() As System.Nullable(Of Date)
+		Get
+			Return Me._TransDate
+		End Get
+		Set
+			If (Me._TransDate.Equals(value) = false) Then
+				Me.OnTransDateChanging(value)
+				Me.SendPropertyChanging
+				Me._TransDate = value
+				Me.SendPropertyChanged("TransDate")
+				Me.OnTransDateChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_Remarks", DbType:="VarChar(MAX)")>  _
+	Public Property Remarks() As String
+		Get
+			Return Me._Remarks
+		End Get
+		Set
+			If (String.Equals(Me._Remarks, value) = false) Then
+				Me.OnRemarksChanging(value)
+				Me.SendPropertyChanging
+				Me._Remarks = value
+				Me.SendPropertyChanged("Remarks")
+				Me.OnRemarksChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_VendorID", DbType:="Int")>  _
+	Public Property VendorID() As System.Nullable(Of Integer)
+		Get
+			Return Me._VendorID
+		End Get
+		Set
+			If (Me._VendorID.Equals(value) = false) Then
+				If Me._tblVendor.HasLoadedOrAssignedValue Then
+					Throw New System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException()
+				End If
+				Me.OnVendorIDChanging(value)
+				Me.SendPropertyChanging
+				Me._VendorID = value
+				Me.SendPropertyChanged("VendorID")
+				Me.OnVendorIDChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.AssociationAttribute(Name:="tblAssetHeaderMasterlist_tblAssetDetailMasterlist", Storage:="_tblAssetDetailMasterlists", ThisKey:="AssetHeaderID", OtherKey:="AssetHeaderID")>  _
+	Public Property tblAssetDetailMasterlists() As EntitySet(Of tblAssetDetailMasterlist)
+		Get
+			Return Me._tblAssetDetailMasterlists
+		End Get
+		Set
+			Me._tblAssetDetailMasterlists.Assign(value)
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.AssociationAttribute(Name:="tblVendor_tblAssetHeaderMasterlist", Storage:="_tblVendor", ThisKey:="VendorID", OtherKey:="VendorID", IsForeignKey:=true)>  _
+	Public Property tblVendor() As tblVendor
+		Get
+			Return Me._tblVendor.Entity
+		End Get
+		Set
+			Dim previousValue As tblVendor = Me._tblVendor.Entity
+			If ((Object.Equals(previousValue, value) = false)  _
+						OrElse (Me._tblVendor.HasLoadedOrAssignedValue = false)) Then
+				Me.SendPropertyChanging
+				If ((previousValue Is Nothing)  _
+							= false) Then
+					Me._tblVendor.Entity = Nothing
+					previousValue.tblAssetHeaderMasterlists.Remove(Me)
+				End If
+				Me._tblVendor.Entity = value
+				If ((value Is Nothing)  _
+							= false) Then
+					value.tblAssetHeaderMasterlists.Add(Me)
+					Me._VendorID = value.VendorID
+				Else
+					Me._VendorID = CType(Nothing, Nullable(Of Integer))
+				End If
+				Me.SendPropertyChanged("tblVendor")
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.AssociationAttribute(Name:="tblUser_tblAssetHeaderMasterlist", Storage:="_tblUser", ThisKey:="UserID", OtherKey:="UserID", IsForeignKey:=true)>  _
+	Public Property tblUser() As tblUser
+		Get
+			Return Me._tblUser.Entity
+		End Get
+		Set
+			Dim previousValue As tblUser = Me._tblUser.Entity
+			If ((Object.Equals(previousValue, value) = false)  _
+						OrElse (Me._tblUser.HasLoadedOrAssignedValue = false)) Then
+				Me.SendPropertyChanging
+				If ((previousValue Is Nothing)  _
+							= false) Then
+					Me._tblUser.Entity = Nothing
+					previousValue.tblAssetHeaderMasterlists.Remove(Me)
+				End If
+				Me._tblUser.Entity = value
+				If ((value Is Nothing)  _
+							= false) Then
+					value.tblAssetHeaderMasterlists.Add(Me)
+					Me._UserID = value.UserID
+				Else
+					Me._UserID = CType(Nothing, Nullable(Of Integer))
+				End If
+				Me.SendPropertyChanged("tblUser")
+			End If
+		End Set
+	End Property
+	
+	Public Event PropertyChanging As PropertyChangingEventHandler Implements System.ComponentModel.INotifyPropertyChanging.PropertyChanging
+	
+	Public Event PropertyChanged As PropertyChangedEventHandler Implements System.ComponentModel.INotifyPropertyChanged.PropertyChanged
+	
+	Protected Overridable Sub SendPropertyChanging()
+		If ((Me.PropertyChangingEvent Is Nothing)  _
+					= false) Then
+			RaiseEvent PropertyChanging(Me, emptyChangingEventArgs)
+		End If
+	End Sub
+	
+	Protected Overridable Sub SendPropertyChanged(ByVal propertyName As [String])
+		If ((Me.PropertyChangedEvent Is Nothing)  _
+					= false) Then
+			RaiseEvent PropertyChanged(Me, New PropertyChangedEventArgs(propertyName))
+		End If
+	End Sub
+	
+	Private Sub attach_tblAssetDetailMasterlists(ByVal entity As tblAssetDetailMasterlist)
+		Me.SendPropertyChanging
+		entity.tblAssetHeaderMasterlist = Me
+	End Sub
+	
+	Private Sub detach_tblAssetDetailMasterlists(ByVal entity As tblAssetDetailMasterlist)
+		Me.SendPropertyChanging
+		entity.tblAssetHeaderMasterlist = Nothing
+	End Sub
+End Class
+
 <Global.System.Data.Linq.Mapping.TableAttribute(Name:="dbo.tblAssetInventory")>  _
-Partial Public Class tblAssetInventory
+Partial Public Class tblAssetInventory1
 	Implements System.ComponentModel.INotifyPropertyChanging, System.ComponentModel.INotifyPropertyChanged
 	
 	Private Shared emptyChangingEventArgs As PropertyChangingEventArgs = New PropertyChangingEventArgs(String.Empty)
@@ -5571,7 +4262,21 @@ Partial Public Class tblAssetInventory
 	
 	Private _ReferenceNUmber As String
 	
+	Private _Owner As System.Nullable(Of Integer)
+	
+	Private _borrowerStat As String
+	
+	Private _borrower As System.Nullable(Of Integer)
+	
+	Private _Status As System.Nullable(Of Integer)
+	
+	Private _tblAllocationDetails As EntitySet(Of tblAllocationDetail)
+	
 	Private _tblAssetDetailMasterlist As EntityRef(Of tblAssetDetailMasterlist)
+	
+	Private _tblEmployee As EntityRef(Of tblEmployee)
+	
+	Private _tblEmployee1 As EntityRef(Of tblEmployee)
 	
     #Region "Extensibility Method Definitions"
     Partial Private Sub OnLoaded()
@@ -5612,11 +4317,30 @@ Partial Public Class tblAssetInventory
     End Sub
     Partial Private Sub OnReferenceNUmberChanged()
     End Sub
+    Partial Private Sub OnOwnerChanging(value As System.Nullable(Of Integer))
+    End Sub
+    Partial Private Sub OnOwnerChanged()
+    End Sub
+    Partial Private Sub OnborrowerStatChanging(value As String)
+    End Sub
+    Partial Private Sub OnborrowerStatChanged()
+    End Sub
+    Partial Private Sub OnborrowerChanging(value As System.Nullable(Of Integer))
+    End Sub
+    Partial Private Sub OnborrowerChanged()
+    End Sub
+    Partial Private Sub OnStatusChanging(value As System.Nullable(Of Integer))
+    End Sub
+    Partial Private Sub OnStatusChanged()
+    End Sub
     #End Region
 	
 	Public Sub New()
 		MyBase.New
+		Me._tblAllocationDetails = New EntitySet(Of tblAllocationDetail)(AddressOf Me.attach_tblAllocationDetails, AddressOf Me.detach_tblAllocationDetails)
 		Me._tblAssetDetailMasterlist = CType(Nothing, EntityRef(Of tblAssetDetailMasterlist))
+		Me._tblEmployee = CType(Nothing, EntityRef(Of tblEmployee))
+		Me._tblEmployee1 = CType(Nothing, EntityRef(Of tblEmployee))
 		OnCreated
 	End Sub
 	
@@ -5752,7 +4476,87 @@ Partial Public Class tblAssetInventory
 		End Set
 	End Property
 	
-	<Global.System.Data.Linq.Mapping.AssociationAttribute(Name:="tblAssetDetailMasterlist_tblAssetInventory", Storage:="_tblAssetDetailMasterlist", ThisKey:="AssetId", OtherKey:="AssetID", IsForeignKey:=true)>  _
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_Owner", DbType:="Int")>  _
+	Public Property Owner() As System.Nullable(Of Integer)
+		Get
+			Return Me._Owner
+		End Get
+		Set
+			If (Me._Owner.Equals(value) = false) Then
+				If Me._tblEmployee1.HasLoadedOrAssignedValue Then
+					Throw New System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException()
+				End If
+				Me.OnOwnerChanging(value)
+				Me.SendPropertyChanging
+				Me._Owner = value
+				Me.SendPropertyChanged("Owner")
+				Me.OnOwnerChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_borrowerStat", DbType:="VarChar(MAX)")>  _
+	Public Property borrowerStat() As String
+		Get
+			Return Me._borrowerStat
+		End Get
+		Set
+			If (String.Equals(Me._borrowerStat, value) = false) Then
+				Me.OnborrowerStatChanging(value)
+				Me.SendPropertyChanging
+				Me._borrowerStat = value
+				Me.SendPropertyChanged("borrowerStat")
+				Me.OnborrowerStatChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_borrower", DbType:="Int")>  _
+	Public Property borrower() As System.Nullable(Of Integer)
+		Get
+			Return Me._borrower
+		End Get
+		Set
+			If (Me._borrower.Equals(value) = false) Then
+				If Me._tblEmployee.HasLoadedOrAssignedValue Then
+					Throw New System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException()
+				End If
+				Me.OnborrowerChanging(value)
+				Me.SendPropertyChanging
+				Me._borrower = value
+				Me.SendPropertyChanged("borrower")
+				Me.OnborrowerChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_Status", DbType:="Int")>  _
+	Public Property Status() As System.Nullable(Of Integer)
+		Get
+			Return Me._Status
+		End Get
+		Set
+			If (Me._Status.Equals(value) = false) Then
+				Me.OnStatusChanging(value)
+				Me.SendPropertyChanging
+				Me._Status = value
+				Me.SendPropertyChanged("Status")
+				Me.OnStatusChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.AssociationAttribute(Name:="tblAssetInventory1_tblAllocationDetail", Storage:="_tblAllocationDetails", ThisKey:="InvID", OtherKey:="InvID")>  _
+	Public Property tblAllocationDetails() As EntitySet(Of tblAllocationDetail)
+		Get
+			Return Me._tblAllocationDetails
+		End Get
+		Set
+			Me._tblAllocationDetails.Assign(value)
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.AssociationAttribute(Name:="tblAssetDetailMasterlist_tblAssetInventory1", Storage:="_tblAssetDetailMasterlist", ThisKey:="AssetId", OtherKey:="AssetID", IsForeignKey:=true)>  _
 	Public Property tblAssetDetailMasterlist() As tblAssetDetailMasterlist
 		Get
 			Return Me._tblAssetDetailMasterlist.Entity
@@ -5765,17 +4569,73 @@ Partial Public Class tblAssetInventory
 				If ((previousValue Is Nothing)  _
 							= false) Then
 					Me._tblAssetDetailMasterlist.Entity = Nothing
-					previousValue.tblAssetInventories.Remove(Me)
+					previousValue.tblAssetInventory1s.Remove(Me)
 				End If
 				Me._tblAssetDetailMasterlist.Entity = value
 				If ((value Is Nothing)  _
 							= false) Then
-					value.tblAssetInventories.Add(Me)
+					value.tblAssetInventory1s.Add(Me)
 					Me._AssetId = value.AssetID
 				Else
 					Me._AssetId = CType(Nothing, Nullable(Of Integer))
 				End If
 				Me.SendPropertyChanged("tblAssetDetailMasterlist")
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.AssociationAttribute(Name:="tblEmployee_tblAssetInventory1", Storage:="_tblEmployee", ThisKey:="borrower", OtherKey:="EmployeeID", IsForeignKey:=true)>  _
+	Public Property tblEmployee() As tblEmployee
+		Get
+			Return Me._tblEmployee.Entity
+		End Get
+		Set
+			Dim previousValue As tblEmployee = Me._tblEmployee.Entity
+			If ((Object.Equals(previousValue, value) = false)  _
+						OrElse (Me._tblEmployee.HasLoadedOrAssignedValue = false)) Then
+				Me.SendPropertyChanging
+				If ((previousValue Is Nothing)  _
+							= false) Then
+					Me._tblEmployee.Entity = Nothing
+					previousValue.tblAssetInventory1s.Remove(Me)
+				End If
+				Me._tblEmployee.Entity = value
+				If ((value Is Nothing)  _
+							= false) Then
+					value.tblAssetInventory1s.Add(Me)
+					Me._borrower = value.EmployeeID
+				Else
+					Me._borrower = CType(Nothing, Nullable(Of Integer))
+				End If
+				Me.SendPropertyChanged("tblEmployee")
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.AssociationAttribute(Name:="tblEmployee_tblAssetInventory11", Storage:="_tblEmployee1", ThisKey:="Owner", OtherKey:="EmployeeID", IsForeignKey:=true)>  _
+	Public Property tblEmployee1() As tblEmployee
+		Get
+			Return Me._tblEmployee1.Entity
+		End Get
+		Set
+			Dim previousValue As tblEmployee = Me._tblEmployee1.Entity
+			If ((Object.Equals(previousValue, value) = false)  _
+						OrElse (Me._tblEmployee1.HasLoadedOrAssignedValue = false)) Then
+				Me.SendPropertyChanging
+				If ((previousValue Is Nothing)  _
+							= false) Then
+					Me._tblEmployee1.Entity = Nothing
+					previousValue.tblAssetInventory1s1.Remove(Me)
+				End If
+				Me._tblEmployee1.Entity = value
+				If ((value Is Nothing)  _
+							= false) Then
+					value.tblAssetInventory1s1.Add(Me)
+					Me._Owner = value.EmployeeID
+				Else
+					Me._Owner = CType(Nothing, Nullable(Of Integer))
+				End If
+				Me.SendPropertyChanged("tblEmployee1")
 			End If
 		End Set
 	End Property
@@ -5796,6 +4656,3033 @@ Partial Public Class tblAssetInventory
 					= false) Then
 			RaiseEvent PropertyChanged(Me, New PropertyChangedEventArgs(propertyName))
 		End If
+	End Sub
+	
+	Private Sub attach_tblAllocationDetails(ByVal entity As tblAllocationDetail)
+		Me.SendPropertyChanging
+		entity.tblAssetInventory1 = Me
+	End Sub
+	
+	Private Sub detach_tblAllocationDetails(ByVal entity As tblAllocationDetail)
+		Me.SendPropertyChanging
+		entity.tblAssetInventory1 = Nothing
+	End Sub
+End Class
+
+<Global.System.Data.Linq.Mapping.TableAttribute(Name:="dbo.tblAssetType")>  _
+Partial Public Class tblAssetType
+	Implements System.ComponentModel.INotifyPropertyChanging, System.ComponentModel.INotifyPropertyChanged
+	
+	Private Shared emptyChangingEventArgs As PropertyChangingEventArgs = New PropertyChangingEventArgs(String.Empty)
+	
+	Private _AssetTypeID As Integer
+	
+	Private _AssetTypeCode As String
+	
+	Private _AssetTypeDescription As String
+	
+	Private _DateCreated As System.Nullable(Of Date)
+	
+	Private _DateModified As System.Nullable(Of Date)
+	
+	Private _UserID As System.Nullable(Of Integer)
+	
+	Private _UserIDModified As System.Nullable(Of Integer)
+	
+	Private _tblAssetDetailMasterlists As EntitySet(Of tblAssetDetailMasterlist)
+	
+	Private _tblAssetDetails As EntitySet(Of tblAssetDetail)
+	
+	Private _tblUser As EntityRef(Of tblUser)
+	
+    #Region "Extensibility Method Definitions"
+    Partial Private Sub OnLoaded()
+    End Sub
+    Partial Private Sub OnValidate(action As System.Data.Linq.ChangeAction)
+    End Sub
+    Partial Private Sub OnCreated()
+    End Sub
+    Partial Private Sub OnAssetTypeIDChanging(value As Integer)
+    End Sub
+    Partial Private Sub OnAssetTypeIDChanged()
+    End Sub
+    Partial Private Sub OnAssetTypeCodeChanging(value As String)
+    End Sub
+    Partial Private Sub OnAssetTypeCodeChanged()
+    End Sub
+    Partial Private Sub OnAssetTypeDescriptionChanging(value As String)
+    End Sub
+    Partial Private Sub OnAssetTypeDescriptionChanged()
+    End Sub
+    Partial Private Sub OnDateCreatedChanging(value As System.Nullable(Of Date))
+    End Sub
+    Partial Private Sub OnDateCreatedChanged()
+    End Sub
+    Partial Private Sub OnDateModifiedChanging(value As System.Nullable(Of Date))
+    End Sub
+    Partial Private Sub OnDateModifiedChanged()
+    End Sub
+    Partial Private Sub OnUserIDChanging(value As System.Nullable(Of Integer))
+    End Sub
+    Partial Private Sub OnUserIDChanged()
+    End Sub
+    Partial Private Sub OnUserIDModifiedChanging(value As System.Nullable(Of Integer))
+    End Sub
+    Partial Private Sub OnUserIDModifiedChanged()
+    End Sub
+    #End Region
+	
+	Public Sub New()
+		MyBase.New
+		Me._tblAssetDetailMasterlists = New EntitySet(Of tblAssetDetailMasterlist)(AddressOf Me.attach_tblAssetDetailMasterlists, AddressOf Me.detach_tblAssetDetailMasterlists)
+		Me._tblAssetDetails = New EntitySet(Of tblAssetDetail)(AddressOf Me.attach_tblAssetDetails, AddressOf Me.detach_tblAssetDetails)
+		Me._tblUser = CType(Nothing, EntityRef(Of tblUser))
+		OnCreated
+	End Sub
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_AssetTypeID", AutoSync:=AutoSync.OnInsert, DbType:="Int NOT NULL IDENTITY", IsPrimaryKey:=true, IsDbGenerated:=true)>  _
+	Public Property AssetTypeID() As Integer
+		Get
+			Return Me._AssetTypeID
+		End Get
+		Set
+			If ((Me._AssetTypeID = value)  _
+						= false) Then
+				Me.OnAssetTypeIDChanging(value)
+				Me.SendPropertyChanging
+				Me._AssetTypeID = value
+				Me.SendPropertyChanged("AssetTypeID")
+				Me.OnAssetTypeIDChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_AssetTypeCode", DbType:="VarChar(200)")>  _
+	Public Property AssetTypeCode() As String
+		Get
+			Return Me._AssetTypeCode
+		End Get
+		Set
+			If (String.Equals(Me._AssetTypeCode, value) = false) Then
+				Me.OnAssetTypeCodeChanging(value)
+				Me.SendPropertyChanging
+				Me._AssetTypeCode = value
+				Me.SendPropertyChanged("AssetTypeCode")
+				Me.OnAssetTypeCodeChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_AssetTypeDescription", DbType:="VarChar(200)")>  _
+	Public Property AssetTypeDescription() As String
+		Get
+			Return Me._AssetTypeDescription
+		End Get
+		Set
+			If (String.Equals(Me._AssetTypeDescription, value) = false) Then
+				Me.OnAssetTypeDescriptionChanging(value)
+				Me.SendPropertyChanging
+				Me._AssetTypeDescription = value
+				Me.SendPropertyChanged("AssetTypeDescription")
+				Me.OnAssetTypeDescriptionChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_DateCreated", DbType:="Date")>  _
+	Public Property DateCreated() As System.Nullable(Of Date)
+		Get
+			Return Me._DateCreated
+		End Get
+		Set
+			If (Me._DateCreated.Equals(value) = false) Then
+				Me.OnDateCreatedChanging(value)
+				Me.SendPropertyChanging
+				Me._DateCreated = value
+				Me.SendPropertyChanged("DateCreated")
+				Me.OnDateCreatedChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_DateModified", DbType:="Date")>  _
+	Public Property DateModified() As System.Nullable(Of Date)
+		Get
+			Return Me._DateModified
+		End Get
+		Set
+			If (Me._DateModified.Equals(value) = false) Then
+				Me.OnDateModifiedChanging(value)
+				Me.SendPropertyChanging
+				Me._DateModified = value
+				Me.SendPropertyChanged("DateModified")
+				Me.OnDateModifiedChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_UserID", DbType:="Int")>  _
+	Public Property UserID() As System.Nullable(Of Integer)
+		Get
+			Return Me._UserID
+		End Get
+		Set
+			If (Me._UserID.Equals(value) = false) Then
+				If Me._tblUser.HasLoadedOrAssignedValue Then
+					Throw New System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException()
+				End If
+				Me.OnUserIDChanging(value)
+				Me.SendPropertyChanging
+				Me._UserID = value
+				Me.SendPropertyChanged("UserID")
+				Me.OnUserIDChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_UserIDModified", DbType:="Int")>  _
+	Public Property UserIDModified() As System.Nullable(Of Integer)
+		Get
+			Return Me._UserIDModified
+		End Get
+		Set
+			If (Me._UserIDModified.Equals(value) = false) Then
+				Me.OnUserIDModifiedChanging(value)
+				Me.SendPropertyChanging
+				Me._UserIDModified = value
+				Me.SendPropertyChanged("UserIDModified")
+				Me.OnUserIDModifiedChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.AssociationAttribute(Name:="tblAssetType_tblAssetDetailMasterlist", Storage:="_tblAssetDetailMasterlists", ThisKey:="AssetTypeID", OtherKey:="AssetTypeID")>  _
+	Public Property tblAssetDetailMasterlists() As EntitySet(Of tblAssetDetailMasterlist)
+		Get
+			Return Me._tblAssetDetailMasterlists
+		End Get
+		Set
+			Me._tblAssetDetailMasterlists.Assign(value)
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.AssociationAttribute(Name:="tblAssetType_tblAssetDetail", Storage:="_tblAssetDetails", ThisKey:="AssetTypeID", OtherKey:="assetTypeID")>  _
+	Public Property tblAssetDetails() As EntitySet(Of tblAssetDetail)
+		Get
+			Return Me._tblAssetDetails
+		End Get
+		Set
+			Me._tblAssetDetails.Assign(value)
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.AssociationAttribute(Name:="tblUser_tblAssetType", Storage:="_tblUser", ThisKey:="UserID", OtherKey:="UserID", IsForeignKey:=true)>  _
+	Public Property tblUser() As tblUser
+		Get
+			Return Me._tblUser.Entity
+		End Get
+		Set
+			Dim previousValue As tblUser = Me._tblUser.Entity
+			If ((Object.Equals(previousValue, value) = false)  _
+						OrElse (Me._tblUser.HasLoadedOrAssignedValue = false)) Then
+				Me.SendPropertyChanging
+				If ((previousValue Is Nothing)  _
+							= false) Then
+					Me._tblUser.Entity = Nothing
+					previousValue.tblAssetTypes.Remove(Me)
+				End If
+				Me._tblUser.Entity = value
+				If ((value Is Nothing)  _
+							= false) Then
+					value.tblAssetTypes.Add(Me)
+					Me._UserID = value.UserID
+				Else
+					Me._UserID = CType(Nothing, Nullable(Of Integer))
+				End If
+				Me.SendPropertyChanged("tblUser")
+			End If
+		End Set
+	End Property
+	
+	Public Event PropertyChanging As PropertyChangingEventHandler Implements System.ComponentModel.INotifyPropertyChanging.PropertyChanging
+	
+	Public Event PropertyChanged As PropertyChangedEventHandler Implements System.ComponentModel.INotifyPropertyChanged.PropertyChanged
+	
+	Protected Overridable Sub SendPropertyChanging()
+		If ((Me.PropertyChangingEvent Is Nothing)  _
+					= false) Then
+			RaiseEvent PropertyChanging(Me, emptyChangingEventArgs)
+		End If
+	End Sub
+	
+	Protected Overridable Sub SendPropertyChanged(ByVal propertyName As [String])
+		If ((Me.PropertyChangedEvent Is Nothing)  _
+					= false) Then
+			RaiseEvent PropertyChanged(Me, New PropertyChangedEventArgs(propertyName))
+		End If
+	End Sub
+	
+	Private Sub attach_tblAssetDetailMasterlists(ByVal entity As tblAssetDetailMasterlist)
+		Me.SendPropertyChanging
+		entity.tblAssetType = Me
+	End Sub
+	
+	Private Sub detach_tblAssetDetailMasterlists(ByVal entity As tblAssetDetailMasterlist)
+		Me.SendPropertyChanging
+		entity.tblAssetType = Nothing
+	End Sub
+	
+	Private Sub attach_tblAssetDetails(ByVal entity As tblAssetDetail)
+		Me.SendPropertyChanging
+		entity.tblAssetType = Me
+	End Sub
+	
+	Private Sub detach_tblAssetDetails(ByVal entity As tblAssetDetail)
+		Me.SendPropertyChanging
+		entity.tblAssetType = Nothing
+	End Sub
+End Class
+
+<Global.System.Data.Linq.Mapping.TableAttribute(Name:="dbo.tblBranch")>  _
+Partial Public Class tblBranch
+	Implements System.ComponentModel.INotifyPropertyChanging, System.ComponentModel.INotifyPropertyChanged
+	
+	Private Shared emptyChangingEventArgs As PropertyChangingEventArgs = New PropertyChangingEventArgs(String.Empty)
+	
+	Private _BranchID As Integer
+	
+	Private _BranchCode As String
+	
+	Private _BranchDescription As String
+	
+	Private _DateCreated As System.Nullable(Of Date)
+	
+	Private _DateModified As System.Nullable(Of Date)
+	
+	Private _UserID As System.Nullable(Of Integer)
+	
+	Private _UserIDModified As System.Nullable(Of Integer)
+	
+	Private _tblAllocationHeaders As EntitySet(Of tblAllocationHeader)
+	
+	Private _tblEmployees As EntitySet(Of tblEmployee)
+	
+	Private _tblUser As EntityRef(Of tblUser)
+	
+    #Region "Extensibility Method Definitions"
+    Partial Private Sub OnLoaded()
+    End Sub
+    Partial Private Sub OnValidate(action As System.Data.Linq.ChangeAction)
+    End Sub
+    Partial Private Sub OnCreated()
+    End Sub
+    Partial Private Sub OnBranchIDChanging(value As Integer)
+    End Sub
+    Partial Private Sub OnBranchIDChanged()
+    End Sub
+    Partial Private Sub OnBranchCodeChanging(value As String)
+    End Sub
+    Partial Private Sub OnBranchCodeChanged()
+    End Sub
+    Partial Private Sub OnBranchDescriptionChanging(value As String)
+    End Sub
+    Partial Private Sub OnBranchDescriptionChanged()
+    End Sub
+    Partial Private Sub OnDateCreatedChanging(value As System.Nullable(Of Date))
+    End Sub
+    Partial Private Sub OnDateCreatedChanged()
+    End Sub
+    Partial Private Sub OnDateModifiedChanging(value As System.Nullable(Of Date))
+    End Sub
+    Partial Private Sub OnDateModifiedChanged()
+    End Sub
+    Partial Private Sub OnUserIDChanging(value As System.Nullable(Of Integer))
+    End Sub
+    Partial Private Sub OnUserIDChanged()
+    End Sub
+    Partial Private Sub OnUserIDModifiedChanging(value As System.Nullable(Of Integer))
+    End Sub
+    Partial Private Sub OnUserIDModifiedChanged()
+    End Sub
+    #End Region
+	
+	Public Sub New()
+		MyBase.New
+		Me._tblAllocationHeaders = New EntitySet(Of tblAllocationHeader)(AddressOf Me.attach_tblAllocationHeaders, AddressOf Me.detach_tblAllocationHeaders)
+		Me._tblEmployees = New EntitySet(Of tblEmployee)(AddressOf Me.attach_tblEmployees, AddressOf Me.detach_tblEmployees)
+		Me._tblUser = CType(Nothing, EntityRef(Of tblUser))
+		OnCreated
+	End Sub
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_BranchID", AutoSync:=AutoSync.OnInsert, DbType:="Int NOT NULL IDENTITY", IsPrimaryKey:=true, IsDbGenerated:=true)>  _
+	Public Property BranchID() As Integer
+		Get
+			Return Me._BranchID
+		End Get
+		Set
+			If ((Me._BranchID = value)  _
+						= false) Then
+				If Me._tblUser.HasLoadedOrAssignedValue Then
+					Throw New System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException()
+				End If
+				Me.OnBranchIDChanging(value)
+				Me.SendPropertyChanging
+				Me._BranchID = value
+				Me.SendPropertyChanged("BranchID")
+				Me.OnBranchIDChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_BranchCode", DbType:="VarChar(200)")>  _
+	Public Property BranchCode() As String
+		Get
+			Return Me._BranchCode
+		End Get
+		Set
+			If (String.Equals(Me._BranchCode, value) = false) Then
+				Me.OnBranchCodeChanging(value)
+				Me.SendPropertyChanging
+				Me._BranchCode = value
+				Me.SendPropertyChanged("BranchCode")
+				Me.OnBranchCodeChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_BranchDescription", DbType:="VarChar(200)")>  _
+	Public Property BranchDescription() As String
+		Get
+			Return Me._BranchDescription
+		End Get
+		Set
+			If (String.Equals(Me._BranchDescription, value) = false) Then
+				Me.OnBranchDescriptionChanging(value)
+				Me.SendPropertyChanging
+				Me._BranchDescription = value
+				Me.SendPropertyChanged("BranchDescription")
+				Me.OnBranchDescriptionChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_DateCreated", DbType:="Date")>  _
+	Public Property DateCreated() As System.Nullable(Of Date)
+		Get
+			Return Me._DateCreated
+		End Get
+		Set
+			If (Me._DateCreated.Equals(value) = false) Then
+				Me.OnDateCreatedChanging(value)
+				Me.SendPropertyChanging
+				Me._DateCreated = value
+				Me.SendPropertyChanged("DateCreated")
+				Me.OnDateCreatedChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_DateModified", DbType:="Date")>  _
+	Public Property DateModified() As System.Nullable(Of Date)
+		Get
+			Return Me._DateModified
+		End Get
+		Set
+			If (Me._DateModified.Equals(value) = false) Then
+				Me.OnDateModifiedChanging(value)
+				Me.SendPropertyChanging
+				Me._DateModified = value
+				Me.SendPropertyChanged("DateModified")
+				Me.OnDateModifiedChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_UserID", DbType:="Int")>  _
+	Public Property UserID() As System.Nullable(Of Integer)
+		Get
+			Return Me._UserID
+		End Get
+		Set
+			If (Me._UserID.Equals(value) = false) Then
+				Me.OnUserIDChanging(value)
+				Me.SendPropertyChanging
+				Me._UserID = value
+				Me.SendPropertyChanged("UserID")
+				Me.OnUserIDChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_UserIDModified", DbType:="Int")>  _
+	Public Property UserIDModified() As System.Nullable(Of Integer)
+		Get
+			Return Me._UserIDModified
+		End Get
+		Set
+			If (Me._UserIDModified.Equals(value) = false) Then
+				Me.OnUserIDModifiedChanging(value)
+				Me.SendPropertyChanging
+				Me._UserIDModified = value
+				Me.SendPropertyChanged("UserIDModified")
+				Me.OnUserIDModifiedChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.AssociationAttribute(Name:="tblBranch_tblAllocationHeader", Storage:="_tblAllocationHeaders", ThisKey:="BranchID", OtherKey:="BranchId")>  _
+	Public Property tblAllocationHeaders() As EntitySet(Of tblAllocationHeader)
+		Get
+			Return Me._tblAllocationHeaders
+		End Get
+		Set
+			Me._tblAllocationHeaders.Assign(value)
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.AssociationAttribute(Name:="tblBranch_tblEmployee", Storage:="_tblEmployees", ThisKey:="BranchID", OtherKey:="BranchID")>  _
+	Public Property tblEmployees() As EntitySet(Of tblEmployee)
+		Get
+			Return Me._tblEmployees
+		End Get
+		Set
+			Me._tblEmployees.Assign(value)
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.AssociationAttribute(Name:="tblUser_tblBranch", Storage:="_tblUser", ThisKey:="BranchID", OtherKey:="UserID", IsForeignKey:=true)>  _
+	Public Property tblUser() As tblUser
+		Get
+			Return Me._tblUser.Entity
+		End Get
+		Set
+			Dim previousValue As tblUser = Me._tblUser.Entity
+			If ((Object.Equals(previousValue, value) = false)  _
+						OrElse (Me._tblUser.HasLoadedOrAssignedValue = false)) Then
+				Me.SendPropertyChanging
+				If ((previousValue Is Nothing)  _
+							= false) Then
+					Me._tblUser.Entity = Nothing
+					previousValue.tblBranch = Nothing
+				End If
+				Me._tblUser.Entity = value
+				If ((value Is Nothing)  _
+							= false) Then
+					value.tblBranch = Me
+					Me._BranchID = value.UserID
+				Else
+					Me._BranchID = CType(Nothing, Integer)
+				End If
+				Me.SendPropertyChanged("tblUser")
+			End If
+		End Set
+	End Property
+	
+	Public Event PropertyChanging As PropertyChangingEventHandler Implements System.ComponentModel.INotifyPropertyChanging.PropertyChanging
+	
+	Public Event PropertyChanged As PropertyChangedEventHandler Implements System.ComponentModel.INotifyPropertyChanged.PropertyChanged
+	
+	Protected Overridable Sub SendPropertyChanging()
+		If ((Me.PropertyChangingEvent Is Nothing)  _
+					= false) Then
+			RaiseEvent PropertyChanging(Me, emptyChangingEventArgs)
+		End If
+	End Sub
+	
+	Protected Overridable Sub SendPropertyChanged(ByVal propertyName As [String])
+		If ((Me.PropertyChangedEvent Is Nothing)  _
+					= false) Then
+			RaiseEvent PropertyChanged(Me, New PropertyChangedEventArgs(propertyName))
+		End If
+	End Sub
+	
+	Private Sub attach_tblAllocationHeaders(ByVal entity As tblAllocationHeader)
+		Me.SendPropertyChanging
+		entity.tblBranch = Me
+	End Sub
+	
+	Private Sub detach_tblAllocationHeaders(ByVal entity As tblAllocationHeader)
+		Me.SendPropertyChanging
+		entity.tblBranch = Nothing
+	End Sub
+	
+	Private Sub attach_tblEmployees(ByVal entity As tblEmployee)
+		Me.SendPropertyChanging
+		entity.tblBranch = Me
+	End Sub
+	
+	Private Sub detach_tblEmployees(ByVal entity As tblEmployee)
+		Me.SendPropertyChanging
+		entity.tblBranch = Nothing
+	End Sub
+End Class
+
+<Global.System.Data.Linq.Mapping.TableAttribute(Name:="dbo.tblCategory")>  _
+Partial Public Class tblCategory
+	Implements System.ComponentModel.INotifyPropertyChanging, System.ComponentModel.INotifyPropertyChanged
+	
+	Private Shared emptyChangingEventArgs As PropertyChangingEventArgs = New PropertyChangingEventArgs(String.Empty)
+	
+	Private _CategoryID As Integer
+	
+	Private _CategoryCode As String
+	
+	Private _CategoryDescription As String
+	
+	Private _DateCreated As System.Nullable(Of Date)
+	
+	Private _DateModified As System.Nullable(Of Date)
+	
+	Private _UserID As System.Nullable(Of Integer)
+	
+	Private _UserIDModified As System.Nullable(Of Integer)
+	
+	Private _tblAssetDetailMasterlists As EntitySet(Of tblAssetDetailMasterlist)
+	
+	Private _tblAssetDetails As EntitySet(Of tblAssetDetail)
+	
+	Private _tblUser As EntityRef(Of tblUser)
+	
+    #Region "Extensibility Method Definitions"
+    Partial Private Sub OnLoaded()
+    End Sub
+    Partial Private Sub OnValidate(action As System.Data.Linq.ChangeAction)
+    End Sub
+    Partial Private Sub OnCreated()
+    End Sub
+    Partial Private Sub OnCategoryIDChanging(value As Integer)
+    End Sub
+    Partial Private Sub OnCategoryIDChanged()
+    End Sub
+    Partial Private Sub OnCategoryCodeChanging(value As String)
+    End Sub
+    Partial Private Sub OnCategoryCodeChanged()
+    End Sub
+    Partial Private Sub OnCategoryDescriptionChanging(value As String)
+    End Sub
+    Partial Private Sub OnCategoryDescriptionChanged()
+    End Sub
+    Partial Private Sub OnDateCreatedChanging(value As System.Nullable(Of Date))
+    End Sub
+    Partial Private Sub OnDateCreatedChanged()
+    End Sub
+    Partial Private Sub OnDateModifiedChanging(value As System.Nullable(Of Date))
+    End Sub
+    Partial Private Sub OnDateModifiedChanged()
+    End Sub
+    Partial Private Sub OnUserIDChanging(value As System.Nullable(Of Integer))
+    End Sub
+    Partial Private Sub OnUserIDChanged()
+    End Sub
+    Partial Private Sub OnUserIDModifiedChanging(value As System.Nullable(Of Integer))
+    End Sub
+    Partial Private Sub OnUserIDModifiedChanged()
+    End Sub
+    #End Region
+	
+	Public Sub New()
+		MyBase.New
+		Me._tblAssetDetailMasterlists = New EntitySet(Of tblAssetDetailMasterlist)(AddressOf Me.attach_tblAssetDetailMasterlists, AddressOf Me.detach_tblAssetDetailMasterlists)
+		Me._tblAssetDetails = New EntitySet(Of tblAssetDetail)(AddressOf Me.attach_tblAssetDetails, AddressOf Me.detach_tblAssetDetails)
+		Me._tblUser = CType(Nothing, EntityRef(Of tblUser))
+		OnCreated
+	End Sub
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_CategoryID", AutoSync:=AutoSync.OnInsert, DbType:="Int NOT NULL IDENTITY", IsPrimaryKey:=true, IsDbGenerated:=true)>  _
+	Public Property CategoryID() As Integer
+		Get
+			Return Me._CategoryID
+		End Get
+		Set
+			If ((Me._CategoryID = value)  _
+						= false) Then
+				Me.OnCategoryIDChanging(value)
+				Me.SendPropertyChanging
+				Me._CategoryID = value
+				Me.SendPropertyChanged("CategoryID")
+				Me.OnCategoryIDChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_CategoryCode", DbType:="VarChar(200)")>  _
+	Public Property CategoryCode() As String
+		Get
+			Return Me._CategoryCode
+		End Get
+		Set
+			If (String.Equals(Me._CategoryCode, value) = false) Then
+				Me.OnCategoryCodeChanging(value)
+				Me.SendPropertyChanging
+				Me._CategoryCode = value
+				Me.SendPropertyChanged("CategoryCode")
+				Me.OnCategoryCodeChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_CategoryDescription", DbType:="VarChar(200)")>  _
+	Public Property CategoryDescription() As String
+		Get
+			Return Me._CategoryDescription
+		End Get
+		Set
+			If (String.Equals(Me._CategoryDescription, value) = false) Then
+				Me.OnCategoryDescriptionChanging(value)
+				Me.SendPropertyChanging
+				Me._CategoryDescription = value
+				Me.SendPropertyChanged("CategoryDescription")
+				Me.OnCategoryDescriptionChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_DateCreated", DbType:="Date")>  _
+	Public Property DateCreated() As System.Nullable(Of Date)
+		Get
+			Return Me._DateCreated
+		End Get
+		Set
+			If (Me._DateCreated.Equals(value) = false) Then
+				Me.OnDateCreatedChanging(value)
+				Me.SendPropertyChanging
+				Me._DateCreated = value
+				Me.SendPropertyChanged("DateCreated")
+				Me.OnDateCreatedChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_DateModified", DbType:="Date")>  _
+	Public Property DateModified() As System.Nullable(Of Date)
+		Get
+			Return Me._DateModified
+		End Get
+		Set
+			If (Me._DateModified.Equals(value) = false) Then
+				Me.OnDateModifiedChanging(value)
+				Me.SendPropertyChanging
+				Me._DateModified = value
+				Me.SendPropertyChanged("DateModified")
+				Me.OnDateModifiedChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_UserID", DbType:="Int")>  _
+	Public Property UserID() As System.Nullable(Of Integer)
+		Get
+			Return Me._UserID
+		End Get
+		Set
+			If (Me._UserID.Equals(value) = false) Then
+				If Me._tblUser.HasLoadedOrAssignedValue Then
+					Throw New System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException()
+				End If
+				Me.OnUserIDChanging(value)
+				Me.SendPropertyChanging
+				Me._UserID = value
+				Me.SendPropertyChanged("UserID")
+				Me.OnUserIDChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_UserIDModified", DbType:="Int")>  _
+	Public Property UserIDModified() As System.Nullable(Of Integer)
+		Get
+			Return Me._UserIDModified
+		End Get
+		Set
+			If (Me._UserIDModified.Equals(value) = false) Then
+				Me.OnUserIDModifiedChanging(value)
+				Me.SendPropertyChanging
+				Me._UserIDModified = value
+				Me.SendPropertyChanged("UserIDModified")
+				Me.OnUserIDModifiedChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.AssociationAttribute(Name:="tblCategory_tblAssetDetailMasterlist", Storage:="_tblAssetDetailMasterlists", ThisKey:="CategoryID", OtherKey:="CategoryID")>  _
+	Public Property tblAssetDetailMasterlists() As EntitySet(Of tblAssetDetailMasterlist)
+		Get
+			Return Me._tblAssetDetailMasterlists
+		End Get
+		Set
+			Me._tblAssetDetailMasterlists.Assign(value)
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.AssociationAttribute(Name:="tblCategory_tblAssetDetail", Storage:="_tblAssetDetails", ThisKey:="CategoryID", OtherKey:="categoryID")>  _
+	Public Property tblAssetDetails() As EntitySet(Of tblAssetDetail)
+		Get
+			Return Me._tblAssetDetails
+		End Get
+		Set
+			Me._tblAssetDetails.Assign(value)
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.AssociationAttribute(Name:="tblUser_tblCategory", Storage:="_tblUser", ThisKey:="UserID", OtherKey:="UserID", IsForeignKey:=true)>  _
+	Public Property tblUser() As tblUser
+		Get
+			Return Me._tblUser.Entity
+		End Get
+		Set
+			Dim previousValue As tblUser = Me._tblUser.Entity
+			If ((Object.Equals(previousValue, value) = false)  _
+						OrElse (Me._tblUser.HasLoadedOrAssignedValue = false)) Then
+				Me.SendPropertyChanging
+				If ((previousValue Is Nothing)  _
+							= false) Then
+					Me._tblUser.Entity = Nothing
+					previousValue.tblCategories.Remove(Me)
+				End If
+				Me._tblUser.Entity = value
+				If ((value Is Nothing)  _
+							= false) Then
+					value.tblCategories.Add(Me)
+					Me._UserID = value.UserID
+				Else
+					Me._UserID = CType(Nothing, Nullable(Of Integer))
+				End If
+				Me.SendPropertyChanged("tblUser")
+			End If
+		End Set
+	End Property
+	
+	Public Event PropertyChanging As PropertyChangingEventHandler Implements System.ComponentModel.INotifyPropertyChanging.PropertyChanging
+	
+	Public Event PropertyChanged As PropertyChangedEventHandler Implements System.ComponentModel.INotifyPropertyChanged.PropertyChanged
+	
+	Protected Overridable Sub SendPropertyChanging()
+		If ((Me.PropertyChangingEvent Is Nothing)  _
+					= false) Then
+			RaiseEvent PropertyChanging(Me, emptyChangingEventArgs)
+		End If
+	End Sub
+	
+	Protected Overridable Sub SendPropertyChanged(ByVal propertyName As [String])
+		If ((Me.PropertyChangedEvent Is Nothing)  _
+					= false) Then
+			RaiseEvent PropertyChanged(Me, New PropertyChangedEventArgs(propertyName))
+		End If
+	End Sub
+	
+	Private Sub attach_tblAssetDetailMasterlists(ByVal entity As tblAssetDetailMasterlist)
+		Me.SendPropertyChanging
+		entity.tblCategory = Me
+	End Sub
+	
+	Private Sub detach_tblAssetDetailMasterlists(ByVal entity As tblAssetDetailMasterlist)
+		Me.SendPropertyChanging
+		entity.tblCategory = Nothing
+	End Sub
+	
+	Private Sub attach_tblAssetDetails(ByVal entity As tblAssetDetail)
+		Me.SendPropertyChanging
+		entity.tblCategory = Me
+	End Sub
+	
+	Private Sub detach_tblAssetDetails(ByVal entity As tblAssetDetail)
+		Me.SendPropertyChanging
+		entity.tblCategory = Nothing
+	End Sub
+End Class
+
+<Global.System.Data.Linq.Mapping.TableAttribute(Name:="dbo.tblDepartment")>  _
+Partial Public Class tblDepartment
+	Implements System.ComponentModel.INotifyPropertyChanging, System.ComponentModel.INotifyPropertyChanged
+	
+	Private Shared emptyChangingEventArgs As PropertyChangingEventArgs = New PropertyChangingEventArgs(String.Empty)
+	
+	Private _DepartmentID As Integer
+	
+	Private _DepartmentCode As String
+	
+	Private _DepartmentDescription As String
+	
+	Private _DateCreated As System.Nullable(Of Date)
+	
+	Private _DateModified As System.Nullable(Of Date)
+	
+	Private _UserID As System.Nullable(Of Integer)
+	
+	Private _UserIDModified As System.Nullable(Of Integer)
+	
+	Private _tblAllocationHeaders As EntitySet(Of tblAllocationHeader)
+	
+	Private _tblEmployees As EntitySet(Of tblEmployee)
+	
+	Private _tblUser As EntityRef(Of tblUser)
+	
+    #Region "Extensibility Method Definitions"
+    Partial Private Sub OnLoaded()
+    End Sub
+    Partial Private Sub OnValidate(action As System.Data.Linq.ChangeAction)
+    End Sub
+    Partial Private Sub OnCreated()
+    End Sub
+    Partial Private Sub OnDepartmentIDChanging(value As Integer)
+    End Sub
+    Partial Private Sub OnDepartmentIDChanged()
+    End Sub
+    Partial Private Sub OnDepartmentCodeChanging(value As String)
+    End Sub
+    Partial Private Sub OnDepartmentCodeChanged()
+    End Sub
+    Partial Private Sub OnDepartmentDescriptionChanging(value As String)
+    End Sub
+    Partial Private Sub OnDepartmentDescriptionChanged()
+    End Sub
+    Partial Private Sub OnDateCreatedChanging(value As System.Nullable(Of Date))
+    End Sub
+    Partial Private Sub OnDateCreatedChanged()
+    End Sub
+    Partial Private Sub OnDateModifiedChanging(value As System.Nullable(Of Date))
+    End Sub
+    Partial Private Sub OnDateModifiedChanged()
+    End Sub
+    Partial Private Sub OnUserIDChanging(value As System.Nullable(Of Integer))
+    End Sub
+    Partial Private Sub OnUserIDChanged()
+    End Sub
+    Partial Private Sub OnUserIDModifiedChanging(value As System.Nullable(Of Integer))
+    End Sub
+    Partial Private Sub OnUserIDModifiedChanged()
+    End Sub
+    #End Region
+	
+	Public Sub New()
+		MyBase.New
+		Me._tblAllocationHeaders = New EntitySet(Of tblAllocationHeader)(AddressOf Me.attach_tblAllocationHeaders, AddressOf Me.detach_tblAllocationHeaders)
+		Me._tblEmployees = New EntitySet(Of tblEmployee)(AddressOf Me.attach_tblEmployees, AddressOf Me.detach_tblEmployees)
+		Me._tblUser = CType(Nothing, EntityRef(Of tblUser))
+		OnCreated
+	End Sub
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_DepartmentID", AutoSync:=AutoSync.OnInsert, DbType:="Int NOT NULL IDENTITY", IsPrimaryKey:=true, IsDbGenerated:=true)>  _
+	Public Property DepartmentID() As Integer
+		Get
+			Return Me._DepartmentID
+		End Get
+		Set
+			If ((Me._DepartmentID = value)  _
+						= false) Then
+				If Me._tblUser.HasLoadedOrAssignedValue Then
+					Throw New System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException()
+				End If
+				Me.OnDepartmentIDChanging(value)
+				Me.SendPropertyChanging
+				Me._DepartmentID = value
+				Me.SendPropertyChanged("DepartmentID")
+				Me.OnDepartmentIDChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_DepartmentCode", DbType:="VarChar(200)")>  _
+	Public Property DepartmentCode() As String
+		Get
+			Return Me._DepartmentCode
+		End Get
+		Set
+			If (String.Equals(Me._DepartmentCode, value) = false) Then
+				Me.OnDepartmentCodeChanging(value)
+				Me.SendPropertyChanging
+				Me._DepartmentCode = value
+				Me.SendPropertyChanged("DepartmentCode")
+				Me.OnDepartmentCodeChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_DepartmentDescription", DbType:="VarChar(200)")>  _
+	Public Property DepartmentDescription() As String
+		Get
+			Return Me._DepartmentDescription
+		End Get
+		Set
+			If (String.Equals(Me._DepartmentDescription, value) = false) Then
+				Me.OnDepartmentDescriptionChanging(value)
+				Me.SendPropertyChanging
+				Me._DepartmentDescription = value
+				Me.SendPropertyChanged("DepartmentDescription")
+				Me.OnDepartmentDescriptionChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_DateCreated", DbType:="Date")>  _
+	Public Property DateCreated() As System.Nullable(Of Date)
+		Get
+			Return Me._DateCreated
+		End Get
+		Set
+			If (Me._DateCreated.Equals(value) = false) Then
+				Me.OnDateCreatedChanging(value)
+				Me.SendPropertyChanging
+				Me._DateCreated = value
+				Me.SendPropertyChanged("DateCreated")
+				Me.OnDateCreatedChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_DateModified", DbType:="Date")>  _
+	Public Property DateModified() As System.Nullable(Of Date)
+		Get
+			Return Me._DateModified
+		End Get
+		Set
+			If (Me._DateModified.Equals(value) = false) Then
+				Me.OnDateModifiedChanging(value)
+				Me.SendPropertyChanging
+				Me._DateModified = value
+				Me.SendPropertyChanged("DateModified")
+				Me.OnDateModifiedChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_UserID", DbType:="Int")>  _
+	Public Property UserID() As System.Nullable(Of Integer)
+		Get
+			Return Me._UserID
+		End Get
+		Set
+			If (Me._UserID.Equals(value) = false) Then
+				Me.OnUserIDChanging(value)
+				Me.SendPropertyChanging
+				Me._UserID = value
+				Me.SendPropertyChanged("UserID")
+				Me.OnUserIDChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_UserIDModified", DbType:="Int")>  _
+	Public Property UserIDModified() As System.Nullable(Of Integer)
+		Get
+			Return Me._UserIDModified
+		End Get
+		Set
+			If (Me._UserIDModified.Equals(value) = false) Then
+				Me.OnUserIDModifiedChanging(value)
+				Me.SendPropertyChanging
+				Me._UserIDModified = value
+				Me.SendPropertyChanged("UserIDModified")
+				Me.OnUserIDModifiedChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.AssociationAttribute(Name:="tblDepartment_tblAllocationHeader", Storage:="_tblAllocationHeaders", ThisKey:="DepartmentID", OtherKey:="DepartmentId")>  _
+	Public Property tblAllocationHeaders() As EntitySet(Of tblAllocationHeader)
+		Get
+			Return Me._tblAllocationHeaders
+		End Get
+		Set
+			Me._tblAllocationHeaders.Assign(value)
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.AssociationAttribute(Name:="tblDepartment_tblEmployee", Storage:="_tblEmployees", ThisKey:="DepartmentID", OtherKey:="DepartmentID")>  _
+	Public Property tblEmployees() As EntitySet(Of tblEmployee)
+		Get
+			Return Me._tblEmployees
+		End Get
+		Set
+			Me._tblEmployees.Assign(value)
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.AssociationAttribute(Name:="tblUser_tblDepartment", Storage:="_tblUser", ThisKey:="DepartmentID", OtherKey:="UserID", IsForeignKey:=true)>  _
+	Public Property tblUser() As tblUser
+		Get
+			Return Me._tblUser.Entity
+		End Get
+		Set
+			Dim previousValue As tblUser = Me._tblUser.Entity
+			If ((Object.Equals(previousValue, value) = false)  _
+						OrElse (Me._tblUser.HasLoadedOrAssignedValue = false)) Then
+				Me.SendPropertyChanging
+				If ((previousValue Is Nothing)  _
+							= false) Then
+					Me._tblUser.Entity = Nothing
+					previousValue.tblDepartment = Nothing
+				End If
+				Me._tblUser.Entity = value
+				If ((value Is Nothing)  _
+							= false) Then
+					value.tblDepartment = Me
+					Me._DepartmentID = value.UserID
+				Else
+					Me._DepartmentID = CType(Nothing, Integer)
+				End If
+				Me.SendPropertyChanged("tblUser")
+			End If
+		End Set
+	End Property
+	
+	Public Event PropertyChanging As PropertyChangingEventHandler Implements System.ComponentModel.INotifyPropertyChanging.PropertyChanging
+	
+	Public Event PropertyChanged As PropertyChangedEventHandler Implements System.ComponentModel.INotifyPropertyChanged.PropertyChanged
+	
+	Protected Overridable Sub SendPropertyChanging()
+		If ((Me.PropertyChangingEvent Is Nothing)  _
+					= false) Then
+			RaiseEvent PropertyChanging(Me, emptyChangingEventArgs)
+		End If
+	End Sub
+	
+	Protected Overridable Sub SendPropertyChanged(ByVal propertyName As [String])
+		If ((Me.PropertyChangedEvent Is Nothing)  _
+					= false) Then
+			RaiseEvent PropertyChanged(Me, New PropertyChangedEventArgs(propertyName))
+		End If
+	End Sub
+	
+	Private Sub attach_tblAllocationHeaders(ByVal entity As tblAllocationHeader)
+		Me.SendPropertyChanging
+		entity.tblDepartment = Me
+	End Sub
+	
+	Private Sub detach_tblAllocationHeaders(ByVal entity As tblAllocationHeader)
+		Me.SendPropertyChanging
+		entity.tblDepartment = Nothing
+	End Sub
+	
+	Private Sub attach_tblEmployees(ByVal entity As tblEmployee)
+		Me.SendPropertyChanging
+		entity.tblDepartment = Me
+	End Sub
+	
+	Private Sub detach_tblEmployees(ByVal entity As tblEmployee)
+		Me.SendPropertyChanging
+		entity.tblDepartment = Nothing
+	End Sub
+End Class
+
+<Global.System.Data.Linq.Mapping.TableAttribute(Name:="dbo.tblDocumentType")>  _
+Partial Public Class tblDocumentType
+	Implements System.ComponentModel.INotifyPropertyChanging, System.ComponentModel.INotifyPropertyChanged
+	
+	Private Shared emptyChangingEventArgs As PropertyChangingEventArgs = New PropertyChangingEventArgs(String.Empty)
+	
+	Private _DocumentID As Integer
+	
+	Private _DocumentCode As String
+	
+	Private _DocumentDescription As String
+	
+	Private _DateCreated As System.Nullable(Of Date)
+	
+	Private _DateModified As System.Nullable(Of Date)
+	
+	Private _UserID As System.Nullable(Of Integer)
+	
+	Private _UserIDModified As System.Nullable(Of Integer)
+	
+	Private _tblAssetHeaders As EntitySet(Of tblAssetHeader)
+	
+	Private _tblUser As EntityRef(Of tblUser)
+	
+    #Region "Extensibility Method Definitions"
+    Partial Private Sub OnLoaded()
+    End Sub
+    Partial Private Sub OnValidate(action As System.Data.Linq.ChangeAction)
+    End Sub
+    Partial Private Sub OnCreated()
+    End Sub
+    Partial Private Sub OnDocumentIDChanging(value As Integer)
+    End Sub
+    Partial Private Sub OnDocumentIDChanged()
+    End Sub
+    Partial Private Sub OnDocumentCodeChanging(value As String)
+    End Sub
+    Partial Private Sub OnDocumentCodeChanged()
+    End Sub
+    Partial Private Sub OnDocumentDescriptionChanging(value As String)
+    End Sub
+    Partial Private Sub OnDocumentDescriptionChanged()
+    End Sub
+    Partial Private Sub OnDateCreatedChanging(value As System.Nullable(Of Date))
+    End Sub
+    Partial Private Sub OnDateCreatedChanged()
+    End Sub
+    Partial Private Sub OnDateModifiedChanging(value As System.Nullable(Of Date))
+    End Sub
+    Partial Private Sub OnDateModifiedChanged()
+    End Sub
+    Partial Private Sub OnUserIDChanging(value As System.Nullable(Of Integer))
+    End Sub
+    Partial Private Sub OnUserIDChanged()
+    End Sub
+    Partial Private Sub OnUserIDModifiedChanging(value As System.Nullable(Of Integer))
+    End Sub
+    Partial Private Sub OnUserIDModifiedChanged()
+    End Sub
+    #End Region
+	
+	Public Sub New()
+		MyBase.New
+		Me._tblAssetHeaders = New EntitySet(Of tblAssetHeader)(AddressOf Me.attach_tblAssetHeaders, AddressOf Me.detach_tblAssetHeaders)
+		Me._tblUser = CType(Nothing, EntityRef(Of tblUser))
+		OnCreated
+	End Sub
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_DocumentID", AutoSync:=AutoSync.OnInsert, DbType:="Int NOT NULL IDENTITY", IsPrimaryKey:=true, IsDbGenerated:=true)>  _
+	Public Property DocumentID() As Integer
+		Get
+			Return Me._DocumentID
+		End Get
+		Set
+			If ((Me._DocumentID = value)  _
+						= false) Then
+				Me.OnDocumentIDChanging(value)
+				Me.SendPropertyChanging
+				Me._DocumentID = value
+				Me.SendPropertyChanged("DocumentID")
+				Me.OnDocumentIDChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_DocumentCode", DbType:="VarChar(200)")>  _
+	Public Property DocumentCode() As String
+		Get
+			Return Me._DocumentCode
+		End Get
+		Set
+			If (String.Equals(Me._DocumentCode, value) = false) Then
+				Me.OnDocumentCodeChanging(value)
+				Me.SendPropertyChanging
+				Me._DocumentCode = value
+				Me.SendPropertyChanged("DocumentCode")
+				Me.OnDocumentCodeChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_DocumentDescription", DbType:="VarChar(200)")>  _
+	Public Property DocumentDescription() As String
+		Get
+			Return Me._DocumentDescription
+		End Get
+		Set
+			If (String.Equals(Me._DocumentDescription, value) = false) Then
+				Me.OnDocumentDescriptionChanging(value)
+				Me.SendPropertyChanging
+				Me._DocumentDescription = value
+				Me.SendPropertyChanged("DocumentDescription")
+				Me.OnDocumentDescriptionChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_DateCreated", DbType:="Date")>  _
+	Public Property DateCreated() As System.Nullable(Of Date)
+		Get
+			Return Me._DateCreated
+		End Get
+		Set
+			If (Me._DateCreated.Equals(value) = false) Then
+				Me.OnDateCreatedChanging(value)
+				Me.SendPropertyChanging
+				Me._DateCreated = value
+				Me.SendPropertyChanged("DateCreated")
+				Me.OnDateCreatedChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_DateModified", DbType:="Date")>  _
+	Public Property DateModified() As System.Nullable(Of Date)
+		Get
+			Return Me._DateModified
+		End Get
+		Set
+			If (Me._DateModified.Equals(value) = false) Then
+				Me.OnDateModifiedChanging(value)
+				Me.SendPropertyChanging
+				Me._DateModified = value
+				Me.SendPropertyChanged("DateModified")
+				Me.OnDateModifiedChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_UserID", DbType:="Int")>  _
+	Public Property UserID() As System.Nullable(Of Integer)
+		Get
+			Return Me._UserID
+		End Get
+		Set
+			If (Me._UserID.Equals(value) = false) Then
+				If Me._tblUser.HasLoadedOrAssignedValue Then
+					Throw New System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException()
+				End If
+				Me.OnUserIDChanging(value)
+				Me.SendPropertyChanging
+				Me._UserID = value
+				Me.SendPropertyChanged("UserID")
+				Me.OnUserIDChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_UserIDModified", DbType:="Int")>  _
+	Public Property UserIDModified() As System.Nullable(Of Integer)
+		Get
+			Return Me._UserIDModified
+		End Get
+		Set
+			If (Me._UserIDModified.Equals(value) = false) Then
+				Me.OnUserIDModifiedChanging(value)
+				Me.SendPropertyChanging
+				Me._UserIDModified = value
+				Me.SendPropertyChanged("UserIDModified")
+				Me.OnUserIDModifiedChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.AssociationAttribute(Name:="tblDocumentType_tblAssetHeader", Storage:="_tblAssetHeaders", ThisKey:="DocumentID", OtherKey:="DocTypeID")>  _
+	Public Property tblAssetHeaders() As EntitySet(Of tblAssetHeader)
+		Get
+			Return Me._tblAssetHeaders
+		End Get
+		Set
+			Me._tblAssetHeaders.Assign(value)
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.AssociationAttribute(Name:="tblUser_tblDocumentType", Storage:="_tblUser", ThisKey:="UserID", OtherKey:="UserID", IsForeignKey:=true)>  _
+	Public Property tblUser() As tblUser
+		Get
+			Return Me._tblUser.Entity
+		End Get
+		Set
+			Dim previousValue As tblUser = Me._tblUser.Entity
+			If ((Object.Equals(previousValue, value) = false)  _
+						OrElse (Me._tblUser.HasLoadedOrAssignedValue = false)) Then
+				Me.SendPropertyChanging
+				If ((previousValue Is Nothing)  _
+							= false) Then
+					Me._tblUser.Entity = Nothing
+					previousValue.tblDocumentTypes.Remove(Me)
+				End If
+				Me._tblUser.Entity = value
+				If ((value Is Nothing)  _
+							= false) Then
+					value.tblDocumentTypes.Add(Me)
+					Me._UserID = value.UserID
+				Else
+					Me._UserID = CType(Nothing, Nullable(Of Integer))
+				End If
+				Me.SendPropertyChanged("tblUser")
+			End If
+		End Set
+	End Property
+	
+	Public Event PropertyChanging As PropertyChangingEventHandler Implements System.ComponentModel.INotifyPropertyChanging.PropertyChanging
+	
+	Public Event PropertyChanged As PropertyChangedEventHandler Implements System.ComponentModel.INotifyPropertyChanged.PropertyChanged
+	
+	Protected Overridable Sub SendPropertyChanging()
+		If ((Me.PropertyChangingEvent Is Nothing)  _
+					= false) Then
+			RaiseEvent PropertyChanging(Me, emptyChangingEventArgs)
+		End If
+	End Sub
+	
+	Protected Overridable Sub SendPropertyChanged(ByVal propertyName As [String])
+		If ((Me.PropertyChangedEvent Is Nothing)  _
+					= false) Then
+			RaiseEvent PropertyChanged(Me, New PropertyChangedEventArgs(propertyName))
+		End If
+	End Sub
+	
+	Private Sub attach_tblAssetHeaders(ByVal entity As tblAssetHeader)
+		Me.SendPropertyChanging
+		entity.tblDocumentType = Me
+	End Sub
+	
+	Private Sub detach_tblAssetHeaders(ByVal entity As tblAssetHeader)
+		Me.SendPropertyChanging
+		entity.tblDocumentType = Nothing
+	End Sub
+End Class
+
+<Global.System.Data.Linq.Mapping.TableAttribute(Name:="dbo.tblEmployee")>  _
+Partial Public Class tblEmployee
+	Implements System.ComponentModel.INotifyPropertyChanging, System.ComponentModel.INotifyPropertyChanged
+	
+	Private Shared emptyChangingEventArgs As PropertyChangingEventArgs = New PropertyChangingEventArgs(String.Empty)
+	
+	Private _EmployeeID As Integer
+	
+	Private _FirstName As String
+	
+	Private _LastName As String
+	
+	Private _BranchID As System.Nullable(Of Integer)
+	
+	Private _DepartmentID As System.Nullable(Of Integer)
+	
+	Private _PositionID As System.Nullable(Of Integer)
+	
+	Private _SectionID As System.Nullable(Of Integer)
+	
+	Private _AddbyUserID As System.Nullable(Of Integer)
+	
+	Private _Datecreated As System.Nullable(Of Date)
+	
+	Private _tblAssetInventories As EntitySet(Of tblAssetInventory)
+	
+	Private _tblAssetInventory1s As EntitySet(Of tblAssetInventory1)
+	
+	Private _tblAssetInventories1 As EntitySet(Of tblAssetInventory)
+	
+	Private _tblAssetInventory1s1 As EntitySet(Of tblAssetInventory1)
+	
+	Private _tblAllocationHeaders As EntitySet(Of tblAllocationHeader)
+	
+	Private _tblBranch As EntityRef(Of tblBranch)
+	
+	Private _tblDepartment As EntityRef(Of tblDepartment)
+	
+	Private _tblSection As EntityRef(Of tblSection)
+	
+	Private _tblPosition As EntityRef(Of tblPosition)
+	
+	Private _tblSection1 As EntityRef(Of tblSection1)
+	
+	Private _tblUser As EntityRef(Of tblUser)
+	
+    #Region "Extensibility Method Definitions"
+    Partial Private Sub OnLoaded()
+    End Sub
+    Partial Private Sub OnValidate(action As System.Data.Linq.ChangeAction)
+    End Sub
+    Partial Private Sub OnCreated()
+    End Sub
+    Partial Private Sub OnEmployeeIDChanging(value As Integer)
+    End Sub
+    Partial Private Sub OnEmployeeIDChanged()
+    End Sub
+    Partial Private Sub OnFirstNameChanging(value As String)
+    End Sub
+    Partial Private Sub OnFirstNameChanged()
+    End Sub
+    Partial Private Sub OnLastNameChanging(value As String)
+    End Sub
+    Partial Private Sub OnLastNameChanged()
+    End Sub
+    Partial Private Sub OnBranchIDChanging(value As System.Nullable(Of Integer))
+    End Sub
+    Partial Private Sub OnBranchIDChanged()
+    End Sub
+    Partial Private Sub OnDepartmentIDChanging(value As System.Nullable(Of Integer))
+    End Sub
+    Partial Private Sub OnDepartmentIDChanged()
+    End Sub
+    Partial Private Sub OnPositionIDChanging(value As System.Nullable(Of Integer))
+    End Sub
+    Partial Private Sub OnPositionIDChanged()
+    End Sub
+    Partial Private Sub OnSectionIDChanging(value As System.Nullable(Of Integer))
+    End Sub
+    Partial Private Sub OnSectionIDChanged()
+    End Sub
+    Partial Private Sub OnAddbyUserIDChanging(value As System.Nullable(Of Integer))
+    End Sub
+    Partial Private Sub OnAddbyUserIDChanged()
+    End Sub
+    Partial Private Sub OnDatecreatedChanging(value As System.Nullable(Of Date))
+    End Sub
+    Partial Private Sub OnDatecreatedChanged()
+    End Sub
+    #End Region
+	
+	Public Sub New()
+		MyBase.New
+		Me._tblAssetInventories = New EntitySet(Of tblAssetInventory)(AddressOf Me.attach_tblAssetInventories, AddressOf Me.detach_tblAssetInventories)
+		Me._tblAssetInventory1s = New EntitySet(Of tblAssetInventory1)(AddressOf Me.attach_tblAssetInventory1s, AddressOf Me.detach_tblAssetInventory1s)
+		Me._tblAssetInventories1 = New EntitySet(Of tblAssetInventory)(AddressOf Me.attach_tblAssetInventories1, AddressOf Me.detach_tblAssetInventories1)
+		Me._tblAssetInventory1s1 = New EntitySet(Of tblAssetInventory1)(AddressOf Me.attach_tblAssetInventory1s1, AddressOf Me.detach_tblAssetInventory1s1)
+		Me._tblAllocationHeaders = New EntitySet(Of tblAllocationHeader)(AddressOf Me.attach_tblAllocationHeaders, AddressOf Me.detach_tblAllocationHeaders)
+		Me._tblBranch = CType(Nothing, EntityRef(Of tblBranch))
+		Me._tblDepartment = CType(Nothing, EntityRef(Of tblDepartment))
+		Me._tblSection = CType(Nothing, EntityRef(Of tblSection))
+		Me._tblPosition = CType(Nothing, EntityRef(Of tblPosition))
+		Me._tblSection1 = CType(Nothing, EntityRef(Of tblSection1))
+		Me._tblUser = CType(Nothing, EntityRef(Of tblUser))
+		OnCreated
+	End Sub
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_EmployeeID", AutoSync:=AutoSync.OnInsert, DbType:="Int NOT NULL IDENTITY", IsPrimaryKey:=true, IsDbGenerated:=true)>  _
+	Public Property EmployeeID() As Integer
+		Get
+			Return Me._EmployeeID
+		End Get
+		Set
+			If ((Me._EmployeeID = value)  _
+						= false) Then
+				Me.OnEmployeeIDChanging(value)
+				Me.SendPropertyChanging
+				Me._EmployeeID = value
+				Me.SendPropertyChanged("EmployeeID")
+				Me.OnEmployeeIDChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_FirstName", DbType:="VarChar(200)")>  _
+	Public Property FirstName() As String
+		Get
+			Return Me._FirstName
+		End Get
+		Set
+			If (String.Equals(Me._FirstName, value) = false) Then
+				Me.OnFirstNameChanging(value)
+				Me.SendPropertyChanging
+				Me._FirstName = value
+				Me.SendPropertyChanged("FirstName")
+				Me.OnFirstNameChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_LastName", DbType:="VarChar(200)")>  _
+	Public Property LastName() As String
+		Get
+			Return Me._LastName
+		End Get
+		Set
+			If (String.Equals(Me._LastName, value) = false) Then
+				Me.OnLastNameChanging(value)
+				Me.SendPropertyChanging
+				Me._LastName = value
+				Me.SendPropertyChanged("LastName")
+				Me.OnLastNameChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_BranchID", DbType:="Int")>  _
+	Public Property BranchID() As System.Nullable(Of Integer)
+		Get
+			Return Me._BranchID
+		End Get
+		Set
+			If (Me._BranchID.Equals(value) = false) Then
+				If Me._tblBranch.HasLoadedOrAssignedValue Then
+					Throw New System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException()
+				End If
+				Me.OnBranchIDChanging(value)
+				Me.SendPropertyChanging
+				Me._BranchID = value
+				Me.SendPropertyChanged("BranchID")
+				Me.OnBranchIDChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_DepartmentID", DbType:="Int")>  _
+	Public Property DepartmentID() As System.Nullable(Of Integer)
+		Get
+			Return Me._DepartmentID
+		End Get
+		Set
+			If (Me._DepartmentID.Equals(value) = false) Then
+				If Me._tblDepartment.HasLoadedOrAssignedValue Then
+					Throw New System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException()
+				End If
+				Me.OnDepartmentIDChanging(value)
+				Me.SendPropertyChanging
+				Me._DepartmentID = value
+				Me.SendPropertyChanged("DepartmentID")
+				Me.OnDepartmentIDChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_PositionID", DbType:="Int")>  _
+	Public Property PositionID() As System.Nullable(Of Integer)
+		Get
+			Return Me._PositionID
+		End Get
+		Set
+			If (Me._PositionID.Equals(value) = false) Then
+				If Me._tblPosition.HasLoadedOrAssignedValue Then
+					Throw New System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException()
+				End If
+				Me.OnPositionIDChanging(value)
+				Me.SendPropertyChanging
+				Me._PositionID = value
+				Me.SendPropertyChanged("PositionID")
+				Me.OnPositionIDChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_SectionID", DbType:="Int")>  _
+	Public Property SectionID() As System.Nullable(Of Integer)
+		Get
+			Return Me._SectionID
+		End Get
+		Set
+			If (Me._SectionID.Equals(value) = false) Then
+				If (Me._tblSection.HasLoadedOrAssignedValue OrElse Me._tblSection1.HasLoadedOrAssignedValue) Then
+					Throw New System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException()
+				End If
+				Me.OnSectionIDChanging(value)
+				Me.SendPropertyChanging
+				Me._SectionID = value
+				Me.SendPropertyChanged("SectionID")
+				Me.OnSectionIDChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_AddbyUserID", DbType:="Int")>  _
+	Public Property AddbyUserID() As System.Nullable(Of Integer)
+		Get
+			Return Me._AddbyUserID
+		End Get
+		Set
+			If (Me._AddbyUserID.Equals(value) = false) Then
+				If Me._tblUser.HasLoadedOrAssignedValue Then
+					Throw New System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException()
+				End If
+				Me.OnAddbyUserIDChanging(value)
+				Me.SendPropertyChanging
+				Me._AddbyUserID = value
+				Me.SendPropertyChanged("AddbyUserID")
+				Me.OnAddbyUserIDChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_Datecreated", DbType:="Date")>  _
+	Public Property Datecreated() As System.Nullable(Of Date)
+		Get
+			Return Me._Datecreated
+		End Get
+		Set
+			If (Me._Datecreated.Equals(value) = false) Then
+				Me.OnDatecreatedChanging(value)
+				Me.SendPropertyChanging
+				Me._Datecreated = value
+				Me.SendPropertyChanged("Datecreated")
+				Me.OnDatecreatedChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.AssociationAttribute(Name:="tblEmployee_tblAssetInventory", Storage:="_tblAssetInventories", ThisKey:="EmployeeID", OtherKey:="borrower")>  _
+	Public Property tblAssetInventories() As EntitySet(Of tblAssetInventory)
+		Get
+			Return Me._tblAssetInventories
+		End Get
+		Set
+			Me._tblAssetInventories.Assign(value)
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.AssociationAttribute(Name:="tblEmployee_tblAssetInventory1", Storage:="_tblAssetInventory1s", ThisKey:="EmployeeID", OtherKey:="borrower")>  _
+	Public Property tblAssetInventory1s() As EntitySet(Of tblAssetInventory1)
+		Get
+			Return Me._tblAssetInventory1s
+		End Get
+		Set
+			Me._tblAssetInventory1s.Assign(value)
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.AssociationAttribute(Name:="tblEmployee_tblAssetInventory2", Storage:="_tblAssetInventories1", ThisKey:="EmployeeID", OtherKey:="Owner")>  _
+	Public Property tblAssetInventories1() As EntitySet(Of tblAssetInventory)
+		Get
+			Return Me._tblAssetInventories1
+		End Get
+		Set
+			Me._tblAssetInventories1.Assign(value)
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.AssociationAttribute(Name:="tblEmployee_tblAssetInventory11", Storage:="_tblAssetInventory1s1", ThisKey:="EmployeeID", OtherKey:="Owner")>  _
+	Public Property tblAssetInventory1s1() As EntitySet(Of tblAssetInventory1)
+		Get
+			Return Me._tblAssetInventory1s1
+		End Get
+		Set
+			Me._tblAssetInventory1s1.Assign(value)
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.AssociationAttribute(Name:="tblEmployee_tblAllocationHeader", Storage:="_tblAllocationHeaders", ThisKey:="EmployeeID", OtherKey:="EmployeeID")>  _
+	Public Property tblAllocationHeaders() As EntitySet(Of tblAllocationHeader)
+		Get
+			Return Me._tblAllocationHeaders
+		End Get
+		Set
+			Me._tblAllocationHeaders.Assign(value)
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.AssociationAttribute(Name:="tblBranch_tblEmployee", Storage:="_tblBranch", ThisKey:="BranchID", OtherKey:="BranchID", IsForeignKey:=true)>  _
+	Public Property tblBranch() As tblBranch
+		Get
+			Return Me._tblBranch.Entity
+		End Get
+		Set
+			Dim previousValue As tblBranch = Me._tblBranch.Entity
+			If ((Object.Equals(previousValue, value) = false)  _
+						OrElse (Me._tblBranch.HasLoadedOrAssignedValue = false)) Then
+				Me.SendPropertyChanging
+				If ((previousValue Is Nothing)  _
+							= false) Then
+					Me._tblBranch.Entity = Nothing
+					previousValue.tblEmployees.Remove(Me)
+				End If
+				Me._tblBranch.Entity = value
+				If ((value Is Nothing)  _
+							= false) Then
+					value.tblEmployees.Add(Me)
+					Me._BranchID = value.BranchID
+				Else
+					Me._BranchID = CType(Nothing, Nullable(Of Integer))
+				End If
+				Me.SendPropertyChanged("tblBranch")
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.AssociationAttribute(Name:="tblDepartment_tblEmployee", Storage:="_tblDepartment", ThisKey:="DepartmentID", OtherKey:="DepartmentID", IsForeignKey:=true)>  _
+	Public Property tblDepartment() As tblDepartment
+		Get
+			Return Me._tblDepartment.Entity
+		End Get
+		Set
+			Dim previousValue As tblDepartment = Me._tblDepartment.Entity
+			If ((Object.Equals(previousValue, value) = false)  _
+						OrElse (Me._tblDepartment.HasLoadedOrAssignedValue = false)) Then
+				Me.SendPropertyChanging
+				If ((previousValue Is Nothing)  _
+							= false) Then
+					Me._tblDepartment.Entity = Nothing
+					previousValue.tblEmployees.Remove(Me)
+				End If
+				Me._tblDepartment.Entity = value
+				If ((value Is Nothing)  _
+							= false) Then
+					value.tblEmployees.Add(Me)
+					Me._DepartmentID = value.DepartmentID
+				Else
+					Me._DepartmentID = CType(Nothing, Nullable(Of Integer))
+				End If
+				Me.SendPropertyChanged("tblDepartment")
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.AssociationAttribute(Name:="tblSection_tblEmployee", Storage:="_tblSection", ThisKey:="SectionID", OtherKey:="SectionID", IsForeignKey:=true)>  _
+	Public Property tblSection() As tblSection
+		Get
+			Return Me._tblSection.Entity
+		End Get
+		Set
+			Dim previousValue As tblSection = Me._tblSection.Entity
+			If ((Object.Equals(previousValue, value) = false)  _
+						OrElse (Me._tblSection.HasLoadedOrAssignedValue = false)) Then
+				Me.SendPropertyChanging
+				If ((previousValue Is Nothing)  _
+							= false) Then
+					Me._tblSection.Entity = Nothing
+					previousValue.tblEmployees.Remove(Me)
+				End If
+				Me._tblSection.Entity = value
+				If ((value Is Nothing)  _
+							= false) Then
+					value.tblEmployees.Add(Me)
+					Me._SectionID = value.SectionID
+				Else
+					Me._SectionID = CType(Nothing, Nullable(Of Integer))
+				End If
+				Me.SendPropertyChanged("tblSection")
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.AssociationAttribute(Name:="tblPosition_tblEmployee", Storage:="_tblPosition", ThisKey:="PositionID", OtherKey:="PositionID", IsForeignKey:=true)>  _
+	Public Property tblPosition() As tblPosition
+		Get
+			Return Me._tblPosition.Entity
+		End Get
+		Set
+			Dim previousValue As tblPosition = Me._tblPosition.Entity
+			If ((Object.Equals(previousValue, value) = false)  _
+						OrElse (Me._tblPosition.HasLoadedOrAssignedValue = false)) Then
+				Me.SendPropertyChanging
+				If ((previousValue Is Nothing)  _
+							= false) Then
+					Me._tblPosition.Entity = Nothing
+					previousValue.tblEmployees.Remove(Me)
+				End If
+				Me._tblPosition.Entity = value
+				If ((value Is Nothing)  _
+							= false) Then
+					value.tblEmployees.Add(Me)
+					Me._PositionID = value.PositionID
+				Else
+					Me._PositionID = CType(Nothing, Nullable(Of Integer))
+				End If
+				Me.SendPropertyChanged("tblPosition")
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.AssociationAttribute(Name:="tblSection1_tblEmployee", Storage:="_tblSection1", ThisKey:="SectionID", OtherKey:="SectionID", IsForeignKey:=true)>  _
+	Public Property tblSection1() As tblSection1
+		Get
+			Return Me._tblSection1.Entity
+		End Get
+		Set
+			Dim previousValue As tblSection1 = Me._tblSection1.Entity
+			If ((Object.Equals(previousValue, value) = false)  _
+						OrElse (Me._tblSection1.HasLoadedOrAssignedValue = false)) Then
+				Me.SendPropertyChanging
+				If ((previousValue Is Nothing)  _
+							= false) Then
+					Me._tblSection1.Entity = Nothing
+					previousValue.tblEmployees.Remove(Me)
+				End If
+				Me._tblSection1.Entity = value
+				If ((value Is Nothing)  _
+							= false) Then
+					value.tblEmployees.Add(Me)
+					Me._SectionID = value.SectionID
+				Else
+					Me._SectionID = CType(Nothing, Nullable(Of Integer))
+				End If
+				Me.SendPropertyChanged("tblSection1")
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.AssociationAttribute(Name:="tblUser_tblEmployee", Storage:="_tblUser", ThisKey:="AddbyUserID", OtherKey:="UserID", IsForeignKey:=true)>  _
+	Public Property tblUser() As tblUser
+		Get
+			Return Me._tblUser.Entity
+		End Get
+		Set
+			Dim previousValue As tblUser = Me._tblUser.Entity
+			If ((Object.Equals(previousValue, value) = false)  _
+						OrElse (Me._tblUser.HasLoadedOrAssignedValue = false)) Then
+				Me.SendPropertyChanging
+				If ((previousValue Is Nothing)  _
+							= false) Then
+					Me._tblUser.Entity = Nothing
+					previousValue.tblEmployees.Remove(Me)
+				End If
+				Me._tblUser.Entity = value
+				If ((value Is Nothing)  _
+							= false) Then
+					value.tblEmployees.Add(Me)
+					Me._AddbyUserID = value.UserID
+				Else
+					Me._AddbyUserID = CType(Nothing, Nullable(Of Integer))
+				End If
+				Me.SendPropertyChanged("tblUser")
+			End If
+		End Set
+	End Property
+	
+	Public Event PropertyChanging As PropertyChangingEventHandler Implements System.ComponentModel.INotifyPropertyChanging.PropertyChanging
+	
+	Public Event PropertyChanged As PropertyChangedEventHandler Implements System.ComponentModel.INotifyPropertyChanged.PropertyChanged
+	
+	Protected Overridable Sub SendPropertyChanging()
+		If ((Me.PropertyChangingEvent Is Nothing)  _
+					= false) Then
+			RaiseEvent PropertyChanging(Me, emptyChangingEventArgs)
+		End If
+	End Sub
+	
+	Protected Overridable Sub SendPropertyChanged(ByVal propertyName As [String])
+		If ((Me.PropertyChangedEvent Is Nothing)  _
+					= false) Then
+			RaiseEvent PropertyChanged(Me, New PropertyChangedEventArgs(propertyName))
+		End If
+	End Sub
+	
+	Private Sub attach_tblAssetInventories(ByVal entity As tblAssetInventory)
+		Me.SendPropertyChanging
+		entity.tblEmployee = Me
+	End Sub
+	
+	Private Sub detach_tblAssetInventories(ByVal entity As tblAssetInventory)
+		Me.SendPropertyChanging
+		entity.tblEmployee = Nothing
+	End Sub
+	
+	Private Sub attach_tblAssetInventory1s(ByVal entity As tblAssetInventory1)
+		Me.SendPropertyChanging
+		entity.tblEmployee = Me
+	End Sub
+	
+	Private Sub detach_tblAssetInventory1s(ByVal entity As tblAssetInventory1)
+		Me.SendPropertyChanging
+		entity.tblEmployee = Nothing
+	End Sub
+	
+	Private Sub attach_tblAssetInventories1(ByVal entity As tblAssetInventory)
+		Me.SendPropertyChanging
+		entity.tblEmployee1 = Me
+	End Sub
+	
+	Private Sub detach_tblAssetInventories1(ByVal entity As tblAssetInventory)
+		Me.SendPropertyChanging
+		entity.tblEmployee1 = Nothing
+	End Sub
+	
+	Private Sub attach_tblAssetInventory1s1(ByVal entity As tblAssetInventory1)
+		Me.SendPropertyChanging
+		entity.tblEmployee1 = Me
+	End Sub
+	
+	Private Sub detach_tblAssetInventory1s1(ByVal entity As tblAssetInventory1)
+		Me.SendPropertyChanging
+		entity.tblEmployee1 = Nothing
+	End Sub
+	
+	Private Sub attach_tblAllocationHeaders(ByVal entity As tblAllocationHeader)
+		Me.SendPropertyChanging
+		entity.tblEmployee = Me
+	End Sub
+	
+	Private Sub detach_tblAllocationHeaders(ByVal entity As tblAllocationHeader)
+		Me.SendPropertyChanging
+		entity.tblEmployee = Nothing
+	End Sub
+End Class
+
+<Global.System.Data.Linq.Mapping.TableAttribute(Name:="dbo.tblPosition")>  _
+Partial Public Class tblPosition
+	Implements System.ComponentModel.INotifyPropertyChanging, System.ComponentModel.INotifyPropertyChanged
+	
+	Private Shared emptyChangingEventArgs As PropertyChangingEventArgs = New PropertyChangingEventArgs(String.Empty)
+	
+	Private _PositionID As Integer
+	
+	Private _PositionCode As String
+	
+	Private _PositionDescription As String
+	
+	Private _DateCreated As System.Nullable(Of Date)
+	
+	Private _DateModified As System.Nullable(Of Date)
+	
+	Private _UserID As System.Nullable(Of Integer)
+	
+	Private _UserIDModified As System.Nullable(Of Integer)
+	
+	Private _tblEmployees As EntitySet(Of tblEmployee)
+	
+	Private _tblUser As EntityRef(Of tblUser)
+	
+    #Region "Extensibility Method Definitions"
+    Partial Private Sub OnLoaded()
+    End Sub
+    Partial Private Sub OnValidate(action As System.Data.Linq.ChangeAction)
+    End Sub
+    Partial Private Sub OnCreated()
+    End Sub
+    Partial Private Sub OnPositionIDChanging(value As Integer)
+    End Sub
+    Partial Private Sub OnPositionIDChanged()
+    End Sub
+    Partial Private Sub OnPositionCodeChanging(value As String)
+    End Sub
+    Partial Private Sub OnPositionCodeChanged()
+    End Sub
+    Partial Private Sub OnPositionDescriptionChanging(value As String)
+    End Sub
+    Partial Private Sub OnPositionDescriptionChanged()
+    End Sub
+    Partial Private Sub OnDateCreatedChanging(value As System.Nullable(Of Date))
+    End Sub
+    Partial Private Sub OnDateCreatedChanged()
+    End Sub
+    Partial Private Sub OnDateModifiedChanging(value As System.Nullable(Of Date))
+    End Sub
+    Partial Private Sub OnDateModifiedChanged()
+    End Sub
+    Partial Private Sub OnUserIDChanging(value As System.Nullable(Of Integer))
+    End Sub
+    Partial Private Sub OnUserIDChanged()
+    End Sub
+    Partial Private Sub OnUserIDModifiedChanging(value As System.Nullable(Of Integer))
+    End Sub
+    Partial Private Sub OnUserIDModifiedChanged()
+    End Sub
+    #End Region
+	
+	Public Sub New()
+		MyBase.New
+		Me._tblEmployees = New EntitySet(Of tblEmployee)(AddressOf Me.attach_tblEmployees, AddressOf Me.detach_tblEmployees)
+		Me._tblUser = CType(Nothing, EntityRef(Of tblUser))
+		OnCreated
+	End Sub
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_PositionID", AutoSync:=AutoSync.OnInsert, DbType:="Int NOT NULL IDENTITY", IsPrimaryKey:=true, IsDbGenerated:=true)>  _
+	Public Property PositionID() As Integer
+		Get
+			Return Me._PositionID
+		End Get
+		Set
+			If ((Me._PositionID = value)  _
+						= false) Then
+				Me.OnPositionIDChanging(value)
+				Me.SendPropertyChanging
+				Me._PositionID = value
+				Me.SendPropertyChanged("PositionID")
+				Me.OnPositionIDChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_PositionCode", DbType:="VarChar(200)")>  _
+	Public Property PositionCode() As String
+		Get
+			Return Me._PositionCode
+		End Get
+		Set
+			If (String.Equals(Me._PositionCode, value) = false) Then
+				Me.OnPositionCodeChanging(value)
+				Me.SendPropertyChanging
+				Me._PositionCode = value
+				Me.SendPropertyChanged("PositionCode")
+				Me.OnPositionCodeChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_PositionDescription", DbType:="VarChar(200)")>  _
+	Public Property PositionDescription() As String
+		Get
+			Return Me._PositionDescription
+		End Get
+		Set
+			If (String.Equals(Me._PositionDescription, value) = false) Then
+				Me.OnPositionDescriptionChanging(value)
+				Me.SendPropertyChanging
+				Me._PositionDescription = value
+				Me.SendPropertyChanged("PositionDescription")
+				Me.OnPositionDescriptionChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_DateCreated", DbType:="Date")>  _
+	Public Property DateCreated() As System.Nullable(Of Date)
+		Get
+			Return Me._DateCreated
+		End Get
+		Set
+			If (Me._DateCreated.Equals(value) = false) Then
+				Me.OnDateCreatedChanging(value)
+				Me.SendPropertyChanging
+				Me._DateCreated = value
+				Me.SendPropertyChanged("DateCreated")
+				Me.OnDateCreatedChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_DateModified", DbType:="Date")>  _
+	Public Property DateModified() As System.Nullable(Of Date)
+		Get
+			Return Me._DateModified
+		End Get
+		Set
+			If (Me._DateModified.Equals(value) = false) Then
+				Me.OnDateModifiedChanging(value)
+				Me.SendPropertyChanging
+				Me._DateModified = value
+				Me.SendPropertyChanged("DateModified")
+				Me.OnDateModifiedChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_UserID", DbType:="Int")>  _
+	Public Property UserID() As System.Nullable(Of Integer)
+		Get
+			Return Me._UserID
+		End Get
+		Set
+			If (Me._UserID.Equals(value) = false) Then
+				If Me._tblUser.HasLoadedOrAssignedValue Then
+					Throw New System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException()
+				End If
+				Me.OnUserIDChanging(value)
+				Me.SendPropertyChanging
+				Me._UserID = value
+				Me.SendPropertyChanged("UserID")
+				Me.OnUserIDChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_UserIDModified", DbType:="Int")>  _
+	Public Property UserIDModified() As System.Nullable(Of Integer)
+		Get
+			Return Me._UserIDModified
+		End Get
+		Set
+			If (Me._UserIDModified.Equals(value) = false) Then
+				Me.OnUserIDModifiedChanging(value)
+				Me.SendPropertyChanging
+				Me._UserIDModified = value
+				Me.SendPropertyChanged("UserIDModified")
+				Me.OnUserIDModifiedChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.AssociationAttribute(Name:="tblPosition_tblEmployee", Storage:="_tblEmployees", ThisKey:="PositionID", OtherKey:="PositionID")>  _
+	Public Property tblEmployees() As EntitySet(Of tblEmployee)
+		Get
+			Return Me._tblEmployees
+		End Get
+		Set
+			Me._tblEmployees.Assign(value)
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.AssociationAttribute(Name:="tblUser_tblPosition", Storage:="_tblUser", ThisKey:="UserID", OtherKey:="UserID", IsForeignKey:=true)>  _
+	Public Property tblUser() As tblUser
+		Get
+			Return Me._tblUser.Entity
+		End Get
+		Set
+			Dim previousValue As tblUser = Me._tblUser.Entity
+			If ((Object.Equals(previousValue, value) = false)  _
+						OrElse (Me._tblUser.HasLoadedOrAssignedValue = false)) Then
+				Me.SendPropertyChanging
+				If ((previousValue Is Nothing)  _
+							= false) Then
+					Me._tblUser.Entity = Nothing
+					previousValue.tblPositions.Remove(Me)
+				End If
+				Me._tblUser.Entity = value
+				If ((value Is Nothing)  _
+							= false) Then
+					value.tblPositions.Add(Me)
+					Me._UserID = value.UserID
+				Else
+					Me._UserID = CType(Nothing, Nullable(Of Integer))
+				End If
+				Me.SendPropertyChanged("tblUser")
+			End If
+		End Set
+	End Property
+	
+	Public Event PropertyChanging As PropertyChangingEventHandler Implements System.ComponentModel.INotifyPropertyChanging.PropertyChanging
+	
+	Public Event PropertyChanged As PropertyChangedEventHandler Implements System.ComponentModel.INotifyPropertyChanged.PropertyChanged
+	
+	Protected Overridable Sub SendPropertyChanging()
+		If ((Me.PropertyChangingEvent Is Nothing)  _
+					= false) Then
+			RaiseEvent PropertyChanging(Me, emptyChangingEventArgs)
+		End If
+	End Sub
+	
+	Protected Overridable Sub SendPropertyChanged(ByVal propertyName As [String])
+		If ((Me.PropertyChangedEvent Is Nothing)  _
+					= false) Then
+			RaiseEvent PropertyChanged(Me, New PropertyChangedEventArgs(propertyName))
+		End If
+	End Sub
+	
+	Private Sub attach_tblEmployees(ByVal entity As tblEmployee)
+		Me.SendPropertyChanging
+		entity.tblPosition = Me
+	End Sub
+	
+	Private Sub detach_tblEmployees(ByVal entity As tblEmployee)
+		Me.SendPropertyChanging
+		entity.tblPosition = Nothing
+	End Sub
+End Class
+
+<Global.System.Data.Linq.Mapping.TableAttribute(Name:="dbo.tblReference")>  _
+Partial Public Class tblReference
+	Implements System.ComponentModel.INotifyPropertyChanging, System.ComponentModel.INotifyPropertyChanged
+	
+	Private Shared emptyChangingEventArgs As PropertyChangingEventArgs = New PropertyChangingEventArgs(String.Empty)
+	
+	Private _Refid As Integer
+	
+	Private _Reference As String
+	
+    #Region "Extensibility Method Definitions"
+    Partial Private Sub OnLoaded()
+    End Sub
+    Partial Private Sub OnValidate(action As System.Data.Linq.ChangeAction)
+    End Sub
+    Partial Private Sub OnCreated()
+    End Sub
+    Partial Private Sub OnRefidChanging(value As Integer)
+    End Sub
+    Partial Private Sub OnRefidChanged()
+    End Sub
+    Partial Private Sub OnReferenceChanging(value As String)
+    End Sub
+    Partial Private Sub OnReferenceChanged()
+    End Sub
+    #End Region
+	
+	Public Sub New()
+		MyBase.New
+		OnCreated
+	End Sub
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_Refid", AutoSync:=AutoSync.OnInsert, DbType:="Int NOT NULL IDENTITY", IsPrimaryKey:=true, IsDbGenerated:=true)>  _
+	Public Property Refid() As Integer
+		Get
+			Return Me._Refid
+		End Get
+		Set
+			If ((Me._Refid = value)  _
+						= false) Then
+				Me.OnRefidChanging(value)
+				Me.SendPropertyChanging
+				Me._Refid = value
+				Me.SendPropertyChanged("Refid")
+				Me.OnRefidChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_Reference", DbType:="VarChar(MAX)")>  _
+	Public Property Reference() As String
+		Get
+			Return Me._Reference
+		End Get
+		Set
+			If (String.Equals(Me._Reference, value) = false) Then
+				Me.OnReferenceChanging(value)
+				Me.SendPropertyChanging
+				Me._Reference = value
+				Me.SendPropertyChanged("Reference")
+				Me.OnReferenceChanged
+			End If
+		End Set
+	End Property
+	
+	Public Event PropertyChanging As PropertyChangingEventHandler Implements System.ComponentModel.INotifyPropertyChanging.PropertyChanging
+	
+	Public Event PropertyChanged As PropertyChangedEventHandler Implements System.ComponentModel.INotifyPropertyChanged.PropertyChanged
+	
+	Protected Overridable Sub SendPropertyChanging()
+		If ((Me.PropertyChangingEvent Is Nothing)  _
+					= false) Then
+			RaiseEvent PropertyChanging(Me, emptyChangingEventArgs)
+		End If
+	End Sub
+	
+	Protected Overridable Sub SendPropertyChanged(ByVal propertyName As [String])
+		If ((Me.PropertyChangedEvent Is Nothing)  _
+					= false) Then
+			RaiseEvent PropertyChanged(Me, New PropertyChangedEventArgs(propertyName))
+		End If
+	End Sub
+End Class
+
+<Global.System.Data.Linq.Mapping.TableAttribute(Name:="dbo.tblSection")>  _
+Partial Public Class tblSection1
+	Implements System.ComponentModel.INotifyPropertyChanging, System.ComponentModel.INotifyPropertyChanged
+	
+	Private Shared emptyChangingEventArgs As PropertyChangingEventArgs = New PropertyChangingEventArgs(String.Empty)
+	
+	Private _SectionID As Integer
+	
+	Private _SectionCode As String
+	
+	Private _SectionDecription As String
+	
+	Private _DateCreated As System.Nullable(Of Date)
+	
+	Private _DateModified As System.Nullable(Of Date)
+	
+	Private _UserID As System.Nullable(Of Integer)
+	
+	Private _UserIDModified As System.Nullable(Of Integer)
+	
+	Private _tblAllocationHeaders As EntitySet(Of tblAllocationHeader)
+	
+	Private _tblEmployees As EntitySet(Of tblEmployee)
+	
+	Private _tblUser As EntityRef(Of tblUser)
+	
+    #Region "Extensibility Method Definitions"
+    Partial Private Sub OnLoaded()
+    End Sub
+    Partial Private Sub OnValidate(action As System.Data.Linq.ChangeAction)
+    End Sub
+    Partial Private Sub OnCreated()
+    End Sub
+    Partial Private Sub OnSectionIDChanging(value As Integer)
+    End Sub
+    Partial Private Sub OnSectionIDChanged()
+    End Sub
+    Partial Private Sub OnSectionCodeChanging(value As String)
+    End Sub
+    Partial Private Sub OnSectionCodeChanged()
+    End Sub
+    Partial Private Sub OnSectionDecriptionChanging(value As String)
+    End Sub
+    Partial Private Sub OnSectionDecriptionChanged()
+    End Sub
+    Partial Private Sub OnDateCreatedChanging(value As System.Nullable(Of Date))
+    End Sub
+    Partial Private Sub OnDateCreatedChanged()
+    End Sub
+    Partial Private Sub OnDateModifiedChanging(value As System.Nullable(Of Date))
+    End Sub
+    Partial Private Sub OnDateModifiedChanged()
+    End Sub
+    Partial Private Sub OnUserIDChanging(value As System.Nullable(Of Integer))
+    End Sub
+    Partial Private Sub OnUserIDChanged()
+    End Sub
+    Partial Private Sub OnUserIDModifiedChanging(value As System.Nullable(Of Integer))
+    End Sub
+    Partial Private Sub OnUserIDModifiedChanged()
+    End Sub
+    #End Region
+	
+	Public Sub New()
+		MyBase.New
+		Me._tblAllocationHeaders = New EntitySet(Of tblAllocationHeader)(AddressOf Me.attach_tblAllocationHeaders, AddressOf Me.detach_tblAllocationHeaders)
+		Me._tblEmployees = New EntitySet(Of tblEmployee)(AddressOf Me.attach_tblEmployees, AddressOf Me.detach_tblEmployees)
+		Me._tblUser = CType(Nothing, EntityRef(Of tblUser))
+		OnCreated
+	End Sub
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_SectionID", AutoSync:=AutoSync.OnInsert, DbType:="Int NOT NULL IDENTITY", IsPrimaryKey:=true, IsDbGenerated:=true)>  _
+	Public Property SectionID() As Integer
+		Get
+			Return Me._SectionID
+		End Get
+		Set
+			If ((Me._SectionID = value)  _
+						= false) Then
+				Me.OnSectionIDChanging(value)
+				Me.SendPropertyChanging
+				Me._SectionID = value
+				Me.SendPropertyChanged("SectionID")
+				Me.OnSectionIDChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_SectionCode", DbType:="VarChar(200)")>  _
+	Public Property SectionCode() As String
+		Get
+			Return Me._SectionCode
+		End Get
+		Set
+			If (String.Equals(Me._SectionCode, value) = false) Then
+				Me.OnSectionCodeChanging(value)
+				Me.SendPropertyChanging
+				Me._SectionCode = value
+				Me.SendPropertyChanged("SectionCode")
+				Me.OnSectionCodeChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_SectionDecription", DbType:="VarChar(200)")>  _
+	Public Property SectionDecription() As String
+		Get
+			Return Me._SectionDecription
+		End Get
+		Set
+			If (String.Equals(Me._SectionDecription, value) = false) Then
+				Me.OnSectionDecriptionChanging(value)
+				Me.SendPropertyChanging
+				Me._SectionDecription = value
+				Me.SendPropertyChanged("SectionDecription")
+				Me.OnSectionDecriptionChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_DateCreated", DbType:="Date")>  _
+	Public Property DateCreated() As System.Nullable(Of Date)
+		Get
+			Return Me._DateCreated
+		End Get
+		Set
+			If (Me._DateCreated.Equals(value) = false) Then
+				Me.OnDateCreatedChanging(value)
+				Me.SendPropertyChanging
+				Me._DateCreated = value
+				Me.SendPropertyChanged("DateCreated")
+				Me.OnDateCreatedChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_DateModified", DbType:="Date")>  _
+	Public Property DateModified() As System.Nullable(Of Date)
+		Get
+			Return Me._DateModified
+		End Get
+		Set
+			If (Me._DateModified.Equals(value) = false) Then
+				Me.OnDateModifiedChanging(value)
+				Me.SendPropertyChanging
+				Me._DateModified = value
+				Me.SendPropertyChanged("DateModified")
+				Me.OnDateModifiedChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_UserID", DbType:="Int")>  _
+	Public Property UserID() As System.Nullable(Of Integer)
+		Get
+			Return Me._UserID
+		End Get
+		Set
+			If (Me._UserID.Equals(value) = false) Then
+				If Me._tblUser.HasLoadedOrAssignedValue Then
+					Throw New System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException()
+				End If
+				Me.OnUserIDChanging(value)
+				Me.SendPropertyChanging
+				Me._UserID = value
+				Me.SendPropertyChanged("UserID")
+				Me.OnUserIDChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_UserIDModified", DbType:="Int")>  _
+	Public Property UserIDModified() As System.Nullable(Of Integer)
+		Get
+			Return Me._UserIDModified
+		End Get
+		Set
+			If (Me._UserIDModified.Equals(value) = false) Then
+				Me.OnUserIDModifiedChanging(value)
+				Me.SendPropertyChanging
+				Me._UserIDModified = value
+				Me.SendPropertyChanged("UserIDModified")
+				Me.OnUserIDModifiedChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.AssociationAttribute(Name:="tblSection1_tblAllocationHeader", Storage:="_tblAllocationHeaders", ThisKey:="SectionID", OtherKey:="SectionId")>  _
+	Public Property tblAllocationHeaders() As EntitySet(Of tblAllocationHeader)
+		Get
+			Return Me._tblAllocationHeaders
+		End Get
+		Set
+			Me._tblAllocationHeaders.Assign(value)
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.AssociationAttribute(Name:="tblSection1_tblEmployee", Storage:="_tblEmployees", ThisKey:="SectionID", OtherKey:="SectionID")>  _
+	Public Property tblEmployees() As EntitySet(Of tblEmployee)
+		Get
+			Return Me._tblEmployees
+		End Get
+		Set
+			Me._tblEmployees.Assign(value)
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.AssociationAttribute(Name:="tblUser_tblSection1", Storage:="_tblUser", ThisKey:="UserID", OtherKey:="UserID", IsForeignKey:=true)>  _
+	Public Property tblUser() As tblUser
+		Get
+			Return Me._tblUser.Entity
+		End Get
+		Set
+			Dim previousValue As tblUser = Me._tblUser.Entity
+			If ((Object.Equals(previousValue, value) = false)  _
+						OrElse (Me._tblUser.HasLoadedOrAssignedValue = false)) Then
+				Me.SendPropertyChanging
+				If ((previousValue Is Nothing)  _
+							= false) Then
+					Me._tblUser.Entity = Nothing
+					previousValue.tblSection1s.Remove(Me)
+				End If
+				Me._tblUser.Entity = value
+				If ((value Is Nothing)  _
+							= false) Then
+					value.tblSection1s.Add(Me)
+					Me._UserID = value.UserID
+				Else
+					Me._UserID = CType(Nothing, Nullable(Of Integer))
+				End If
+				Me.SendPropertyChanged("tblUser")
+			End If
+		End Set
+	End Property
+	
+	Public Event PropertyChanging As PropertyChangingEventHandler Implements System.ComponentModel.INotifyPropertyChanging.PropertyChanging
+	
+	Public Event PropertyChanged As PropertyChangedEventHandler Implements System.ComponentModel.INotifyPropertyChanged.PropertyChanged
+	
+	Protected Overridable Sub SendPropertyChanging()
+		If ((Me.PropertyChangingEvent Is Nothing)  _
+					= false) Then
+			RaiseEvent PropertyChanging(Me, emptyChangingEventArgs)
+		End If
+	End Sub
+	
+	Protected Overridable Sub SendPropertyChanged(ByVal propertyName As [String])
+		If ((Me.PropertyChangedEvent Is Nothing)  _
+					= false) Then
+			RaiseEvent PropertyChanged(Me, New PropertyChangedEventArgs(propertyName))
+		End If
+	End Sub
+	
+	Private Sub attach_tblAllocationHeaders(ByVal entity As tblAllocationHeader)
+		Me.SendPropertyChanging
+		entity.tblSection1 = Me
+	End Sub
+	
+	Private Sub detach_tblAllocationHeaders(ByVal entity As tblAllocationHeader)
+		Me.SendPropertyChanging
+		entity.tblSection1 = Nothing
+	End Sub
+	
+	Private Sub attach_tblEmployees(ByVal entity As tblEmployee)
+		Me.SendPropertyChanging
+		entity.tblSection1 = Me
+	End Sub
+	
+	Private Sub detach_tblEmployees(ByVal entity As tblEmployee)
+		Me.SendPropertyChanging
+		entity.tblSection1 = Nothing
+	End Sub
+End Class
+
+<Global.System.Data.Linq.Mapping.TableAttribute(Name:="dbo.tblUser")>  _
+Partial Public Class tblUser
+	Implements System.ComponentModel.INotifyPropertyChanging, System.ComponentModel.INotifyPropertyChanged
+	
+	Private Shared emptyChangingEventArgs As PropertyChangingEventArgs = New PropertyChangingEventArgs(String.Empty)
+	
+	Private _UserID As Integer
+	
+	Private _EmployeeID As System.Nullable(Of Integer)
+	
+	Private _Username As String
+	
+	Private _Password As String
+	
+	Private _Status As String
+	
+	Private _tblSections As EntitySet(Of tblSection)
+	
+	Private _tblSection1s As EntitySet(Of tblSection1)
+	
+	Private _tblVendor As EntityRef(Of tblVendor)
+	
+	Private _tblAssetConditions As EntitySet(Of tblAssetCondition)
+	
+	Private _tblAssetDetailMasterlists As EntitySet(Of tblAssetDetailMasterlist)
+	
+	Private _tblAssetDetails As EntitySet(Of tblAssetDetail)
+	
+	Private _tblAssetHeaders As EntitySet(Of tblAssetHeader)
+	
+	Private _tblAssetHeaderMasterlists As EntitySet(Of tblAssetHeaderMasterlist)
+	
+	Private _tblAssetTypes As EntitySet(Of tblAssetType)
+	
+	Private _tblBranch As EntityRef(Of tblBranch)
+	
+	Private _tblCategories As EntitySet(Of tblCategory)
+	
+	Private _tblDepartment As EntityRef(Of tblDepartment)
+	
+	Private _tblDocumentTypes As EntitySet(Of tblDocumentType)
+	
+	Private _tblEmployees As EntitySet(Of tblEmployee)
+	
+	Private _tblPositions As EntitySet(Of tblPosition)
+	
+    #Region "Extensibility Method Definitions"
+    Partial Private Sub OnLoaded()
+    End Sub
+    Partial Private Sub OnValidate(action As System.Data.Linq.ChangeAction)
+    End Sub
+    Partial Private Sub OnCreated()
+    End Sub
+    Partial Private Sub OnUserIDChanging(value As Integer)
+    End Sub
+    Partial Private Sub OnUserIDChanged()
+    End Sub
+    Partial Private Sub OnEmployeeIDChanging(value As System.Nullable(Of Integer))
+    End Sub
+    Partial Private Sub OnEmployeeIDChanged()
+    End Sub
+    Partial Private Sub OnUsernameChanging(value As String)
+    End Sub
+    Partial Private Sub OnUsernameChanged()
+    End Sub
+    Partial Private Sub OnPasswordChanging(value As String)
+    End Sub
+    Partial Private Sub OnPasswordChanged()
+    End Sub
+    Partial Private Sub OnStatusChanging(value As String)
+    End Sub
+    Partial Private Sub OnStatusChanged()
+    End Sub
+    #End Region
+	
+	Public Sub New()
+		MyBase.New
+		Me._tblSections = New EntitySet(Of tblSection)(AddressOf Me.attach_tblSections, AddressOf Me.detach_tblSections)
+		Me._tblSection1s = New EntitySet(Of tblSection1)(AddressOf Me.attach_tblSection1s, AddressOf Me.detach_tblSection1s)
+		Me._tblVendor = CType(Nothing, EntityRef(Of tblVendor))
+		Me._tblAssetConditions = New EntitySet(Of tblAssetCondition)(AddressOf Me.attach_tblAssetConditions, AddressOf Me.detach_tblAssetConditions)
+		Me._tblAssetDetailMasterlists = New EntitySet(Of tblAssetDetailMasterlist)(AddressOf Me.attach_tblAssetDetailMasterlists, AddressOf Me.detach_tblAssetDetailMasterlists)
+		Me._tblAssetDetails = New EntitySet(Of tblAssetDetail)(AddressOf Me.attach_tblAssetDetails, AddressOf Me.detach_tblAssetDetails)
+		Me._tblAssetHeaders = New EntitySet(Of tblAssetHeader)(AddressOf Me.attach_tblAssetHeaders, AddressOf Me.detach_tblAssetHeaders)
+		Me._tblAssetHeaderMasterlists = New EntitySet(Of tblAssetHeaderMasterlist)(AddressOf Me.attach_tblAssetHeaderMasterlists, AddressOf Me.detach_tblAssetHeaderMasterlists)
+		Me._tblAssetTypes = New EntitySet(Of tblAssetType)(AddressOf Me.attach_tblAssetTypes, AddressOf Me.detach_tblAssetTypes)
+		Me._tblBranch = CType(Nothing, EntityRef(Of tblBranch))
+		Me._tblCategories = New EntitySet(Of tblCategory)(AddressOf Me.attach_tblCategories, AddressOf Me.detach_tblCategories)
+		Me._tblDepartment = CType(Nothing, EntityRef(Of tblDepartment))
+		Me._tblDocumentTypes = New EntitySet(Of tblDocumentType)(AddressOf Me.attach_tblDocumentTypes, AddressOf Me.detach_tblDocumentTypes)
+		Me._tblEmployees = New EntitySet(Of tblEmployee)(AddressOf Me.attach_tblEmployees, AddressOf Me.detach_tblEmployees)
+		Me._tblPositions = New EntitySet(Of tblPosition)(AddressOf Me.attach_tblPositions, AddressOf Me.detach_tblPositions)
+		OnCreated
+	End Sub
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_UserID", AutoSync:=AutoSync.OnInsert, DbType:="Int NOT NULL IDENTITY", IsPrimaryKey:=true, IsDbGenerated:=true)>  _
+	Public Property UserID() As Integer
+		Get
+			Return Me._UserID
+		End Get
+		Set
+			If ((Me._UserID = value)  _
+						= false) Then
+				Me.OnUserIDChanging(value)
+				Me.SendPropertyChanging
+				Me._UserID = value
+				Me.SendPropertyChanged("UserID")
+				Me.OnUserIDChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_EmployeeID", DbType:="Int")>  _
+	Public Property EmployeeID() As System.Nullable(Of Integer)
+		Get
+			Return Me._EmployeeID
+		End Get
+		Set
+			If (Me._EmployeeID.Equals(value) = false) Then
+				Me.OnEmployeeIDChanging(value)
+				Me.SendPropertyChanging
+				Me._EmployeeID = value
+				Me.SendPropertyChanged("EmployeeID")
+				Me.OnEmployeeIDChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_Username", DbType:="VarChar(200)")>  _
+	Public Property Username() As String
+		Get
+			Return Me._Username
+		End Get
+		Set
+			If (String.Equals(Me._Username, value) = false) Then
+				Me.OnUsernameChanging(value)
+				Me.SendPropertyChanging
+				Me._Username = value
+				Me.SendPropertyChanged("Username")
+				Me.OnUsernameChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_Password", DbType:="VarChar(200)")>  _
+	Public Property Password() As String
+		Get
+			Return Me._Password
+		End Get
+		Set
+			If (String.Equals(Me._Password, value) = false) Then
+				Me.OnPasswordChanging(value)
+				Me.SendPropertyChanging
+				Me._Password = value
+				Me.SendPropertyChanged("Password")
+				Me.OnPasswordChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_Status", DbType:="VarChar(200)")>  _
+	Public Property Status() As String
+		Get
+			Return Me._Status
+		End Get
+		Set
+			If (String.Equals(Me._Status, value) = false) Then
+				Me.OnStatusChanging(value)
+				Me.SendPropertyChanging
+				Me._Status = value
+				Me.SendPropertyChanged("Status")
+				Me.OnStatusChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.AssociationAttribute(Name:="tblUser_tblSection", Storage:="_tblSections", ThisKey:="UserID", OtherKey:="UserID")>  _
+	Public Property tblSections() As EntitySet(Of tblSection)
+		Get
+			Return Me._tblSections
+		End Get
+		Set
+			Me._tblSections.Assign(value)
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.AssociationAttribute(Name:="tblUser_tblSection1", Storage:="_tblSection1s", ThisKey:="UserID", OtherKey:="UserID")>  _
+	Public Property tblSection1s() As EntitySet(Of tblSection1)
+		Get
+			Return Me._tblSection1s
+		End Get
+		Set
+			Me._tblSection1s.Assign(value)
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.AssociationAttribute(Name:="tblUser_tblVendor", Storage:="_tblVendor", ThisKey:="UserID", OtherKey:="VendorID", IsUnique:=true, IsForeignKey:=false)>  _
+	Public Property tblVendor() As tblVendor
+		Get
+			Return Me._tblVendor.Entity
+		End Get
+		Set
+			Dim previousValue As tblVendor = Me._tblVendor.Entity
+			If ((Object.Equals(previousValue, value) = false)  _
+						OrElse (Me._tblVendor.HasLoadedOrAssignedValue = false)) Then
+				Me.SendPropertyChanging
+				If ((previousValue Is Nothing)  _
+							= false) Then
+					Me._tblVendor.Entity = Nothing
+					previousValue.tblUser = Nothing
+				End If
+				Me._tblVendor.Entity = value
+				If (Object.Equals(value, Nothing) = false) Then
+					value.tblUser = Me
+				End If
+				Me.SendPropertyChanged("tblVendor")
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.AssociationAttribute(Name:="tblUser_tblAssetCondition", Storage:="_tblAssetConditions", ThisKey:="UserID", OtherKey:="UserID")>  _
+	Public Property tblAssetConditions() As EntitySet(Of tblAssetCondition)
+		Get
+			Return Me._tblAssetConditions
+		End Get
+		Set
+			Me._tblAssetConditions.Assign(value)
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.AssociationAttribute(Name:="tblUser_tblAssetDetailMasterlist", Storage:="_tblAssetDetailMasterlists", ThisKey:="UserID", OtherKey:="UserID")>  _
+	Public Property tblAssetDetailMasterlists() As EntitySet(Of tblAssetDetailMasterlist)
+		Get
+			Return Me._tblAssetDetailMasterlists
+		End Get
+		Set
+			Me._tblAssetDetailMasterlists.Assign(value)
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.AssociationAttribute(Name:="tblUser_tblAssetDetail", Storage:="_tblAssetDetails", ThisKey:="UserID", OtherKey:="UserID")>  _
+	Public Property tblAssetDetails() As EntitySet(Of tblAssetDetail)
+		Get
+			Return Me._tblAssetDetails
+		End Get
+		Set
+			Me._tblAssetDetails.Assign(value)
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.AssociationAttribute(Name:="tblUser_tblAssetHeader", Storage:="_tblAssetHeaders", ThisKey:="UserID", OtherKey:="UserID")>  _
+	Public Property tblAssetHeaders() As EntitySet(Of tblAssetHeader)
+		Get
+			Return Me._tblAssetHeaders
+		End Get
+		Set
+			Me._tblAssetHeaders.Assign(value)
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.AssociationAttribute(Name:="tblUser_tblAssetHeaderMasterlist", Storage:="_tblAssetHeaderMasterlists", ThisKey:="UserID", OtherKey:="UserID")>  _
+	Public Property tblAssetHeaderMasterlists() As EntitySet(Of tblAssetHeaderMasterlist)
+		Get
+			Return Me._tblAssetHeaderMasterlists
+		End Get
+		Set
+			Me._tblAssetHeaderMasterlists.Assign(value)
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.AssociationAttribute(Name:="tblUser_tblAssetType", Storage:="_tblAssetTypes", ThisKey:="UserID", OtherKey:="UserID")>  _
+	Public Property tblAssetTypes() As EntitySet(Of tblAssetType)
+		Get
+			Return Me._tblAssetTypes
+		End Get
+		Set
+			Me._tblAssetTypes.Assign(value)
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.AssociationAttribute(Name:="tblUser_tblBranch", Storage:="_tblBranch", ThisKey:="UserID", OtherKey:="BranchID", IsUnique:=true, IsForeignKey:=false)>  _
+	Public Property tblBranch() As tblBranch
+		Get
+			Return Me._tblBranch.Entity
+		End Get
+		Set
+			Dim previousValue As tblBranch = Me._tblBranch.Entity
+			If ((Object.Equals(previousValue, value) = false)  _
+						OrElse (Me._tblBranch.HasLoadedOrAssignedValue = false)) Then
+				Me.SendPropertyChanging
+				If ((previousValue Is Nothing)  _
+							= false) Then
+					Me._tblBranch.Entity = Nothing
+					previousValue.tblUser = Nothing
+				End If
+				Me._tblBranch.Entity = value
+				If (Object.Equals(value, Nothing) = false) Then
+					value.tblUser = Me
+				End If
+				Me.SendPropertyChanged("tblBranch")
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.AssociationAttribute(Name:="tblUser_tblCategory", Storage:="_tblCategories", ThisKey:="UserID", OtherKey:="UserID")>  _
+	Public Property tblCategories() As EntitySet(Of tblCategory)
+		Get
+			Return Me._tblCategories
+		End Get
+		Set
+			Me._tblCategories.Assign(value)
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.AssociationAttribute(Name:="tblUser_tblDepartment", Storage:="_tblDepartment", ThisKey:="UserID", OtherKey:="DepartmentID", IsUnique:=true, IsForeignKey:=false)>  _
+	Public Property tblDepartment() As tblDepartment
+		Get
+			Return Me._tblDepartment.Entity
+		End Get
+		Set
+			Dim previousValue As tblDepartment = Me._tblDepartment.Entity
+			If ((Object.Equals(previousValue, value) = false)  _
+						OrElse (Me._tblDepartment.HasLoadedOrAssignedValue = false)) Then
+				Me.SendPropertyChanging
+				If ((previousValue Is Nothing)  _
+							= false) Then
+					Me._tblDepartment.Entity = Nothing
+					previousValue.tblUser = Nothing
+				End If
+				Me._tblDepartment.Entity = value
+				If (Object.Equals(value, Nothing) = false) Then
+					value.tblUser = Me
+				End If
+				Me.SendPropertyChanged("tblDepartment")
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.AssociationAttribute(Name:="tblUser_tblDocumentType", Storage:="_tblDocumentTypes", ThisKey:="UserID", OtherKey:="UserID")>  _
+	Public Property tblDocumentTypes() As EntitySet(Of tblDocumentType)
+		Get
+			Return Me._tblDocumentTypes
+		End Get
+		Set
+			Me._tblDocumentTypes.Assign(value)
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.AssociationAttribute(Name:="tblUser_tblEmployee", Storage:="_tblEmployees", ThisKey:="UserID", OtherKey:="AddbyUserID")>  _
+	Public Property tblEmployees() As EntitySet(Of tblEmployee)
+		Get
+			Return Me._tblEmployees
+		End Get
+		Set
+			Me._tblEmployees.Assign(value)
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.AssociationAttribute(Name:="tblUser_tblPosition", Storage:="_tblPositions", ThisKey:="UserID", OtherKey:="UserID")>  _
+	Public Property tblPositions() As EntitySet(Of tblPosition)
+		Get
+			Return Me._tblPositions
+		End Get
+		Set
+			Me._tblPositions.Assign(value)
+		End Set
+	End Property
+	
+	Public Event PropertyChanging As PropertyChangingEventHandler Implements System.ComponentModel.INotifyPropertyChanging.PropertyChanging
+	
+	Public Event PropertyChanged As PropertyChangedEventHandler Implements System.ComponentModel.INotifyPropertyChanged.PropertyChanged
+	
+	Protected Overridable Sub SendPropertyChanging()
+		If ((Me.PropertyChangingEvent Is Nothing)  _
+					= false) Then
+			RaiseEvent PropertyChanging(Me, emptyChangingEventArgs)
+		End If
+	End Sub
+	
+	Protected Overridable Sub SendPropertyChanged(ByVal propertyName As [String])
+		If ((Me.PropertyChangedEvent Is Nothing)  _
+					= false) Then
+			RaiseEvent PropertyChanged(Me, New PropertyChangedEventArgs(propertyName))
+		End If
+	End Sub
+	
+	Private Sub attach_tblSections(ByVal entity As tblSection)
+		Me.SendPropertyChanging
+		entity.tblUser = Me
+	End Sub
+	
+	Private Sub detach_tblSections(ByVal entity As tblSection)
+		Me.SendPropertyChanging
+		entity.tblUser = Nothing
+	End Sub
+	
+	Private Sub attach_tblSection1s(ByVal entity As tblSection1)
+		Me.SendPropertyChanging
+		entity.tblUser = Me
+	End Sub
+	
+	Private Sub detach_tblSection1s(ByVal entity As tblSection1)
+		Me.SendPropertyChanging
+		entity.tblUser = Nothing
+	End Sub
+	
+	Private Sub attach_tblAssetConditions(ByVal entity As tblAssetCondition)
+		Me.SendPropertyChanging
+		entity.tblUser = Me
+	End Sub
+	
+	Private Sub detach_tblAssetConditions(ByVal entity As tblAssetCondition)
+		Me.SendPropertyChanging
+		entity.tblUser = Nothing
+	End Sub
+	
+	Private Sub attach_tblAssetDetailMasterlists(ByVal entity As tblAssetDetailMasterlist)
+		Me.SendPropertyChanging
+		entity.tblUser = Me
+	End Sub
+	
+	Private Sub detach_tblAssetDetailMasterlists(ByVal entity As tblAssetDetailMasterlist)
+		Me.SendPropertyChanging
+		entity.tblUser = Nothing
+	End Sub
+	
+	Private Sub attach_tblAssetDetails(ByVal entity As tblAssetDetail)
+		Me.SendPropertyChanging
+		entity.tblUser = Me
+	End Sub
+	
+	Private Sub detach_tblAssetDetails(ByVal entity As tblAssetDetail)
+		Me.SendPropertyChanging
+		entity.tblUser = Nothing
+	End Sub
+	
+	Private Sub attach_tblAssetHeaders(ByVal entity As tblAssetHeader)
+		Me.SendPropertyChanging
+		entity.tblUser = Me
+	End Sub
+	
+	Private Sub detach_tblAssetHeaders(ByVal entity As tblAssetHeader)
+		Me.SendPropertyChanging
+		entity.tblUser = Nothing
+	End Sub
+	
+	Private Sub attach_tblAssetHeaderMasterlists(ByVal entity As tblAssetHeaderMasterlist)
+		Me.SendPropertyChanging
+		entity.tblUser = Me
+	End Sub
+	
+	Private Sub detach_tblAssetHeaderMasterlists(ByVal entity As tblAssetHeaderMasterlist)
+		Me.SendPropertyChanging
+		entity.tblUser = Nothing
+	End Sub
+	
+	Private Sub attach_tblAssetTypes(ByVal entity As tblAssetType)
+		Me.SendPropertyChanging
+		entity.tblUser = Me
+	End Sub
+	
+	Private Sub detach_tblAssetTypes(ByVal entity As tblAssetType)
+		Me.SendPropertyChanging
+		entity.tblUser = Nothing
+	End Sub
+	
+	Private Sub attach_tblCategories(ByVal entity As tblCategory)
+		Me.SendPropertyChanging
+		entity.tblUser = Me
+	End Sub
+	
+	Private Sub detach_tblCategories(ByVal entity As tblCategory)
+		Me.SendPropertyChanging
+		entity.tblUser = Nothing
+	End Sub
+	
+	Private Sub attach_tblDocumentTypes(ByVal entity As tblDocumentType)
+		Me.SendPropertyChanging
+		entity.tblUser = Me
+	End Sub
+	
+	Private Sub detach_tblDocumentTypes(ByVal entity As tblDocumentType)
+		Me.SendPropertyChanging
+		entity.tblUser = Nothing
+	End Sub
+	
+	Private Sub attach_tblEmployees(ByVal entity As tblEmployee)
+		Me.SendPropertyChanging
+		entity.tblUser = Me
+	End Sub
+	
+	Private Sub detach_tblEmployees(ByVal entity As tblEmployee)
+		Me.SendPropertyChanging
+		entity.tblUser = Nothing
+	End Sub
+	
+	Private Sub attach_tblPositions(ByVal entity As tblPosition)
+		Me.SendPropertyChanging
+		entity.tblUser = Me
+	End Sub
+	
+	Private Sub detach_tblPositions(ByVal entity As tblPosition)
+		Me.SendPropertyChanging
+		entity.tblUser = Nothing
 	End Sub
 End Class
 
@@ -7161,6 +9048,83 @@ Partial Public Class spViewUserResult
 		Set
 			If (Me._Status.Equals(value) = false) Then
 				Me._Status = value
+			End If
+		End Set
+	End Property
+End Class
+
+Partial Public Class spViewInventoryResult
+	
+	Private _AssetCode As String
+	
+	Private _AssetDescription As String
+	
+	Private _available As System.Nullable(Of Double)
+	
+	Private _used As System.Nullable(Of Double)
+	
+	Private _total As System.Nullable(Of Double)
+	
+	Public Sub New()
+		MyBase.New
+	End Sub
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_AssetCode", DbType:="VarChar(MAX)")>  _
+	Public Property AssetCode() As String
+		Get
+			Return Me._AssetCode
+		End Get
+		Set
+			If (String.Equals(Me._AssetCode, value) = false) Then
+				Me._AssetCode = value
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_AssetDescription", DbType:="VarChar(200)")>  _
+	Public Property AssetDescription() As String
+		Get
+			Return Me._AssetDescription
+		End Get
+		Set
+			If (String.Equals(Me._AssetDescription, value) = false) Then
+				Me._AssetDescription = value
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_available", DbType:="Float")>  _
+	Public Property available() As System.Nullable(Of Double)
+		Get
+			Return Me._available
+		End Get
+		Set
+			If (Me._available.Equals(value) = false) Then
+				Me._available = value
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_used", DbType:="Float")>  _
+	Public Property used() As System.Nullable(Of Double)
+		Get
+			Return Me._used
+		End Get
+		Set
+			If (Me._used.Equals(value) = false) Then
+				Me._used = value
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_total", DbType:="Float")>  _
+	Public Property total() As System.Nullable(Of Double)
+		Get
+			Return Me._total
+		End Get
+		Set
+			If (Me._total.Equals(value) = false) Then
+				Me._total = value
 			End If
 		End Set
 	End Property

@@ -11,6 +11,8 @@
         dgv.Columns(1).HeaderText = "Entry No."
         dgv.Columns(2).HeaderText = "Remarks"
         dgv.Columns(3).HeaderText = "User"
+
+        'dgv.Columns(4).Visible = False
     End Sub
 
     Private Sub TextBox2_TextChanged(sender As Object, e As EventArgs) Handles TextBox2.TextChanged
@@ -34,8 +36,7 @@
 
 
             With AAdetail
-                .entry = selectedrow.Cells(1).Value.ToString
-
+                .entry = Integer.Parse(selectedrow.Cells(4).Value.ToString)
                 .TextBox1.Text = selectedrow.Cells(1).Value.ToString
                 .TextBox2.Text = Format(CDate(selectedrow.Cells(0).Value.ToString), "dd/MM/yyyy")
                 .TextBox3.Text = selectedrow.Cells(2).Value.ToString
