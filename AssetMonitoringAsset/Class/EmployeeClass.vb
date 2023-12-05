@@ -135,7 +135,7 @@ Public Class EmployeeClass
                             Join g In db.tblSections On s.SectionID Equals g.SectionID
                             Where s.FirstName.Contains(search) Or s.LastName.Contains(search)
                             Order By s.EmployeeID
-                            Select s.EmployeeID, s.FirstName, s.LastName, p.BranchDescription, l.DepartmentDescription, g.SectionDecription).ToList
+                            Select s.EmployeeID, s.FirstName, s.LastName, p.BranchDescription, l.DepartmentDescription, g.SectionDecription, p.BranchID, l.DepartmentID, g.SectionID).ToList
         Return querysection
     End Function
 

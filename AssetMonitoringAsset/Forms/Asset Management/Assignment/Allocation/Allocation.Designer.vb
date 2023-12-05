@@ -37,11 +37,19 @@ Partial Class Allocation
         Me.PanelControl2 = New DevExpress.XtraEditors.PanelControl()
         Me.dgv = New System.Windows.Forms.DataGridView()
         Me.SimpleButton1 = New DevExpress.XtraEditors.SimpleButton()
+        Me.SimpleButton3 = New DevExpress.XtraEditors.SimpleButton()
+        Me.RadioButton1 = New System.Windows.Forms.RadioButton()
+        Me.RadioButton2 = New System.Windows.Forms.RadioButton()
+        Me.RadioButton3 = New System.Windows.Forms.RadioButton()
+        Me.RadioButton4 = New System.Windows.Forms.RadioButton()
+        Me.PanelControl3 = New DevExpress.XtraEditors.PanelControl()
         CType(Me.PanelControl1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.PanelControl1.SuspendLayout()
         CType(Me.PanelControl2, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.PanelControl2.SuspendLayout()
         CType(Me.dgv, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PanelControl3, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.PanelControl3.SuspendLayout()
         Me.SuspendLayout()
         '
         'PanelControl1
@@ -218,14 +226,88 @@ Partial Class Allocation
         Me.SimpleButton1.TabIndex = 15
         Me.SimpleButton1.Text = "Record"
         '
+        'SimpleButton3
+        '
+        Me.SimpleButton3.Appearance.Font = New System.Drawing.Font("Arial Rounded MT Bold", 11.25!)
+        Me.SimpleButton3.Appearance.Options.UseFont = True
+        Me.SimpleButton3.ImageOptions.Image = CType(resources.GetObject("SimpleButton3.ImageOptions.Image"), System.Drawing.Image)
+        Me.SimpleButton3.Location = New System.Drawing.Point(868, 119)
+        Me.SimpleButton3.Name = "SimpleButton3"
+        Me.SimpleButton3.Size = New System.Drawing.Size(112, 63)
+        Me.SimpleButton3.TabIndex = 16
+        Me.SimpleButton3.Text = "Print"
+        Me.SimpleButton3.Visible = False
+        '
+        'RadioButton1
+        '
+        Me.RadioButton1.AutoSize = True
+        Me.RadioButton1.Font = New System.Drawing.Font("Arial Rounded MT Bold", 11.25!)
+        Me.RadioButton1.Location = New System.Drawing.Point(10, 11)
+        Me.RadioButton1.Name = "RadioButton1"
+        Me.RadioButton1.Size = New System.Drawing.Size(65, 21)
+        Me.RadioButton1.TabIndex = 17
+        Me.RadioButton1.TabStop = True
+        Me.RadioButton1.Text = "Set A"
+        Me.RadioButton1.UseVisualStyleBackColor = True
+        '
+        'RadioButton2
+        '
+        Me.RadioButton2.AutoSize = True
+        Me.RadioButton2.Font = New System.Drawing.Font("Arial Rounded MT Bold", 11.25!)
+        Me.RadioButton2.Location = New System.Drawing.Point(81, 11)
+        Me.RadioButton2.Name = "RadioButton2"
+        Me.RadioButton2.Size = New System.Drawing.Size(65, 21)
+        Me.RadioButton2.TabIndex = 18
+        Me.RadioButton2.TabStop = True
+        Me.RadioButton2.Text = "Set B"
+        Me.RadioButton2.UseVisualStyleBackColor = True
+        '
+        'RadioButton3
+        '
+        Me.RadioButton3.AutoSize = True
+        Me.RadioButton3.Font = New System.Drawing.Font("Arial Rounded MT Bold", 11.25!)
+        Me.RadioButton3.Location = New System.Drawing.Point(81, 35)
+        Me.RadioButton3.Name = "RadioButton3"
+        Me.RadioButton3.Size = New System.Drawing.Size(65, 21)
+        Me.RadioButton3.TabIndex = 19
+        Me.RadioButton3.TabStop = True
+        Me.RadioButton3.Text = "Set C"
+        Me.RadioButton3.UseVisualStyleBackColor = True
+        '
+        'RadioButton4
+        '
+        Me.RadioButton4.AutoSize = True
+        Me.RadioButton4.Font = New System.Drawing.Font("Arial Rounded MT Bold", 11.25!)
+        Me.RadioButton4.Location = New System.Drawing.Point(10, 35)
+        Me.RadioButton4.Name = "RadioButton4"
+        Me.RadioButton4.Size = New System.Drawing.Size(65, 21)
+        Me.RadioButton4.TabIndex = 20
+        Me.RadioButton4.TabStop = True
+        Me.RadioButton4.Text = "Set D"
+        Me.RadioButton4.UseVisualStyleBackColor = True
+        '
+        'PanelControl3
+        '
+        Me.PanelControl3.Controls.Add(Me.RadioButton3)
+        Me.PanelControl3.Controls.Add(Me.RadioButton4)
+        Me.PanelControl3.Controls.Add(Me.RadioButton2)
+        Me.PanelControl3.Controls.Add(Me.RadioButton1)
+        Me.PanelControl3.Location = New System.Drawing.Point(709, 119)
+        Me.PanelControl3.Name = "PanelControl3"
+        Me.PanelControl3.Size = New System.Drawing.Size(152, 64)
+        Me.PanelControl3.TabIndex = 21
+        '
         'Allocation
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(985, 610)
+        Me.Controls.Add(Me.PanelControl3)
+        Me.Controls.Add(Me.SimpleButton3)
         Me.Controls.Add(Me.SimpleButton1)
         Me.Controls.Add(Me.PanelControl2)
         Me.Controls.Add(Me.PanelControl1)
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
         Me.IconOptions.ShowIcon = False
         Me.KeyPreview = True
         Me.MaximizeBox = False
@@ -241,6 +323,9 @@ Partial Class Allocation
         CType(Me.PanelControl2, System.ComponentModel.ISupportInitialize).EndInit()
         Me.PanelControl2.ResumeLayout(False)
         CType(Me.dgv, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PanelControl3, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.PanelControl3.ResumeLayout(False)
+        Me.PanelControl3.PerformLayout()
         Me.ResumeLayout(False)
 
     End Sub
@@ -262,4 +347,10 @@ Partial Class Allocation
     Friend WithEvents TextBox3 As TextBox
     Friend WithEvents TextBox2 As TextBox
     Friend WithEvents SimpleButton2 As DevExpress.XtraEditors.SimpleButton
+    Friend WithEvents SimpleButton3 As DevExpress.XtraEditors.SimpleButton
+    Friend WithEvents RadioButton1 As RadioButton
+    Friend WithEvents RadioButton2 As RadioButton
+    Friend WithEvents RadioButton3 As RadioButton
+    Friend WithEvents RadioButton4 As RadioButton
+    Friend WithEvents PanelControl3 As DevExpress.XtraEditors.PanelControl
 End Class

@@ -131,4 +131,32 @@
     Private Sub AccordionControlElement35_Click(sender As Object, e As EventArgs) Handles AccordionControlElement35.Click
         Allocation.ShowDialog()
     End Sub
+
+    Private Sub AccordionControlElement40_Click(sender As Object, e As EventArgs) Handles AccordionControlElement40.Click
+        AllocatedItems.ShowDialog()
+    End Sub
+
+    Private Sub AccordionControlElement20_Click(sender As Object, e As EventArgs) Handles AccordionControlElement20.Click
+
+    End Sub
+
+    Private Sub AccordionControlElement36_Click(sender As Object, e As EventArgs) Handles AccordionControlElement36.Click
+        AllocationRegister.ShowDialog()
+    End Sub
+
+    Private Sub AccordionControlElement33_Click(sender As Object, e As EventArgs) Handles AccordionControlElement33.Click
+        TransferRequest.ShowDialog()
+    End Sub
+
+    Private Sub AccordionControlElement42_Click(sender As Object, e As EventArgs) Handles AccordionControlElement42.Click
+        AssetStatus.ShowDialog()
+    End Sub
+
+    Private Sub AccordionControlElement43_Click(sender As Object, e As EventArgs) Handles AccordionControlElement43.Click
+        CreateRequest.ShowDialog()
+    End Sub
+
+    Private Sub AccordionControlElement44_Click(sender As Object, e As EventArgs) Handles AccordionControlElement44.Click
+        AcquisitionRequest.ShowDialog()
+    End Sub
 End Class

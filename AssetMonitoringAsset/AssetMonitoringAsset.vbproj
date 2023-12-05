@@ -40,6 +40,9 @@
   <PropertyGroup>
     <StartupObject>AssetMonitoringAsset.My.MyApplication</StartupObject>
   </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>completed-task.ico</ApplicationIcon>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="DevExpress.BonusSkins.v21.2" />
     <Reference Include="DevExpress.Data.v21.2" />
@@ -98,7 +101,10 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>AMSdbDataSet.xsd</DependentUpon>
     </Compile>
+    <Compile Include="Class\AllocationDetailClass.vb" />
     <Compile Include="Class\AllocationHeaderClass.vb" />
+    <Compile Include="Class\AqRequestDetailClass.vb" />
+    <Compile Include="Class\AqRequestHeaderClass.vb" />
     <Compile Include="Class\AssetDetailClass.vb" />
     <Compile Include="Class\AssetHeaderClass.vb" />
     <Compile Include="Class\BranchClass.vb" />
@@ -113,6 +119,7 @@
     <Compile Include="Class\PositionClass.vb" />
     <Compile Include="Class\ReferenceClass.vb" />
     <Compile Include="Class\SectionClass.vb" />
+    <Compile Include="Class\TransferHeaderClass.vb" />
     <Compile Include="Class\TypeClass.vb" />
     <Compile Include="Class\UserClass.vb" />
     <Compile Include="Class\VendorClass.vb" />
@@ -127,16 +134,58 @@
     <Compile Include="Forms\Asset Management\Acquisition\AssetAcquisition.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\Asset Management\Register\AAdetail.Designer.vb">
+    <Compile Include="Forms\Asset Management\Acquisition\Register\AAdetail.Designer.vb">
       <DependentUpon>AAdetail.vb</DependentUpon>
     </Compile>
-    <Compile Include="Forms\Asset Management\Register\AAdetail.vb">
+    <Compile Include="Forms\Asset Management\Acquisition\Register\AAdetail.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\Asset Management\Register\AARegister.Designer.vb">
+    <Compile Include="Forms\Asset Management\Acquisition\Register\AARegister.Designer.vb">
       <DependentUpon>AARegister.vb</DependentUpon>
     </Compile>
-    <Compile Include="Forms\Asset Management\Register\AARegister.vb">
+    <Compile Include="Forms\Asset Management\Acquisition\Register\AARegister.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Asset Management\Acquisition\Request\AcquisitionRequest.Designer.vb">
+      <DependentUpon>AcquisitionRequest.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Asset Management\Acquisition\Request\AcquisitionRequest.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Asset Management\Acquisition\Request\AssetList3.Designer.vb">
+      <DependentUpon>AssetList3.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Asset Management\Acquisition\Request\AssetList3.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Asset Management\Transfer\Request\CreateRequest.Designer.vb">
+      <DependentUpon>CreateRequest.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Asset Management\Transfer\Request\CreateRequest.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Asset Management\Transfer\Status\AllocationUpdate.Designer.vb">
+      <DependentUpon>AllocationUpdate.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Asset Management\Transfer\Status\AllocationUpdate.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Asset Management\Transfer\Status\AssetStatus.Designer.vb">
+      <DependentUpon>AssetStatus.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Asset Management\Transfer\Status\AssetStatus.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Asset Management\Transfer\Assets\Assets1.Designer.vb">
+      <DependentUpon>Assets1.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Asset Management\Transfer\Assets\Assets1.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Asset Management\Transfer\TransferRequest.Designer.vb">
+      <DependentUpon>TransferRequest.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Asset Management\Transfer\TransferRequest.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Forms\ASSET\AssetList.Designer.vb">
@@ -229,22 +278,46 @@
     <Compile Include="Forms\ASSET\view.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\Assignment\Allocation\Allocation.Designer.vb">
+    <Compile Include="Forms\Asset Management\Assignment\Allocated Assets\AllocatedAssetDetails.Designer.vb">
+      <DependentUpon>AllocatedAssetDetails.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Asset Management\Assignment\Allocated Assets\AllocatedAssetDetails.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Asset Management\Assignment\Allocated Assets\AllocatedItems.Designer.vb">
+      <DependentUpon>AllocatedItems.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Asset Management\Assignment\Allocated Assets\AllocatedItems.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Asset Management\Assignment\Allocation\Allocation.Designer.vb">
       <DependentUpon>Allocation.vb</DependentUpon>
     </Compile>
-    <Compile Include="Forms\Assignment\Allocation\Allocation.vb">
+    <Compile Include="Forms\Asset Management\Assignment\Allocation\Allocation.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\Assignment\Allocation\EmployeeList2.Designer.vb">
+    <Compile Include="Forms\Asset Management\Assignment\Allocation\Register\AllocationRegister.Designer.vb">
+      <DependentUpon>AllocationRegister.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Asset Management\Assignment\Allocation\Register\AllocationRegister.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Asset Management\Assignment\Allocation\EmployeeList2.Designer.vb">
       <DependentUpon>EmployeeList2.vb</DependentUpon>
     </Compile>
-    <Compile Include="Forms\Assignment\Allocation\EmployeeList2.vb">
+    <Compile Include="Forms\Asset Management\Assignment\Allocation\EmployeeList2.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\Assignment\Allocation\Items\AssetList2.Designer.vb">
+    <Compile Include="Forms\Asset Management\Assignment\Allocation\Items\AssetList2.Designer.vb">
       <DependentUpon>AssetList2.vb</DependentUpon>
     </Compile>
-    <Compile Include="Forms\Assignment\Allocation\Items\AssetList2.vb">
+    <Compile Include="Forms\Asset Management\Assignment\Allocation\Items\AssetList2.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Asset Management\Assignment\Allocation\Register\RegisterDetail.Designer.vb">
+      <DependentUpon>RegisterDetail.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Asset Management\Assignment\Allocation\Register\RegisterDetail.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Forms\LoginForm\Login.Designer.vb">
@@ -444,11 +517,32 @@
     <EmbeddedResource Include="Forms\Asset Management\Acquisition\AssetAcquisition.resx">
       <DependentUpon>AssetAcquisition.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Asset Management\Register\AAdetail.resx">
+    <EmbeddedResource Include="Forms\Asset Management\Acquisition\Register\AAdetail.resx">
       <DependentUpon>AAdetail.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Asset Management\Register\AARegister.resx">
+    <EmbeddedResource Include="Forms\Asset Management\Acquisition\Register\AARegister.resx">
       <DependentUpon>AARegister.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Asset Management\Acquisition\Request\AcquisitionRequest.resx">
+      <DependentUpon>AcquisitionRequest.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Asset Management\Acquisition\Request\AssetList3.resx">
+      <DependentUpon>AssetList3.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Asset Management\Transfer\Request\CreateRequest.resx">
+      <DependentUpon>CreateRequest.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Asset Management\Transfer\Status\AllocationUpdate.resx">
+      <DependentUpon>AllocationUpdate.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Asset Management\Transfer\Status\AssetStatus.resx">
+      <DependentUpon>AssetStatus.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Asset Management\Transfer\Assets\Assets1.resx">
+      <DependentUpon>Assets1.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Asset Management\Transfer\TransferRequest.resx">
+      <DependentUpon>TransferRequest.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\ASSET\AssetList.resx">
       <DependentUpon>AssetList.vb</DependentUpon>
@@ -496,14 +590,26 @@
     <EmbeddedResource Include="Forms\ASSET\view.resx">
       <DependentUpon>view.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Assignment\Allocation\Allocation.resx">
+    <EmbeddedResource Include="Forms\Asset Management\Assignment\Allocated Assets\AllocatedAssetDetails.resx">
+      <DependentUpon>AllocatedAssetDetails.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Asset Management\Assignment\Allocated Assets\AllocatedItems.resx">
+      <DependentUpon>AllocatedItems.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Asset Management\Assignment\Allocation\Allocation.resx">
       <DependentUpon>Allocation.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Assignment\Allocation\EmployeeList2.resx">
+    <EmbeddedResource Include="Forms\Asset Management\Assignment\Allocation\Register\AllocationRegister.resx">
+      <DependentUpon>AllocationRegister.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Asset Management\Assignment\Allocation\EmployeeList2.resx">
       <DependentUpon>EmployeeList2.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Assignment\Allocation\Items\AssetList2.resx">
+    <EmbeddedResource Include="Forms\Asset Management\Assignment\Allocation\Items\AssetList2.resx">
       <DependentUpon>AssetList2.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Asset Management\Assignment\Allocation\Register\RegisterDetail.resx">
+      <DependentUpon>RegisterDetail.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\LoginForm\Login.resx">
       <DependentUpon>Login.vb</DependentUpon>
@@ -637,6 +743,7 @@
     <None Include="Resources\photo_2023-10-23_15-37-35.jpg" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="completed-task.ico" />
     <Content Include="SqlServerTypes\Loader.cs" />
     <Content Include="SqlServerTypes\readme.htm" />
     <Content Include="SqlServerTypes\x64\msvcr120.dll">
@@ -655,9 +762,7 @@
   <ItemGroup>
     <WCFMetadata Include="Connected Services\" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Forms\Assignment\Allocation\retun\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
        Other similar extension points exist, see Microsoft.Common.targets.

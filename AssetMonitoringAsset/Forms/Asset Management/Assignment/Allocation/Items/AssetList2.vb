@@ -5,6 +5,7 @@
     Public check As Boolean = False
     Private pd As String = ""
 
+
     Private Sub AssetList2_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         display1()
     End Sub
@@ -31,11 +32,17 @@
             .Columns(3).HeaderText = "Reference"
             .Columns(4).HeaderText = "Number"
 
+
             .Columns(0).Width = 150
             .Columns(1).Width = 400
             .Columns(2).Width = 100
             .Columns(3).Width = 120
             .Columns(4).Width = 200
+
+            .Columns(5).Visible = False
+            .Columns(6).Visible = False
+
+
 
         End With
 
@@ -70,6 +77,10 @@
                 .Rows(rowToEdit).Cells(1).Value = selectedrow.Cells(1).Value.ToString
                 .Rows(rowToEdit).Cells(2).Value = selectedrow.Cells(3).Value.ToString
                 .Rows(rowToEdit).Cells(3).Value = selectedrow.Cells(4).Value.ToString
+                .Rows(rowToEdit).Cells(4).Value = "0"
+                .Rows(rowToEdit).Cells(5).Value = selectedrow.Cells(5).Value.ToString
+                .Rows(rowToEdit).Cells(6).Value = selectedrow.Cells(6).Value.ToString
+                .CurrentCell = .Rows(rowToEdit).Cells(4)
             End With
             check = False
             Me.Close()

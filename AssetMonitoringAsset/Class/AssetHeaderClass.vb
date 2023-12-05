@@ -121,4 +121,15 @@ Public Class AssetHeaderClass
     End Function
 
 
+
+    Public Shared Function FetchDataFetchAllocation(ByVal Search As String, ByVal date1 As Date, ByVal date2 As Date) As Object
+        Dim querysection = (From s In db.tblAllocationHeaders
+                            Join j In db.tblUsers On s.UserID Equals j.UserID
+                            Join h In db.tblEmployees On j.EmployeeID Equals h.EmployeeID
+                            Where (s.Entrynumber.Contains(Search)) And (s.Date >= date1 AndAlso s.Date <= date2)
+                            Let name = h.FirstName + " " + h.LastName
+                            Select s.Date, s.Entrynumber, name, s.Allocationheaderid).ToList()
+        Return querysection
+    End Function
+
 End Class

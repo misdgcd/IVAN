@@ -165,4 +165,15 @@ Public Class UserClass
 
     End Function
 
+
+    Public Shared Function FetcUserfandlname(ByVal user As Integer) As String
+        Dim querydetail = (From p In db.tblUsers
+                           Join j In db.tblEmployees On p.EmployeeID Equals j.EmployeeID
+                           Where p.UserID = user
+                           Let g = j.FirstName + " " + j.LastName
+                           Select g).SingleOrDefault
+        Return querydetail
+
+    End Function
+
 End Class

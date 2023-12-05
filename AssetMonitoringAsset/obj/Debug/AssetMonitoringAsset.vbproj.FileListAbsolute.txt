@@ -174,3 +174,14 @@ C:\Users\HSDP_SYS_DEV\source\repos\AssetMonitoringAsset\AssetMonitoringAsset\obj
 C:\Users\HSDP_SYS_DEV\source\repos\AssetMonitoringAsset\AssetMonitoringAsset\obj\Debug\AssetMonitoringAsset.Allocation.resources
 C:\Users\HSDP_SYS_DEV\source\repos\AssetMonitoringAsset\AssetMonitoringAsset\obj\Debug\AssetMonitoringAsset.EmployeeList2.resources
 C:\Users\HSDP_SYS_DEV\source\repos\AssetMonitoringAsset\AssetMonitoringAsset\obj\Debug\AssetMonitoringAsset.AssetList2.resources
+C:\Users\HSDP_SYS_DEV\source\repos\AssetMonitoringAsset\AssetMonitoringAsset\obj\Debug\AssetMonitoringAsset.AllocatedItems.resources
+C:\Users\HSDP_SYS_DEV\source\repos\AssetMonitoringAsset\AssetMonitoringAsset\obj\Debug\AssetMonitoringAsset.AllocatedAssetDetails.resources
+C:\Users\HSDP_SYS_DEV\source\repos\AssetMonitoringAsset\AssetMonitoringAsset\obj\Debug\AssetMonitoringAsset.AllocationRegister.resources
+C:\Users\HSDP_SYS_DEV\source\repos\AssetMonitoringAsset\AssetMonitoringAsset\obj\Debug\AssetMonitoringAsset.RegisterDetail.resources
+C:\Users\HSDP_SYS_DEV\source\repos\AssetMonitoringAsset\AssetMonitoringAsset\obj\Debug\AssetMonitoringAsset.TransferRequest.resources
+C:\Users\HSDP_SYS_DEV\source\repos\AssetMonitoringAsset\AssetMonitoringAsset\obj\Debug\AssetMonitoringAsset.AssetStatus.resources
+C:\Users\HSDP_SYS_DEV\source\repos\AssetMonitoringAsset\AssetMonitoringAsset\obj\Debug\AssetMonitoringAsset.Assets1.resources
+C:\Users\HSDP_SYS_DEV\source\repos\AssetMonitoringAsset\AssetMonitoringAsset\obj\Debug\AssetMonitoringAsset.AllocationUpdate.resources
+C:\Users\HSDP_SYS_DEV\source\repos\AssetMonitoringAsset\AssetMonitoringAsset\obj\Debug\AssetMonitoringAsset.CreateRequest.resources
+C:\Users\HSDP_SYS_DEV\source\repos\AssetMonitoringAsset\AssetMonitoringAsset\obj\Debug\AssetMonitoringAsset.AcquisitionRequest.resources
+C:\Users\HSDP_SYS_DEV\source\repos\AssetMonitoringAsset\AssetMonitoringAsset\obj\Debug\AssetMonitoringAsset.AssetList3.resources

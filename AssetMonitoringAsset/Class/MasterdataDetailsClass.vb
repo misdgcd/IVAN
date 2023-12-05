@@ -115,4 +115,13 @@ Public Class MasterdataDetailsClass
                             Select f.AssetCode, f.AssetDescription, c.CategoryDescription, k.AssetTypeDescription, e.AssetConditionDescription).ToList()
         Return querysection
     End Function
+
+    Public Shared Function Fetchrlist1(ByVal Search As String) As Object
+        Dim querysection = (From s In db.tblAssetHeaderMasterlists
+                            Join f In db.tblAssetDetailMasterlists On s.AssetHeaderID Equals f.AssetHeaderID
+                            Join e In db.tblAssetConditions On f.AssetConditionID Equals e.AssetConditionID
+                            Where (f.AssetDescription.Contains(Search) Or f.AssetCode.Contains(Search))
+                            Select f.AssetCode, f.AssetDescription, f.AssetID).ToList()
+        Return querysection
+    End Function
 End Class
