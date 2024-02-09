@@ -4,6 +4,14 @@
     Public Branch As String = ""
     Public Department As String = ""
     Public Section As String = ""
+    Public noti1 As Integer
+    Public UserType As String = ""
+
+    Public EmployeeID As Integer
+    Public DepartmentID As Integer
+    Public BranchID As Integer
+    Public SectionID As Integer
+
 
 
     Private Sub Button1_Click(sender As Object, e As EventArgs)
@@ -15,8 +23,14 @@
     End Sub
 
     Private Sub Home_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        requestnotif()
 
     End Sub
+
+    Public Sub requestnotif()
+
+    End Sub
+
 
     Private Sub AccordionControlElement5_Click(sender As Object, e As EventArgs) Handles AccordionControlElement5.Click
         AssetCategory.ShowDialog()
@@ -128,7 +142,7 @@
 
     End Sub
 
-    Private Sub AccordionControlElement35_Click(sender As Object, e As EventArgs) Handles AccordionControlElement35.Click
+    Private Sub AccordionControlElement35_Click(sender As Object, e As EventArgs) Handles e.Click
         Allocation.ShowDialog()
     End Sub
 
@@ -156,7 +170,44 @@
         CreateRequest.ShowDialog()
     End Sub
 
-    Private Sub AccordionControlElement44_Click(sender As Object, e As EventArgs) Handles AccordionControlElement44.Click
-        AcquisitionRequest.ShowDialog()
+    Private Sub AccordionControlElement44_Click(sender As Object, e As EventArgs)
+
+    End Sub
+
+    Private Sub AccordionControlElement35_Click_1(sender As Object, e As EventArgs) Handles AccordionControlElement35.Click
+
+    End Sub
+
+    Private Sub AccordionControlElement45_Click(sender As Object, e As EventArgs) Handles AccordionControlElement45.Click
+        importmasterlist.ShowDialog()
+    End Sub
+
+    Private Sub Home_Validating(sender As Object, e As System.ComponentModel.CancelEventArgs) Handles MyBase.Validating
+
+    End Sub
+
+    Private Sub AccordionControlElement38_Click(sender As Object, e As EventArgs) Handles AccordionControlElement38.Click
+        Request.ShowDialog()
+    End Sub
+
+    Private Sub AccordionControlElement47_Click(sender As Object, e As EventArgs) Handles AccordionControlElement47.Click
+
+    End Sub
+
+    Private Sub AccordionControlElement48_Click(sender As Object, e As EventArgs) Handles AccordionControlElement48.Click
+
+    End Sub
+
+    Private Sub AccordionControlElement52_Click(sender As Object, e As EventArgs) Handles AccordionControlElement52.Click
+
+    End Sub
+
+    Private Sub AccordionControlElement59_Click(sender As Object, e As EventArgs) Handles AccordionControlElement59.Click
+        RequestForApproval.ShowDialog()
+    End Sub
+
+    Private Sub AccordionControlElement46_Click(sender As Object, e As EventArgs) Handles AccordionControlElement46.Click
+
+        RequestRegister.ShowDialog()
     End Sub
 End Class

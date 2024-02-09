@@ -25,13 +25,15 @@ Partial Class AssetDepartmentAddandUpdate
         Me.TextBox2 = New System.Windows.Forms.TextBox()
         Me.TextBox1 = New System.Windows.Forms.TextBox()
         Me.Label1 = New System.Windows.Forms.Label()
+        Me.ComboBox1 = New System.Windows.Forms.ComboBox()
+        Me.Label3 = New System.Windows.Forms.Label()
         Me.SuspendLayout()
         '
         'SimpleButton2
         '
         Me.SimpleButton2.Appearance.Font = New System.Drawing.Font("Arial Rounded MT Bold", 11.25!)
         Me.SimpleButton2.Appearance.Options.UseFont = True
-        Me.SimpleButton2.Location = New System.Drawing.Point(232, 210)
+        Me.SimpleButton2.Location = New System.Drawing.Point(232, 199)
         Me.SimpleButton2.Name = "SimpleButton2"
         Me.SimpleButton2.Size = New System.Drawing.Size(142, 45)
         Me.SimpleButton2.TabIndex = 25
@@ -41,7 +43,7 @@ Partial Class AssetDepartmentAddandUpdate
         '
         Me.SimpleButton1.Appearance.Font = New System.Drawing.Font("Arial Rounded MT Bold", 11.25!)
         Me.SimpleButton1.Appearance.Options.UseFont = True
-        Me.SimpleButton1.Location = New System.Drawing.Point(84, 210)
+        Me.SimpleButton1.Location = New System.Drawing.Point(84, 199)
         Me.SimpleButton1.Name = "SimpleButton1"
         Me.SimpleButton1.Size = New System.Drawing.Size(142, 45)
         Me.SimpleButton1.TabIndex = 24
@@ -71,7 +73,7 @@ Partial Class AssetDepartmentAddandUpdate
         Me.TextBox1.Font = New System.Drawing.Font("Arial", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.TextBox1.Location = New System.Drawing.Point(12, 27)
         Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.Size = New System.Drawing.Size(362, 25)
+        Me.TextBox1.Size = New System.Drawing.Size(235, 25)
         Me.TextBox1.TabIndex = 21
         '
         'Label1
@@ -84,11 +86,34 @@ Partial Class AssetDepartmentAddandUpdate
         Me.Label1.TabIndex = 20
         Me.Label1.Text = "Department Code :"
         '
+        'ComboBox1
+        '
+        Me.ComboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.ComboBox1.Font = New System.Drawing.Font("Arial", 11.25!)
+        Me.ComboBox1.FormattingEnabled = True
+        Me.ComboBox1.Items.AddRange(New Object() {"Within", "Outside"})
+        Me.ComboBox1.Location = New System.Drawing.Point(253, 27)
+        Me.ComboBox1.Name = "ComboBox1"
+        Me.ComboBox1.Size = New System.Drawing.Size(121, 25)
+        Me.ComboBox1.TabIndex = 26
+        '
+        'Label3
+        '
+        Me.Label3.AutoSize = True
+        Me.Label3.Font = New System.Drawing.Font("Arial Rounded MT Bold", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label3.Location = New System.Drawing.Point(253, 7)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(71, 17)
+        Me.Label3.TabIndex = 27
+        Me.Label3.Text = "Location"
+        '
         'AssetDepartmentAddandUpdate
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(387, 272)
+        Me.ClientSize = New System.Drawing.Size(381, 254)
+        Me.Controls.Add(Me.Label3)
+        Me.Controls.Add(Me.ComboBox1)
         Me.Controls.Add(Me.SimpleButton2)
         Me.Controls.Add(Me.SimpleButton1)
         Me.Controls.Add(Me.Label2)
@@ -115,4 +140,6 @@ Partial Class AssetDepartmentAddandUpdate
     Friend WithEvents TextBox2 As TextBox
     Friend WithEvents TextBox1 As TextBox
     Friend WithEvents Label1 As Label
+    Friend WithEvents ComboBox1 As ComboBox
+    Friend WithEvents Label3 As Label
 End Class

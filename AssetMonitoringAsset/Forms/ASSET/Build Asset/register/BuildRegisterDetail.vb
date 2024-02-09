@@ -6,7 +6,7 @@
     End Sub
 
     Public Sub viewdgv()
-        dgv.DataSource = AssetHeaderClass.Fetchregister1(entry)
+        'dgv.DataSource = AssetHeaderClass.Fetchregister1(entry)
 
         'dgv.Columns(0).HeaderText = "Asset Code"
         'dgv.Columns(1).HeaderText = "Description"

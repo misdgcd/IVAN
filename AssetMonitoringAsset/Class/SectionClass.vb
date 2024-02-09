@@ -96,7 +96,7 @@ Public Class SectionClass
     Public Shared Function FetchSectionID(ByVal Des As String) As Object
         Dim querysection = (From s In db.tblSections
                             Where s.SectionDecription.Contains(Des)
-                            Select s.SectionID).Single
+                            Select s.SectionID).FirstOrDefault
 
         Return querysection
     End Function

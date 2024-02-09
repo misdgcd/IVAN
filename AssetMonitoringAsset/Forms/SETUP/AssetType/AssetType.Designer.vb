@@ -126,7 +126,7 @@ Partial Class AssetType
         Me.SimpleButton1.Name = "SimpleButton1"
         Me.SimpleButton1.Size = New System.Drawing.Size(151, 45)
         Me.SimpleButton1.TabIndex = 4
-        Me.SimpleButton1.Text = "New Asset Type"
+        Me.SimpleButton1.Text = "Add"
         '
         'TextBox2
         '

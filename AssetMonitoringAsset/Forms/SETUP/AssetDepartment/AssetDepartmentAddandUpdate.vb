@@ -9,10 +9,10 @@
                 If DepartmentClass.FetchDepCount(TextBox1.Text) > 0 Then
                     MessageBox.Show("Department Code Already Exist", "Validation", MessageBoxButtons.OK, MessageBoxIcon.Information)
                 Else
-                    DepartmentClass.SaveDepartment(TextBox1.Text, TextBox2.Text)
+                    DepartmentClass.SaveDepartment(TextBox1.Text, TextBox2.Text, ComboBox1.Text)
                 End If
             ElseIf SimpleButton2.Text = "Save" Then
-                DepartmentClass.UpdateDepartment(AssetDepartment.DepID, TextBox1.Text, TextBox2.Text)
+                DepartmentClass.UpdateDepartment(AssetDepartment.DepID, TextBox1.Text, TextBox2.Text, ComboBox1.Text)
             End If
         End If
     End Sub

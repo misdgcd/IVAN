@@ -8,13 +8,13 @@ Public Class DepartmentClass
         Return db.GetTable(Of tblDepartment)()
     End Function
 
-    Public Shared Sub SaveDepartment(ByVal Code As String, ByVal Des As String)
+    Public Shared Sub SaveDepartment(ByVal Code As String, ByVal Des As String, ByVal loc As String)
         Try
 
             Dim user As Integer = Home.UserID
             Dim currentdate As Date = DateTime.Now.Date()
             'Insert Asset in DB
-            db.spNewDepartment(Code.ToUpper, StrConv(Des, VbStrConv.ProperCase), currentdate, currentdate, user, user)
+            db.spNewDepartment(Code.ToUpper, StrConv(Des, VbStrConv.ProperCase), currentdate, currentdate, user, user, loc)
             MessageBox.Show("Department Successfully Recorded.", "Info!", MessageBoxButtons.OK, MessageBoxIcon.Information)
             'After Insert Load View
             AssetDepartment.ViewDepartment()
@@ -59,13 +59,13 @@ Public Class DepartmentClass
 
     End Sub
 
-    Public Shared Sub UpdateDepartment(ByVal typeid As Integer, ByVal ATC As String, ByVal ATD As String)
+    Public Shared Sub UpdateDepartment(ByVal typeid As Integer, ByVal ATC As String, ByVal ATD As String, ByVal loc As String)
         Try
 
             Dim user As Integer = Home.UserID
             Dim currentdate As Date = DateTime.Now.Date()
             'Insert Asset in DB
-            db.spUpdateDepartment(typeid, StrConv(ATD, VbStrConv.ProperCase), currentdate, user, ATC.ToUpper)
+            db.spUpdateDepartment(typeid, StrConv(ATD, VbStrConv.ProperCase), currentdate, user, ATC.ToUpper, loc)
             MessageBox.Show("Department Successfully Updated.", "Info!", MessageBoxButtons.OK, MessageBoxIcon.Information)
             'After Insert Load View
             With AssetDepartment
@@ -98,7 +98,7 @@ Public Class DepartmentClass
     Public Shared Function FetchDepartmentID(ByVal Des As String) As Object
         Dim querysection = (From s In db.tblDepartments
                             Where s.DepartmentDescription.Contains(Des)
-                            Select s.DepartmentID).Single
+                            Select s.DepartmentID).FirstOrDefault
 
         Return querysection
     End Function

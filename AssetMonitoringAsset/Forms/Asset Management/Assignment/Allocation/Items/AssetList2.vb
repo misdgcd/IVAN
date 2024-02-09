@@ -4,7 +4,7 @@
     Public validate1 As Boolean = False
     Public check As Boolean = False
     Private pd As String = ""
-
+    Public reqt2 As Boolean = False
 
     Private Sub AssetList2_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         display1()
@@ -25,6 +25,7 @@
     Private Sub display2()
         Dim code As String = pd
         dgview.DataSource = InventoryClass.ViewInventoryDetails1(code, TextBox1.Text)
+
         With dgview
             .Columns(0).HeaderText = "Asset Code"
             .Columns(1).HeaderText = "Description"
@@ -39,9 +40,8 @@
             .Columns(3).Width = 120
             .Columns(4).Width = 200
 
-            .Columns(5).Visible = False
-            .Columns(6).Visible = False
-
+            .Columns(5).Visible = True
+            .Columns(6).Visible = True
 
 
         End With
@@ -58,6 +58,7 @@
                 validate1 = True
                 display2()
                 SimpleButton1.Enabled = True
+
             ElseIf e.ColumnIndex = 1 Then
                 pd = dgview.Rows(row).Cells(0).Value.ToString
                 check = True
@@ -67,23 +68,47 @@
             End If
         ElseIf check = True Then
 
-            Dim index As Integer
-            index = e.RowIndex
-            Dim selectedrow As DataGridViewRow
-            selectedrow = dgview.Rows(index)
+            If reqt2 = True Then
 
-            With Allocation.dgv
-                .Rows(rowToEdit).Cells(0).Value = selectedrow.Cells(0).Value.ToString
-                .Rows(rowToEdit).Cells(1).Value = selectedrow.Cells(1).Value.ToString
-                .Rows(rowToEdit).Cells(2).Value = selectedrow.Cells(3).Value.ToString
-                .Rows(rowToEdit).Cells(3).Value = selectedrow.Cells(4).Value.ToString
-                .Rows(rowToEdit).Cells(4).Value = "0"
-                .Rows(rowToEdit).Cells(5).Value = selectedrow.Cells(5).Value.ToString
-                .Rows(rowToEdit).Cells(6).Value = selectedrow.Cells(6).Value.ToString
-                .CurrentCell = .Rows(rowToEdit).Cells(4)
-            End With
-            check = False
-            Me.Close()
+
+                Dim index As Integer
+                index = e.RowIndex
+                Dim selectedrow As DataGridViewRow
+                selectedrow = dgview.Rows(index)
+
+                With Allocation.dgv
+
+                    .Rows(rowToEdit).Cells(2).Value = selectedrow.Cells(3).Value.ToString
+                    .Rows(rowToEdit).Cells(3).Value = selectedrow.Cells(4).Value.ToString
+
+                    .Rows(rowToEdit).Cells(5).Value = selectedrow.Cells(5).Value.ToString
+                    .Rows(rowToEdit).Cells(6).Value = selectedrow.Cells(6).Value.ToString
+                End With
+                check = False
+                Me.Close()
+
+            ElseIf reqt2 = False Then
+
+                Dim index As Integer
+                index = e.RowIndex
+                Dim selectedrow As DataGridViewRow
+                selectedrow = dgview.Rows(index)
+
+                With Allocation.dgv
+                    .Rows(rowToEdit).Cells(0).Value = selectedrow.Cells(0).Value.ToString
+                    .Rows(rowToEdit).Cells(1).Value = selectedrow.Cells(1).Value.ToString
+                    .Rows(rowToEdit).Cells(2).Value = selectedrow.Cells(3).Value.ToString
+                    .Rows(rowToEdit).Cells(3).Value = selectedrow.Cells(4).Value.ToString
+                    .Rows(rowToEdit).Cells(4).Value = "0"
+                    .Rows(rowToEdit).Cells(5).Value = selectedrow.Cells(5).Value.ToString
+                    .Rows(rowToEdit).Cells(6).Value = selectedrow.Cells(6).Value.ToString
+                    .CurrentCell = .Rows(rowToEdit).Cells(4)
+                End With
+                check = False
+                Me.Close()
+            End If
+
+
         End If
 
 

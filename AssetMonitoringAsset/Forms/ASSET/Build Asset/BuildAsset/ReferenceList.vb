@@ -25,11 +25,11 @@
 
             If modty = 1 Then
                 With BuildAsset.dgview
-                    .Rows(rowToEdit).Cells(4).Value = selectedrow.Cells(1).Value.ToString
+                    .Rows(rowToEdit).Cells(9).Value = selectedrow.Cells(1).Value.ToString
                 End With
             ElseIf modty = 2 Then
                 With AssetAcquisition.dgview
-                    .Rows(rowToEdit).Cells(4).Value = selectedrow.Cells(1).Value.ToString
+                    .Rows(rowToEdit).Cells(2).Value = selectedrow.Cells(1).Value.ToString
                 End With
             End If
 

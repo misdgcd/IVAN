@@ -22,10 +22,6 @@ Partial Class MasterDataList
         Me.PanelControl1 = New DevExpress.XtraEditors.PanelControl()
         Me.dgv = New System.Windows.Forms.DataGridView()
         Me.PanelControl2 = New DevExpress.XtraEditors.PanelControl()
-        Me.GroupBox2 = New System.Windows.Forms.GroupBox()
-        Me.RadioButton3 = New System.Windows.Forms.RadioButton()
-        Me.RadioButton4 = New System.Windows.Forms.RadioButton()
-        Me.ComboBox3 = New System.Windows.Forms.ComboBox()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.RadioButton1 = New System.Windows.Forms.RadioButton()
         Me.RadioButton2 = New System.Windows.Forms.RadioButton()
@@ -41,7 +37,6 @@ Partial Class MasterDataList
         CType(Me.dgv, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PanelControl2, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.PanelControl2.SuspendLayout()
-        Me.GroupBox2.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
         Me.GroupBox3.SuspendLayout()
         Me.SuspendLayout()
@@ -75,7 +70,6 @@ Partial Class MasterDataList
         '
         'PanelControl2
         '
-        Me.PanelControl2.Controls.Add(Me.GroupBox2)
         Me.PanelControl2.Controls.Add(Me.GroupBox1)
         Me.PanelControl2.Controls.Add(Me.GroupBox3)
         Me.PanelControl2.Controls.Add(Me.Label3)
@@ -85,53 +79,6 @@ Partial Class MasterDataList
         Me.PanelControl2.Name = "PanelControl2"
         Me.PanelControl2.Size = New System.Drawing.Size(1012, 110)
         Me.PanelControl2.TabIndex = 1
-        '
-        'GroupBox2
-        '
-        Me.GroupBox2.Controls.Add(Me.RadioButton3)
-        Me.GroupBox2.Controls.Add(Me.RadioButton4)
-        Me.GroupBox2.Controls.Add(Me.ComboBox3)
-        Me.GroupBox2.Font = New System.Drawing.Font("Arial Rounded MT Bold", 11.25!)
-        Me.GroupBox2.Location = New System.Drawing.Point(788, 6)
-        Me.GroupBox2.Name = "GroupBox2"
-        Me.GroupBox2.Size = New System.Drawing.Size(215, 91)
-        Me.GroupBox2.TabIndex = 34
-        Me.GroupBox2.TabStop = False
-        Me.GroupBox2.Text = "Condition"
-        '
-        'RadioButton3
-        '
-        Me.RadioButton3.AutoSize = True
-        Me.RadioButton3.Font = New System.Drawing.Font("Arial Rounded MT Bold", 11.25!)
-        Me.RadioButton3.Location = New System.Drawing.Point(61, 23)
-        Me.RadioButton3.Name = "RadioButton3"
-        Me.RadioButton3.Size = New System.Drawing.Size(145, 21)
-        Me.RadioButton3.TabIndex = 28
-        Me.RadioButton3.Text = "Select Condition"
-        Me.RadioButton3.UseVisualStyleBackColor = True
-        '
-        'RadioButton4
-        '
-        Me.RadioButton4.AutoSize = True
-        Me.RadioButton4.Checked = True
-        Me.RadioButton4.Font = New System.Drawing.Font("Arial Rounded MT Bold", 11.25!)
-        Me.RadioButton4.Location = New System.Drawing.Point(10, 23)
-        Me.RadioButton4.Name = "RadioButton4"
-        Me.RadioButton4.Size = New System.Drawing.Size(45, 21)
-        Me.RadioButton4.TabIndex = 27
-        Me.RadioButton4.TabStop = True
-        Me.RadioButton4.Text = "All"
-        Me.RadioButton4.UseVisualStyleBackColor = True
-        '
-        'ComboBox3
-        '
-        Me.ComboBox3.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.ComboBox3.Font = New System.Drawing.Font("Arial", 11.25!)
-        Me.ComboBox3.FormattingEnabled = True
-        Me.ComboBox3.Location = New System.Drawing.Point(10, 50)
-        Me.ComboBox3.Name = "ComboBox3"
-        Me.ComboBox3.Size = New System.Drawing.Size(194, 25)
-        Me.ComboBox3.TabIndex = 23
         '
         'GroupBox1
         '
@@ -268,8 +215,6 @@ Partial Class MasterDataList
         CType(Me.PanelControl2, System.ComponentModel.ISupportInitialize).EndInit()
         Me.PanelControl2.ResumeLayout(False)
         Me.PanelControl2.PerformLayout()
-        Me.GroupBox2.ResumeLayout(False)
-        Me.GroupBox2.PerformLayout()
         Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox1.PerformLayout()
         Me.GroupBox3.ResumeLayout(False)
@@ -283,10 +228,6 @@ Partial Class MasterDataList
     Friend WithEvents dgv As DataGridView
     Friend WithEvents TextBox1 As TextBox
     Friend WithEvents Label3 As Label
-    Friend WithEvents GroupBox2 As GroupBox
-    Friend WithEvents RadioButton3 As RadioButton
-    Friend WithEvents RadioButton4 As RadioButton
-    Friend WithEvents ComboBox3 As ComboBox
     Friend WithEvents GroupBox1 As GroupBox
     Friend WithEvents RadioButton1 As RadioButton
     Friend WithEvents RadioButton2 As RadioButton

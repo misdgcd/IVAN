@@ -9,7 +9,7 @@ Public Class UserClass
         Return db.GetTable(Of tblUser)()
     End Function
 
-    Public Shared Sub SaveUser(ByVal uname As String, ByVal pass As String, ByVal empID As Integer)
+    Public Shared Sub SaveUser(ByVal uname As String, ByVal pass As String, ByVal empID As Integer, ByVal cat As String, ByVal type As String)
 
         Dim Status As String = "Active"
         Try
@@ -19,14 +19,16 @@ Public Class UserClass
                     .Username = uname,
                     .Password = pass,
                     .EmployeeID = empID,
-                    .Status = Status
+                    .Status = Status,
+                    .UserCat = cat,
+                    .UserType = type
                 }
 
             post.InsertOnSubmit(p)
             post.Context.SubmitChanges()
             MessageBox.Show("User Account Successfully Recorded.", "Info!", MessageBoxButtons.OK, MessageBoxIcon.Information)
             'After Insert Load View
-            User.viewdg()
+            User.Viewdg()
 
             With UserAdd
                 .TextBox1.Text = String.Empty
@@ -102,7 +104,6 @@ Public Class UserClass
         Dim queryBook = (From p In db.tblUsers
                          Where (p.Username = uname)
                          Select p.Username).Count
-
         Return queryBook
     End Function
 
@@ -128,19 +129,25 @@ Public Class UserClass
                            Join e In db.tblEmployees On e.EmployeeID Equals p.EmployeeID
                            Join b In db.tblBranches On b.BranchID Equals e.BranchID
                            Where (p.Username = uname And p.Password = pass)
-                           Select b.BranchCode).Single
-
-
+                           Select b.BranchCode).SingleOrDefault
         Return querydetail
 
     End Function
+    Public Shared Function FetcBranchID(ByVal uname As String, ByVal pass As String) As String
+        Dim querydetail = (From p In db.tblUsers
+                           Join e In db.tblEmployees On e.EmployeeID Equals p.EmployeeID
+                           Join b In db.tblBranches On b.BranchID Equals e.BranchID
+                           Where (p.Username = uname And p.Password = pass)
+                           Select b.BranchCode).SingleOrDefault
+        Return querydetail
 
+    End Function
     Public Shared Function FetcDepartment(ByVal uname As String, ByVal pass As String) As String
         Dim querydetail = (From p In db.tblUsers
                            Join e In db.tblEmployees On e.EmployeeID Equals p.EmployeeID
                            Join d In db.tblDepartments On d.DepartmentID Equals e.DepartmentID
                            Where (p.Username = uname And p.Password = pass)
-                           Select d.DepartmentCode).Single
+                           Select d.DepartmentCode).SingleOrDefault
 
         Return querydetail
 
@@ -152,7 +159,7 @@ Public Class UserClass
                            Join e In db.tblEmployees On e.EmployeeID Equals p.EmployeeID
                            Join s In db.tblSections On s.SectionID Equals e.SectionID
                            Where (p.Username = uname And p.Password = pass)
-                           Select s.SectionCode).Single
+                           Select s.SectionCode).SingleOrDefault
         Return querydetail
 
     End Function
@@ -160,7 +167,7 @@ Public Class UserClass
     Public Shared Function FetcUserID(ByVal uname As String, ByVal pass As String) As Integer
         Dim querydetail = (From p In db.tblUsers
                            Where (p.Username = uname And p.Password = pass)
-                           Select p.UserID).Single
+                           Select p.UserID).SingleOrDefault
         Return querydetail
 
     End Function
@@ -172,6 +179,49 @@ Public Class UserClass
                            Where p.UserID = user
                            Let g = j.FirstName + " " + j.LastName
                            Select g).SingleOrDefault
+        Return querydetail
+
+    End Function
+
+    Public Shared Function FetcEmployeeID(ByVal UserID As Integer) As Integer
+        Dim querydetail = (From p In db.tblUsers
+                           Where (p.UserID = UserID)
+                           Select p.EmployeeID).SingleOrDefault
+        Return querydetail
+
+    End Function
+
+    Public Shared Function FetcUserType(ByVal Emplid As Integer) As Object
+        Dim querydetail = (From p In db.tblUsers
+                           Where (p.EmployeeID = Emplid)
+                           Select p.UserType).FirstOrDefault
+        Return querydetail
+
+    End Function
+
+    Public Shared Function FetcBranchID(ByVal BranchCode As String) As Integer
+
+        Dim querydetail = (From p In db.tblBranches
+                           Where (p.BranchCode = BranchCode)
+                           Select p.BranchID).SingleOrDefault
+        Return querydetail
+
+    End Function
+
+    Public Shared Function FetcDepartmentID(ByVal DepartmentCode As String) As Integer
+
+        Dim querydetail = (From p In db.tblDepartments
+                           Where (p.DepartmentCode = DepartmentCode)
+                           Select p.DepartmentID).SingleOrDefault
+        Return querydetail
+
+    End Function
+
+    Public Shared Function FetcSectionID(ByVal SectionCode As String) As Integer
+
+        Dim querydetail = (From p In db.tblSections
+                           Where (p.SectionCode = SectionCode)
+                           Select p.SectionID).SingleOrDefault
         Return querydetail
 
     End Function

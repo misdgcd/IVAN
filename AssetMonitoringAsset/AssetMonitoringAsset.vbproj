@@ -54,6 +54,18 @@
     <Reference Include="DevExpress.XtraEditors.v21.2" />
     <Reference Include="DevExpress.Printing.v21.2.Core" />
     <Reference Include="DevExpress.XtraSpellChecker.v21.2, Version=21.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="EPPlus, Version=7.0.4.0, Culture=neutral, PublicKeyToken=ea159fdaa78159a1, processorArchitecture=MSIL">
+      <HintPath>..\packages\EPPlus.7.0.4\lib\net462\EPPlus.dll</HintPath>
+    </Reference>
+    <Reference Include="EPPlus.Interfaces, Version=6.1.1.0, Culture=neutral, PublicKeyToken=a694d7f3b0907a61, processorArchitecture=MSIL">
+      <HintPath>..\packages\EPPlus.Interfaces.6.1.1\lib\net462\EPPlus.Interfaces.dll</HintPath>
+    </Reference>
+    <Reference Include="EPPlus.System.Drawing, Version=6.1.1.0, Culture=neutral, PublicKeyToken=2308d35469c9bac0, processorArchitecture=MSIL">
+      <HintPath>..\packages\EPPlus.System.Drawing.6.1.1\lib\net462\EPPlus.System.Drawing.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.IO.RecyclableMemoryStream, Version=1.4.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.IO.RecyclableMemoryStream.1.4.1\lib\net46\Microsoft.IO.RecyclableMemoryStream.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.ReportViewer.Common, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1586.0\lib\net40\Microsoft.ReportViewer.Common.dll</HintPath>
     </Reference>
@@ -72,9 +84,17 @@
     <Reference Include="Microsoft.SqlServer.Types, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.SqlServer.Types.14.0.314.76\lib\net40\Microsoft.SqlServer.Types.dll</HintPath>
     </Reference>
+    <Reference Include="PresentationCore" />
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.Annotations, Version=4.2.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.ComponentModel.Annotations.5.0.0\lib\net461\System.ComponentModel.Annotations.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Data.Linq" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Threading.Tasks" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -103,8 +123,8 @@
     </Compile>
     <Compile Include="Class\AllocationDetailClass.vb" />
     <Compile Include="Class\AllocationHeaderClass.vb" />
-    <Compile Include="Class\AqRequestDetailClass.vb" />
-    <Compile Include="Class\AqRequestHeaderClass.vb" />
+    <Compile Include="Class\RequestDetailClass.vb" />
+    <Compile Include="Class\RequestHeaderClass.vb" />
     <Compile Include="Class\AssetDetailClass.vb" />
     <Compile Include="Class\AssetHeaderClass.vb" />
     <Compile Include="Class\BranchClass.vb" />
@@ -128,34 +148,82 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DataClasses1.dbml</DependentUpon>
     </Compile>
-    <Compile Include="Forms\Asset Management\Acquisition\AssetAcquisition.Designer.vb">
+    <Compile Include="Forms\Approval\Approval.Designer.vb">
+      <DependentUpon>Approval.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Approval\Approval.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Approval\RequestForApproval.Designer.vb">
+      <DependentUpon>RequestForApproval.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Approval\RequestForApproval.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Asset Management\receive\AssetAcquisition.Designer.vb">
       <DependentUpon>AssetAcquisition.vb</DependentUpon>
     </Compile>
-    <Compile Include="Forms\Asset Management\Acquisition\AssetAcquisition.vb">
+    <Compile Include="Forms\Asset Management\receive\AssetAcquisition.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\Asset Management\Acquisition\Register\AAdetail.Designer.vb">
+    <Compile Include="Forms\Asset Management\receive\Register\AAdetail.Designer.vb">
       <DependentUpon>AAdetail.vb</DependentUpon>
     </Compile>
-    <Compile Include="Forms\Asset Management\Acquisition\Register\AAdetail.vb">
+    <Compile Include="Forms\Asset Management\receive\Register\AAdetail.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\Asset Management\Acquisition\Register\AARegister.Designer.vb">
+    <Compile Include="Forms\Asset Management\receive\Register\AARegister.Designer.vb">
       <DependentUpon>AARegister.vb</DependentUpon>
     </Compile>
-    <Compile Include="Forms\Asset Management\Acquisition\Register\AARegister.vb">
+    <Compile Include="Forms\Asset Management\receive\Register\AARegister.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\Asset Management\Acquisition\Request\AcquisitionRequest.Designer.vb">
-      <DependentUpon>AcquisitionRequest.vb</DependentUpon>
+    <Compile Include="Forms\Asset Management\Request\date1.Designer.vb">
+      <DependentUpon>date1.vb</DependentUpon>
     </Compile>
-    <Compile Include="Forms\Asset Management\Acquisition\Request\AcquisitionRequest.vb">
+    <Compile Include="Forms\Asset Management\Request\date1.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\Asset Management\Acquisition\Request\AssetList3.Designer.vb">
+    <Compile Include="Forms\Asset Management\Request\empllist.Designer.vb">
+      <DependentUpon>empllist.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Asset Management\Request\empllist.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Asset Management\Request\Register\ChngState.Designer.vb">
+      <DependentUpon>ChngState.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Asset Management\Request\Register\ChngState.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Asset Management\Request\Register\Rqregister.Designer.vb">
+      <DependentUpon>Rqregister.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Asset Management\Request\Register\Rqregister.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Asset Management\Request\Request.Designer.vb">
+      <DependentUpon>Request.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Asset Management\Request\Request.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ASSET\AssetList\AssetList3.Designer.vb">
       <DependentUpon>AssetList3.vb</DependentUpon>
     </Compile>
-    <Compile Include="Forms\Asset Management\Acquisition\Request\AssetList3.vb">
+    <Compile Include="Forms\ASSET\AssetList\AssetList3.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Asset Management\receive\Request2.Designer.vb">
+      <DependentUpon>Request2.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Asset Management\receive\Request2.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Asset Management\Request\Register\RequestRegister.Designer.vb">
+      <DependentUpon>RequestRegister.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Asset Management\Request\Register\RequestRegister.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Forms\Asset Management\Transfer\Request\CreateRequest.Designer.vb">
@@ -236,10 +304,10 @@
     <Compile Include="Forms\ASSET\MasterData\masterdatalist\MasterDataList.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\ASSET\MasterData\New Asset Masterdata\NACondition.Designer.vb">
+    <Compile Include="Forms\ASSET\Build Asset\BuildAsset\NACondition.Designer.vb">
       <DependentUpon>NACondition.vb</DependentUpon>
     </Compile>
-    <Compile Include="Forms\ASSET\MasterData\New Asset Masterdata\NACondition.vb">
+    <Compile Include="Forms\ASSET\Build Asset\BuildAsset\NACondition.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Forms\ASSET\MasterData\New Asset Masterdata\NATypeh.Designer.vb">
@@ -318,6 +386,12 @@
       <DependentUpon>RegisterDetail.vb</DependentUpon>
     </Compile>
     <Compile Include="Forms\Asset Management\Assignment\Allocation\Register\RegisterDetail.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\IMPORT\importmasterlist.Designer.vb">
+      <DependentUpon>importmasterlist.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\IMPORT\importmasterlist.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Forms\LoginForm\Login.Designer.vb">
@@ -500,6 +574,12 @@
       <DependentUpon>Application.myapp</DependentUpon>
     </Compile>
     <Compile Include="My Project\AssemblyInfo.vb" />
+    <Compile Include="New_Class\FetchClass.vb" />
+    <Compile Include="New_Class\UpdateClass.vb" />
+    <Compile Include="New_Class\ViewClass.vb" />
+    <None Include="..\.editorconfig">
+      <Link>.editorconfig</Link>
+    </None>
     <None Include="AMSdbDataSet.xsc">
       <DependentUpon>AMSdbDataSet.xsd</DependentUpon>
     </None>
@@ -514,20 +594,44 @@
     <None Include="DataClasses1.dbml.layout">
       <DependentUpon>DataClasses1.dbml</DependentUpon>
     </None>
-    <EmbeddedResource Include="Forms\Asset Management\Acquisition\AssetAcquisition.resx">
+    <EmbeddedResource Include="Forms\Approval\Approval.resx">
+      <DependentUpon>Approval.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Approval\RequestForApproval.resx">
+      <DependentUpon>RequestForApproval.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Asset Management\receive\AssetAcquisition.resx">
       <DependentUpon>AssetAcquisition.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Asset Management\Acquisition\Register\AAdetail.resx">
+    <EmbeddedResource Include="Forms\Asset Management\receive\Register\AAdetail.resx">
       <DependentUpon>AAdetail.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Asset Management\Acquisition\Register\AARegister.resx">
+    <EmbeddedResource Include="Forms\Asset Management\receive\Register\AARegister.resx">
       <DependentUpon>AARegister.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Asset Management\Acquisition\Request\AcquisitionRequest.resx">
-      <DependentUpon>AcquisitionRequest.vb</DependentUpon>
+    <EmbeddedResource Include="Forms\Asset Management\Request\date1.resx">
+      <DependentUpon>date1.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Asset Management\Acquisition\Request\AssetList3.resx">
+    <EmbeddedResource Include="Forms\Asset Management\Request\empllist.resx">
+      <DependentUpon>empllist.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Asset Management\Request\Register\ChngState.resx">
+      <DependentUpon>ChngState.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Asset Management\Request\Register\Rqregister.resx">
+      <DependentUpon>Rqregister.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Asset Management\Request\Request.resx">
+      <DependentUpon>Request.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ASSET\AssetList\AssetList3.resx">
       <DependentUpon>AssetList3.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Asset Management\receive\Request2.resx">
+      <DependentUpon>Request2.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Asset Management\Request\Register\RequestRegister.resx">
+      <DependentUpon>RequestRegister.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Asset Management\Transfer\Request\CreateRequest.resx">
       <DependentUpon>CreateRequest.vb</DependentUpon>
@@ -568,7 +672,7 @@
     <EmbeddedResource Include="Forms\ASSET\MasterData\masterdatalist\MasterDataList.resx">
       <DependentUpon>MasterDataList.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\ASSET\MasterData\New Asset Masterdata\NACondition.resx">
+    <EmbeddedResource Include="Forms\ASSET\Build Asset\BuildAsset\NACondition.resx">
       <DependentUpon>NACondition.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\ASSET\MasterData\New Asset Masterdata\NATypeh.resx">
@@ -610,6 +714,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Asset Management\Assignment\Allocation\Register\RegisterDetail.resx">
       <DependentUpon>RegisterDetail.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\IMPORT\importmasterlist.resx">
+      <DependentUpon>importmasterlist.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\LoginForm\Login.resx">
       <DependentUpon>Login.vb</DependentUpon>

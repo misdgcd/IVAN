@@ -106,13 +106,37 @@ Public Class PositionClass
         Return querysection
     End Function
 
+    Public Shared Function ViewCboxManager() As Object
+        Dim querysection = (From s In db.tblEmployees
+                            Order By s.EmployeeID
+                            Where s.PositionID = 1 Or s.PositionID = 2
+                            Let x = s.EmployeeID.ToString + "-" + s.FirstName + " " + s.LastName
+                            Select x).ToList()
+        Return querysection
+
+
+    End Function
+
+
+    'Public Shared Function FetchManagerID(ByVal Des As String) As Object
+    '    Dim querysection = (
+    '        From s In db.tblEmployees
+    '        Where s.FirstName.Contains(Des)
+    '        Select s.EmployeeID
+    '    ).SingleOrDefault()
+
+    '    Return querysection
+    'End Function
+
+
     Public Shared Function FetchPositionID(ByVal Des As String) As Object
         Dim querysection = (From s In db.tblPositions
                             Where s.PositionDescription.Contains(Des)
-                            Select s.PositionID).Single
+                            Select s.PositionID).FirstOrDefault
 
         Return querysection
     End Function
+
 
 
 

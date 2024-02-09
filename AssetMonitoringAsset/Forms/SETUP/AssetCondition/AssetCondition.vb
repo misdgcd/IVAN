@@ -1,7 +1,7 @@
 ﻿Public Class AssetCondition
     Public ConID As Integer
     Private Sub SimpleButton1_Click(sender As Object, e As EventArgs) Handles SimpleButton1.Click
-        If SimpleButton1.Text = "New Condition" Then
+        If SimpleButton1.Text = "Add" Then
             AssetConditionAddandUpdate.TextBox1.Text = String.Empty
             AssetConditionAddandUpdate.TextBox2.Text = String.Empty
             AssetConditionAddandUpdate.SimpleButton2.Text = "Record"
@@ -14,7 +14,7 @@
     End Sub
 
     Private Sub SimpleButton2_Click(sender As Object, e As EventArgs) Handles SimpleButton2.Click
-        SimpleButton1.Text = "New Condition"
+        SimpleButton1.Text = "Add"
         TextBox1.Text = String.Empty
         TextBox2.Text = String.Empty
     End Sub
@@ -30,7 +30,7 @@
     Private Sub AssetCondition_FormClosing(sender As Object, e As FormClosingEventArgs) Handles MyBase.FormClosing
         TextBox1.Text = String.Empty
         TextBox2.Text = String.Empty
-        SimpleButton1.Text = "New Condition"
+        SimpleButton1.Text = "Add"
     End Sub
 
     Private Sub AssetCondition_Load(sender As Object, e As EventArgs) Handles MyBase.Load

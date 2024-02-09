@@ -31,7 +31,7 @@
 
         ElseIf check = 3 Then
 
-            dgview2.DataSource = InventoryClass.FetchAssetMasterData6(TextBox1.Text)
+            'dgview2.DataSource = InventoryClass.FetchAssetMasterData6(TextBox1.Text)
 
         End If
 

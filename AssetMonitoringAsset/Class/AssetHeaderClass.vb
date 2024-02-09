@@ -57,6 +57,7 @@ Public Class AssetHeaderClass
     End Function
 
 
+
     Public Shared Function FetchEntryID2() As String
         Dim querysection As String = (From s In db.tblAssetHeaders
                                       Order By s.AssetHeaderID Descending
@@ -64,7 +65,7 @@ Public Class AssetHeaderClass
                                       Select s.EntryNumber).FirstOrDefault()
 
         If IsNothing(querysection) Then
-            Dim newEntryID As String = "AA" + "-" + Home.Department + "-" + Home.Branch + "-" + Home.Section + "-" + "000001"
+            Dim newEntryID As String = "RECV" + "-" + Home.Department + "-" + Home.Branch + "-" + Home.Section + "-" + "000001"
             Return newEntryID
         Else
             Dim parts As String() = querysection.Split("-"c)
@@ -73,20 +74,22 @@ Public Class AssetHeaderClass
 
             ' Assuming you want the format "000001" for all values, you can use the following format.
             Dim formattedNextNumber As String = nextNumber.ToString("D6")
-            Dim newEntryID As String = $"{"AA"}-{Home.Department}-{Home.Branch}-{Home.Section}-{formattedNextNumber}"
+            Dim newEntryID As String = $"{"RECV"}-{Home.Department}-{Home.Branch}-{Home.Section}-{formattedNextNumber}"
 
             Return newEntryID
         End If
     End Function
 
+
+
     Public Shared Function FetchAssetMasterData(ByVal Search As String) As Object
-        Dim querysection = (From s In db.tblAssetDetailMasterlists
-                            Join p In db.tblCategories On s.CategoryID Equals p.CategoryID
-                            Join t In db.tblAssetTypes On s.AssetTypeID Equals t.AssetTypeID
-                            Join h In db.tblAssetConditions On s.AssetConditionID Equals h.AssetConditionID
-                            Where s.AssetCode.Contains(Search) Or s.AssetDescription.Contains(Search)
-                            Select s.AssetCode, s.AssetDescription, p.CategoryDescription, t.AssetTypeDescription, h.AssetConditionDescription, s.CategoryID, s.AssetTypeID, s.AssetConditionID, s.AssetID).ToList
-        Return querysection
+        'Dim querysection = (From s In db.tblAssetDetailMasterlists
+        '                    Join p In db.tblCategories On s.CategoryID Equals p.CategoryID
+        '                    Join t In db.tblAssetTypes On s.AssetTypeID Equals t.AssetTypeID
+        '                    Join h In db.tblAssetConditions On s.AssetConditionID Equals h.AssetConditionID
+        '                    Where s.AssetCode.Contains(Search) Or s.AssetDescription.Contains(Search)
+        '                    Select s.AssetCode, s.AssetDescription, p.CategoryDescription, t.AssetTypeDescription, h.AssetConditionDescription, s.CategoryID, s.AssetTypeID, s.AssetConditionID, s.AssetID).ToList
+        'Return querysection
     End Function
 
 
@@ -109,16 +112,7 @@ Public Class AssetHeaderClass
         Return querysection
     End Function
 
-    Public Shared Function Fetchregister1(ByVal entryno As Integer) As Object
-        Dim querysection = (From s In db.tblAssetHeaders
-                            Join f In db.tblAssetDetails On s.AssetHeaderID Equals f.TransHeaderID
-                            Join c In db.tblCategories On f.categoryID Equals c.CategoryID
-                            Join k In db.tblAssetTypes On f.assetTypeID Equals k.AssetTypeID
-                            Join e In db.tblAssetConditions On f.AssetConditionID Equals e.AssetConditionID
-                            Where f.TransHeaderID = entryno
-                            Select f.AssetCode, f.description, c.CategoryDescription, k.AssetTypeDescription, e.AssetConditionDescription, f.Reference, f.Refno, f.Quantity).ToList
-        Return querysection
-    End Function
+
 
 
 

@@ -10,7 +10,7 @@
     End Sub
 
     Private Sub SimpleButton1_Click(sender As Object, e As EventArgs) Handles SimpleButton1.Click
-        If SimpleButton1.Text = "New Position" Then
+        If SimpleButton1.Text = "Add" Then
             AssetPositionAddandUpdate.TextBox1.Text = String.Empty
             AssetPositionAddandUpdate.TextBox2.Text = String.Empty
             AssetPositionAddandUpdate.SimpleButton2.Text = "Record"
@@ -43,7 +43,7 @@
     End Sub
 
     Private Sub SimpleButton2_Click(sender As Object, e As EventArgs) Handles SimpleButton2.Click
-        SimpleButton1.Text = "New Position"
+        SimpleButton1.Text = "Add"
         TextBox1.Text = String.Empty
         TextBox2.Text = String.Empty
     End Sub
@@ -57,7 +57,7 @@
     End Sub
 
     Private Sub AssetPosition_FormClosing(sender As Object, e As FormClosingEventArgs) Handles MyBase.FormClosing
-        SimpleButton1.Text = "New Position"
+        SimpleButton1.Text = "Add"
         TextBox1.Text = String.Empty
         TextBox2.Text = String.Empty
     End Sub

@@ -6,7 +6,7 @@
     End Sub
 
     Private Sub SimpleButton1_Click(sender As Object, e As EventArgs) Handles SimpleButton1.Click
-        If SimpleButton1.Text = "New Department" Then
+        If SimpleButton1.Text = "Add" Then
             AssetDepartmentAddandUpdate.TextBox1.Text = String.Empty
             AssetDepartmentAddandUpdate.TextBox2.Text = String.Empty
             AssetDepartmentAddandUpdate.SimpleButton2.Text = "Record"
@@ -29,7 +29,7 @@
     Private Sub AssetDepartment_FormClosing(sender As Object, e As FormClosingEventArgs) Handles MyBase.FormClosing
         TextBox1.Text = String.Empty
         TextBox2.Text = String.Empty
-        SimpleButton1.Text = "New Department"
+        SimpleButton1.Text = "Add"
     End Sub
 
     Private Sub Dgview_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgview.CellClick
@@ -53,7 +53,7 @@
     End Sub
 
     Private Sub SimpleButton2_Click(sender As Object, e As EventArgs) Handles SimpleButton2.Click
-        SimpleButton1.Text = "New Department"
+        SimpleButton1.Text = "Add"
         TextBox1.Text = String.Empty
         TextBox2.Text = String.Empty
     End Sub

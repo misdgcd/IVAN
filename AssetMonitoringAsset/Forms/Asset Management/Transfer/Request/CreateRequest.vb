@@ -87,13 +87,13 @@
     End Sub
 
     Private Sub SimpleButton1_Click(sender As Object, e As EventArgs) Handles SimpleButton1.Click
-        EmployeeList2.mods = 1
-        EmployeeList2.ShowDialog()
+        EmployeeList4.mods = 1
+        EmployeeList4.ShowDialog()
     End Sub
 
     Private Sub SimpleButton2_Click(sender As Object, e As EventArgs) Handles SimpleButton2.Click
-        EmployeeList2.mods = 3
-        EmployeeList2.ShowDialog()
+        EmployeeList4.mods = 3
+        EmployeeList4.ShowDialog()
     End Sub
 
     Private Sub CreateRequest_FormClosing(sender As Object, e As FormClosingEventArgs) Handles MyBase.FormClosing

@@ -1,4 +1,4 @@
-﻿Public Class EmployeeList2
+﻿Public Class EmployeeList4
 
     Public mods As Integer
     Private Sub EmployeeList2_Load(sender As Object, e As EventArgs) Handles MyBase.Load
@@ -46,9 +46,9 @@
                 With Allocation
 
                     .TextBox1.Text = selectedrow.Cells(1).Value.ToString + " " + selectedrow.Cells(2).Value.ToString
-                    .TextBox3.Text = selectedrow.Cells(3).Value.ToString
-                    .TextBox2.Text = selectedrow.Cells(4).Value.ToString
-                    .TextBox5.Text = selectedrow.Cells(5).Value.ToString
+                    '.TextBox3.Text = selectedrow.Cells(3).Value.ToString
+                    '.TextBox2.Text = selectedrow.Cells(4).Value.ToString
+                    '.TextBox5.Text = selectedrow.Cells(5).Value.ToString
 
                     .branID = Integer.Parse(selectedrow.Cells(6).Value.ToString)
                     .depID = Integer.Parse(selectedrow.Cells(7).Value.ToString)
@@ -70,19 +70,19 @@
 
             ElseIf mods = 4 Then
 
-                With AcquisitionRequest
+                'With Request
 
-                    .TextBox4.Text = selectedrow.Cells(1).Value.ToString + " " + selectedrow.Cells(2).Value.ToString
-                    .TextBox5.Text = selectedrow.Cells(3).Value.ToString
-                    .TextBox6.Text = selectedrow.Cells(4).Value.ToString
-                    .TextBox7.Text = selectedrow.Cells(5).Value.ToString
+                '    .TextBox4.Text = selectedrow.Cells(1).Value.ToString + " " + selectedrow.Cells(2).Value.ToString
+                '    .TextBox5.Text = selectedrow.Cells(3).Value.ToString
+                '    .TextBox6.Text = selectedrow.Cells(4).Value.ToString
+                '    .TextBox7.Text = selectedrow.Cells(5).Value.ToString
 
-                    .branID = Integer.Parse(selectedrow.Cells(6).Value.ToString)
-                    .depID = Integer.Parse(selectedrow.Cells(7).Value.ToString)
-                    .SecID = Integer.Parse(selectedrow.Cells(8).Value.ToString)
-                    .EmpID = Integer.Parse(selectedrow.Cells(0).Value.ToString)
+                '    .branID = Integer.Parse(selectedrow.Cells(6).Value.ToString)
+                '    .depID = Integer.Parse(selectedrow.Cells(7).Value.ToString)
+                '    .SecID = Integer.Parse(selectedrow.Cells(8).Value.ToString)
+                '    .EmpID = Integer.Parse(selectedrow.Cells(0).Value.ToString)
 
-                End With
+                'End With
 
             End If
 

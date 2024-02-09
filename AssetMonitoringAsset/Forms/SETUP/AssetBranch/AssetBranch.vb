@@ -1,7 +1,7 @@
 ﻿Public Class AssetBranch
     Public BranID As Integer
     Private Sub SimpleButton1_Click(sender As Object, e As EventArgs) Handles SimpleButton1.Click
-        If SimpleButton1.Text = "New Branch" Then
+        If SimpleButton1.Text = "Add" Then
 
 
             AssetBranchAddandUpdate1.TextBox1.Text = String.Empty
@@ -49,7 +49,7 @@
     End Sub
 
     Private Sub SimpleButton2_Click(sender As Object, e As EventArgs) Handles SimpleButton2.Click
-        SimpleButton1.Text = "New Branch"
+        SimpleButton1.Text = "Add"
         TextBox1.Text = String.Empty
         TextBox2.Text = String.Empty
     End Sub
@@ -57,7 +57,7 @@
     Private Sub AssetBranch_FormClosing(sender As Object, e As FormClosingEventArgs) Handles MyBase.FormClosing
         TextBox1.Text = String.Empty
         TextBox2.Text = String.Empty
-        SimpleButton1.Text = "New Branch"
+        SimpleButton1.Text = "Add"
     End Sub
 
     Private Sub AssetBranch_KeyDown(sender As Object, e As KeyEventArgs) Handles MyBase.KeyDown

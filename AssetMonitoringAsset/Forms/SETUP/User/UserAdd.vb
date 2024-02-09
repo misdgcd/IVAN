@@ -6,6 +6,8 @@
     End Sub
 
     Private Sub SimpleButton1_Click(sender As Object, e As EventArgs) Handles SimpleButton1.Click
+
+        EmployeeList.modty = 2
         EmployeeList.ShowDialog()
     End Sub
 
@@ -22,7 +24,7 @@
                     TextBox1.Text = ""
                     TextBox2.Text = ""
                 Else
-                    UserClass.SaveUser(TextBox1.Text, TextBox2.Text, EmpID)
+                    UserClass.SaveUser(TextBox1.Text, TextBox2.Text, EmpID, ComboBox2.Text, ComboBox1.Text)
                 End If
 
             End If

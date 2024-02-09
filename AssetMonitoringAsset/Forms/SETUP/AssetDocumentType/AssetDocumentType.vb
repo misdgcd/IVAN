@@ -10,7 +10,7 @@
     End Sub
 
     Private Sub SimpleButton1_Click(sender As Object, e As EventArgs) Handles SimpleButton1.Click
-        If SimpleButton1.Text = "New Doc. Type" Then
+        If SimpleButton1.Text = "Add" Then
             AssetDocTypeAddandUpdate.TextBox1.Text = String.Empty
             AssetDocTypeAddandUpdate.TextBox2.Text = String.Empty
             AssetDocTypeAddandUpdate.SimpleButton2.Text = "Record"
@@ -49,11 +49,11 @@
     Private Sub AssetDocumentType_FormClosing(sender As Object, e As FormClosingEventArgs) Handles MyBase.FormClosing
         TextBox1.Text = String.Empty
         TextBox2.Text = String.Empty
-        SimpleButton1.Text = "New Doc. Type"
+        SimpleButton1.Text = "Add"
     End Sub
 
     Private Sub SimpleButton2_Click(sender As Object, e As EventArgs) Handles SimpleButton2.Click
-        SimpleButton1.Text = "New Doc. Type"
+        SimpleButton1.Text = "Add"
         TextBox1.Text = String.Empty
         TextBox2.Text = String.Empty
     End Sub

@@ -1,5 +1,5 @@
 ﻿Public Class Details
-
+    Public ac As String = ""
     Public code As String = ""
     Private Sub Details_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         display()
@@ -8,7 +8,30 @@
 
 
     Public Sub display()
-        dgv.DataSource = InventoryClass.ViewInventoryDetails(code, TextBox1.Text, ComboBox1.Text, ComboBox2.Text)
+
+        If Home.UserType = "ADMIN" Then
+            dgv.DataSource = InventoryClass.ViewInventoryDetails(Integer.Parse(ac))
+
+            With dgv
+                .Columns(0).HeaderText = "Property Code"
+                .Columns(1).HeaderText = "Description"
+                .Columns(2).HeaderText = "Quantity"
+                .Columns(3).HeaderText = "Department"
+                .Columns(4).HeaderText = "Branch"
+                .Columns(5).HeaderText = "Section"
+                .Columns(6).HeaderText = "Keeper"
+                .Columns(7).HeaderText = "Owner"
+            End With
+
+        ElseIf Home.UserType = "BPC" Then
+
+        ElseIf Home.UserType = "SPC" Then
+
+        ElseIf Home.UserType = "DPC" Then
+
+        End If
+
+
     End Sub
 
     Private Sub Details_KeyDown(sender As Object, e As KeyEventArgs) Handles MyBase.KeyDown

@@ -5,12 +5,12 @@
 
 
     Private Sub display()
-        dgv.DataSource = MasterdataDetailsClass.Fetchrlist(TextBox1.Text, ComboBox1.Text, ComboBox2.Text, ComboBox3.Text)
-        dgv.Columns(0).HeaderText = "Asset Code"
-        dgv.Columns(1).HeaderText = "Description"
-        dgv.Columns(2).HeaderText = "Category"
-        dgv.Columns(3).HeaderText = "Asset Type"
-        dgv.Columns(4).HeaderText = "Condition"
+        dgv.DataSource = MasterdataDetailsClass.Fetchmasterdata(TextBox1.Text, ComboBox1.Text, ComboBox2.Text)
+        'dgv.Columns(0).HeaderText = "Asset Code"
+        'dgv.Columns(1).HeaderText = "Description"
+        'dgv.Columns(2).HeaderText = "Category"
+        'dgv.Columns(3).HeaderText = "Asset Type"
+        'dgv.Columns(4).HeaderText = "Condition"
     End Sub
 
     Private Sub RadioButton5_CheckedChanged(sender As Object, e As EventArgs) Handles RadioButton5.CheckedChanged
@@ -35,20 +35,16 @@
         End If
     End Sub
 
-    Private Sub RadioButton3_CheckedChanged(sender As Object, e As EventArgs) Handles RadioButton3.CheckedChanged
+    Private Sub RadioButton3_CheckedChanged(sender As Object, e As EventArgs)
 
-        If RadioButton3.Checked = True Then
-            ComboBox3.DataSource = ConditionClass.ViewCboxCon
-            RadioButton4.Checked = False
-            ComboBox3.Enabled = True
-        End If
+
     End Sub
 
     Private Sub ComboBox2_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ComboBox2.SelectedIndexChanged
         display()
     End Sub
 
-    Private Sub ComboBox3_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ComboBox3.SelectedIndexChanged
+    Private Sub ComboBox3_SelectedIndexChanged(sender As Object, e As EventArgs)
         display()
     End Sub
 
@@ -72,12 +68,8 @@
         End If
     End Sub
 
-    Private Sub RadioButton4_CheckedChanged(sender As Object, e As EventArgs) Handles RadioButton4.CheckedChanged
-        If RadioButton4.Checked = True Then
-            ComboBox3.DataSource = Nothing
-            ComboBox3.Enabled = False
-            RadioButton3.Checked = False
-        End If
+    Private Sub RadioButton4_CheckedChanged(sender As Object, e As EventArgs)
+
     End Sub
 
     Private Sub MasterDataList_KeyDown(sender As Object, e As KeyEventArgs) Handles MyBase.KeyDown
@@ -85,7 +77,7 @@
             Me.Close()
             TextBox1.Text = String.Empty
             RadioButton6.Checked = True
-            RadioButton4.Checked = True
+
             RadioButton2.Checked = True
         End If
     End Sub
@@ -94,7 +86,7 @@
 
         TextBox1.Text = String.Empty
         RadioButton6.Checked = True
-        RadioButton4.Checked = True
+
         RadioButton2.Checked = True
     End Sub
 End Class

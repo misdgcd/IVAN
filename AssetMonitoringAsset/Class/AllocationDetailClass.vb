@@ -31,12 +31,12 @@ Public Class AllocationDetailClass
 
 
     Public Shared Function Fetchregister1(ByVal entryno As Integer) As Object
-        Dim querysection = (From s In db.tblAllocationDetails
-                            Join g In db.tblAssetDetailMasterlists On s.AssetId Equals g.AssetID
-                            Join h In db.tblAssetInventories On s.InvID Equals h.InvID
-                            Where s.Allocationheaderid = entryno
-                            Select g.AssetCode, g.AssetDescription, h.Reference, h.ReferenceNUmber, s.qty).ToList
-        Return querysection
+        'Dim querysection = (From s In db.tblAllocationDetails
+        '                    Join g In db.tblAssetDetailMasterlists On s.AssetId Equals g.AssetID
+        '                    Join h In db.tblAssetInventories On s.InvID Equals h.InvID
+        '                    Where s.Allocationheaderid = entryno
+        '                    Select g.AssetCode, g.AssetDescription, h.Reference, h.ReferenceNUmber, s.qty).ToList
+        'Return querysection
     End Function
 
 

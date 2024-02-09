@@ -10,7 +10,6 @@
     Private Sub display()
         dgview2.DataSource = AssetHeaderClass.FetchAssetMasterData(TextBox1.Text)
 
-
         With dgview2
             .Columns(0).HeaderText = "Asset Code"
             .Columns(1).HeaderText = "Asset Description"
@@ -23,10 +22,6 @@
             .Columns(7).Visible = False
             .Columns(8).Visible = False
         End With
-    End Sub
-
-    Private Sub TextB()
-
 
     End Sub
 

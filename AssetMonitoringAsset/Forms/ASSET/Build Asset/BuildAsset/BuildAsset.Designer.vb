@@ -112,6 +112,7 @@ Partial Class BuildAsset
         Me.Label2.Size = New System.Drawing.Size(15, 17)
         Me.Label2.TabIndex = 7
         Me.Label2.Text = "*"
+        Me.Label2.Visible = False
         '
         'PanelControl1
         '

@@ -23,16 +23,12 @@
         End If
 
 
-        InventoryClass.ViewInventory(TextBox1.Text, fltr)
-
+        InventoryClass.ViewInventory()
 
         With dgv
             .Columns(0).HeaderText = "Asset Code"
             .Columns(1).HeaderText = "Description"
-            .Columns(2).HeaderText = "Available Quantity"
-            .Columns(3).HeaderText = "Used Quantity"
-            .Columns(4).HeaderText = "Total Quantity"
-
+            .Columns(2).HeaderText = "Quantity"
         End With
     End Sub
 
@@ -63,12 +59,15 @@
             Dim selectedrow As DataGridViewRow
             selectedrow = dgv.Rows(index)
             With Details
-                .code = selectedrow.Cells(0).Value.ToString
+                .ac = selectedrow.Cells(0).Value.ToString
                 .ShowDialog()
             End With
+
+
         Catch ex As Exception
 
         End Try
+
 
     End Sub
 

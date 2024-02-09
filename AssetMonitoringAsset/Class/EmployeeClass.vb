@@ -9,7 +9,7 @@ Public Class EmployeeClass
         Return db.GetTable(Of tblEmployee)()
     End Function
 
-    Public Shared Sub SaveEmployee(ByVal fname As String, ByVal lname As String, ByVal BranchID As Integer, ByVal DepID As Integer, ByVal PID As Integer, ByVal SecID As Integer)
+    Public Shared Sub SaveEmployee(ByVal fname As String, ByVal lname As String, ByVal BranchID As Integer, ByVal DepID As Integer, ByVal PID As Integer, ByVal SecID As Integer, ByVal manager As Integer, ByVal compny As String)
         'Try
         Dim user As Integer = Home.UserID
         Dim currentdate As Date = DateTime.Now.Date()
@@ -24,7 +24,9 @@ Public Class EmployeeClass
                     .PositionID = PID,
                     .SectionID = SecID,
                     .AddbyUserID = user,
-                    .Datecreated = currentdate
+                    .Datecreated = currentdate,
+                    .Manager = manager,
+                    .Company = compny
                 }
 
         post.InsertOnSubmit(p)
@@ -50,19 +52,20 @@ Public Class EmployeeClass
             With Employee.dgview
 
                 'soure for viewing
-                .DataSource = db.spViewEmployee(Search, Bra, Dep, Pos, Sec)
+                .DataSource = db.spViewEmployee(Search, Bra, Dep, Sec, Pos)
                 'hide column 0
 
                 'set column name
                 .Columns(0).HeaderText = "Employee ID"
                 .Columns(1).HeaderText = "First Name"
                 .Columns(2).HeaderText = "Last Name"
-                .Columns(3).HeaderText = "Branch"
-                .Columns(4).HeaderText = "Department"
-                .Columns(5).HeaderText = "Position"
-                .Columns(6).HeaderText = "Section"
-                .Columns(7).HeaderText = "Date Added"
-
+                .Columns(3).HeaderText = "Department"
+                .Columns(4).HeaderText = "Branch"
+                .Columns(5).HeaderText = "Section"
+                .Columns(6).HeaderText = "Position"
+                .Columns(7).HeaderText = "Manager"
+                .Columns(8).HeaderText = "Company"
+                .Columns(9).HeaderText = "Date Added"
                 'set column Width
                 '.dgview.Columns(1).Width = 100
                 '.dgview.Columns(3).Width = 125
@@ -79,35 +82,35 @@ Public Class EmployeeClass
 
 
 
-    Public Shared Sub UpdateEmployee(ByVal typeid As Integer, ByVal fname As String, ByVal lname As String, ByVal BranchID As Integer, ByVal DepID As Integer, ByVal PID As Integer, ByVal SecID As Integer)
+    Public Shared Sub UpdateEmployee(ByVal typeid As Integer, ByVal fname As String, ByVal lname As String, ByVal BranchID As Integer, ByVal DepID As Integer, ByVal PID As Integer, ByVal SecID As Integer, ByVal manager As Integer, ByVal compny As String)
         Try
 
             Dim user As Integer = Home.UserID
             Dim currentdate As Date = DateTime.Now.Date()
-            'Insert Asset in DB
-            db.spUpdateEmployee(typeid, StrConv(fname, VbStrConv.ProperCase), StrConv(lname, VbStrConv.ProperCase), BranchID, DepID, PID, SecID)
-            MessageBox.Show("Branch Successfully Updated.", "Info!", MessageBoxButtons.OK, MessageBoxIcon.Information)
+        'Insert Asset in DB
+        db.spUpdateEmployee(typeid, StrConv(fname, VbStrConv.ProperCase), StrConv(lname, VbStrConv.ProperCase), BranchID, DepID, PID, SecID, manager, compny)
+        MessageBox.Show("Branch Successfully Updated.", "Info!", MessageBoxButtons.OK, MessageBoxIcon.Information)
             'After Insert Load View
 
-            With Login
-                .loaddetails()
-            End With
+            'With Login
+            '    .loaddetails()
+            'End With
             With Employee
-                .viewEmployee()
-                .TextBox1.Text = String.Empty
-                .TextBox3.Text = String.Empty
-                .Label5.Text = ""
-                .SimpleButton2.Visible = False
-            End With
+            .viewEmployee()
+            .TextBox1.Text = String.Empty
 
-            With EmployeeAddandUpdate
-                .TextBox1.Text = String.Empty
-                .TextBox2.Text = String.Empty
-                .Close()
-            End With
+            .Label5.Text = ""
+            .SimpleButton2.Visible = False
+        End With
+
+        With EmployeeAddandUpdate
+            .TextBox1.Text = String.Empty
+            .TextBox2.Text = String.Empty
+            .Close()
+        End With
 
         Catch ex As Exception
-            MsgBox("Invalid Data...")
+        MsgBox("Invalid Data...")
         End Try
     End Sub
 
@@ -119,6 +122,25 @@ Public Class EmployeeClass
                             Select s.EmployeeID, s.FirstName, s.LastName).ToList
         Return querysection
     End Function
+
+    Public Shared Function ViewEmployeeList4(ByVal branch As Integer, ByVal dept As Integer, ByVal section As Integer, ByVal search As String) As Object
+        Dim querysection = (From s In db.tblEmployees
+                            Where (s.BranchID = branch AndAlso s.DepartmentID = dept AndAlso s.SectionID = section) And s.FirstName.Contains(search) Or s.LastName.Contains(search) Or (s.FirstName + " " + s.LastName).Contains(search)
+                            Order By s.EmployeeID
+                            Let g = s.FirstName + " " + s.LastName
+                            Select s.EmployeeID, g).ToList
+        Return querysection
+    End Function
+
+    Public Shared Function ViewEmployeeList5(ByVal search As String) As Object
+        Dim querysection = (From s In db.tblEmployees
+                            Where s.FirstName.Contains(search) Or s.LastName.Contains(search) Or (s.FirstName + " " + s.LastName).Contains(search)
+                            Order By s.EmployeeID
+                            Let g = s.FirstName + " " + s.LastName
+                            Select s.EmployeeID, g).ToList
+        Return querysection
+    End Function
+
 
     Public Shared Function FetchEmCount(ByVal fname As String, ByVal lname As String) As Integer
         Dim count As Integer = (From s In db.tblEmployees
@@ -138,6 +160,8 @@ Public Class EmployeeClass
                             Select s.EmployeeID, s.FirstName, s.LastName, p.BranchDescription, l.DepartmentDescription, g.SectionDecription, p.BranchID, l.DepartmentID, g.SectionID).ToList
         Return querysection
     End Function
+
+
 
 
 

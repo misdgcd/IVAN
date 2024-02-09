@@ -90,14 +90,14 @@ Public Class MasterdataHeaderClass
     End Function
 
     Public Shared Function Fetchregister(ByVal entryno As String) As Object
-        Dim querysection = (From s In db.tblAssetHeaderMasterlists
-                            Join f In db.tblAssetDetailMasterlists On s.AssetHeaderID Equals f.AssetHeaderID
-                            Join c In db.tblCategories On f.CategoryID Equals c.CategoryID
-                            Join k In db.tblAssetTypes On f.AssetTypeID Equals k.AssetTypeID
-                            Join e In db.tblAssetConditions On f.AssetConditionID Equals e.AssetConditionID
-                            Where s.EntryNumber.Contains(entryno)
-                            Select f.AssetCode, f.AssetDescription, c.CategoryDescription, k.AssetTypeDescription, e.AssetConditionDescription).ToList()
-        Return querysection
+        'Dim querysection = (From s In db.tblAssetHeaderMasterlists
+        '                    Join f In db.tblAssetDetailMasterlists On s.AssetHeaderID Equals f.AssetHeaderID
+        '                    Join c In db.tblCategories On f.CategoryID Equals c.CategoryID
+        '                    Join k In db.tblAssetTypes On f.AssetTypeID Equals k.AssetTypeID
+        '                    Join e In db.tblAssetConditions On f.AssetConditionID Equals e.AssetConditionID
+        '                    Where s.EntryNumber.Contains(entryno)
+        '                    Select f.AssetCode, f.AssetDescription, c.CategoryDescription, k.AssetTypeDescription, e.AssetConditionDescription).ToList()
+        'Return querysection
     End Function
 
 

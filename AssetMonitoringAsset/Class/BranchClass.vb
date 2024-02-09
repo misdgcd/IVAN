@@ -99,7 +99,7 @@ Public Class BranchClass
     Public Shared Function FetchBranchID(ByVal Des As String) As Object
         Dim querysection = (From s In db.tblBranches
                             Where s.BranchDescription.Contains(Des)
-                            Select s.BranchID).Single
+                            Select s.BranchID).FirstOrDefault
 
         Return querysection
     End Function

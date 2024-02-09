@@ -92,11 +92,11 @@ Partial Class User
         Me.SimpleButton2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.SimpleButton2.ImageOptions.Image = CType(resources.GetObject("SimpleButton2.ImageOptions.Image"), System.Drawing.Image)
         Me.SimpleButton2.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.TopCenter
-        Me.SimpleButton2.Location = New System.Drawing.Point(672, 62)
+        Me.SimpleButton2.Location = New System.Drawing.Point(646, 62)
         Me.SimpleButton2.Name = "SimpleButton2"
         Me.SimpleButton2.ShowFocusRectangle = DevExpress.Utils.DefaultBoolean.[False]
         Me.SimpleButton2.ShowToolTips = False
-        Me.SimpleButton2.Size = New System.Drawing.Size(76, 67)
+        Me.SimpleButton2.Size = New System.Drawing.Size(88, 67)
         Me.SimpleButton2.TabIndex = 38
         Me.SimpleButton2.Text = "UPDATE"
         Me.SimpleButton2.Visible = False
@@ -252,9 +252,9 @@ Partial Class User
         Me.SimpleButton1.Appearance.Options.UseFont = True
         Me.SimpleButton1.ImageOptions.Image = CType(resources.GetObject("SimpleButton1.ImageOptions.Image"), System.Drawing.Image)
         Me.SimpleButton1.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.TopCenter
-        Me.SimpleButton1.Location = New System.Drawing.Point(754, 62)
+        Me.SimpleButton1.Location = New System.Drawing.Point(740, 62)
         Me.SimpleButton1.Name = "SimpleButton1"
-        Me.SimpleButton1.Size = New System.Drawing.Size(76, 67)
+        Me.SimpleButton1.Size = New System.Drawing.Size(90, 67)
         Me.SimpleButton1.TabIndex = 4
         Me.SimpleButton1.Text = "ADD"
         '

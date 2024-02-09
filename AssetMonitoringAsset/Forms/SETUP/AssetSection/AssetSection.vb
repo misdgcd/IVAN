@@ -1,7 +1,7 @@
 ﻿Public Class AssetSection
     Public SecID As Integer
     Private Sub SimpleButton1_Click(sender As Object, e As EventArgs) Handles SimpleButton1.Click
-        If SimpleButton1.Text = "New Section" Then
+        If SimpleButton1.Text = "Add" Then
             AssetSectionAddandUpdate1.TextBox1.Text = String.Empty
             AssetSectionAddandUpdate1.TextBox2.Text = String.Empty
             AssetSectionAddandUpdate1.SimpleButton2.Text = "Record"
@@ -22,7 +22,7 @@
     End Sub
 
     Private Sub SimpleButton2_Click(sender As Object, e As EventArgs) Handles SimpleButton2.Click
-        SimpleButton1.Text = "New Section"
+        SimpleButton1.Text = "Add"
         TextBox1.Text = String.Empty
         TextBox2.Text = String.Empty
     End Sub
@@ -60,7 +60,7 @@
     End Sub
 
     Private Sub AssetSection_FormClosing(sender As Object, e As FormClosingEventArgs) Handles MyBase.FormClosing
-        SimpleButton1.Text = "New Section"
+        SimpleButton1.Text = "Add"
         TextBox1.Text = String.Empty
         TextBox2.Text = String.Empty
     End Sub

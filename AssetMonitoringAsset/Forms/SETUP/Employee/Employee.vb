@@ -1,11 +1,20 @@
 ﻿Public Class Employee
-    Private Sub SimpleButton1_Click(sender As Object, e As EventArgs) Handles SimpleButton1.Click
 
-        With EmployeeAddandUpdate
-            .TextBox1.Text = ""
-            .TextBox2.Text = ""
-        End With
-        EmployeeAddandUpdate.ShowDialog()
+    Public updatethis As Boolean = False
+
+    Private Sub SimpleButton1_Click(sender As Object, e As EventArgs) Handles SimpleButton1.Click
+        If TextBox1.Text = "" Then
+
+            With EmployeeAddandUpdate
+                .TextBox1.Text = ""
+                .TextBox2.Text = ""
+            End With
+            EmployeeAddandUpdate.ShowDialog()
+        Else
+
+
+        End If
+
     End Sub
 
     Private Sub Employee_Load(sender As Object, e As EventArgs) Handles MyBase.Load
@@ -14,7 +23,7 @@
 
 
     Public Sub viewEmployee()
-        EmployeeClass.ViewEmployee(TextBox2.Text, ComboBox1.Text, ComboBox2.Text, ComboBox4.Text, ComboBox3.Text)
+        EmployeeClass.ViewEmployee(TextBox2.Text, ComboBox1.Text, ComboBox2.Text, ComboBox3.Text, ComboBox4.Text)
 
     End Sub
 
@@ -29,17 +38,22 @@
             index = e.RowIndex
             Dim selectedrow As DataGridViewRow
             selectedrow = dgview.Rows(index)
-            TextBox1.Text = selectedrow.Cells(1).Value.ToString
-            TextBox3.Text = selectedrow.Cells(2).Value.ToString
+            TextBox1.Text = selectedrow.Cells(1).Value.ToString + " " + selectedrow.Cells(2).Value.ToString
             Label5.Text = selectedrow.Cells(0).Value.ToString
             'DepID = CInt(selectedrow.Cells(0).Value)
             SimpleButton2.Visible = True
+            SimpleButton3.Visible = True
 
             With EmployeeAddandUpdate
+
                 .TextBox1.Text = selectedrow.Cells(1).Value.ToString
                 .TextBox2.Text = selectedrow.Cells(2).Value.ToString
+                .ComboBox2.Text = selectedrow.Cells(3).Value.ToString
+
                 .updateID = Integer.Parse(Label5.Text)
+
             End With
+            SimpleButton1.Enabled = False
         Catch ex As Exception
 
         End Try
@@ -50,6 +64,7 @@
     End Sub
 
     Private Sub SimpleButton2_Click(sender As Object, e As EventArgs) Handles SimpleButton2.Click
+        SimpleButton1.Enabled = False
         With EmployeeAddandUpdate
             .Text = "Update"
             .SimpleButton1.Text = "Save"
@@ -149,9 +164,23 @@
         If e.KeyCode = Keys.Escape Then
             Me.Close()
             TextBox1.Text = String.Empty
-            TextBox3.Text = String.Empty
+
             Label5.Text = "*"
             TextBox2.Text = String.Empty
         End If
+    End Sub
+
+    Private Sub SimpleButton3_Click(sender As Object, e As EventArgs) Handles SimpleButton3.Click
+        With EmployeeAddandUpdate
+            .Text = "Add"
+            .SimpleButton1.Text = "Record"
+        End With
+        SimpleButton1.Enabled = True
+        TextBox1.Text = String.Empty
+        SimpleButton2.Visible = False
+        SimpleButton3.Visible = False
+        Label5.Text = "*"
+        TextBox2.Text = String.Empty
+        SimpleButton2.Visible = False
     End Sub
 End Class

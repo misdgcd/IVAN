@@ -14,7 +14,7 @@ Option Explicit On
 
 
 <Global.System.Runtime.CompilerServices.CompilerGeneratedAttribute(),  _
- Global.System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Editors.SettingsDesigner.SettingsSingleFileGenerator", "16.0.0.0"),  _
+ Global.System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Editors.SettingsDesigner.SettingsSingleFileGenerator", "16.10.0.0"),  _
  Global.System.ComponentModel.EditorBrowsableAttribute(Global.System.ComponentModel.EditorBrowsableState.Advanced)>  _
 Partial Friend NotInheritable Class Settings
     Inherits Global.System.Configuration.ApplicationSettingsBase
@@ -61,6 +61,49 @@ Partial Friend NotInheritable Class Settings
     Public ReadOnly Property AMSdbConnectionString() As String
         Get
             Return CType(Me("AMSdbConnectionString"),String)
+        End Get
+    End Property
+    
+    <Global.System.Configuration.ApplicationScopedSettingAttribute(),  _
+     Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+     Global.System.Configuration.SpecialSettingAttribute(Global.System.Configuration.SpecialSetting.ConnectionString),  _
+     Global.System.Configuration.DefaultSettingValueAttribute("Data Source=172.16.4.111;Initial Catalog=AMSdb;Persist Security Info=True;User ID"& _ 
+        "=HSDPI;Password=123456$hsdp")>  _
+    Public ReadOnly Property AMSdbConnectionString1() As String
+        Get
+            Return CType(Me("AMSdbConnectionString1"),String)
+        End Get
+    End Property
+    
+    <Global.System.Configuration.ApplicationScopedSettingAttribute(),  _
+     Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+     Global.System.Configuration.SpecialSettingAttribute(Global.System.Configuration.SpecialSetting.ConnectionString),  _
+     Global.System.Configuration.DefaultSettingValueAttribute("Data Source=HSDP_SYS_DEV;Initial Catalog=AMSdb;Integrated Security=True")>  _
+    Public ReadOnly Property AMSdbConnectionString2() As String
+        Get
+            Return CType(Me("AMSdbConnectionString2"),String)
+        End Get
+    End Property
+    
+    <Global.System.Configuration.ApplicationScopedSettingAttribute(),  _
+     Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+     Global.System.Configuration.SpecialSettingAttribute(Global.System.Configuration.SpecialSetting.ConnectionString),  _
+     Global.System.Configuration.DefaultSettingValueAttribute("Data Source=172.16.10.218;Initial Catalog=AMSdb;Persist Security Info=True;User I"& _ 
+        "D=HSDPI;Password=123456$hsdp")>  _
+    Public ReadOnly Property AMSdbConnectionString3() As String
+        Get
+            Return CType(Me("AMSdbConnectionString3"),String)
+        End Get
+    End Property
+    
+    <Global.System.Configuration.ApplicationScopedSettingAttribute(),  _
+     Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+     Global.System.Configuration.SpecialSettingAttribute(Global.System.Configuration.SpecialSetting.ConnectionString),  _
+     Global.System.Configuration.DefaultSettingValueAttribute("Data Source=172.16.10.218;Initial Catalog=AMSdb;Persist Security Info=True;User I"& _ 
+        "D=HSDPI")>  _
+    Public ReadOnly Property AMSdbConnectionString4() As String
+        Get
+            Return CType(Me("AMSdbConnectionString4"),String)
         End Get
     End Property
 End Class
