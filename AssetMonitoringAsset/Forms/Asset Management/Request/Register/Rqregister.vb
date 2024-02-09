@@ -14,7 +14,7 @@
 
         If Rtype = "Procure" Then
             'DISPLAY IF THE REQUEST TYPE IS PROCUREMENT
-            ViewClass.FetchRegisterDetail(headerid, Rtype)
+            ViewClass.FetchRegisterDetail1(headerid, Rtype)
 
             'dgv.Enabled = True
             With dgv
@@ -24,6 +24,7 @@
                 .Columns(4).HeaderText = "Quantity"
                 .Columns(5).HeaderText = "Remarks"
                 .Columns(6).HeaderText = "State"
+                .Columns(7).HeaderText = "Available"
                 .Columns(0).Visible = False
                 .ReadOnly = True
             End With
@@ -98,8 +99,9 @@
     End Sub
 
     Private Sub SimpleButton3_Click(sender As Object, e As EventArgs) Handles SimpleButton1.Click
-        'With Assignment
-        '    .Show()
-        'End With
+        With Assignment1
+            .headerid = headerid
+            .Show()
+        End With
     End Sub
 End Class

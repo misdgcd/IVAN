@@ -147,7 +147,7 @@
 
                 fordgvclearing()
                 Displaydg()
-                SimpleButton3.Visible = False
+
                 SimpleButton1.Text = "Record"
             End If
 

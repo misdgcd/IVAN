@@ -127,7 +127,6 @@ Partial Class Home
         'AccordionControlElement35
         '
         Me.AccordionControlElement35.Elements.AddRange(New DevExpress.XtraBars.Navigation.AccordionControlElement() {Me.AccordionControlElement38, Me.AccordionControlElement46, Me.AccordionControlElement56})
-        Me.AccordionControlElement35.Expanded = True
         Me.AccordionControlElement35.Name = "AccordionControlElement35"
         Me.AccordionControlElement35.Text = "Request"
         '
@@ -152,12 +151,14 @@ Partial Class Home
         'AccordionControlElement48
         '
         Me.AccordionControlElement48.Elements.AddRange(New DevExpress.XtraBars.Navigation.AccordionControlElement() {Me.AccordionControlElement55, Me.AccordionControlElement18, Me.AccordionControlElement49, Me.AccordionControlElement52})
+        Me.AccordionControlElement48.Expanded = True
         Me.AccordionControlElement48.Name = "AccordionControlElement48"
         Me.AccordionControlElement48.Text = "Movement"
         '
         'AccordionControlElement55
         '
         Me.AccordionControlElement55.Elements.AddRange(New DevExpress.XtraBars.Navigation.AccordionControlElement() {Me.e, Me.AccordionControlElement36})
+        Me.AccordionControlElement55.Expanded = True
         Me.AccordionControlElement55.Name = "AccordionControlElement55"
         Me.AccordionControlElement55.Text = "Assignment"
         '

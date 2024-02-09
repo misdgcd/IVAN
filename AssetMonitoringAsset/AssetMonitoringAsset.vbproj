@@ -160,6 +160,12 @@
     <Compile Include="Forms\Approval\RequestForApproval.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Forms\Asset Management\Assignment\Automatic\Assignment1.Designer.vb">
+      <DependentUpon>Assignment1.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Asset Management\Assignment\Automatic\Assignment1.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Forms\Asset Management\receive\AssetAcquisition.Designer.vb">
       <DependentUpon>AssetAcquisition.vb</DependentUpon>
     </Compile>
@@ -600,6 +606,9 @@
     <EmbeddedResource Include="Forms\Approval\RequestForApproval.resx">
       <DependentUpon>RequestForApproval.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Asset Management\Assignment\Automatic\Assignment1.resx">
+      <DependentUpon>Assignment1.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\Asset Management\receive\AssetAcquisition.resx">
       <DependentUpon>AssetAcquisition.vb</DependentUpon>
     </EmbeddedResource>
@@ -869,7 +878,9 @@
   <ItemGroup>
     <WCFMetadata Include="Connected Services\" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Forms\Asset Management\Assignment\Manual\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
        Other similar extension points exist, see Microsoft.Common.targets.

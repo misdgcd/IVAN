@@ -605,3 +605,4 @@ C:\Users\HSDP_SYS_DEV\Desktop\AMS\AssetMonitoringAsset\AssetMonitoringAsset\bin\
 C:\Users\HSDP_SYS_DEV\Desktop\AMS\AssetMonitoringAsset\AssetMonitoringAsset\bin\Debug\ru\DevExpress.Pdf.v21.2.Core.resources.dll
 C:\Users\HSDP_SYS_DEV\Desktop\AMS\AssetMonitoringAsset\AssetMonitoringAsset\obj\Debug\AssetMonitoringAsset.vbproj.CopyComplete
 C:\Users\HSDP_SYS_DEV\Desktop\AMS\AssetMonitoringAsset\AssetMonitoringAsset\obj\Debug\AssetMonitoringAsset.ChngState.resources
+C:\Users\HSDP_SYS_DEV\Desktop\AMS\AssetMonitoringAsset\AssetMonitoringAsset\obj\Debug\AssetMonitoringAsset.Assignment1.resources

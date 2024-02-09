@@ -143,7 +143,7 @@
     End Sub
 
     Private Sub AccordionControlElement35_Click(sender As Object, e As EventArgs) Handles e.Click
-        Allocation.ShowDialog()
+        Assignment1.ShowDialog()
     End Sub
 
     Private Sub AccordionControlElement40_Click(sender As Object, e As EventArgs) Handles AccordionControlElement40.Click

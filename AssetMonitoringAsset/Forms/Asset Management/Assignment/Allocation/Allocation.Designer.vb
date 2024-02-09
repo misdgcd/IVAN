@@ -21,6 +21,7 @@ Partial Class Allocation
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Allocation))
         Me.PanelControl1 = New DevExpress.XtraEditors.PanelControl()
+        Me.SimpleButton4 = New DevExpress.XtraEditors.SimpleButton()
         Me.SimpleButton2 = New DevExpress.XtraEditors.SimpleButton()
         Me.DateTimePicker1 = New System.Windows.Forms.DateTimePicker()
         Me.TextBox4 = New System.Windows.Forms.TextBox()
@@ -31,8 +32,6 @@ Partial Class Allocation
         Me.PanelControl2 = New DevExpress.XtraEditors.PanelControl()
         Me.dgv = New System.Windows.Forms.DataGridView()
         Me.SimpleButton1 = New DevExpress.XtraEditors.SimpleButton()
-        Me.SimpleButton3 = New DevExpress.XtraEditors.SimpleButton()
-        Me.SimpleButton4 = New DevExpress.XtraEditors.SimpleButton()
         CType(Me.PanelControl1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.PanelControl1.SuspendLayout()
         CType(Me.PanelControl2, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -42,6 +41,7 @@ Partial Class Allocation
         '
         'PanelControl1
         '
+        Me.PanelControl1.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple
         Me.PanelControl1.Controls.Add(Me.SimpleButton4)
         Me.PanelControl1.Controls.Add(Me.SimpleButton2)
         Me.PanelControl1.Controls.Add(Me.DateTimePicker1)
@@ -54,6 +54,17 @@ Partial Class Allocation
         Me.PanelControl1.Name = "PanelControl1"
         Me.PanelControl1.Size = New System.Drawing.Size(706, 147)
         Me.PanelControl1.TabIndex = 0
+        '
+        'SimpleButton4
+        '
+        Me.SimpleButton4.Appearance.Font = New System.Drawing.Font("Arial Rounded MT Bold", 11.25!)
+        Me.SimpleButton4.Appearance.Options.UseFont = True
+        Me.SimpleButton4.ImageOptions.Image = CType(resources.GetObject("SimpleButton4.ImageOptions.Image"), System.Drawing.Image)
+        Me.SimpleButton4.Location = New System.Drawing.Point(14, 24)
+        Me.SimpleButton4.Name = "SimpleButton4"
+        Me.SimpleButton4.Size = New System.Drawing.Size(301, 37)
+        Me.SimpleButton4.TabIndex = 22
+        Me.SimpleButton4.Text = "Request"
         '
         'SimpleButton2
         '
@@ -153,35 +164,11 @@ Partial Class Allocation
         Me.SimpleButton1.TabIndex = 15
         Me.SimpleButton1.Text = "Record"
         '
-        'SimpleButton3
-        '
-        Me.SimpleButton3.Appearance.Font = New System.Drawing.Font("Arial Rounded MT Bold", 11.25!)
-        Me.SimpleButton3.Appearance.Options.UseFont = True
-        Me.SimpleButton3.ImageOptions.Image = CType(resources.GetObject("SimpleButton3.ImageOptions.Image"), System.Drawing.Image)
-        Me.SimpleButton3.Location = New System.Drawing.Point(717, 92)
-        Me.SimpleButton3.Name = "SimpleButton3"
-        Me.SimpleButton3.Size = New System.Drawing.Size(110, 63)
-        Me.SimpleButton3.TabIndex = 16
-        Me.SimpleButton3.Text = "Print"
-        Me.SimpleButton3.Visible = False
-        '
-        'SimpleButton4
-        '
-        Me.SimpleButton4.Appearance.Font = New System.Drawing.Font("Arial Rounded MT Bold", 11.25!)
-        Me.SimpleButton4.Appearance.Options.UseFont = True
-        Me.SimpleButton4.ImageOptions.Image = CType(resources.GetObject("SimpleButton4.ImageOptions.Image"), System.Drawing.Image)
-        Me.SimpleButton4.Location = New System.Drawing.Point(14, 24)
-        Me.SimpleButton4.Name = "SimpleButton4"
-        Me.SimpleButton4.Size = New System.Drawing.Size(301, 37)
-        Me.SimpleButton4.TabIndex = 22
-        Me.SimpleButton4.Text = "Request"
-        '
         'Allocation
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(990, 610)
-        Me.Controls.Add(Me.SimpleButton3)
         Me.Controls.Add(Me.SimpleButton1)
         Me.Controls.Add(Me.PanelControl2)
         Me.Controls.Add(Me.PanelControl1)
@@ -216,6 +203,5 @@ Partial Class Allocation
     Friend WithEvents TextBox4 As TextBox
     Friend WithEvents SimpleButton1 As DevExpress.XtraEditors.SimpleButton
     Friend WithEvents SimpleButton2 As DevExpress.XtraEditors.SimpleButton
-    Friend WithEvents SimpleButton3 As DevExpress.XtraEditors.SimpleButton
     Friend WithEvents SimpleButton4 As DevExpress.XtraEditors.SimpleButton
 End Class
