@@ -41,7 +41,7 @@
     <StartupObject>AssetMonitoringAsset.My.MyApplication</StartupObject>
   </PropertyGroup>
   <PropertyGroup>
-    <ApplicationIcon>completed-task.ico</ApplicationIcon>
+    <ApplicationIcon>Connection and Module\completed-task.ico</ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="DevExpress.BonusSkins.v21.2" />
@@ -116,288 +116,154 @@
     <Import Include="System" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AMSdbDataSet.Designer.vb">
+    <Compile Include="Connection and Module\AMSdbDataSet.Designer.vb">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>AMSdbDataSet.xsd</DependentUpon>
     </Compile>
-    <Compile Include="Class\AllocationDetailClass.vb" />
-    <Compile Include="Class\AllocationHeaderClass.vb" />
-    <Compile Include="Class\RequestDetailClass.vb" />
-    <Compile Include="Class\RequestHeaderClass.vb" />
-    <Compile Include="Class\AssetDetailClass.vb" />
-    <Compile Include="Class\AssetHeaderClass.vb" />
-    <Compile Include="Class\BranchClass.vb" />
-    <Compile Include="Class\InventoryClass.vb" />
-    <Compile Include="Class\MasterdataDetailsClass.vb" />
-    <Compile Include="Class\MasterdataHeaderClass.vb" />
-    <Compile Include="Class\CategoryClass.vb" />
-    <Compile Include="Class\ConditionClass.vb" />
-    <Compile Include="Class\DepartmentClass.vb" />
-    <Compile Include="Class\DocTypeClass.vb" />
-    <Compile Include="Class\EmployeeClass.vb" />
-    <Compile Include="Class\PositionClass.vb" />
-    <Compile Include="Class\ReferenceClass.vb" />
-    <Compile Include="Class\SectionClass.vb" />
-    <Compile Include="Class\TransferHeaderClass.vb" />
-    <Compile Include="Class\TypeClass.vb" />
-    <Compile Include="Class\UserClass.vb" />
-    <Compile Include="Class\VendorClass.vb" />
-    <Compile Include="DataClasses1.designer.vb">
+    <Compile Include="OLD_FORMS_AND_CLASS\Class\RequestDetailClass.vb" />
+    <Compile Include="OLD_FORMS_AND_CLASS\Class\RequestHeaderClass.vb" />
+    <Compile Include="OLD_FORMS_AND_CLASS\Class\AssetDetailClass.vb" />
+    <Compile Include="OLD_FORMS_AND_CLASS\Class\AssetHeaderClass.vb" />
+    <Compile Include="OLD_FORMS_AND_CLASS\Class\BranchClass.vb" />
+    <Compile Include="OLD_FORMS_AND_CLASS\Class\InventoryClass.vb" />
+    <Compile Include="OLD_FORMS_AND_CLASS\Class\MasterdataDetailsClass.vb" />
+    <Compile Include="OLD_FORMS_AND_CLASS\Class\MasterdataHeaderClass.vb" />
+    <Compile Include="OLD_FORMS_AND_CLASS\Class\CategoryClass.vb" />
+    <Compile Include="OLD_FORMS_AND_CLASS\Class\ConditionClass.vb" />
+    <Compile Include="OLD_FORMS_AND_CLASS\Class\DepartmentClass.vb" />
+    <Compile Include="OLD_FORMS_AND_CLASS\Class\DocTypeClass.vb" />
+    <Compile Include="OLD_FORMS_AND_CLASS\Class\EmployeeClass.vb" />
+    <Compile Include="OLD_FORMS_AND_CLASS\Class\PositionClass.vb" />
+    <Compile Include="OLD_FORMS_AND_CLASS\Class\ReferenceClass.vb" />
+    <Compile Include="OLD_FORMS_AND_CLASS\Class\SectionClass.vb" />
+    <Compile Include="OLD_FORMS_AND_CLASS\Class\TransferHeaderClass.vb" />
+    <Compile Include="OLD_FORMS_AND_CLASS\Class\TypeClass.vb" />
+    <Compile Include="OLD_FORMS_AND_CLASS\Class\UserClass.vb" />
+    <Compile Include="OLD_FORMS_AND_CLASS\Class\VendorClass.vb" />
+    <Compile Include="Connection and Module\DataClasses1.designer.vb">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>DataClasses1.dbml</DependentUpon>
     </Compile>
-    <Compile Include="Forms\Approval\Approval.Designer.vb">
-      <DependentUpon>Approval.vb</DependentUpon>
-    </Compile>
-    <Compile Include="Forms\Approval\Approval.vb">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\Approval\RequestForApproval.Designer.vb">
-      <DependentUpon>RequestForApproval.vb</DependentUpon>
-    </Compile>
-    <Compile Include="Forms\Approval\RequestForApproval.vb">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\Asset Management\Assignment\Automatic\Assignment1.Designer.vb">
+    <Compile Include="Forms\2.%29 Asset_Management\2.%29 Movement\1.%29 Assignment\Assignment1.Designer.vb">
       <DependentUpon>Assignment1.vb</DependentUpon>
     </Compile>
-    <Compile Include="Forms\Asset Management\Assignment\Automatic\Assignment1.vb">
+    <Compile Include="Forms\2.%29 Asset_Management\2.%29 Movement\1.%29 Assignment\Assignment1.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\Asset Management\receive\AssetAcquisition.Designer.vb">
-      <DependentUpon>AssetAcquisition.vb</DependentUpon>
-    </Compile>
-    <Compile Include="Forms\Asset Management\receive\AssetAcquisition.vb">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\Asset Management\receive\Register\AAdetail.Designer.vb">
-      <DependentUpon>AAdetail.vb</DependentUpon>
-    </Compile>
-    <Compile Include="Forms\Asset Management\receive\Register\AAdetail.vb">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\Asset Management\receive\Register\AARegister.Designer.vb">
-      <DependentUpon>AARegister.vb</DependentUpon>
-    </Compile>
-    <Compile Include="Forms\Asset Management\receive\Register\AARegister.vb">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\Asset Management\Request\date1.Designer.vb">
+    <Compile Include="Forms\2.%29 Asset_Management\1.%29 Request\Creating Request\date1.Designer.vb">
       <DependentUpon>date1.vb</DependentUpon>
     </Compile>
-    <Compile Include="Forms\Asset Management\Request\date1.vb">
+    <Compile Include="Forms\2.%29 Asset_Management\1.%29 Request\Creating Request\date1.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\Asset Management\Request\empllist.Designer.vb">
+    <Compile Include="Forms\2.%29 Asset_Management\1.%29 Request\Creating Request\empllist.Designer.vb">
       <DependentUpon>empllist.vb</DependentUpon>
     </Compile>
-    <Compile Include="Forms\Asset Management\Request\empllist.vb">
+    <Compile Include="Forms\2.%29 Asset_Management\1.%29 Request\Creating Request\empllist.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\Asset Management\Request\Register\ChngState.Designer.vb">
+    <Compile Include="Forms\2.%29 Asset_Management\1.%29 Request\For Approval\ChngState.Designer.vb">
       <DependentUpon>ChngState.vb</DependentUpon>
     </Compile>
-    <Compile Include="Forms\Asset Management\Request\Register\ChngState.vb">
+    <Compile Include="Forms\2.%29 Asset_Management\1.%29 Request\For Approval\ChngState.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\Asset Management\Request\Register\Rqregister.Designer.vb">
+    <Compile Include="Forms\2.%29 Asset_Management\1.%29 Request\For Approval\Rqregister.Designer.vb">
       <DependentUpon>Rqregister.vb</DependentUpon>
     </Compile>
-    <Compile Include="Forms\Asset Management\Request\Register\Rqregister.vb">
+    <Compile Include="Forms\2.%29 Asset_Management\1.%29 Request\For Approval\Rqregister.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\Asset Management\Request\Request.Designer.vb">
+    <Compile Include="Forms\2.%29 Asset_Management\1.%29 Request\Creating Request\Request.Designer.vb">
       <DependentUpon>Request.vb</DependentUpon>
     </Compile>
-    <Compile Include="Forms\Asset Management\Request\Request.vb">
+    <Compile Include="Forms\2.%29 Asset_Management\1.%29 Request\Creating Request\Request.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\ASSET\AssetList\AssetList3.Designer.vb">
+    <Compile Include="Forms\4.%29 List\AssetList\AssetList3.Designer.vb">
       <DependentUpon>AssetList3.vb</DependentUpon>
     </Compile>
-    <Compile Include="Forms\ASSET\AssetList\AssetList3.vb">
+    <Compile Include="Forms\4.%29 List\AssetList\AssetList3.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\Asset Management\receive\Request2.Designer.vb">
-      <DependentUpon>Request2.vb</DependentUpon>
-    </Compile>
-    <Compile Include="Forms\Asset Management\receive\Request2.vb">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\Asset Management\Request\Register\RequestRegister.Designer.vb">
+    <Compile Include="Forms\2.%29 Asset_Management\1.%29 Request\For Approval\RequestRegister.Designer.vb">
       <DependentUpon>RequestRegister.vb</DependentUpon>
     </Compile>
-    <Compile Include="Forms\Asset Management\Request\Register\RequestRegister.vb">
+    <Compile Include="Forms\2.%29 Asset_Management\1.%29 Request\For Approval\RequestRegister.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\Asset Management\Transfer\Request\CreateRequest.Designer.vb">
-      <DependentUpon>CreateRequest.vb</DependentUpon>
-    </Compile>
-    <Compile Include="Forms\Asset Management\Transfer\Request\CreateRequest.vb">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\Asset Management\Transfer\Status\AllocationUpdate.Designer.vb">
-      <DependentUpon>AllocationUpdate.vb</DependentUpon>
-    </Compile>
-    <Compile Include="Forms\Asset Management\Transfer\Status\AllocationUpdate.vb">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\Asset Management\Transfer\Status\AssetStatus.Designer.vb">
-      <DependentUpon>AssetStatus.vb</DependentUpon>
-    </Compile>
-    <Compile Include="Forms\Asset Management\Transfer\Status\AssetStatus.vb">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\Asset Management\Transfer\Assets\Assets1.Designer.vb">
-      <DependentUpon>Assets1.vb</DependentUpon>
-    </Compile>
-    <Compile Include="Forms\Asset Management\Transfer\Assets\Assets1.vb">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\Asset Management\Transfer\TransferRequest.Designer.vb">
-      <DependentUpon>TransferRequest.vb</DependentUpon>
-    </Compile>
-    <Compile Include="Forms\Asset Management\Transfer\TransferRequest.vb">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\ASSET\AssetList.Designer.vb">
-      <DependentUpon>AssetList.vb</DependentUpon>
-    </Compile>
-    <Compile Include="Forms\ASSET\AssetList.vb">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\ASSET\Build Asset\BuildAsset\BuildAsset.Designer.vb">
+    <Compile Include="Forms\3.%29 Asset\Build Asset\BuildAsset\BuildAsset.Designer.vb">
       <DependentUpon>BuildAsset.vb</DependentUpon>
     </Compile>
-    <Compile Include="Forms\ASSET\Build Asset\BuildAsset\BuildAsset.vb">
+    <Compile Include="Forms\3.%29 Asset\Build Asset\BuildAsset\BuildAsset.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\ASSET\Build Asset\BuildAsset\ReferenceList.Designer.vb">
+    <Compile Include="Forms\3.%29 Asset\Build Asset\BuildAsset\ReferenceList.Designer.vb">
       <DependentUpon>ReferenceList.vb</DependentUpon>
     </Compile>
-    <Compile Include="Forms\ASSET\Build Asset\BuildAsset\ReferenceList.vb">
+    <Compile Include="Forms\3.%29 Asset\Build Asset\BuildAsset\ReferenceList.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\ASSET\Build Asset\register\BuildRegisterDetail.Designer.vb">
+    <Compile Include="Forms\3.%29 Asset\Build Asset\register\BuildRegisterDetail.Designer.vb">
       <DependentUpon>BuildRegisterDetail.vb</DependentUpon>
     </Compile>
-    <Compile Include="Forms\ASSET\Build Asset\register\BuildRegisterDetail.vb">
+    <Compile Include="Forms\3.%29 Asset\Build Asset\register\BuildRegisterDetail.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\ASSET\Build Asset\register\NewAssetRegister.Designer.vb">
+    <Compile Include="Forms\3.%29 Asset\Build Asset\register\NewAssetRegister.Designer.vb">
       <DependentUpon>NewAssetRegister.vb</DependentUpon>
     </Compile>
-    <Compile Include="Forms\ASSET\Build Asset\register\NewAssetRegister.vb">
+    <Compile Include="Forms\3.%29 Asset\Build Asset\register\NewAssetRegister.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\ASSET\Inventory\Details.Designer.vb">
+    <Compile Include="Forms\1.%29 Asset_Inquiry\Inventory\Details.Designer.vb">
       <DependentUpon>Details.vb</DependentUpon>
     </Compile>
-    <Compile Include="Forms\ASSET\Inventory\Details.vb">
+    <Compile Include="Forms\1.%29 Asset_Inquiry\Inventory\Details.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\ASSET\Inventory\InventoryList.Designer.vb">
+    <Compile Include="Forms\1.%29 Asset_Inquiry\Inventory\InventoryList.Designer.vb">
       <DependentUpon>InventoryList.vb</DependentUpon>
     </Compile>
-    <Compile Include="Forms\ASSET\Inventory\InventoryList.vb">
+    <Compile Include="Forms\1.%29 Asset_Inquiry\Inventory\InventoryList.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\ASSET\MasterData\masterdatalist\MasterDataList.Designer.vb">
+    <Compile Include="Forms\3.%29 Asset\MasterData\masterdatalist\MasterDataList.Designer.vb">
       <DependentUpon>MasterDataList.vb</DependentUpon>
     </Compile>
-    <Compile Include="Forms\ASSET\MasterData\masterdatalist\MasterDataList.vb">
+    <Compile Include="Forms\3.%29 Asset\MasterData\masterdatalist\MasterDataList.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\ASSET\Build Asset\BuildAsset\NACondition.Designer.vb">
+    <Compile Include="Forms\3.%29 Asset\Build Asset\BuildAsset\NACondition.Designer.vb">
       <DependentUpon>NACondition.vb</DependentUpon>
     </Compile>
-    <Compile Include="Forms\ASSET\Build Asset\BuildAsset\NACondition.vb">
+    <Compile Include="Forms\3.%29 Asset\Build Asset\BuildAsset\NACondition.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\ASSET\MasterData\New Asset Masterdata\NATypeh.Designer.vb">
+    <Compile Include="Forms\3.%29 Asset\MasterData\New Asset Masterdata\NATypeh.Designer.vb">
       <DependentUpon>NATypeh.vb</DependentUpon>
     </Compile>
-    <Compile Include="Forms\ASSET\MasterData\New Asset Masterdata\NATypeh.vb">
+    <Compile Include="Forms\3.%29 Asset\MasterData\New Asset Masterdata\NATypeh.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\ASSET\MasterData\New Asset Masterdata\NAcategory.Designer.vb">
+    <Compile Include="Forms\3.%29 Asset\MasterData\New Asset Masterdata\NAcategory.Designer.vb">
       <DependentUpon>NAcategory.vb</DependentUpon>
     </Compile>
-    <Compile Include="Forms\ASSET\MasterData\New Asset Masterdata\NAcategory.vb">
+    <Compile Include="Forms\3.%29 Asset\MasterData\New Asset Masterdata\NAcategory.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\ASSET\MasterData\New Asset Masterdata\NewAsset.Designer.vb">
+    <Compile Include="Forms\3.%29 Asset\MasterData\New Asset Masterdata\NewAsset.Designer.vb">
       <DependentUpon>NewAsset.vb</DependentUpon>
     </Compile>
-    <Compile Include="Forms\ASSET\MasterData\New Asset Masterdata\NewAsset.vb">
+    <Compile Include="Forms\3.%29 Asset\MasterData\New Asset Masterdata\NewAsset.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\ASSET\MasterData\Register\BuildAssetRegister.Designer.vb">
-      <DependentUpon>BuildAssetRegister.vb</DependentUpon>
-    </Compile>
-    <Compile Include="Forms\ASSET\MasterData\Register\BuildAssetRegister.vb">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\ASSET\MasterData\Register\RegisterDetails.Designer.vb">
-      <DependentUpon>RegisterDetails.vb</DependentUpon>
-    </Compile>
-    <Compile Include="Forms\ASSET\MasterData\Register\RegisterDetails.vb">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\ASSET\view.Designer.vb">
-      <DependentUpon>view.vb</DependentUpon>
-    </Compile>
-    <Compile Include="Forms\ASSET\view.vb">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\Asset Management\Assignment\Allocated Assets\AllocatedAssetDetails.Designer.vb">
-      <DependentUpon>AllocatedAssetDetails.vb</DependentUpon>
-    </Compile>
-    <Compile Include="Forms\Asset Management\Assignment\Allocated Assets\AllocatedAssetDetails.vb">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\Asset Management\Assignment\Allocated Assets\AllocatedItems.Designer.vb">
-      <DependentUpon>AllocatedItems.vb</DependentUpon>
-    </Compile>
-    <Compile Include="Forms\Asset Management\Assignment\Allocated Assets\AllocatedItems.vb">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\Asset Management\Assignment\Allocation\Allocation.Designer.vb">
-      <DependentUpon>Allocation.vb</DependentUpon>
-    </Compile>
-    <Compile Include="Forms\Asset Management\Assignment\Allocation\Allocation.vb">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\Asset Management\Assignment\Allocation\Register\AllocationRegister.Designer.vb">
-      <DependentUpon>AllocationRegister.vb</DependentUpon>
-    </Compile>
-    <Compile Include="Forms\Asset Management\Assignment\Allocation\Register\AllocationRegister.vb">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\Asset Management\Assignment\Allocation\EmployeeList2.Designer.vb">
-      <DependentUpon>EmployeeList2.vb</DependentUpon>
-    </Compile>
-    <Compile Include="Forms\Asset Management\Assignment\Allocation\EmployeeList2.vb">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\Asset Management\Assignment\Allocation\Items\AssetList2.Designer.vb">
-      <DependentUpon>AssetList2.vb</DependentUpon>
-    </Compile>
-    <Compile Include="Forms\Asset Management\Assignment\Allocation\Items\AssetList2.vb">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\Asset Management\Assignment\Allocation\Register\RegisterDetail.Designer.vb">
-      <DependentUpon>RegisterDetail.vb</DependentUpon>
-    </Compile>
-    <Compile Include="Forms\Asset Management\Assignment\Allocation\Register\RegisterDetail.vb">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\IMPORT\importmasterlist.Designer.vb">
+    <Compile Include="Forms\7.%29 Importation\Build Asset\importmasterlist.Designer.vb">
       <DependentUpon>importmasterlist.vb</DependentUpon>
     </Compile>
-    <Compile Include="Forms\IMPORT\importmasterlist.vb">
+    <Compile Include="Forms\7.%29 Importation\Build Asset\importmasterlist.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Forms\LoginForm\Login.Designer.vb">
@@ -406,100 +272,100 @@
     <Compile Include="Forms\LoginForm\Login.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\SETUP\AssetBranch\AssetBranch.Designer.vb">
+    <Compile Include="Forms\6.%29 Setup\AssetBranch\AssetBranch.Designer.vb">
       <DependentUpon>AssetBranch.vb</DependentUpon>
     </Compile>
-    <Compile Include="Forms\SETUP\AssetBranch\AssetBranch.vb">
+    <Compile Include="Forms\6.%29 Setup\AssetBranch\AssetBranch.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\SETUP\AssetBranch\AssetBranchAddandUpdate1.Designer.vb">
+    <Compile Include="Forms\6.%29 Setup\AssetBranch\AssetBranchAddandUpdate1.Designer.vb">
       <DependentUpon>AssetBranchAddandUpdate1.vb</DependentUpon>
     </Compile>
-    <Compile Include="Forms\SETUP\AssetBranch\AssetBranchAddandUpdate1.vb">
+    <Compile Include="Forms\6.%29 Setup\AssetBranch\AssetBranchAddandUpdate1.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\SETUP\AssetCategory\AssetCategory.Designer.vb">
+    <Compile Include="Forms\6.%29 Setup\AssetCategory\AssetCategory.Designer.vb">
       <DependentUpon>AssetCategory.vb</DependentUpon>
     </Compile>
-    <Compile Include="Forms\SETUP\AssetCategory\AssetCategory.vb">
+    <Compile Include="Forms\6.%29 Setup\AssetCategory\AssetCategory.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\SETUP\AssetCategory\AssetCategoryAddandUpdate1.Designer.vb">
+    <Compile Include="Forms\6.%29 Setup\AssetCategory\AssetCategoryAddandUpdate1.Designer.vb">
       <DependentUpon>AssetCategoryAddandUpdate1.vb</DependentUpon>
     </Compile>
-    <Compile Include="Forms\SETUP\AssetCategory\AssetCategoryAddandUpdate1.vb">
+    <Compile Include="Forms\6.%29 Setup\AssetCategory\AssetCategoryAddandUpdate1.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\SETUP\AssetCondition\AssetConditionAddandUpdate.Designer.vb">
+    <Compile Include="Forms\6.%29 Setup\AssetCondition\AssetConditionAddandUpdate.Designer.vb">
       <DependentUpon>AssetConditionAddandUpdate.vb</DependentUpon>
     </Compile>
-    <Compile Include="Forms\SETUP\AssetCondition\AssetConditionAddandUpdate.vb">
+    <Compile Include="Forms\6.%29 Setup\AssetCondition\AssetConditionAddandUpdate.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\SETUP\AssetCondition\AssetCondition.Designer.vb">
+    <Compile Include="Forms\6.%29 Setup\AssetCondition\AssetCondition.Designer.vb">
       <DependentUpon>AssetCondition.vb</DependentUpon>
     </Compile>
-    <Compile Include="Forms\SETUP\AssetCondition\AssetCondition.vb">
+    <Compile Include="Forms\6.%29 Setup\AssetCondition\AssetCondition.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\SETUP\AssetDepartment\AssetDepartment.Designer.vb">
+    <Compile Include="Forms\6.%29 Setup\AssetDepartment\AssetDepartment.Designer.vb">
       <DependentUpon>AssetDepartment.vb</DependentUpon>
     </Compile>
-    <Compile Include="Forms\SETUP\AssetDepartment\AssetDepartment.vb">
+    <Compile Include="Forms\6.%29 Setup\AssetDepartment\AssetDepartment.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\SETUP\AssetDepartment\AssetDepartmentAddandUpdate.Designer.vb">
+    <Compile Include="Forms\6.%29 Setup\AssetDepartment\AssetDepartmentAddandUpdate.Designer.vb">
       <DependentUpon>AssetDepartmentAddandUpdate.vb</DependentUpon>
     </Compile>
-    <Compile Include="Forms\SETUP\AssetDepartment\AssetDepartmentAddandUpdate.vb">
+    <Compile Include="Forms\6.%29 Setup\AssetDepartment\AssetDepartmentAddandUpdate.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\SETUP\AssetDocumentType\AssetDocTypeAddandUpdate.Designer.vb">
+    <Compile Include="Forms\6.%29 Setup\AssetDocumentType\AssetDocTypeAddandUpdate.Designer.vb">
       <DependentUpon>AssetDocTypeAddandUpdate.vb</DependentUpon>
     </Compile>
-    <Compile Include="Forms\SETUP\AssetDocumentType\AssetDocTypeAddandUpdate.vb">
+    <Compile Include="Forms\6.%29 Setup\AssetDocumentType\AssetDocTypeAddandUpdate.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\SETUP\AssetDocumentType\AssetDocumentType.Designer.vb">
+    <Compile Include="Forms\6.%29 Setup\AssetDocumentType\AssetDocumentType.Designer.vb">
       <DependentUpon>AssetDocumentType.vb</DependentUpon>
     </Compile>
-    <Compile Include="Forms\SETUP\AssetDocumentType\AssetDocumentType.vb">
+    <Compile Include="Forms\6.%29 Setup\AssetDocumentType\AssetDocumentType.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\SETUP\AssetPosition\AssetPositionAddandUpdate.Designer.vb">
+    <Compile Include="Forms\6.%29 Setup\AssetPosition\AssetPositionAddandUpdate.Designer.vb">
       <DependentUpon>AssetPositionAddandUpdate.vb</DependentUpon>
     </Compile>
-    <Compile Include="Forms\SETUP\AssetPosition\AssetPositionAddandUpdate.vb">
+    <Compile Include="Forms\6.%29 Setup\AssetPosition\AssetPositionAddandUpdate.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\SETUP\AssetPosition\AssetPosition.Designer.vb">
+    <Compile Include="Forms\6.%29 Setup\AssetPosition\AssetPosition.Designer.vb">
       <DependentUpon>AssetPosition.vb</DependentUpon>
     </Compile>
-    <Compile Include="Forms\SETUP\AssetPosition\AssetPosition.vb">
+    <Compile Include="Forms\6.%29 Setup\AssetPosition\AssetPosition.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\SETUP\AssetSection\AssetSection.Designer.vb">
+    <Compile Include="Forms\6.%29 Setup\AssetSection\AssetSection.Designer.vb">
       <DependentUpon>AssetSection.vb</DependentUpon>
     </Compile>
-    <Compile Include="Forms\SETUP\AssetSection\AssetSection.vb">
+    <Compile Include="Forms\6.%29 Setup\AssetSection\AssetSection.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\SETUP\AssetSection\AssetSectionAddandUpdate1.Designer.vb">
+    <Compile Include="Forms\6.%29 Setup\AssetSection\AssetSectionAddandUpdate1.Designer.vb">
       <DependentUpon>AssetSectionAddandUpdate1.vb</DependentUpon>
     </Compile>
-    <Compile Include="Forms\SETUP\AssetSection\AssetSectionAddandUpdate1.vb">
+    <Compile Include="Forms\6.%29 Setup\AssetSection\AssetSectionAddandUpdate1.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\SETUP\AssetType\AssetType.Designer.vb">
+    <Compile Include="Forms\6.%29 Setup\AssetType\AssetType.Designer.vb">
       <DependentUpon>AssetType.vb</DependentUpon>
     </Compile>
-    <Compile Include="Forms\SETUP\AssetType\AssetType.vb">
+    <Compile Include="Forms\6.%29 Setup\AssetType\AssetType.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\SETUP\AssetType\AssetTypeAddandUpdate.Designer.vb">
+    <Compile Include="Forms\6.%29 Setup\AssetType\AssetTypeAddandUpdate.Designer.vb">
       <DependentUpon>AssetTypeAddandUpdate.vb</DependentUpon>
     </Compile>
-    <Compile Include="Forms\SETUP\AssetType\AssetTypeAddandUpdate.vb">
+    <Compile Include="Forms\6.%29 Setup\AssetType\AssetTypeAddandUpdate.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Forms\Home.Designer.vb">
@@ -508,310 +374,244 @@
     <Compile Include="Forms\Home.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\SETUP\Employee\Employee.Designer.vb">
+    <Compile Include="Forms\6.%29 Setup\Employee\Employee.Designer.vb">
       <DependentUpon>Employee.vb</DependentUpon>
     </Compile>
-    <Compile Include="Forms\SETUP\Employee\Employee.vb">
+    <Compile Include="Forms\6.%29 Setup\Employee\Employee.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\SETUP\Employee\EmployeeAddandUpdate.Designer.vb">
+    <Compile Include="Forms\6.%29 Setup\Employee\EmployeeAddandUpdate.Designer.vb">
       <DependentUpon>EmployeeAddandUpdate.vb</DependentUpon>
     </Compile>
-    <Compile Include="Forms\SETUP\Employee\EmployeeAddandUpdate.vb">
+    <Compile Include="Forms\6.%29 Setup\Employee\EmployeeAddandUpdate.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\SETUP\Reference\Reference.Designer.vb">
+    <Compile Include="Forms\6.%29 Setup\Reference\Reference.Designer.vb">
       <DependentUpon>Reference.vb</DependentUpon>
     </Compile>
-    <Compile Include="Forms\SETUP\Reference\Reference.vb">
+    <Compile Include="Forms\6.%29 Setup\Reference\Reference.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\SETUP\User\EmployeeList.Designer.vb">
+    <Compile Include="Forms\6.%29 Setup\User\EmployeeList.Designer.vb">
       <DependentUpon>EmployeeList.vb</DependentUpon>
     </Compile>
-    <Compile Include="Forms\SETUP\User\EmployeeList.vb">
+    <Compile Include="Forms\6.%29 Setup\User\EmployeeList.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\SETUP\User\UpdateSelection.Designer.vb">
+    <Compile Include="Forms\6.%29 Setup\User\UpdateSelection.Designer.vb">
       <DependentUpon>UpdateSelection.vb</DependentUpon>
     </Compile>
-    <Compile Include="Forms\SETUP\User\UpdateSelection.vb">
+    <Compile Include="Forms\6.%29 Setup\User\UpdateSelection.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\SETUP\User\UserChangePass.Designer.vb">
+    <Compile Include="Forms\6.%29 Setup\User\UserChangePass.Designer.vb">
       <DependentUpon>UserChangePass.vb</DependentUpon>
     </Compile>
-    <Compile Include="Forms\SETUP\User\UserChangePass.vb">
+    <Compile Include="Forms\6.%29 Setup\User\UserChangePass.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\SETUP\User\User.Designer.vb">
+    <Compile Include="Forms\6.%29 Setup\User\User.Designer.vb">
       <DependentUpon>User.vb</DependentUpon>
     </Compile>
-    <Compile Include="Forms\SETUP\User\User.vb">
+    <Compile Include="Forms\6.%29 Setup\User\User.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\SETUP\User\UserAdd.Designer.vb">
+    <Compile Include="Forms\6.%29 Setup\User\UserAdd.Designer.vb">
       <DependentUpon>UserAdd.vb</DependentUpon>
     </Compile>
-    <Compile Include="Forms\SETUP\User\UserAdd.vb">
+    <Compile Include="Forms\6.%29 Setup\User\UserAdd.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\SETUP\User\UserUpdate.Designer.vb">
+    <Compile Include="Forms\6.%29 Setup\User\UserUpdate.Designer.vb">
       <DependentUpon>UserUpdate.vb</DependentUpon>
     </Compile>
-    <Compile Include="Forms\SETUP\User\UserUpdate.vb">
+    <Compile Include="Forms\6.%29 Setup\User\UserUpdate.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\SETUP\Vendor\Vendor.Designer.vb">
+    <Compile Include="Forms\6.%29 Setup\Vendor\Vendor.Designer.vb">
       <DependentUpon>Vendor.vb</DependentUpon>
     </Compile>
-    <Compile Include="Forms\SETUP\Vendor\Vendor.vb">
+    <Compile Include="Forms\6.%29 Setup\Vendor\Vendor.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\SETUP\Vendor\VendorAddandUpdate.Designer.vb">
+    <Compile Include="Forms\6.%29 Setup\Vendor\VendorAddandUpdate.Designer.vb">
       <DependentUpon>VendorAddandUpdate.vb</DependentUpon>
     </Compile>
-    <Compile Include="Forms\SETUP\Vendor\VendorAddandUpdate.vb">
+    <Compile Include="Forms\6.%29 Setup\Vendor\VendorAddandUpdate.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Mod\DBmodule.vb" />
+    <Compile Include="Connection and Module\DBmodule.vb" />
     <Compile Include="My Project\Application.Designer.vb">
       <AutoGen>True</AutoGen>
       <DependentUpon>Application.myapp</DependentUpon>
     </Compile>
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="New_Class\FetchClass.vb" />
+    <Compile Include="New_Class\InsertionClass.vb" />
     <Compile Include="New_Class\UpdateClass.vb" />
     <Compile Include="New_Class\ViewClass.vb" />
     <None Include="..\.editorconfig">
-      <Link>.editorconfig</Link>
+      <Link>Connection and Module\.editorconfig</Link>
     </None>
-    <None Include="AMSdbDataSet.xsc">
+    <None Include="Connection and Module\AMSdbDataSet.xsc">
       <DependentUpon>AMSdbDataSet.xsd</DependentUpon>
     </None>
-    <None Include="AMSdbDataSet.xsd">
+    <None Include="Connection and Module\AMSdbDataSet.xsd">
       <Generator>MSDataSetGenerator</Generator>
       <LastGenOutput>AMSdbDataSet.Designer.vb</LastGenOutput>
       <SubType>Designer</SubType>
     </None>
-    <None Include="AMSdbDataSet.xss">
+    <None Include="Connection and Module\AMSdbDataSet.xss">
       <DependentUpon>AMSdbDataSet.xsd</DependentUpon>
     </None>
-    <None Include="DataClasses1.dbml.layout">
+    <None Include="Connection and Module\DataClasses1.dbml.layout">
       <DependentUpon>DataClasses1.dbml</DependentUpon>
     </None>
-    <EmbeddedResource Include="Forms\Approval\Approval.resx">
-      <DependentUpon>Approval.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Approval\RequestForApproval.resx">
-      <DependentUpon>RequestForApproval.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Asset Management\Assignment\Automatic\Assignment1.resx">
+    <EmbeddedResource Include="Forms\2.%29 Asset_Management\2.%29 Movement\1.%29 Assignment\Assignment1.resx">
       <DependentUpon>Assignment1.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Asset Management\receive\AssetAcquisition.resx">
-      <DependentUpon>AssetAcquisition.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Asset Management\receive\Register\AAdetail.resx">
-      <DependentUpon>AAdetail.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Asset Management\receive\Register\AARegister.resx">
-      <DependentUpon>AARegister.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Asset Management\Request\date1.resx">
+    <EmbeddedResource Include="Forms\2.%29 Asset_Management\1.%29 Request\Creating Request\date1.resx">
       <DependentUpon>date1.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Asset Management\Request\empllist.resx">
+    <EmbeddedResource Include="Forms\2.%29 Asset_Management\1.%29 Request\Creating Request\empllist.resx">
       <DependentUpon>empllist.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Asset Management\Request\Register\ChngState.resx">
+    <EmbeddedResource Include="Forms\2.%29 Asset_Management\1.%29 Request\For Approval\ChngState.resx">
       <DependentUpon>ChngState.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Asset Management\Request\Register\Rqregister.resx">
+    <EmbeddedResource Include="Forms\2.%29 Asset_Management\1.%29 Request\For Approval\Rqregister.resx">
       <DependentUpon>Rqregister.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Asset Management\Request\Request.resx">
+    <EmbeddedResource Include="Forms\2.%29 Asset_Management\1.%29 Request\Creating Request\Request.resx">
       <DependentUpon>Request.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\ASSET\AssetList\AssetList3.resx">
+    <EmbeddedResource Include="Forms\4.%29 List\AssetList\AssetList3.resx">
       <DependentUpon>AssetList3.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Asset Management\receive\Request2.resx">
-      <DependentUpon>Request2.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Asset Management\Request\Register\RequestRegister.resx">
+    <EmbeddedResource Include="Forms\2.%29 Asset_Management\1.%29 Request\For Approval\RequestRegister.resx">
       <DependentUpon>RequestRegister.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Asset Management\Transfer\Request\CreateRequest.resx">
-      <DependentUpon>CreateRequest.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Asset Management\Transfer\Status\AllocationUpdate.resx">
-      <DependentUpon>AllocationUpdate.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Asset Management\Transfer\Status\AssetStatus.resx">
-      <DependentUpon>AssetStatus.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Asset Management\Transfer\Assets\Assets1.resx">
-      <DependentUpon>Assets1.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Asset Management\Transfer\TransferRequest.resx">
-      <DependentUpon>TransferRequest.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\ASSET\AssetList.resx">
-      <DependentUpon>AssetList.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\ASSET\Build Asset\BuildAsset\BuildAsset.resx">
+    <EmbeddedResource Include="Forms\3.%29 Asset\Build Asset\BuildAsset\BuildAsset.resx">
       <DependentUpon>BuildAsset.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\ASSET\Build Asset\BuildAsset\ReferenceList.resx">
+    <EmbeddedResource Include="Forms\3.%29 Asset\Build Asset\BuildAsset\ReferenceList.resx">
       <DependentUpon>ReferenceList.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\ASSET\Build Asset\register\BuildRegisterDetail.resx">
+    <EmbeddedResource Include="Forms\3.%29 Asset\Build Asset\register\BuildRegisterDetail.resx">
       <DependentUpon>BuildRegisterDetail.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\ASSET\Build Asset\register\NewAssetRegister.resx">
+    <EmbeddedResource Include="Forms\3.%29 Asset\Build Asset\register\NewAssetRegister.resx">
       <DependentUpon>NewAssetRegister.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\ASSET\Inventory\Details.resx">
+    <EmbeddedResource Include="Forms\1.%29 Asset_Inquiry\Inventory\Details.resx">
       <DependentUpon>Details.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\ASSET\Inventory\InventoryList.resx">
+    <EmbeddedResource Include="Forms\1.%29 Asset_Inquiry\Inventory\InventoryList.resx">
       <DependentUpon>InventoryList.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\ASSET\MasterData\masterdatalist\MasterDataList.resx">
+    <EmbeddedResource Include="Forms\3.%29 Asset\MasterData\masterdatalist\MasterDataList.resx">
       <DependentUpon>MasterDataList.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\ASSET\Build Asset\BuildAsset\NACondition.resx">
+    <EmbeddedResource Include="Forms\3.%29 Asset\Build Asset\BuildAsset\NACondition.resx">
       <DependentUpon>NACondition.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\ASSET\MasterData\New Asset Masterdata\NATypeh.resx">
+    <EmbeddedResource Include="Forms\3.%29 Asset\MasterData\New Asset Masterdata\NATypeh.resx">
       <DependentUpon>NATypeh.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\ASSET\MasterData\New Asset Masterdata\NAcategory.resx">
+    <EmbeddedResource Include="Forms\3.%29 Asset\MasterData\New Asset Masterdata\NAcategory.resx">
       <DependentUpon>NAcategory.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\ASSET\MasterData\New Asset Masterdata\NewAsset.resx">
+    <EmbeddedResource Include="Forms\3.%29 Asset\MasterData\New Asset Masterdata\NewAsset.resx">
       <DependentUpon>NewAsset.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\ASSET\MasterData\Register\BuildAssetRegister.resx">
-      <DependentUpon>BuildAssetRegister.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\ASSET\MasterData\Register\RegisterDetails.resx">
-      <DependentUpon>RegisterDetails.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\ASSET\MasterData\Register\Report1.rdlc" />
-    <EmbeddedResource Include="Forms\ASSET\view.resx">
-      <DependentUpon>view.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Asset Management\Assignment\Allocated Assets\AllocatedAssetDetails.resx">
-      <DependentUpon>AllocatedAssetDetails.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Asset Management\Assignment\Allocated Assets\AllocatedItems.resx">
-      <DependentUpon>AllocatedItems.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Asset Management\Assignment\Allocation\Allocation.resx">
-      <DependentUpon>Allocation.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Asset Management\Assignment\Allocation\Register\AllocationRegister.resx">
-      <DependentUpon>AllocationRegister.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Asset Management\Assignment\Allocation\EmployeeList2.resx">
-      <DependentUpon>EmployeeList2.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Asset Management\Assignment\Allocation\Items\AssetList2.resx">
-      <DependentUpon>AssetList2.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Asset Management\Assignment\Allocation\Register\RegisterDetail.resx">
-      <DependentUpon>RegisterDetail.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\IMPORT\importmasterlist.resx">
+    <EmbeddedResource Include="Forms\7.%29 Importation\Build Asset\importmasterlist.resx">
       <DependentUpon>importmasterlist.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\LoginForm\Login.resx">
       <DependentUpon>Login.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\SETUP\AssetBranch\AssetBranch.resx">
+    <EmbeddedResource Include="Forms\6.%29 Setup\AssetBranch\AssetBranch.resx">
       <DependentUpon>AssetBranch.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\SETUP\AssetBranch\AssetBranchAddandUpdate1.resx">
+    <EmbeddedResource Include="Forms\6.%29 Setup\AssetBranch\AssetBranchAddandUpdate1.resx">
       <DependentUpon>AssetBranchAddandUpdate1.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\SETUP\AssetCategory\AssetCategory.resx">
+    <EmbeddedResource Include="Forms\6.%29 Setup\AssetCategory\AssetCategory.resx">
       <DependentUpon>AssetCategory.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\SETUP\AssetCategory\AssetCategoryAddandUpdate1.resx">
+    <EmbeddedResource Include="Forms\6.%29 Setup\AssetCategory\AssetCategoryAddandUpdate1.resx">
       <DependentUpon>AssetCategoryAddandUpdate1.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\SETUP\AssetCondition\AssetConditionAddandUpdate.resx">
+    <EmbeddedResource Include="Forms\6.%29 Setup\AssetCondition\AssetConditionAddandUpdate.resx">
       <DependentUpon>AssetConditionAddandUpdate.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\SETUP\AssetCondition\AssetCondition.resx">
+    <EmbeddedResource Include="Forms\6.%29 Setup\AssetCondition\AssetCondition.resx">
       <DependentUpon>AssetCondition.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\SETUP\AssetDepartment\AssetDepartment.resx">
+    <EmbeddedResource Include="Forms\6.%29 Setup\AssetDepartment\AssetDepartment.resx">
       <DependentUpon>AssetDepartment.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\SETUP\AssetDepartment\AssetDepartmentAddandUpdate.resx">
+    <EmbeddedResource Include="Forms\6.%29 Setup\AssetDepartment\AssetDepartmentAddandUpdate.resx">
       <DependentUpon>AssetDepartmentAddandUpdate.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\SETUP\AssetDocumentType\AssetDocTypeAddandUpdate.resx">
+    <EmbeddedResource Include="Forms\6.%29 Setup\AssetDocumentType\AssetDocTypeAddandUpdate.resx">
       <DependentUpon>AssetDocTypeAddandUpdate.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\SETUP\AssetDocumentType\AssetDocumentType.resx">
+    <EmbeddedResource Include="Forms\6.%29 Setup\AssetDocumentType\AssetDocumentType.resx">
       <DependentUpon>AssetDocumentType.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\SETUP\AssetPosition\AssetPositionAddandUpdate.resx">
+    <EmbeddedResource Include="Forms\6.%29 Setup\AssetPosition\AssetPositionAddandUpdate.resx">
       <DependentUpon>AssetPositionAddandUpdate.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\SETUP\AssetPosition\AssetPosition.resx">
+    <EmbeddedResource Include="Forms\6.%29 Setup\AssetPosition\AssetPosition.resx">
       <DependentUpon>AssetPosition.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\SETUP\AssetSection\AssetSection.resx">
+    <EmbeddedResource Include="Forms\6.%29 Setup\AssetSection\AssetSection.resx">
       <DependentUpon>AssetSection.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\SETUP\AssetSection\AssetSectionAddandUpdate1.resx">
+    <EmbeddedResource Include="Forms\6.%29 Setup\AssetSection\AssetSectionAddandUpdate1.resx">
       <DependentUpon>AssetSectionAddandUpdate1.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\SETUP\AssetType\AssetType.resx">
+    <EmbeddedResource Include="Forms\6.%29 Setup\AssetType\AssetType.resx">
       <DependentUpon>AssetType.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\SETUP\AssetType\AssetTypeAddandUpdate.resx">
+    <EmbeddedResource Include="Forms\6.%29 Setup\AssetType\AssetTypeAddandUpdate.resx">
       <DependentUpon>AssetTypeAddandUpdate.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Home.resx">
       <DependentUpon>Home.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\SETUP\Employee\Employee.resx">
+    <EmbeddedResource Include="Forms\6.%29 Setup\Employee\Employee.resx">
       <DependentUpon>Employee.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\SETUP\Employee\EmployeeAddandUpdate.resx">
+    <EmbeddedResource Include="Forms\6.%29 Setup\Employee\EmployeeAddandUpdate.resx">
       <DependentUpon>EmployeeAddandUpdate.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\SETUP\Reference\Reference.resx">
+    <EmbeddedResource Include="Forms\6.%29 Setup\Reference\Reference.resx">
       <DependentUpon>Reference.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\SETUP\User\EmployeeList.resx">
+    <EmbeddedResource Include="Forms\6.%29 Setup\User\EmployeeList.resx">
       <DependentUpon>EmployeeList.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\SETUP\User\UpdateSelection.resx">
+    <EmbeddedResource Include="Forms\6.%29 Setup\User\UpdateSelection.resx">
       <DependentUpon>UpdateSelection.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\SETUP\User\UserChangePass.resx">
+    <EmbeddedResource Include="Forms\6.%29 Setup\User\UserChangePass.resx">
       <DependentUpon>UserChangePass.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\SETUP\User\User.resx">
+    <EmbeddedResource Include="Forms\6.%29 Setup\User\User.resx">
       <DependentUpon>User.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\SETUP\User\UserAdd.resx">
+    <EmbeddedResource Include="Forms\6.%29 Setup\User\UserAdd.resx">
       <DependentUpon>UserAdd.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\SETUP\User\UserUpdate.resx">
+    <EmbeddedResource Include="Forms\6.%29 Setup\User\UserUpdate.resx">
       <DependentUpon>UserUpdate.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\SETUP\Vendor\Vendor.resx">
+    <EmbeddedResource Include="Forms\6.%29 Setup\Vendor\Vendor.resx">
       <DependentUpon>Vendor.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\SETUP\Vendor\VendorAddandUpdate.resx">
+    <EmbeddedResource Include="Forms\6.%29 Setup\Vendor\VendorAddandUpdate.resx">
       <DependentUpon>VendorAddandUpdate.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="My Project\licenses.licx" />
@@ -826,7 +626,7 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <None Include="DataClasses1.dbml">
+    <None Include="Connection and Module\DataClasses1.dbml">
       <Generator>MSLinqToSQLGenerator</Generator>
       <LastGenOutput>DataClasses1.designer.vb</LastGenOutput>
       <SubType>Designer</SubType>
@@ -835,7 +635,7 @@
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.vb</LastGenOutput>
     </None>
-    <None Include="app.config" />
+    <None Include="Connection and Module\app.config" />
     <Compile Include="My Project\Settings.Designer.vb">
       <AutoGen>True</AutoGen>
       <DependentUpon>Settings.settings</DependentUpon>
@@ -852,14 +652,14 @@
     <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="packages.config" />
+    <None Include="Connection and Module\packages.config" />
     <None Include="Resources\Untitled.jpg" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\photo_2023-10-23_15-37-35.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="completed-task.ico" />
+    <Content Include="Connection and Module\completed-task.ico" />
     <Content Include="SqlServerTypes\Loader.cs" />
     <Content Include="SqlServerTypes\readme.htm" />
     <Content Include="SqlServerTypes\x64\msvcr120.dll">
@@ -879,7 +679,8 @@
     <WCFMetadata Include="Connected Services\" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Forms\Asset Management\Assignment\Manual\" />
+    <Folder Include="Forms\3.%29 Asset\MasterData\Register\" />
+    <Folder Include="Forms\5.%29 Reports\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
